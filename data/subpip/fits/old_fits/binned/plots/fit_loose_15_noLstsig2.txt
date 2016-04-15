@@ -1,0 +1,16 @@
+/\ signal: fraction gaus 1 = 0.330 +/- 3.055036E-01
+/\ gaus 1: mean = 5622.500 +/- 5.647081E+01
+/\ gaus 1: sigma = 0.000 +/- 1.198778E+01
+/\ gaus 2: sigma = 13.497 +/- 2.219891E+01
+/\ gaus 1: mean = 5622.500 +/- 5.647081E+01
+/\ gaus 1: sigma = 0.000 +/- 1.198778E+01
+/\ gaus 1: mean = 5622.500 +/- 5.647081E+01
+/\ gaus 2: sigma = 13.497 +/- 2.219891E+01
+/\ gaus 1: mean = 5622.500 +/- 5.647081E+01
+Background: Chebychev b1 = -0.525 +/- 6.496372E+03
+Background: Chebychev b2 = -0.045 +/- 6.496372E+03
+Background: Chebychev b3 = 0.065 +/- 6.496372E+03
+#chi^{2}/N_{DoF} = 4471.783
+Yield #Lambda = 13830.155 +/- 11984466.359
+N_{bkg} = 680309.523 +/- 11824674.084
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.225481E+03

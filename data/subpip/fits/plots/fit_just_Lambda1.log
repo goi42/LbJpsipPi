@@ -1,0 +1,215 @@
+=========================================
+START@:		Fri Apr 15 15:35:26 CEST 2016
+=========================================
+Configuring DaVinci v39r1p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r1p1
+Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
+Environment for DaVinci v39r1p1 ready.
+(Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
+ DaVinci v39r1p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r1p1)
+
+Processing rootopts/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = _just_Lambda1
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named '1405' created with bounds [4220,5460]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tail' created with bounds [5950,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,6040]
+mass declared
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(LMC) Ignored 182 out of range events
+LMC RooDataSet created
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+SMC file opened
+SMC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_LMC) constructing test statistic for sub-range named tot
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeFortot' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_LMC' created with bounds [4300,6040]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_LMC) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        2500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+ FCN=-25182.3 FROM MIGRAD    STATUS=INITIATE       20 CALLS          21 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  f1L          8.27146e-01   8.64270e-02   2.35858e-01  -2.36812e+02
+   2  mean1L       5.62135e+03   1.75000e+01   2.02455e-01   9.27573e+03
+   3  nsigL        1.68964e+03   8.44819e+02   6.72858e-04  -4.93698e+06
+   4  sig1L        8.03001e+00   4.01500e+00   1.52693e-01   1.81767e+03
+   5  sig2L        2.32095e+01   1.00000e+01   2.42199e-01  -1.05327e+04
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-33964.8 FROM MIGRAD    STATUS=CONVERGED     234 CALLS         235 TOTAL
+                     EDM=3.93681e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  f1L          9.56473e-01   2.79454e-03   1.67822e-03   3.13740e-03
+   2  mean1L       5.62005e+03   1.02179e-01   1.49071e-04  -5.75359e-01
+   3  nsigL        8.10713e+03   9.00400e+01   4.02424e-06   4.43839e+01
+   4  sig1L        8.68358e+00   8.44109e-02   3.67337e-04   1.01784e+00
+   5  sig2L        9.99999e+01   3.82020e+00   4.94331e-02  -1.31736e-02
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  5    ERR DEF=0.5
+  7.810e-06  4.963e-06 -7.613e-07  6.292e-05 -3.724e-06 
+  4.963e-06  1.044e-02  1.558e-06  2.088e-04 -3.188e-06 
+ -7.613e-07  1.558e-06  8.107e+03 -5.612e-06 -1.420e-05 
+  6.292e-05  2.088e-04 -5.612e-06  7.125e-03 -8.569e-05 
+ -3.724e-06 -3.188e-06 -1.420e-05 -8.569e-05  1.651e-03 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5
+        1  0.26823   1.000  0.017 -0.000  0.267 -0.033
+        2  0.02673   0.017  1.000  0.000  0.024 -0.001
+        3  0.00001  -0.000  0.000  1.000 -0.000 -0.000
+        4  0.26794   0.267  0.024 -0.000  1.000 -0.025
+        5  0.03687  -0.033 -0.001 -0.000 -0.025  1.000
+ **********
+ **   18 **MINOS        2500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+    THE POSITIVE MINOS ERROR OF PARAMETER   5, sig2L EXCEEDS ITS LIMIT.
+ FCN=-33964.8 FROM MINOS     STATUS=PROBLEMS      307 CALLS         542 TOTAL
+                     EDM=3.93681e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  f1L          9.56473e-01   2.79454e-03  -2.84830e-03   2.73844e-03
+   2  mean1L       5.62005e+03   1.02179e-01  -1.02099e-01   1.02260e-01
+   3  nsigL        8.10713e+03   9.00400e+01  -8.98330e+01   9.02469e+01
+   4  sig1L        8.68358e+00   8.44109e-02  -8.41037e-02   8.46607e-02
+   5  sig2L        9.99999e+01   3.82020e+00  -2.46977e+00   at limit   
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        2500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE5 IS AT ITS UPPER ALLOWED LIMIT.
+    THE POSITIVE MINOS ERROR OF PARAMETER   5, sig2L EXCEEDS ITS LIMIT.
+ FCN=-33964.8 FROM MINOS     STATUS=PROBLEMS      309 CALLS         851 TOTAL
+                     EDM=3.93681e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  f1L          9.56473e-01   2.79454e-03  -2.84830e-03   2.73844e-03
+   2  mean1L       5.62005e+03   1.02179e-01  -1.02099e-01   1.02260e-01
+   3  nsigL        8.10713e+03   9.00400e+01  -8.98330e+01   9.02469e+01
+   4  sig1L        8.68358e+00   8.44109e-02  -8.41037e-02   8.46607e-02
+   5  sig2L        9.99999e+01   3.82020e+00  -2.46977e+00   at limit   
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_LMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_LMC'
+/\ signal: fraction gaussian 1 = 0.956473 +/- 2.848296E-03
+/\ gaus 1: mean = 5620.050675 +/- 1.022604E-01
+/\ gaus 1: sigma = 8.683575 +/- 8.466065E-02
+/\ gaus 2: sigma = 99.999893 +/- 2.469768E+00
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_LMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_LMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigL)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: (gau1L,gau2L,mean2L)
+#chi^{2}/N_{DoF} = 18.488338
+N /\ = 8107.130868 +/- 90.246854
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.574272E-02
+limit = 1.022514E+00
+limit at 90% confidence level = 1.636023E+00
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 10 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 11 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 12 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 13 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 14 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 15 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 16 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 17 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 18 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 19 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 20 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 21 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 22 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 23 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 24 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 25 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 26 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 27 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 28 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 29 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 30 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 31 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 32 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 33 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 34 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 35 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 36 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 37 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 38 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 39 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 40 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 41 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 42 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 43 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 44 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 46 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 47 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 48 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 49 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 50 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 51 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 52 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 53 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 55 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 57 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 58 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 61 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 62 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 63 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 65 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 66 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 67 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 68 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 91 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 93 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 94 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 96 has zero error, setting residual to zero
+Info in <TCanvas::Print>: eps file plots/fit_just_Lambda1.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fit_just_Lambda1.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Fri Apr 15 15:44:23 CEST 2016
+=========================================

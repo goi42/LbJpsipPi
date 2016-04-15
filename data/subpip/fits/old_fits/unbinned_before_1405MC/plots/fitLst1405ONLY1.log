@@ -1,0 +1,215 @@
+=========================================
+START@:		Wed Mar 16 20:38:51 CET 2016
+=========================================
+Configuring DaVinci v39r1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r1
+Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
+Environment for DaVinci v39r1 ready.
+(Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
+ DaVinci v39r1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r1)
+
+Processing rootopts/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = Lst1405ONLY1
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named '1405' created with bounds [4220,5460]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tail' created with bounds [5950,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,6040]
+mass declared
+LstMC RooDataSet created
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+SMC file opened
+SMC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_LstMC) constructing test statistic for sub-range named 1405
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeFor1405' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_LstMC' created with bounds [4220,5460]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_LstMC) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        2500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (435593) to force MIGRAD to back out of this region. Error log follows
+Parameter values: alphaLst2=0.596179, mean5Lst2=5245.26, nCBLst1405=152.062, nLst2=719.116, sigLst2=64.5648
+RooNLLVar::nll_totalPdf_LstMC[ paramSet=(alphaLst2,mean5Lst2,nCBLst1405,nLst2,sigLst2) ]
+     function value is NAN @ paramSet=(alphaLst2 = 0.596179,mean5Lst2 = 5245.26,nCBLst1405 = 152.062,nLst2 = 719.116,sigLst2 = 64.5648)
+RooAddPdf::totalPdf[ nCBLst1405 * CBLst1405 ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5312.01), !pdfs=(CBLst1405 = 0.586069/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5223.81), !pdfs=(CBLst1405 = 0.946323/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5223.81), !pdfs=(CBLst1405 = 0.946323/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5199.54), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5199.54), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5359.26), !pdfs=(CBLst1405 = 0.21039/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5359.26), !pdfs=(CBLst1405 = 0.21039/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4935.23), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4935.23), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5128.57), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5128.57), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5246.42), !pdfs=(CBLst1405 = 0.999839/-nan), !coefficients=(nCBLst1405 = 152.062)
+    ... (remaining 2038 messages suppressed)
+RooCBShape::CBLst1405[ m=Bs_LOKI_MASS_JpsiConstr m0=mean5Lst2 sigma=sigLst2 alpha=alphaLst2 n=nLst2 ]
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5193.48, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=4810.65, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5186.1, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5038.2, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5056.11, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5010.12, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5194.14, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5059.67, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5116.97, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5071.57, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5004.28, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5075.28, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=719.116
+    ... (remaining 2038 messages suppressed)
+RooRealIntegral::CBLst1405_Int[Bs_LOKI_MASS_JpsiConstr|NormalizationRangeFor1405]_Norm[Bs_LOKI_MASS_JpsiConstr][ Int CBLst1405_Norm(Bs_LOKI_MASS_JpsiConstr) d[Ana](Bs_LOKI_MASS_JpsiConstr) ]
+     function value is NAN @ !sumList=(), !intList=(), !anaList=(Bs_LOKI_MASS_JpsiConstr = 4845.37), !jacList=(), !facList=(), !func=CBLst1405=-nan/-nan, !sumCat=()
+RooRealIntegral::CBLst1405_Int[Bs_LOKI_MASS_JpsiConstr][ Int CBLst1405d[Ana](Bs_LOKI_MASS_JpsiConstr) ]
+     function value is NAN @ !sumList=(), !intList=(), !anaList=(Bs_LOKI_MASS_JpsiConstr = 4845.37), !jacList=(), !facList=(), !func=CBLst1405=-nan/230.668, !sumCat=()
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (435593) to force MIGRAD to back out of this region. Error log follows
+Parameter values: alphaLst2=0.596179, mean5Lst2=5245.26, nCBLst1405=152.062, nLst2=513.16, sigLst2=64.5648
+RooNLLVar::nll_totalPdf_LstMC[ paramSet=(alphaLst2,mean5Lst2,nCBLst1405,nLst2,sigLst2) ]
+     function value is NAN @ paramSet=(alphaLst2 = 0.596179,mean5Lst2 = 5245.26,nCBLst1405 = 152.062,nLst2 = 513.16,sigLst2 = 64.5648)
+RooAddPdf::totalPdf[ nCBLst1405 * CBLst1405 ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5312.01), !pdfs=(CBLst1405 = 0.586069/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5223.81), !pdfs=(CBLst1405 = 0.946323/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5223.81), !pdfs=(CBLst1405 = 0.946323/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5199.54), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5199.54), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5359.26), !pdfs=(CBLst1405 = 0.21039/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5359.26), !pdfs=(CBLst1405 = 0.21039/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4935.23), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4935.23), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5128.57), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5128.57), !pdfs=(CBLst1405 = -nan/-nan), !coefficients=(nCBLst1405 = 152.062)
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5246.42), !pdfs=(CBLst1405 = 0.999839/-nan), !coefficients=(nCBLst1405 = 152.062)
+    ... (remaining 2038 messages suppressed)
+RooCBShape::CBLst1405[ m=Bs_LOKI_MASS_JpsiConstr m0=mean5Lst2 sigma=sigLst2 alpha=alphaLst2 n=nLst2 ]
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5193.48, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=4810.65, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5186.1, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5038.2, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5056.11, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5010.12, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5194.14, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5059.67, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5116.97, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5071.57, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5004.28, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+     p.d.f value is Not-a-Number (-nan), forcing value to zero @ m=Bs_LOKI_MASS_JpsiConstr=5075.28, m0=mean5Lst2=5245.26, sigma=sigLst2=64.5648, alpha=alphaLst2=0.596179, n=nLst2=513.16
+    ... (remaining 2038 messages suppressed)
+RooRealIntegral::CBLst1405_Int[Bs_LOKI_MASS_JpsiConstr|NormalizationRangeFor1405]_Norm[Bs_LOKI_MASS_JpsiConstr][ Int CBLst1405_Norm(Bs_LOKI_MASS_JpsiConstr) d[Ana](Bs_LOKI_MASS_JpsiConstr) ]
+     function value is NAN @ !sumList=(), !intList=(), !anaList=(Bs_LOKI_MASS_JpsiConstr = 4845.37), !jacList=(), !facList=(), !func=CBLst1405=-nan/-nan, !sumCat=()
+RooRealIntegral::CBLst1405_Int[Bs_LOKI_MASS_JpsiConstr][ Int CBLst1405d[Ana](Bs_LOKI_MASS_JpsiConstr) ]
+     function value is NAN @ !sumList=(), !intList=(), !anaList=(Bs_LOKI_MASS_JpsiConstr = 4845.37), !jacList=(), !facList=(), !func=CBLst1405=-nan/-nan, !sumCat=()
+
+ FCN=97487.9 FROM MIGRAD    STATUS=INITIATE       75 CALLS          76 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alphaLst2    5.96179e-01   1.45752e+01  -1.02880e-01   9.59409e+05
+   2  mean5Lst2    5.24526e+03   4.00000e+01   0.00000e+00   2.30699e+02
+   3  nCBLst1405   1.52062e+02   7.60308e+01   0.00000e+00** at limit **
+   4  nLst2        4.61582e+00   2.30791e+00   0.00000e+00   0.00000e+00
+   5  sigLst2      6.45648e+01   3.22824e+01   0.00000e+00  -2.40655e+05
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-240986 FROM MIGRAD    STATUS=CONVERGED     444 CALLS         445 TOTAL
+                     EDM=3.3514e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alphaLst2    1.48148e+00   3.31140e-02   2.84149e-05   4.42382e+00
+   2  mean5Lst2    5.17463e+03   7.02128e-01   1.04588e-03  -3.11600e-01
+   3  nCBLst1405   6.68226e+04   2.63052e+02   3.42153e-06   1.00232e+02
+   4  nLst2        4.09861e+00   3.27684e-01   1.95796e-04   3.08992e+00
+   5  sigLst2      1.36367e+02   7.22856e-01   1.57672e-04   1.57802e-01
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  5    ERR DEF=0.5
+  1.097e-03  1.071e-02 -5.483e-01  9.940e-03 -1.336e-02 
+  1.071e-02  4.930e-01  2.251e+00  8.245e-02 -1.506e-01 
+ -5.483e-01  2.251e+00  6.920e+04 -4.128e+00  2.203e+01 
+  9.940e-03  8.245e-02 -4.128e+00  1.074e-01 -8.736e-02 
+ -1.336e-02 -1.506e-01  2.203e+01 -8.736e-02  5.225e-01 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5
+        1  0.95135   1.000  0.461 -0.063  0.916 -0.558
+        2  0.48992   0.461  1.000  0.012  0.358 -0.297
+        3  0.12730  -0.063  0.012  1.000 -0.048  0.116
+        4  0.93411   0.916  0.358 -0.048  1.000 -0.369
+        5  0.66565  -0.558 -0.297  0.116 -0.369  1.000
+ **********
+ **   18 **MINOS        2500
+ **********
+ FCN=-240986 FROM MINOS     STATUS=SUCCESSFUL    480 CALLS         925 TOTAL
+                     EDM=3.3514e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  alphaLst2    1.48148e+00   3.31140e-02  -3.40100e-02   3.39556e-02
+   2  mean5Lst2    5.17463e+03   7.02128e-01  -7.03129e-01   7.07842e-01
+   3  nCBLst1405   6.68226e+04   2.63052e+02  -2.62905e+02   2.63260e+02
+   4  nLst2        4.09861e+00   3.27684e-01  -3.18455e-01   3.58113e-01
+   5  sigLst2      1.36367e+02   7.22856e-01  -7.29422e-01   7.25252e-01
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        2500
+ **********
+ FCN=-240986 FROM MINOS     STATUS=SUCCESSFUL    476 CALLS        1401 TOTAL
+                     EDM=3.3514e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  alphaLst2    1.48148e+00   3.31140e-02  -3.40100e-02   3.39556e-02
+   2  mean5Lst2    5.17463e+03   7.02128e-01  -7.03129e-01   7.07842e-01
+   3  nCBLst1405   6.68226e+04   2.63052e+02  -2.62905e+02   2.63260e+02
+   4  nLst2        4.09861e+00   3.27684e-01  -3.18455e-01   3.58113e-01
+   5  sigLst2      1.36367e+02   7.22856e-01  -7.29422e-01   7.25252e-01
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_LstMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_LstMC'
+/\*(1405): alpha2 = 1.481478 +/- 3.400996E-02
+/\*(1405): mean2 = 5174.632207 +/- 7.078420E-01
+/\*(1405): n2 = 4.098612 +/- 3.581133E-01
+/\*(1405): sigma2 = 136.367127 +/- 7.294215E-01
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_LstMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_LstMC'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (CBLst1405)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#chi^{2}/N_{DoF} = 30.605502
+N /\*(1405) = 66822.626264 +/- 263.260035
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 5.571555E-03
+limit = 1.007911E+00
+limit at 90% confidence level = 1.612657E+00
+Info in <TCanvas::Print>: eps file plots/fitLst1405ONLY1.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fitLst1405ONLY1.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Wed Mar 16 20:39:52 CET 2016
+=========================================

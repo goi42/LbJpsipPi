@@ -1,0 +1,44 @@
+=========================================
+START@:		Wed Mar 9 16:54:41 CET 2016
+=========================================
+Configuring DaVinci v39r0p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r0p1
+Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
+Environment for DaVinci v39r0p1 ready.
+(Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
+ DaVinci v39r0p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r0p1)
+
+Processing rootopts/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = test
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+tree gotten
+SMC file opened
+SMC hist gotten
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'tot' created with bounds [4300,5950]
+mass declared
+data declared
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2)) expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+Lst stuff
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named tot
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'NormalizationRangeFortot' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(sqrt(pow(J_psi_1S_TRUEP_E+Lambda0_TRUEP_E,2)-pow(J_psi_1S_TRUEP_X+Lambda0_TRUEP_X,2)-pow(J_psi_1S_TRUEP_Y+Lambda0_TRUEP_Y,2)-pow(J_psi_1S_TRUEP_Z+Lambda0_TRUEP_Z,2))) new range named 'fit_nll_totalPdf_data' created with bounds [4300,5950]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        2000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+
+ *** Break *** keyboard interrupt

@@ -1,0 +1,9 @@
+/\ gaus 1: mean = 5621.284 +/- 1.235418E-01
+/\ gaus 1: sigma = 8.639 +/- 1.276931E-01
+Background: Chebychev b1 = -0.522 +/- 4.174476E-03
+Background: Chebychev b2 = -0.037 +/- 4.066424E-03
+Background: Chebychev b3 = 0.059 +/- 3.180519E-03
+#chi^{2}/N_{DoF} = 4485.408
+Yield #Lambda = 12992.260 +/- 169.292
+N_{bkg} = 682116.568 +/- 1206.917
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.842749E-02

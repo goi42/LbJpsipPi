@@ -1,0 +1,35 @@
+        //previous cuts from somewhere:                                                                                                                                          
+         //if((Bs_ENDVERTEX_CHI2/Bs_ENDVERTEX_NDOF<16/*8*/)&&             \                                                                                                       
+         //(Bs_IPCHI2_OWNPV<9)&&(anglePPmE<0.008)&&                    \                                                                                                          
+         //(chi2ndfv<16)&&(J_psi_1S_MM>=3036.9)&&(J_psi_1S_MM<=3156.9)&& \                                                                                                        
+         //(((H2_TRACK_Type==3) && (H2_TRACK_GhostProb<0.5/*2*/))||H2_TRACK_Type==5)&& \                                                                                          
+         //(((H1_TRACK_Type==3) && (H1_TRACK_GhostProb<0.5/*2*/))||H1_TRACK_Type==5)&& \                                                                                          
+         //(((muplus_TRACK_Type==3) && (muplus_TRACK_GhostProb<0.5/*2*/))||muplus_TRACK_Type==5)&& \                                                                              
+         //(((muminus_TRACK_Type==3) && (muminus_TRACK_GhostProb<0.5/*2*/))||muminus_TRACK_Type==5)&& \                                                                           
+         //(H1_PT>500)&&(H2_PT>500)){                                                                                                                                             
+         //}                                                                                                                                                                      
+      //if(                                                             \                                                                                                         
+      //   /*from /\b->/\mumu paper:*/                                  \                                                                                                         
+      //   (Bs_DIRA_OWNPV>0.999968)&&(Bs_IPCHI2_OWNPV<9)                \                                                                                                         
+             //   &&(Bs_FDCHI2_OWNPV>100)&&(Bs_OWNPV_CHI2/Bs_OWNPV_NDOF<10)/*/\ mass already required to be within 30 MeV*/ \                                                     
+      //   &&(R_PT>500)/*&&decaytime*/                                  \                                                                                                         
+      //   &&(muminus_TRACK_CHI2NDOF<4)&&(muplus_TRACK_CHI2NDOF<4)&&(muminus_PIDmu>0)&&(muplus_PIDmu>0) \                                                                         
+             //   &&(muminus_IPCHI2_OWNPV>16)&&(muplus_IPCHI2_OWNPV>16) /*&&dimuon stuff*/ \                                                                                      
+                    //   &&(((H1_TRACK_Type==3)&&(H2_TRACK_Type==3)&&(R_ENDVERTEX_CHI2<30)) \                                                                                     
+       //      ||((H1_TRACK_Type==5)&&(H2_TRACK_Type==5)&&(R_ENDVERTEX_CHI2<25))) \                                                                                               
+      //  /*from lifetime paper:*/                                      \                                                                                                         
+      //   &&(H2_PT>100)&&(H1_P>2000)&&(H2_P>2000)&&(R_PT>1000)         \                                                                                                         
+      //   /*&&/\b and /\ separated*/                                   \                                                                                                         
+      //   &&(R_OWNPV_CHI2<25)                                          \                                                                                                         
+      //   /*&&m(ppi)within 6 MeV of/\ */                               \                                                                                                         
+      //   &&(Bs_LOKI_DTF_CHI2NDOF<5)                                   \                                                                                                         
+      //                                          ){                                                                                                                              
+      //  cutmassLb->Fill(Bs_MM);                                                                                                                                                 
+      //  if((Bs_MM>=5470)&&(Bs_MM<=5770))cutmassLbyield++;                                                                                                                       
+
+        //isolation cut:                                                                                                                                                          
+      //  if((dJpsiH1>icut)&&(dJpsiH2>icut)) {                                                                                                                                    
+      //    cutmassLb2->Fill(Bs_MM);                                                                                                                                              
+      //    if((Bs_MM>=5470)&&(Bs_MM<=5770))cutmassLb2yield++;                                                                                                                    
+      //  }                                                                                                                                                                       
+      //}                                                                                                                                                                         

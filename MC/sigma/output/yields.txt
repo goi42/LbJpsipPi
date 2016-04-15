@@ -1,0 +1,19 @@
+yields of 5470<=Lambda_b0_MM<=5770 with various cuts:
+no cuts: 5793
+with Liming's Aug5 cuts: 3972
+ditto LL: 853
+ditto DD: 3119
+with pID cut: 3586
+ditto LL: 786
+ditto DD: 2800
+Liming's and KS: 2471
+ditto LL: 548
+ditto DD: 1923
+Liming's, KS, and pID: 2185
+ditto LL: 496
+ditto DD: 1689
+
+fLfdtot/cutmassLb7yield= 0.499334
+fLfdLLtot/cutmassLb8yield= 0.511466
+fLfdDDtot/cutmassLb9yield= 0.495877
+currently not counting yields from trigger cut

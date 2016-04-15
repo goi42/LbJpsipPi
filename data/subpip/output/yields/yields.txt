@@ -1,0 +1,19 @@
+yields of 5470<=Bs_LOKI_MASS_JpsiConstr<=5770 with various cuts:
+no cuts: 566142
+with Liming's Aug5 cuts: 43957
+ditto LL: 6566
+ditto DD: 37391
+with pID cut: 29786
+ditto LL: 5141
+ditto DD: 24645
+Liming's and KS: 28114
+ditto LL: 4688
+ditto DD: 23426
+Liming's, KS, and pID: 19532
+ditto LL: 3663
+ditto DD: 15869
+
+fLfdtot/cutmassLb7yield= 0.529785
+fLfdLLtot/cutmassLb8yield= 0.530225
+fLfdDDtot/cutmassLb9yield= 0.529697
+currently not counting yields from trigger cut

@@ -1,0 +1,1249 @@
+====================================================
+START@:     Thu Apr 7 00:15:24 CEST 2016
+YEAR:       2012
+POLARITY:   Up
+====================================================
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/MC/sigma/tupleproduction_plus2011/with_gd_info/myDaVinci.py'
+Requested Stripping20
+Trying to import module StrippingArchive.Stripping20
+# Register line: StrippingDiMuonAndGammaForCharmAssociative
+# Register line: StrippingDoubleDiMuonForCharmAssociative
+# Register line: StrippingChiAndDiMuonForCharmAssociative
+# Register line: StrippingDiChiForCharmAssociative
+# Register line: StrippingDiMuonAndWForCharmAssociative
+# Register line: StrippingChiAndWForCharmAssociative
+# WARNING: lineMBNoBias uses plain Gaudi configurable MBNoBiasORL. Consider using Selection instead!
+# WARNING: lineHlt1L0AnyRateLimited uses plain Gaudi configurable Hlt1L0AnyRateLimitedORL. Consider using Selection instead!
+# ConfiguredMuonIDs: Loaded configuration info M_2011_def
+# WARNING: lineB2hhh_KKK_inclLine uses plain Gaudi configurable B2hhhGlobalEventCutFilter. Consider using Selection instead!
+# WARNING: lineB2hhh_pph_inclLine uses plain Gaudi configurable B2hhhGlobalEventCutFilter. Consider using Selection instead!
+# WARNING: new configuration: TrackCuts        :  ( TRCHI2DOF < 5 ) & ( PT > 250 * MeV ) & ( TRGHOSTPROB < 0.5 ) & in_range  ( 2 , ETA , 5 )  
+Creating CharmToBeSwum stream with 14 lines
+Creating Bhadron stream with 275 lines
+Creating Semileptonic stream with 32 lines
+Creating BhadronCompleteEvent stream with 76 lines
+Creating Leptonic stream with 31 lines
+# WARNING: Line StrippingInflaton2MuMuForMicro_Bu2InflatonK has prescale <= 0, it will be removed from stream Leptonic
+# WARNING: Line StrippingInflaton2MuMuForMicro_Bs2InflatonPhi has prescale <= 0, it will be removed from stream Leptonic
+# WARNING: Line StrippingInflaton2MuMuForMicro_Bd2InflatonKst has prescale <= 0, it will be removed from stream Leptonic
+# WARNING: Line StrippingInflaton2MuMuForMicro_Bd2InflatonRho has prescale <= 0, it will be removed from stream Leptonic
+Creating PID stream with 15 lines
+Creating Dimuon stream with 95 lines
+# WARNING: Line StrippingTau23MuDs23PiLine has prescale <= 0, it will be removed from stream Dimuon
+# WARNING: Line StrippingInflaton2MuMuLongLine has prescale <= 0, it will be removed from stream Dimuon
+# WARNING: Line StrippingBs2MuMuLinesNoMuIDLooseLine has prescale <= 0, it will be removed from stream Dimuon
+Creating Calibration stream with 23 lines
+# WARNING: Line StrippingTriggerValidationD02KPiLine has prescale <= 0, it will be removed from stream Calibration
+# WARNING: Line StrippingTriggerValidationD2KPiPiLine has prescale <= 0, it will be removed from stream Calibration
+Creating Radiative stream with 32 lines
+Creating Charm stream with 202 lines
+Creating EW stream with 75 lines
+Creating MiniBias stream with 3 lines
+Creating CharmCompleteEvent stream with 75 lines
+# WARNING: Line StrippingD2hhhControl_PPPLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhhControl_KPPosLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhhControl_KKKLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhhControl_KKPosLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhhControl_HHHIncLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2KPiLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2KKLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2PiPiLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhWSCompleteEventPromptDst2D2KKLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingD2hhWSCompleteEventPromptDst2D2PiPiLine has prescale <= 0, it will be removed from stream CharmCompleteEvent
+# WARNING: Line StrippingBetaSBu2JpsiKUnbiasedLine is declared but not appended to any stream
+# WARNING: Line StrippingBetaSBs2JpsiPhiUnbiasedLine is declared but not appended to any stream
+# WARNING: Line StrippingBetaSBd2JpsiKstarUnbiasedLine is declared but not appended to any stream
+# WARNING: Line StrippingBetaSBd2JpsiKsUnbiasedLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiElectronDiElectronLowMassLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiElectronBiasedIncDiElectronLowMassLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiElectronJpsi2eeLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptD2KPiLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptD2KKLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptD2PiPiLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptDst2D2RSLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptDst2D2WSLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptDst2D2KKLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptDst2D2PiPiLine is declared but not appended to any stream
+# WARNING: Line StrippingPromptD2hhPromptD0D0FromDstarPartialLine is declared but not appended to any stream
+# WARNING: Line StrippingInflaton2MuMuForMicroDownstreamLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonExclusiveLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonNoPVLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonHighMassLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonHighMassSameSignLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonLowMassLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonJpsi2MuMuTOSLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonPsi2MuMuTOSLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonDiMuonDetachedLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonJpsi2MuMuDetachedLine is declared but not appended to any stream
+# WARNING: Line StrippingMicroDSTDiMuonPsi2MuMuDetachedLine is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_DpKs is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_D0K is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_DpPim is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_D0Pip is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_DstarpPim is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_DsKs is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_DsKm is declared but not appended to any stream
+# WARNING: Line StrippingCharmedAndCharmedStrangeSpectroscopy_Ds is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_JpsiNoPID is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_JpsiFromBNoPIDNoMipHiP is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_PiFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_KFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_PFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_PiISMUONFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_KISMUONFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingMuIDCalib_PISMUONFromLambdacDecay is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptD2KPiTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptD2KKTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptD2PiPiTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptDst2D2RSSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptDst2D2KKSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhPromptDst2D2PiPiSSLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2HHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2HHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2HHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2HHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiNoIPD2KPIPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KSDDD2HHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KSLLD2HHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KPi0MergedD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiPi0MergedD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KsPiDDD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KPi0ResolvedD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KsPiLLD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiPi0ResolvedD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2PhiMuNuBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2PhiMuNuBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2HHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2HHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2HHHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2HHHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiNoIPD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiNoIPDs2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKsPiDDD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiPi0MergedD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKPi0MergedD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiPi0ResolvedD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKPi0ResolvedD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKsPiLLD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2DHHOSD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2DRho0D2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2DKstar0D2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2DKSDDD2HHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2DKSLLD2HHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DRhoPMD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKstarPMD2HHHCFPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2KSHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2KSHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2KSHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2KSHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KKD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0PiPiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KPiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KKD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0PiPiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KPiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstarKDst2D0Pi_D2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstarPiDst2D0Pi_D2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstarKDst2D0Pi_D2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstarPiDst2D0Pi_D2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2HHHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2HHHHBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2HHHHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2HHHHUPBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KSDDD2K3PiBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KSLLD2K3PiBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2Pi0HHResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2Pi0HHResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KD2Pi0HHMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiD2Pi0HHMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KKD2Pi0KPiResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0PiPiD2Pi0KPiResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KPiD2Pi0KPiResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KKD2Pi0KPiMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0PiPiD2Pi0KPiMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02D0KPiD2Pi0KPiMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2Pi0HHHResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2Pi0HHHResolvedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKD2Pi0HHHMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiD2Pi0HHHMergedBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KKPiD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KPiPiD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiPiPiD2HHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KKPiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KPiPiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiPiPiD2KSHHDDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KKPiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0KPiPiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB2D0PiPiPiD2KSHHLLBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKKPiD2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DKPiPiD2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DPiPiPiD2HHHPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstKKPiDstar2D0PiPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstKPiPiDstar2D0PiPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingDstarUPB02DstPiPiPiDstar2D0PiPIDBeauty2CharmLine is declared but not appended to any stream
+# WARNING: Line StrippingInflaton2MuMuDownstreamLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonIncLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonSameSignLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonPrescaledLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonExclusiveLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonLowMassLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonJpsi2MuMuLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonPsi2MuMuLine is declared but not appended to any stream
+# WARNING: Line StrippingFullDSTDiMuonDiMuonDetachedLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhCompleteEventPromptDst2D2RSSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhCompleteEventPromptDst2D2KKSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhCompleteEventPromptDst2D2PiPiSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2KPiTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2KKTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptD2PiPiTISLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptDst2D2RSSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptDst2D2KKSSLine is declared but not appended to any stream
+# WARNING: Line StrippingD2hhWSCompleteEventPromptDst2D2PiPiSSLine is declared but not appended to any stream
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Applying DaVinci configuration
+# DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
+|-MainOptions          = ''
+|-TupleFile            = 'DVNtuples_2012_Up.root'  (default: '')
+|-SkipEvents           = 0
+|-RootCompressionLevel = 'LZMA:6'
+|-Input                = []  (default: [])
+|-DDDBtag              = 'Sim08-20130503-1'  (default: '')
+|-UserAlgorithms       = [<GaudiSequencer/SeqLb2JpsiL at 0x7fe9ee4d0620>, <DecayTreeTuple/Lb2JpsiLTree at 0x7ba3e90>]
+|                      (default: [])
+|-RootInTES            = ''
+|-DQFLAGStag           = ''
+|-Lumi                 = False  (default: False)
+|-MoniSequence         = []  (default: [])
+|-VerboseMessages      = False
+|-IgnoreDQFlags        = False
+|-ProductionType       = 'None'
+|-PrintFreq            = 50000  (default: 1000)
+|-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+|                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+|-EvtMax               = -1  (default: -1)
+|-CondDBtag            = 'Sim08-20130503-1-vc-md100'  (default: '')
+|-Simulation           = True  (default: False)
+|-DataType             = '2012'  (default: '')
+|-RedoMCLinks          = False
+|-InputType            = 'DST'
+|-HistogramFile        = ''
+|-WriteFSR             = True
+|-EnableUnpack         = None
+|-EventPreFilters      = []  (default: [])
+\----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# DaVinci                   INFO    Creating Lumi Algorithms
+# DaVinci                   INFO    No MainOptions specified. DaVinci() will import no options file!
+# DaVinci                   INFO    Creating User Algorithms
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Creating Moni Algorithms
+# DaVinci                   INFO    Append to Moni Sequence has been called
+# WARNING: file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43/options/L0DUConfig.opts' already included, ignored.
+# WARNING: Using default tag dq-20140822 for partition DQFLAGS
+# WARNING: something else configured a decoder already, Raw/Spd/Digits CaloDigitsFromRaw/SpdFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/Calo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/FullCalo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/L0DUReport L0DUFromRawAlg/L0DUFromRaw
+# WARNING: something else configured a decoder already, Raw/Prs/Digits CaloDigitsFromRaw/PrsFromRaw
+# WARNING: something else configured a decoder already, Raw/Ecal/Digits CaloZSupAlg/EcalZSup
+# WARNING: something else configured a decoder already, Raw/Hcal/Digits CaloZSupAlg/HcalZSup
+# WARNING: something else configured a decoder already, Trig/L0/MuonCtrl L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonBCSU L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonData L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: Property 'EnableUnpack' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.EnableUnpack'
+# WARNING: Property 'DataType' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.DataType'
+# WARNING: tool ToolSvc.OTRawBankDecoder has non-default configuration! Attributes that differ:
+# WARNING:     TimeWindow = (-8.0, 56.0) (default = (999.0, -999.0))
+# WARNING: tool ToolSvc.DisplVerticesWithVeloVertexFinder.PVSeed3DTool has non-default configuration! Attributes that differ:
+# WARNING:     MinCloseTracks = 3 (default = 4)
+# WARNING: tool ToolSvc.UnpackRecPhysMapper has non-default configuration! Attributes that differ:
+# WARNING:     Transformations = [('(.*)/Rec(.*)', '$1/pRec$2'), ('(.*)/Phys(.*)', '$1/pPhys$2'), ('(.*)/MC(.*)', '$1/pMC$2')] (default = [])
+# WARNING:     Algorithms = {1571: 'DataPacking::Unpack<LHCb::MuonPIDPacker>', 1541: 'DataPacking::Unpack<LHCb::CaloClusterPacker>', 1510: 'UnpackMCParticle', 1511: 'UnpackMCVertex', 1581: 'UnpackParticlesAndVertices', 1550: 'UnpackTrack', 1551: 'UnpackCaloHypo', 1552: 'UnpackProtoParticle', 1553: 'UnpackRecVertex', 1555: 'DataPacking::Unpack<LHCb::WeightsVectorPacker>', 1559: 'UnpackDecReport', 1561: 'DataPacking::Unpack<LHCb::RichPIDPacker>'} (default = {})
+# WARNING: tool ToolSvc.DisplVerticesDownVertexFinder.PVSeed3DTool has non-default configuration! Attributes that differ:
+# WARNING:     zMaxSpread = 20.0 (default = 3.0)
+# WARNING:     TrackPairMaxDistance = 2.0 (default = 0.3)
+# WARNING: tool ToolSvc.DisplVerticesDownVertexFinder.LSAdaptPVFitter has non-default configuration! Attributes that differ:
+# WARNING:     acceptTrack = 1e-09 (default = 1e-08)
+# WARNING:     trackMaxChi2Remove = 64.0 (default = 25.0)
+# WARNING:     MinTracks = 4 (default = 5)
+# WARNING: tool ToolSvc.CoreFactory has non-default configuration! Attributes that differ:
+# WARNING:     Modules = ['LoKiNumbers.decorators', 'LoKiTracks.decorators'] (default = ['LoKiNumbers.decorators'])
+# WARNING: tool ToolSvc.LoKi_R has non-default configuration! Attributes that differ:
+# WARNING:     Variables = {'WM': "WM( 'pi+' , 'pi-')"} (default = {})
+# WARNING: tool ToolSvc.SequencerTimerTool has non-default configuration! Attributes that differ:
+# WARNING:     OutputLevel = 4 (default = 7)
+# WARNING: tool ToolSvc.DisplVerticesWithVeloVertexFinder has non-default configuration! Attributes that differ:
+# WARNING:     PVsChi2Separation = 0.0 (default = 25.0)
+# WARNING:     PVsChi2SeparationLowMult = 0.0 (default = 91.0)
+# WARNING:     PVFitterName = LSAdaptPV3DFitter (default = LSAdaptPVFitter)
+# WARNING: tool ToolSvc.STOfflinePosition has non-default configuration! Attributes that differ:
+# WARNING:     APE = 0.197 (default = 0.0)
+# WARNING: tool ToolSvc.DisplVerticesDownVertexFinder has non-default configuration! Attributes that differ:
+# WARNING:     PVsChi2Separation = 0.0 (default = 25.0)
+# WARNING:     RequireVelo = False (default = True)
+# WARNING:     PVsChi2SeparationLowMult = 0.0 (default = 91.0)
+# WARNING: tool ToolSvc.LoKi_Jpsi has non-default configuration! Attributes that differ:
+# WARNING:     Variables = {'LOKI_TAU': 'BPVLTIME()'} (default = {})
+# WARNING: tool ToolSvc.STOnlinePosition has non-default configuration! Attributes that differ:
+# WARNING:     APE = 0.197 (default = 0.0)
+# WARNING:     ErrorVec = [0.257, 0.245, 0.277] (default = [0.22, 0.14, 0.25])
+# WARNING: tool ToolSvc.LoKi_Bs has non-default configuration! Attributes that differ:
+# WARNING:     Variables = {'LOKI_DTF_CTAU': 'DTF_CTAU( 0, True )', 'LOKI_DTF_CTAUERR': 'DTF_CTAUERR( 0, True )', 'LOKI_MASS_JpsiConstr': "DTF_FUN ( M , True , 'J/psi(1S)' )", 'LOKI_DTF_CHI2NDOF': 'DTF_CHI2NDOF( True )'} (default = {})
+# WARNING: tool ToolSvc.ITLiteClusterPosition has non-default configuration! Attributes that differ:
+# WARNING:     APE = 0.0758 (default = 0.0)
+# WARNING:     ErrorVec = [0.253, 0.236, 0.273] (default = [0.22, 0.14, 0.25])
+# WARNING: tool ToolSvc.ITClusterPosition has non-default configuration! Attributes that differ:
+# WARNING:     APE = 0.0758 (default = 0.0)
+# WARNING:     CubicSharingCorr2 = 12.33 (default = 15.4)
+# WARNING:     CubicSharingCorr3 = 4.369 (default = 4.433)
+# WARNING:     ErrorVec = [0.253, 0.236, 0.273, 0.185] (default = [0.257, 0.245, 0.277, 0.208])
+# WARNING:     LinSharingCorr2 = -0.0152 (default = 0.37)
+# WARNING:     LinSharingCorr4 = 0.53 (default = 0.564)
+# WARNING:     DetType = IT (default = TT)
+# WARNING: tool ToolSvc.LiteClusterMapper has non-default configuration! Attributes that differ:
+# WARNING:     Transformations = [('(.*)/Raw/(.*)/LiteClusters', '$1/Raw/$2/Clusters')] (default = [])
+# WARNING:     OutputOptionName = outputLocation (default = OutputName)
+# WARNING:     InputOptionName = inputLocation (default = InputName)
+# WARNING:     Algorithms = {402220: 'STClustersToLite', 397222: 'VeloClustersToLite'} (default = {})
+# WARNING: tool ToolSvc.DoubleTopoLine_DT has non-default configuration! Attributes that differ:
+# WARNING:     minAngle = 0.0350877192982 (default = 0.0350877)
+# WARNING:     minMass = 19000.0 (default = 20000.0)
+# WARNING: tool ToolSvc.UTClusterPosition has non-default configuration! Attributes that differ:
+# WARNING:     DetType = UT (default = TT)
+# WARNING: tool ToolSvc.HighPtTopoLine_DT_40000 has non-default configuration! Attributes that differ:
+# WARNING:     minpT = 40000.0 (default = 20000.0)
+# WARNING: tool ToolSvc.OTMeasurementProvider has non-default configuration! Attributes that differ:
+# WARNING:     RawBankDecoder = OTRawBankDecoder (default = OTRawBankDecoder)
+# WARNING: tool ToolSvc.MeasurementProvider.OTMeasurementProvider has non-default configuration! Attributes that differ:
+# WARNING:     RawBankDecoder = OTRawBankDecoder (default = OTRawBankDecoder)
+# WARNING: tool ToolSvc.tistos has non-default configuration! Attributes that differ:
+# WARNING:     VerboseL0 = True (default = False)
+# WARNING:     TriggerList = ['L0DiMuonDecision', 'L0HCALDecision', 'L0MuonDecision', 'L0MuonHighDecision', 'Hlt1SingleMuonNoIPL0Decision', 'Hlt1DiMuonHighMassDecision', 'Hlt1DiMuonLowMassDecision', 'Hlt1SingleMuonHighPTDecision', 'Hlt1SingleMuonNoIPDecision', 'Hlt1TrackAllL0Decision', 'Hlt1TrackMuonDecision', 'Hlt1SingleMuonNoIPL0Decision', 'Hlt2DiMuonBDecision', 'Hlt2DiMuonDecision', 'Hlt2DiMuonDY1Decision', 'Hlt2DiMuonDetachedDecision', 'Hlt2DiMuonDetachedHeavyDecision', 'Hlt2DiMuonDetachedJPsiDecision', 'Hlt2DiMuonJPsiDecision', 'Hlt2DiMuonJPsiHighPTDecision', 'Hlt2ExpressJPsiDecision', 'Hlt2ExpressJPsiTagProbeDecision', 'Hlt2SingleMuonDecision', 'Hlt2SingleMuonHighPTDecision', 'Hlt2SingleMuonLowPTDecision', 'Hlt2Topo2BodyBBDTDecision', 'Hlt2Topo2BodySimpleDecision', 'Hlt2Topo3BodyBBDTDecision', 'Hlt2Topo3BodySimpleDecision', 'Hlt2Topo4BodyBBDTDecision', 'Hlt2Topo4BodySimpleDecision', 'Hlt2TopoMu2BodyBBDTDecision', 'Hlt2TopoMu3BodyBBDTDecision', 'Hlt2TopoMu4BodyBBDTDecision', 'Hlt2TransparentDecision', 'Hlt2DiMuonUnbiasedJPsiDecision'] (default = [])
+# WARNING:     VerboseHlt2 = True (default = False)
+# WARNING:     VerboseHlt1 = True (default = False)
+# WARNING: tool ToolSvc.OTHitCreator has non-default configuration! Attributes that differ:
+# WARNING:     RawBankDecoder = OTRawBankDecoder (default = OTRawBankDecoder)
+# WARNING: tool ToolSvc.DisplVerticesWithVeloVertexFinder.LSAdaptPV3DFitter has non-default configuration! Attributes that differ:
+# WARNING:     MinTracks = 4 (default = 5)
+# WARNING:     maxIP2PV = 2.0 (default = -999.0)
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v37r2p4
+                                          running on lxplus052.cern.ch on Thu Apr  7 00:15:42 2016
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+DetectorPersistencySvc                                         INFO Added successfully Conversion service:XmlCnvSvc
+DetectorDataSvc                                             SUCCESS Detector description database: conddb:/lhcb.xml
+RndmGenSvc.Engine                                              INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine                                              INFO Current Seed:1234567 Luxury:3
+RndmGenSvc                                                     INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.TIMER                                            INFO This machine has a speed about   3.30 times the speed of a 2.8 GHz Xeon.
+NTupleSvc                                                      INFO Added stream file:DVNtuples_2012_Up.root as FILE1
+TransportSvc                                                   INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
+TransportSvc                                                   INFO Recovery of geometry errors is  ENABLED
+DaVinciEventSeq                                                INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
+DaVinciInitAlg                                              SUCCESS ==================================================================
+DaVinciInitAlg                                              SUCCESS Requested to process all events on input file(s)
+DaVinciInitAlg                                              SUCCESS ==================================================================
+RootHistSvc                                                    INFO Writing ROOT histograms to: UndefinedROOTOutputFileName
+HistogramPersistencySvc                                        INFO Added successfully Conversion service:RootHistSvc
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r18/data/JetEnergyCorrections_R05_v3.root as JEC14R05
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r18/data/JetEnergyCorrections_R07_v3.root as JEC14R07
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r18/data/PhotonPdf.root as CaloNeutralPIDs
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r18/data/CaloPIDs_DC09_v1.root as CaloPIDs
+FilteredEventSeq                                               INFO Member list: GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
+DaVinciEventInitSeq                                            INFO Member list: GaudiSequencer/PhysInitSeq, GaudiSequencer/AnalysisInitSeq
+PhysInitSeq                                                    INFO Member list: 
+AnalysisInitSeq                                                INFO Member list: 
+DaVinciAnalysisSeq                                             INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
+DaVinciUserSequence                                            INFO Member list: GaudiSequencer/StrippingGlobal, GaudiSequencer/SeqLb2JpsiL, DecayTreeTuple/Lb2JpsiLTree
+StrippingGlobal                                                INFO Member list: GaudiSequencer/StrippingGlobal_Selection
+COOLConfSvc                                                    INFO CORAL Connection Retrial Period set to 60s
+COOLConfSvc                                                    INFO CORAL Connection Retrial Time-Out set to 900s
+DDDB                                                           INFO Connected to database "sqlite_file:/cvmfs/lhcb.cern.ch/lib/lhcb/SQLite/SQLDDDB/db/DDDB.db/DDDB"
+DDDB                                                           INFO Using TAG "Sim08-20130503-1"
+SeqLb2JpsiL                                                    INFO Member list: LoKi::VoidFilter/SelFilterPhys_FullDSTDiMuonJpsi2MuMuDetachedLine_Particles, GaudiSequencer/SeqAllLambda0, FilterDesktop/FilterL, CombineParticles/Lb2JpsiL
+SeqAllLambda0                                                  INFO OR Member list: LoKi::VoidFilter/SelFilterPhys_StdLooseLambdaLL_Particles, LoKi::VoidFilter/SelFilterPhys_StdLooseLambdaDD_Particles, FilterDesktop/AllLambda0
+SIMCOND                                                        INFO Connected to database "sqlite_file:/cvmfs/lhcb.cern.ch/lib/lhcb/SQLite/SQLDDDB/db/SIMCOND.db/SIMCOND"
+SIMCOND                                                        INFO Using TAG "Sim08-20130503-1-vc-md100"
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/c1_onemap_down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/c2_onemap_down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/c3_onemap_down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/c4_onemap_down.cdf
+MagneticFieldSvc                                               INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
+Lb2JpsiLTree                                                   INFO Will look for  ( ( Lambda_b0  -> ^( ( J/psi(1S)  -> ^( mu+ ) ^( mu- )) ) ^( ( Lambda0  -> ^( p+ ) ^( pi- )) )) || ( Lambda_b~0  -> ^( ( J/psi(1S)  -> ^( mu- ) ^( mu+ )) ) ^( ( Lambda~0  -> ^( p~- ) ^( pi+ )) )) ) 
+Lb2JpsiLTree                                                   INFO Explicit sub decays :5
+Lb2JpsiLTree.Bs                                                INFO Lb2JpsiLTree.Bs : ^( ( ( Lambda_b0  -> ( J/psi(1S)  -> mu+  mu- )  ( Lambda0  -> p+  pi- ) ) || ( Lambda_b~0  -> ( J/psi(1S)  -> mu-  mu+ )  ( Lambda~0  -> p~-  pi+ ) ) ) )
+Lb2JpsiLTree.H1                                                INFO Lb2JpsiLTree.H1 : ( ( Lambda_b0  -> ( J/psi(1S)  -> mu+  mu- )  ( Lambda0  -> ^( p+ ) pi- ) ) || ( Lambda_b~0  -> ( J/psi(1S)  -> mu-  mu+ )  ( Lambda~0  -> ^( p~- ) pi+ ) ) ) 
+Lb2JpsiLTree.H2                                                INFO Lb2JpsiLTree.H2 : ( ( Lambda_b0  -> ( J/psi(1S)  -> mu+  mu- )  ( Lambda0  -> p+  ^( pi- )) ) || ( Lambda_b~0  -> ( J/psi(1S)  -> mu-  mu+ )  ( Lambda~0  -> p~-  ^( pi+ )) ) ) 
+Lb2JpsiLTree.J_psi_1S                                          INFO Lb2JpsiLTree.J_psi_1S : ( ( Lambda_b0  -> ^( ( J/psi(1S)  -> mu+  mu- ) ) ( Lambda0  -> p+  pi- ) ) || ( Lambda_b~0  -> ^( ( J/psi(1S)  -> mu-  mu+ ) ) ( Lambda~0  -> p~-  pi+ ) ) ) 
+Lb2JpsiLTree.R                                                 INFO Lb2JpsiLTree.R : ( ( Lambda_b0  -> ( J/psi(1S)  -> mu+  mu- )  ^( ( Lambda0  -> p+  pi- ) )) || ( Lambda_b~0  -> ( J/psi(1S)  -> mu-  mu+ )  ^( ( Lambda~0  -> p~-  pi+ ) )) ) 
+MonitoringSequence                                             INFO Member list: 
+LumiSeq                                                        INFO OR Member list: EventAccounting/EventAccount
+EventPersistencySvc                                            INFO Added successfully Conversion service:RootCnvSvc
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000001_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+ApplicationMgr                                                 INFO Application Manager Initialized successfully
+ApplicationMgr                                                 INFO Application Manager Started successfully
+FileRecordPersistencySvc                                       INFO Added successfully Conversion service:FileRecordCnvSvc
+EventSelector                                               SUCCESS Reading Event record 1. Record number within stream 1: 1
+StdAllLooseMuons                                               INFO Particle/AntiParticle to be created : 'mu+'/'mu-'
+UnpackChargedProtosSeq                                         INFO Member list: UnpackProtoParticle/UnpackChargedProtos, GaudiSequencer/ProtoParticleCombDLLs, GaudiSequencer/ANNPIDSeq
+ProtoParticleCombDLLs                                          INFO Member list: TESCheck/CheckChargedProtosExist, ChargedProtoParticleAddMuonInfo/ChargedProtoPAddMuon, ChargedProtoParticleAddRichInfo/ChargedProtoPAddRich, ChargedProtoCombineDLLsAlg/ChargedProtoPCombDLL
+ChargedProtoPCombDLL                                           INFO Using retuned RICH el and mu DLL values in combined DLLs
+ANNPIDSeq                                                      INFO Member list: ApplicationVersionFilter/Reco14Filter, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongElectron, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongMuon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongPion, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongKaon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongProton, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDLongGhost, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamElectron, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamMuon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamPion, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamKaon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamProton, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDDownstreamGhost, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamElectron, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamMuon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamPion, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamKaon, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamProton, ANNGlobalPID::ChargedProtoANNPIDAlg/ReDoANNPIDUpstreamGhost
+ReDoANNPIDLongElectron                                         INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=electron    
+ReDoANNPIDLongMuon                                             INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=muon        
+ReDoANNPIDLongPion                                             INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=pion        
+ReDoANNPIDLongKaon                                             INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=kaon        
+ReDoANNPIDLongProton                                           INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=proton      
+ReDoANNPIDLongGhost                                            INFO ANNPID : Tune=MC12TuneV2    TrackType=Long         Particle=ghost       
+ReDoANNPIDDownstreamElectron                                   INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=electron    
+ReDoANNPIDDownstreamMuon                                       INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=muon        
+ReDoANNPIDDownstreamPion                                       INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=pion        
+ReDoANNPIDDownstreamKaon                                       INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=kaon        
+ReDoANNPIDDownstreamProton                                     INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=proton      
+ReDoANNPIDDownstreamGhost                                      INFO ANNPID : Tune=MC12TuneV2    TrackType=Downstream   Particle=ghost       
+ReDoANNPIDUpstreamElectron                                     INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=electron    
+ReDoANNPIDUpstreamMuon                                         INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=muon        
+ReDoANNPIDUpstreamPion                                         INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=pion        
+ReDoANNPIDUpstreamKaon                                         INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=kaon        
+ReDoANNPIDUpstreamProton                                       INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=proton      
+ReDoANNPIDUpstreamGhost                                        INFO ANNPID : Tune=MC12TuneV2    TrackType=Upstream     Particle=ghost       
+UnpackMuonPIDSeq                                               INFO Member list: DataPacking::Unpack<LHCb::MuonPIDPacker>/UnpackMuonPIDs, MuonPIDsFromProtoParticlesAlg/CheckMuonPIDs
+CheckMuonPIDs                                                  INFO Creating MuonPIDs 'Rec/Muon/MuonPID' from ProtoParticles at 'Rec/ProtoP/Charged'
+UnpackRichPIDSeq                                               INFO Member list: DataPacking::Unpack<LHCb::RichPIDPacker>/UnpackRichPIDs, RichPIDsFromProtoParticlesAlg/CheckRichPIDs
+CheckRichPIDs                                                  INFO Creating RichPIDs 'Rec/Rich/PIDs' from ProtoParticles at 'Rec/ProtoP/Charged'
+ToolSvc.LoKi::VertexFitter                                     INFO Option for Optimised Kalman Filter fit is activated 
+ChronoStatSvc                                                  INFO  Number of skipped events for MemStat-1
+StdAllLoosePions                                               INFO Particle/AntiParticle to be created : 'pi+'/'pi-'
+StdAllLooseProtons                                             INFO Particle/AntiParticle to be created : 'p+'/'p~-'
+StdNoPIDsDownPions                                             INFO Particle/AntiParticle to be created : 'pi+'/'pi-'
+StdNoPIDsDownProtons                                           INFO Particle/AntiParticle to be created : 'p+'/'p~-'
+Lb2JpsiLTree                                                   INFO The head of chain is a Lambda_b~0 : Will change to its antiparticle. Will change daughters to antiparticles. 
+Lb2JpsiLTree                                                   INFO Tree mytree initialized :-
+Lb2JpsiLTree                                                   INFO  Event related tools : [LoKi::Hybrid::EvtTupleTool, TupleToolEventInfo]
+Lb2JpsiLTree                                                   INFO  Particle related stuffers :- 
+Lb2JpsiLTree                                                   INFO   Lambda_b0 (Bs)              : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolPid, TupleToolTrackInfo, LoKi::Hybrid::TupleTool, TupleToolMCTruth, TupleToolPropertime, TupleToolTISTOS
+Lb2JpsiLTree                                                   INFO      J/psi(1S) (J_psi_1S)     : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo, TupleToolTISTOS
+Lb2JpsiLTree                                                   INFO         mu- (muminus)         : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Lb2JpsiLTree                                                   INFO         mu+ (muplus)          : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Lb2JpsiLTree                                                   INFO      Lambda0 (R)              : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolPid, TupleToolTrackInfo, LoKi::Hybrid::TupleTool, TupleToolMCTruth
+Lb2JpsiLTree                                                   INFO         p+ (H1)               : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Lb2JpsiLTree                                                   INFO         pi- (H2)              : TupleToolGeometry, TupleToolKinematic, TupleToolMCBackgroundInfo, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+CaloDigitMCTruth                                               INFO Member list: CaloZSupAlg/EcalZSup, CaloDigit2MCLinks2Table/CaloDigitMCLinks2Table, with context 'Offline'
+EcalZSup                                                       INFO Calorimeter has 6016 cells. Zsup method 2D Threshold 20
+ClusterReco                                                    INFO Member list: GaudiSequencer/CaloDigits, CaloDigitFilterAlg/CaloDigitFilter, CellularAutomatonAlg/EcalClust, CaloShowerOverlap/EcalShare, CaloClusterCovarianceAlg/EcalCovar, with context 'Offline'
+CaloDigits                                                     INFO Member list: CaloDigitsFromRaw/SpdFromRaw, CaloDigitsFromRaw/PrsFromRaw, CaloZSupAlg/EcalZSup, CaloZSupAlg/HcalZSup, with context 'Offline'
+HcalZSup                                                       INFO Calorimeter has 1488 cells. Zsup method 1D Threshold 4
+EcalShare.EcalClusterTag.DBAccessor                            INFO Condition 'Conditions/Reco/Calo/EcalClusterMasks' has not been found 
+EcalShare.EcalClusterTag                                       INFO  Energy   mask : [3x3, 3x3, 3x3] (from DB) 
+EcalShare.EcalClusterTag                                       INFO  Position mask : [3x3, 3x3, 3x3] (from DB) 
+EcalCovar.EcalClusterTag.DBAccessor                            INFO Condition 'Conditions/Reco/Calo/EcalClusterMasks' has not been found 
+EcalCovar.EcalClusterTag                                       INFO  Energy   mask : [3x3, 3x3, 3x3] (from DB) 
+EcalCovar.EcalClusterTag                                       INFO  Position mask : [3x3, 3x3, 3x3] (from DB) 
+EcalCovar.EcalCovarTool.DBAccessor                             INFO Condition 'Conditions/Reco/Calo/EcalCovariance' has not been found 
+EcalCovar.EcalCovarTool                                        INFO  Has initialized with parameters: 
+EcalCovar.EcalCovarTool                                        INFO  	 'Detector'         = '/dd/Structure/LHCb/DownstreamRegion/Ecal'
+EcalCovar.EcalCovarTool                                        INFO  	 ==  Parameters for covariance estimation ==
+EcalCovar.EcalCovarTool                                        INFO Stochastic 	 : [0.1, 0.1, 0.1] Sqrt(GeV)	 : from options
+EcalCovar.EcalCovarTool                                        INFO GainError 	 : [0.01, 0.01, 0.01] 	 : from options
+EcalCovar.EcalCovarTool                                        INFO IncoherentNoise 	 : [1.2, 1.2, 1.2] ADC	 : from options
+EcalCovar.EcalCovarTool                                        INFO CoherentNoise 	 : [0.3, 0.3, 0.3] ADC	 : from options
+EcalCovar.EcalCovarTool                                        INFO ConstantE 	 : [0, 0, 0] MeV	 : from options
+EcalCovar.EcalCovarTool                                        INFO ConstantX 	 : [0, 0, 0] mm	 : from options
+EcalCovar.EcalCovarTool                                        INFO ConstantY 	 : [0, 0, 0] mm	 : from options
+SplitClusterReco                                               INFO Member list: CaloMergedPi0/SplitClustersRec
+SplitClustersRec                                               INFO Producing SplitClusters only
+SplitClustersRec.EcalCovariance.DBAccessor                     INFO Condition 'Conditions/Reco/Calo/EcalCovariance' has not been found 
+SplitClustersRec.EcalCovariance                                INFO  Has initialized with parameters: 
+SplitClustersRec.EcalCovariance                                INFO  	 'Detector'         = '/dd/Structure/LHCb/DownstreamRegion/Ecal'
+SplitClustersRec.EcalCovariance                                INFO  	 ==  Parameters for covariance estimation ==
+SplitClustersRec.EcalCovariance                                INFO Stochastic 	 : [0.1, 0.1, 0.1] Sqrt(GeV)	 : from options
+SplitClustersRec.EcalCovariance                                INFO GainError 	 : [0.01, 0.01, 0.01] 	 : from options
+SplitClustersRec.EcalCovariance                                INFO IncoherentNoise 	 : [1.2, 1.2, 1.2] ADC	 : from options
+SplitClustersRec.EcalCovariance                                INFO CoherentNoise 	 : [0.3, 0.3, 0.3] ADC	 : from options
+SplitClustersRec.EcalCovariance                                INFO ConstantE 	 : [0, 0, 0] MeV	 : from options
+SplitClustersRec.EcalCovariance                                INFO ConstantX 	 : [0, 0, 0] mm	 : from options
+SplitClustersRec.EcalCovariance                                INFO ConstantY 	 : [0, 0, 0] mm	 : from options
+SplitClustersRec.EcalClusterTag.DBAccessor                     INFO Condition 'Conditions/Reco/Calo/EcalClusterMasks' has not been found 
+SplitClustersRec.EcalClusterTag                                INFO  Energy   mask : [3x3, 3x3, 3x3] (from DB) 
+SplitClustersRec.EcalClusterTag                                INFO  Position mask : [3x3, 3x3, 3x3] (from DB) 
+ToolSvc.L0DUConfig                                             INFO Creating the TEMPLATE configuration tools : ToolSvc.L0DUConfig.Template for time slot :  'T0'
+ToolSvc.L0CondDBProvider                                       INFO Registered RAM(BCID) versions = {}
+ToolSvc.L0DUConfig.Template                                    INFO --------------- TCK = 0x10000------------------
+ToolSvc.L0DUConfig.Template                                    INFO **** L0DU Config loading : L0TCK = 0x10000 for slot T0 ==> OK 
+ToolSvc.L0DUConfig.Template                                    INFO Short description :: NO DESCRIPTION (L0DUConfig.Template)
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO --------------- TCK = 0x0045------------------
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO **** L0DU Config loading : L0TCK = 0x0045 for slot T0 ==> OK 
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO Short description :: Same as L0 TCK 0x0044 with had at 187 (io 184)
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO The configuration 0x0045 matches the hardware limitations 
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO - Usage : Channels [75.0% ]  |  Conditions [25.0% ]; max/type [75.0% ]; order : OK ; reported  : 32/32
+L0MuonFromRaw                                                  INFO XML config file = /cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r18/data/L0MuonKernel.xml
+PropertyConfigSvc                                              INFO  resolving alias TCK/0x409f0045
+ConfigCDBAccessSvc                                             INFO  opening /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/HltTCK/v3r15p14/config.cdb in mode ReadOnly
+PropertyConfigSvc                                              INFO  resolved TCK/0x409f0045 to 00d005885a31707bb508cc3e55567c22
+RCWNTupleCnv                                                   INFO Booked TTree with ID: mytree "mytree" in directory DVNtuples_2012_Up.root:/Lb2JpsiLTree
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+Lb2JpsiLTree.LoKi::DecayTreeFit                             WARNING LoKi::DecayTreeFit:: The WARNING message is suppressed : 'Fitter failed status' StatusCode=111
+LoKiSvc.REPORT                                              WARNING LoKi::Particles::DecayTreeFitChi2NDoF: 	 Error from IDecayTreeFit, return InvalidChi2 [Lb2JpsiLTree] StatusCode=111
+LoKiSvc.REPORT                                              WARNING LoKi::Particles::ChildCTau: 	 Error from IDecayTreeFit [Lb2JpsiLTree] StatusCode=111
+LoKiSvc.REPORT                                              WARNING LoKi::Particles::ChildCTauErr: 	 Error from IDecayTreeFit [Lb2JpsiLTree] StatusCode=111
+LoKiSvc.REPORT                                              WARNING LoKi::Particles::DecayTreeFitterFun: 	 Error from IDecayTreeFit [Lb2JpsiLTree] StatusCode=111
+LoKiSvc.REPORT                                              WARNING The WARNING message is suppressed : 'LoKi::Particles::DecayTreeFitChi2NDoF: 	 Error from IDecayTreeFit, return InvalidChi2 [Lb2JpsiLTree]' StatusCode=113
+LoKiSvc.REPORT                                              WARNING The WARNING message is suppressed : 'LoKi::Particles::ChildCTau: 	 Error from IDecayTreeFit [Lb2JpsiLTree]' StatusCode=113
+LoKiSvc.REPORT                                              WARNING The WARNING message is suppressed : 'LoKi::Particles::ChildCTauErr: 	 Error from IDecayTreeFit [Lb2JpsiLTree]' StatusCode=113
+LoKiSvc.REPORT                                              WARNING The WARNING message is suppressed : 'LoKi::Particles::DecayTreeFitterFun: 	 Error from IDecayTreeFit [Lb2JpsiLTree]' StatusCode=113
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+SIMCOND.TimeOutChecker                                         INFO Disconnect from database after being idle for 120s (will reconnect if needed)
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+DDDB.TimeOutChecker                                            INFO Disconnect from database after being idle for 120s (will reconnect if needed)
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: NULL end vertex for Bs StatusCode=FAILURE
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       WARNING MCTupleToolKinematic:: The WARNING message is suppressed : 'NULL end vertex for Bs' StatusCode=FAILURE
+DDDB.DataBaseOperationLock                                     INFO Connecting to database
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+DDDB.TimeOutChecker                                            INFO Disconnect from database after being idle for 120s (will reconnect if needed)
+Lb2JpsiLTree                                                WARNING DecayTreeFitter::Fitter: Warning: Error matrix not positive definite. Changing status to failed.
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_2 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000002_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000001_2.AllStreams.dst [8E879681-76E3-E411-B8FB-485B39800BF3]
+DDDB.DataBaseOperationLock                                     INFO Connecting to database
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: No MC information for the cluster is found StatusCode=FAILURE
+DDDB.TimeOutChecker                                            INFO Disconnect from database after being idle for 120s (will reconnect if needed)
+Lb2JpsiLTree                                                WARNING DecayTreeFitter::Fitter: Warning: Error matrix not positive definite. Changing status to failed.
+Lb2JpsiLTree                                                WARNING DecayTreeFitter::Fitter: Warning: Error matrix not positive definite. Changing status to failed.
+Lb2JpsiLTree                                                WARNING DecayTreeFitter::Fitter: Warning: Error matrix not positive definite. Changing status to failed.
+CaloClusterMCTruth                                          WARNING CaloClusterMCTruth:: The WARNING message is suppressed : 'No MC information for the cluster is found' StatusCode=FAILURE
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_3 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000003_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000002_2.AllStreams.dst?svcClass=lhcbDst [DA06057B-84E3-E411-9264-0025907FD280]
+DaVinciInitAlg                                                 INFO Memory has changed from 1984356 to 2621652 KB (637296KB, 32.116%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 50001. Record number within stream 3: 4132
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_4 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000004_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000003_2.AllStreams.dst [24D1DF87-92E3-E411-A256-02163E013ABE]
+Lb2JpsiLTree.TupleToolMCBackgroundInfo.BackgroundCategory   WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+Lb2JpsiLTree.R.TupleToolMCTruth.DaVinciSmartAssociator.Ba...WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_5 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000005_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000004_2.AllStreams.dst [E47F3C02-66E3-E411-9BD6-6CC2173BC1D0]
+ToolSvc.LoKi::VertexFitter                                  WARNING LoKi::VertexFitter:: Error from Kalman-step, skip [StdLooseLambdaLL] StatusCode=405
+DaVinciInitAlg                                                 INFO Memory has changed from 2621652 to 2644568 KB (22916KB, 0.874105%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 100001. Record number within stream 5: 8665
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_6 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000006_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+XrdSec: No authentication protocols are available.
+XrdSec: No authentication protocols are available.
+Error in <TNetXNGFile::Open>: [FATAL] Auth failed
+IODataManager                                                 ERROR Error: connectDataIO> Cannot connect to database: PFN=root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000006_2.AllStreams.dst FID=CCF98BCE-BEE4-E411-A037-089E01DC6CE8
+IODataManager                                               WARNING Attempt to connect dsn:CCF98BCE-BEE4-E411-A037-089E01DC6CE8 with next entry in data federation:root://bw32-4.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000006_2.AllStreams.dst.
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000005_2.AllStreams.dst [04CB1CB9-DAE4-E411-A9D7-7845C4FC3AFD]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_7 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000007_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://bw32-4.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000006_2.AllStreams.dst [CCF98BCE-BEE4-E411-A037-089E01DC6CE8]
+DaVinciInitAlg                                                 INFO Memory has changed from 2644568 to 2652812 KB (8244KB, 0.311733%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 150001. Record number within stream 7: 13101
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_8 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000008_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000007_2.AllStreams.dst [B2B0D707-E8E4-E411-8939-02163E00F68E]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_9 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000009_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000008_2.AllStreams.dst [9C009FE2-E8E4-E411-A6BD-D8D385FF4A7C]
+DaVinciInitAlg                                                 INFO Memory has changed from 2652812 to 2643828 KB (-8984KB, -0.33866%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 200001. Record number within stream 9: 17424
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_10 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000010_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000009_2.AllStreams.dst [60E1E69E-E0E4-E411-98CF-E0CB4E29C4DB]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_11 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+Error in <TNetXNGFile::Open>: [ERROR] Operation expired
+IODataManager                                                 ERROR Error: connectDataIO> Cannot connect to database: PFN=root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst?svcClass=lhcbDst FID=3805E872-FBE4-E411-8874-002590AC4B5C
+IODataManager                                               WARNING Attempt to connect dsn:3805E872-FBE4-E411-8874-002590AC4B5C with next entry in data federation:root://tbit00.nipne.ro:1094//dpm/nipne.ro/home/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst.
+Error in <TNetXNGFile::Open>: [ERROR] Server responded with an error: [3010] Permission denied
+
+IODataManager                                                 ERROR Error: connectDataIO> Cannot connect to database: PFN=root://tbit00.nipne.ro:1094//dpm/nipne.ro/home/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst FID=3805E872-FBE4-E411-8874-002590AC4B5C
+IODataManager                                               WARNING Attempt to connect dsn:3805E872-FBE4-E411-8874-002590AC4B5C with next entry in data federation:root://heplnx229.pp.rl.ac.uk:1090/pnfs/pp.rl.ac.uk/data/lhcb/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst.
+Error in <TNetXNGFile::Open>: [ERROR] Operation expired
+IODataManager                                                 ERROR Error: connectDataIO> Cannot connect to database: PFN=root://heplnx229.pp.rl.ac.uk:1090/pnfs/pp.rl.ac.uk/data/lhcb/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000011_2.AllStreams.dst FID=3805E872-FBE4-E411-8874-002590AC4B5C
+IODataManager                                                 ERROR Failed to open dsn:3805E872-FBE4-E411-8874-002590AC4B5C Federated file could not be resolved from 3 entries.
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_12 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000012_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000010_2.AllStreams.dst [DE5824E4-E5E4-E411-BAAF-3417EBE644F2]
+DaVinciInitAlg                                                 INFO Memory has changed from 2643828 to 2685580 KB (41752KB, 1.57923%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 250001. Record number within stream 12: 21883
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_13 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000013_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://bw32-4.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000012_2.AllStreams.dst [A8541A0C-02E5-E411-A9F9-00259059EB7C]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_14 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000014_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000013_2.AllStreams.dst [529DEA6F-30E5-E411-BCCC-02163E00E604]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_15 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000015_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000014_2.AllStreams.dst [8E10C562-8BE5-E411-BA59-3417EBE2F0B2]
+DaVinciInitAlg                                                 INFO Memory has changed from 2685580 to 2686796 KB (1216KB, 0.0452789%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 300001. Record number within stream 15: 3592
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_16 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000016_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000015_2.AllStreams.dst [7A5D060F-97E5-E411-9EE4-1803730B4959]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_17 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000017_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000016_2.AllStreams.dst [8468776A-BFE5-E411-90C7-02163E013E7A]
+Lb2JpsiLTree.TupleToolMCBackgroundInfo.BackgroundCategory   WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+Lb2JpsiLTree.R.TupleToolMCTruth.DaVinciSmartAssociator.Ba...WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+DaVinciInitAlg                                                 INFO Memory has changed from 2686796 to 2668696 KB (-18100KB, -0.673665%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 350001. Record number within stream 17: 7971
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_18 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000018_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000017_2.AllStreams.dst [B860F06F-28E6-E411-96CD-6CC2173BBE90]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_19 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000019_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000018_2.AllStreams.dst?svcClass=lhcbDst [DE5EE2F7-52E6-E411-99CC-002590DB925E]
+Lb2JpsiLTree.TupleToolMCBackgroundInfo.BackgroundCategory   WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+Lb2JpsiLTree.R.TupleToolMCTruth.DaVinciSmartAssociator.Ba...WARNING BackgroundCategory:: Common mother is stable. StatusCode=FAILURE
+Error inverting matrix. Vertex fit fails.
+Error inverting matrix. Vertex fit fails.
+Error inverting matrix. Vertex fit fails.
+DaVinciInitAlg                                                 INFO Memory has changed from 2668696 to 2686116 KB (17420KB, 0.652753%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 400001. Record number within stream 19: 12631
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_20 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000020_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000019_2.AllStreams.dst [020AF1D0-6EE6-E411-A211-02163E012F60]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_21 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000021_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000020_2.AllStreams.dst [0A8073D9-41E7-E411-B104-02163E00EB96]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_22 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000022_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000021_2.AllStreams.dst?svcClass=lhcbDst [5CD8FD44-65E7-E411-B591-00259074AE8C]
+DaVinciInitAlg                                                 INFO Memory has changed from 2686116 to 2800672 KB (114556KB, 4.26475%) in last 50000 events
+EventSelector                                               SUCCESS Reading Event record 450001. Record number within stream 22: 16113
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_23 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000023_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000022_2.AllStreams.dst?svcClass=lhcbDst [3EEB4952-4EE7-E411-BCBD-001E673972AB]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_24 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000024_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000023_2.AllStreams.dst [70C7CB85-53E7-E411-A858-3417EBE64B5B]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_25 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000025_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000024_2.AllStreams.dst [A24047F2-24E7-E411-9272-6CC2173BBE60]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_26 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000026_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000025_2.AllStreams.dst?svcClass=lhcbDst [FCB9EC5A-25E7-E411-B177-00266CFFA3FC]
+EventSelector                                                  INFO Stream:EventSelector.DataStreamTool_27 Def:DATAFILE='LFN:/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000027_2.AllStreams.dst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+IODataManager                                                  INFO Disconnect from dataset root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000026_2.AllStreams.dst [C265E999-4AE7-E411-BD0A-00259059DAD8]
+EventLoopMgr                                                   INFO No more events in event selection 
+ApplicationMgr                                                 INFO Application Manager Stopped successfully
+UnpackTrack                                                 SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked Tracks"                             |    482931 |6.563299e+07 |     135.91 |     78.385 |      7.0000 |      1004.0 |
+StdLooseJpsi2MuMu                                           SUCCESS Number of counters : 9
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# J/psi(1S) -> mu+  mu- "                      |    482931 |     133498 |    0.27643 |    0.46085 |      0.0000 |      7.0000 |
+ | "# Phys/StdAllLooseMuons"                       |    482931 |    1311366 |     2.7154 |     2.6507 |      0.0000 |      55.000 |
+ | "# input particles"                             |    482931 |    1311366 |     2.7154 |     2.6507 |      0.0000 |      55.000 |
+ | "# mu+"                                         |    482931 |     663199 |     1.3733 |     1.6459 |      0.0000 |      39.000 |
+ | "# mu-"                                         |    482931 |     648167 |     1.3422 |     1.6036 |      0.0000 |      45.000 |
+ | "# selected"                                    |    482931 |     133498 |    0.27643 |    0.46085 |      0.0000 |      7.0000 |
+ |*"#accept"                                       |    482931 | 1.3068e+05 |(  27.0598 +- 0.0639298)%|   -------   |   -------   |
+ |*"#pass combcut"                                 |   1311617 | 1.3389e+05 |(  10.2079 +- 0.0264352)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    133888 |  1.335e+05 |(  99.7087 +- 0.0147285)%|   -------   |   -------   |
+StdAllLooseMuons                                               INFO Selected 98.83% of 'Long' ProtoParticles
+StdAllLooseMuons                                               INFO   -> Muons     6.8626% of selected ProtoParticles
+StdAllLooseMuons                                            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    482931 | 4.2018e+05 |(  87.0062 +- 0.0483838)%|   -------   |   -------   |
+ChargedProtoPAddMuon                                        SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Rec/Muon/MuonPID ==> Rec/ProtoP/Charged"       |    482931 |3.163024e+07 |     65.496 |     39.112 |      0.0000 |      533.00 |
+ChargedProtoPAddRich                                        SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Rec/Rich/PIDs ==> Rec/ProtoP/Charged"          |    482931 |3.163024e+07 |     65.496 |     39.112 |      0.0000 |      533.00 |
+ChargedProtoPCombDLL                                        SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "CombineDLL ==> Rec/ProtoP/Charged"             |    482931 |3.163024e+07 |     65.496 |     39.112 |      0.0000 |      533.00 |
+UnpackMuonPIDs                                              SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# UnPackedData"                                |    482931 |2.065197e+07 |     42.764 |     29.133 |      0.0000 |      447.00 |
+UnpackRichPIDs                                              SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# UnPackedData"                                |    482931 |3.486684e+07 |     72.198 |     42.516 |      0.0000 |      559.00 |
+StdLooseLambdaLL                                            SUCCESS Number of counters : 14
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Lambda0 -> p+  pi- "                         |     89035 |       4728 |   0.053103 |    0.28474 |      0.0000 |      13.000 |
+ | "# Lambda~0 -> p~-  pi+ "                       |     89035 |       4681 |   0.052575 |    0.28021 |      0.0000 |      9.0000 |
+ | "# Phys/StdLoosePions"                          |     89035 |    1101538 |     12.372 |     9.0787 |      2.0000 |      188.00 |
+ | "# Phys/StdLooseProtons"                        |     89035 |     638193 |     7.1679 |     7.8937 |      0.0000 |      176.00 |
+ | "# input particles"                             |     89035 |    1739731 |     19.540 |     16.852 |      2.0000 |      364.00 |
+ | "# p+"                                          |     89035 |     218587 |     2.4551 |     3.2585 |      0.0000 |      67.000 |
+ | "# pi+"                                         |     89035 |     384415 |     4.3176 |     3.6431 |      0.0000 |      72.000 |
+ | "# pi-"                                         |     89035 |     376120 |     4.2244 |     3.6551 |      0.0000 |      88.000 |
+ | "# p~-"                                         |     89035 |     210510 |     2.3644 |     3.2725 |      0.0000 |      84.000 |
+ | "# selected"                                    |     89035 |       9409 |    0.10568 |    0.43060 |      0.0000 |      16.000 |
+ |*"#accept"                                       |     89035 |       7299 |(  8.19790 +- 0.0919385)%|   -------   |   -------   |
+ |*"#pass combcut"                                 |   3413643 |      12581 |( 0.368551 +- 0.00327973)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |     12581 |       9409 |(  74.7874 +- 0.387138 )%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|        28 |         28 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+StdLoosePions                                               SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/StdAllLoosePions"                       |     89035 |    3627692 |     40.745 |     25.209 |      2.0000 |      339.00 |
+ | "# input particles"                             |     89035 |    3627692 |     40.745 |     25.209 |      2.0000 |      339.00 |
+ |*"#accept"                                       |     89035 |      89035 |(  100.000 +- 0.00112315)%|   -------   |   -------   |
+ | "#passed"                                       |     89035 |    1101538 |     12.372 |     9.0787 |      2.0000 |      188.00 |
+ |*"efficiency"                                    |   3627692 | 1.1015e+06 |(  30.3647 +- 0.0241426)%|   -------   |   -------   |
+StdAllLoosePions                                               INFO Selected 98.8611% of 'Long' ProtoParticles
+StdAllLoosePions                                               INFO   -> Pions     100% of selected ProtoParticles
+StdAllLoosePions                                            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      89035 |(  100.000 +- 0.00112315)%|   -------   |   -------   |
+StdLooseProtons                                             SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/StdAllLooseProtons"                     |     89035 |    2177895 |     24.461 |     19.408 |      0.0000 |      300.00 |
+ | "# input particles"                             |     89035 |    2177895 |     24.461 |     19.408 |      0.0000 |      300.00 |
+ |*"#accept"                                       |     89035 |      85239 |(  95.7365 +- 0.0677082)%|   -------   |   -------   |
+ | "#passed"                                       |     89035 |     638193 |     7.1679 |     7.8937 |      0.0000 |      176.00 |
+ |*"efficiency"                                    |   2177895 | 6.3819e+05 |(  29.3032 +- 0.0308417)%|   -------   |   -------   |
+StdAllLooseProtons                                             INFO Selected 98.8611% of 'Long' ProtoParticles
+StdAllLooseProtons                                             INFO   -> Protons   60.0353% of selected ProtoParticles
+StdAllLooseProtons                                          SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      88905 |(  99.8540 +- 0.0127966)%|   -------   |   -------   |
+StdLooseLambdaDD                                            SUCCESS Number of counters : 14
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Lambda0 -> p+  pi- "                         |     89035 |      98433 |     1.1056 |     2.1111 |      0.0000 |      71.000 |
+ | "# Lambda~0 -> p~-  pi+ "                       |     89035 |      97617 |     1.0964 |     2.0610 |      0.0000 |      41.000 |
+ | "# Phys/StdNoPIDsDownPions"                     |     89035 |    1342397 |     15.077 |     11.045 |      0.0000 |      126.00 |
+ | "# Phys/StdNoPIDsDownProtons"                   |     89035 |    1342397 |     15.077 |     11.045 |      0.0000 |      126.00 |
+ | "# input particles"                             |     89035 |    2684794 |     30.154 |     22.090 |      0.0000 |      252.00 |
+ | "# p+"                                          |     89035 |     632242 |     7.1011 |     5.4466 |      0.0000 |      63.000 |
+ | "# pi+"                                         |     89035 |     632242 |     7.1011 |     5.4466 |      0.0000 |      63.000 |
+ | "# pi-"                                         |     89035 |     576934 |     6.4799 |     5.0376 |      0.0000 |      62.000 |
+ | "# p~-"                                         |     89035 |     576934 |     6.4799 |     5.0376 |      0.0000 |      62.000 |
+ | "# selected"                                    |     89035 |     196050 |     2.2019 |     3.5200 |      0.0000 |      87.000 |
+ |*"#accept"                                       |     89035 |      54643 |(  61.3725 +- 0.163175 )%|   -------   |   -------   |
+ |*"#pass combcut"                                 |  12059992 | 2.7636e+05 |(  2.29155 +- 0.00430881)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    276361 | 1.9605e+05 |(  70.9398 +- 0.0863686)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|     21802 |      21802 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+StdNoPIDsDownPions                                             INFO ********************************************************************************
+StdNoPIDsDownPions                                             INFO  created 'pi+' and 'pi- : 1.3424e+06 per 89035 calls (15.0772+-11.0449)/event
+StdNoPIDsDownPions                                          SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      88397 |(  99.2834 +- 0.0282675)%|   -------   |   -------   |
+StdNoPIDsDownProtons                                           INFO ********************************************************************************
+StdNoPIDsDownProtons                                           INFO  created 'p+' and 'p~- : 1.3424e+06 per 89035 calls (15.0772+-11.0449)/event
+StdNoPIDsDownProtons                                        SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      88397 |(  99.2834 +- 0.0282675)%|   -------   |   -------   |
+CaloClusterMCTruth                                          SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#CC2MC links"                                  |     12583 |1.800067e+07 |     1430.6 |     1151.9 |      24.000 |      10762. |
+CaloClusterMCTruth                                          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+CaloClusterMCTruth                                          SUCCESS  #WARNINGS   = 69       Message = 'No MC information for the cluster is found'
+CaloDigitMCLinks2Table                                      SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#CD2MC links"                                  |     12583 |6.289567e+07 |     4998.5 |     3506.0 |      89.000 |      29792. |
+EcalClust                                                      INFO Built <93.407> cellular automaton clusters/event  with <3.21783> iterations (min,max)=(2,7) on average 
+EcalClust                                                   SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#clusters => 'Rec/Calo/EcalClusters'"          |     12583 |    1175340 |     93.407 |     43.231 |      5.0000 |      279.00 |
+ | "Clusterisation pass"                           |     12583 |      40490 |     3.2178 |    0.60238 |      2.0000 |      7.0000 |
+EcalCovar                                                   SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#Clusters from 'Rec/Calo/EcalClusters'"        |     12583 |    1175340 |     93.407 |     43.231 |      5.0000 |      279.00 |
+SplitClustersRec                                            SUCCESS Number of counters : 3
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Rec/Calo/EcalClusters=>Rec/Calo/EcalSplitCluste|     12583 |    1175340 |     93.407 |     43.231 |      5.0000 |      279.00 |
+ | "Rec/Calo/EcalClusters=>Rec/Calo/MergedPi0s"    |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Rec/Calo/EcalClusters=>Rec/Calo/SplitPhotons"  |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+UnpackMuonTracks                                            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked Tracks"                             |     12583 |      86021 |     6.8363 |     5.9657 |      2.0000 |      94.000 |
+L0DUFromRaw                                                 SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "L0DU RawBank Size (Bytes)"                     |     12583 |    1056972 |     84.000 |     0.0000 |      84.000 |      84.000 |
+L0MuonFromRaw                                                  INFO --- L0Muon decoding error summary
+L0MuonFromRaw                                                  INFO L0MuonCtrlCand Side A -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO L0MuonCtrlCand Side C -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO L0MuonProcCand Q1     -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO L0MuonProcCand Q2     -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO L0MuonProcCand Q3     -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO L0MuonProcCand Q4     -> nb of banks seen     : 12583
+L0MuonFromRaw                                                  INFO --- End of L0Muon decoding error summary
+L0MuonFromRaw                                                  INFO - ------------------------------------------------------------------
+L0MuonFromRaw                                                  INFO - ========> Final summary of the L0Muon trigger (from raw) <========
+L0MuonFromRaw                                                  INFO - Total number of events processed           :    12583
+L0MuonFromRaw                                                  INFO - Total number of bunch crossings processed  :    12583
+L0MuonFromRaw                                                  INFO - Total number of candidates                 :    24997
+L0MuonFromRaw                                                  INFO - Number of Bx with at least 1 candidate     :    12173  ( 96.74%)
+L0MuonFromRaw                                                  INFO - Number of candidate per Bx                 :        1.99
+L0MuonFromRaw                                                  INFO - Average Pt of the candidates               :     2500.47 MeV
+L0MuonFromRaw                                                  INFO - Average charge of the candidates           :        1.00 (+/-0.00)
+L0MuonFromRaw                                                  INFO - Average raw banks size                     :      640.2 Bytes
+L0MuonFromRaw                                                  INFO - ------------------------------------------------------------------
+DaVinciInitAlg                                              SUCCESS ==================================================================
+DaVinciInitAlg                                              SUCCESS 483456 events processed
+DaVinciInitAlg                                              SUCCESS ==================================================================
+StrippingFullDSTDiMuonJpsi2MuMuDetachedLinePreScaler        SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    483456 | 4.8346e+05 |(  100.000 +- 0.000206844)%|   -------   |   -------   |
+checkPVmin1                                                 SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Events"                                        |    483456 |     482931 |    0.99891 |   0.032936 |      0.0000 |      1.0000 |
+ | "PVs"                                           |    483456 |    1122705 |     2.3222 |     1.1059 |      0.0000 |      10.000 |
+SelFilterPhys_StdLooseJpsi2MuMu_Particles                   SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#passed"                                       |    482931 | 1.3068e+05 |(  27.0598 +- 0.0639298)%|   -------   |   -------   |
+FullDSTDiMuonJpsi2MuMuDetachedLine                          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/StdLooseJpsi2MuMu"                      |    130680 |     133498 |     1.0216 |    0.15385 |      1.0000 |      7.0000 |
+ | "# input particles"                             |    130680 |     133498 |     1.0216 |    0.15385 |      1.0000 |      7.0000 |
+ |*"#accept"                                       |    130680 |      89035 |(  68.1321 +- 0.128899 )%|   -------   |   -------   |
+ | "#passed"                                       |    130680 |      89224 |    0.68277 |    0.46853 |      0.0000 |      3.0000 |
+ |*"efficiency"                                    |    133498 |      89224 |(  66.8355 +- 0.128856 )%|   -------   |   -------   |
+StrippingFullDSTDiMuonJpsi2MuMuDetachedLinePostScaler       SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      89035 |(  100.000 +- 0.00112315)%|   -------   |   -------   |
+StrippingFullDSTDiMuonJpsi2MuMuDetachedLine                 SUCCESS Booked 4 Histogram(s) : 1D=3 1DProf=1 
+StrippingFullDSTDiMuonJpsi2MuMuDetachedLine                 SUCCESS Number of counters : 3
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    483456 |      89035 |(  18.4164 +- 0.0557474)%|   -------   |   -------   |
+ | "#errors"                                       |    483456 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "#slow events"                                  |    483456 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+StrippingStreamMyStreamPreScaler                            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    483456 | 4.8346e+05 |(  100.000 +- 0.000206844)%|   -------   |   -------   |
+checkPVmin0                                                 SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Events"                                        |    483456 |     483456 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "PVs"                                           |    483456 |    1122705 |     2.3222 |     1.1059 |      0.0000 |      10.000 |
+StrippingStreamMyStreamPostScaler                           SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |     89035 |      89035 |(  100.000 +- 0.00112315)%|   -------   |   -------   |
+StrippingStreamMyStream                                     SUCCESS Booked 4 Histogram(s) : 1D=3 1DProf=1 
+StrippingStreamMyStream                                     SUCCESS Number of counters : 3
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    483456 |      89035 |(  18.4164 +- 0.0557474)%|   -------   |   -------   |
+ | "#errors"                                       |    483456 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "#slow events"                                  |    483456 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+SelFilterPhys_FullDSTDiMuonJpsi2MuMuDetachedLine_Particles  SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#passed"                                       |    483456 |      89035 |(  18.4164 +- 0.0557474)%|   -------   |   -------   |
+SelFilterPhys_StdLooseLambdaLL_Particles                    SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#passed"                                       |     89035 |       7299 |(  8.19790 +- 0.0919385)%|   -------   |   -------   |
+SelFilterPhys_StdLooseLambdaDD_Particles                    SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#passed"                                       |     89035 |      54643 |(  61.3725 +- 0.163175 )%|   -------   |   -------   |
+AllLambda0                                                  SUCCESS Number of counters : 6
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/StdLooseLambdaDD"                       |     89035 |     196050 |     2.2019 |     3.5200 |      0.0000 |      87.000 |
+ | "# Phys/StdLooseLambdaLL"                       |     89035 |       9409 |    0.10568 |    0.43060 |      0.0000 |      16.000 |
+ | "# input particles"                             |     89035 |     205459 |     2.3076 |     3.6640 |      0.0000 |      94.000 |
+ |*"#accept"                                       |     89035 |      56504 |(  63.4627 +- 0.161379 )%|   -------   |   -------   |
+ | "#passed"                                       |     89035 |     205459 |     2.3076 |     3.6640 |      0.0000 |      94.000 |
+ |*"efficiency"                                    |    205459 | 2.0546e+05 |(  100.000 +- 0.000486715)%|   -------   |   -------   |
+FilterL                                                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/AllLambda0"                             |     56504 |     205459 |     3.6362 |     4.0401 |      1.0000 |      94.000 |
+ | "# input particles"                             |     56504 |     205459 |     3.6362 |     4.0401 |      1.0000 |      94.000 |
+ |*"#accept"                                       |     56504 |      42547 |(  75.2991 +- 0.181431 )%|   -------   |   -------   |
+ | "#passed"                                       |     56504 |      91481 |     1.6190 |     1.9153 |      0.0000 |      33.000 |
+ |*"efficiency"                                    |    205459 |      91481 |(  44.5252 +- 0.109645 )%|   -------   |   -------   |
+Lb2JpsiL                                                    SUCCESS Number of counters : 13
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# J/psi(1S)"                                   |     42547 |      42646 |     1.0023 |   0.048181 |      1.0000 |      2.0000 |
+ | "# Lambda0"                                     |     42547 |      46097 |     1.0834 |     1.3564 |      0.0000 |      26.000 |
+ | "# Lambda_b0 -> J/psi(1S)  Lambda0 "            |     42547 |       7135 |    0.16770 |    0.40126 |      0.0000 |      4.0000 |
+ | "# Lambda_b~0 -> J/psi(1S)  Lambda~0 "          |     42547 |       6605 |    0.15524 |    0.39037 |      0.0000 |      5.0000 |
+ | "# Lambda~0"                                    |     42547 |      45384 |     1.0667 |     1.3172 |      0.0000 |      20.000 |
+ | "# Phys/FilterL"                                |     42547 |      91481 |     2.1501 |     1.9313 |      1.0000 |      33.000 |
+ | "# Phys/FullDSTDiMuonJpsi2MuMuDetachedLine"     |     42547 |      42646 |     1.0023 |   0.048181 |      1.0000 |      2.0000 |
+ | "# input particles"                             |     42547 |     134127 |     3.1524 |     1.9321 |      2.0000 |      34.000 |
+ | "# selected"                                    |     42547 |      13740 |    0.32294 |    0.53162 |      0.0000 |      6.0000 |
+ |*"#accept"                                       |     42547 |      12583 |(  29.5744 +- 0.221253 )%|   -------   |   -------   |
+ |*"#pass combcut"                                 |     91713 |      77339 |(  84.3272 +- 0.120044 )%|   -------   |   -------   |
+ |*"#pass mother cut"                              |     77339 |      13740 |(  17.7659 +- 0.137442 )%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|        23 |         23 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+Lb2JpsiLTree                                                SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+Lb2JpsiLTree                                                SUCCESS List of booked N-Tuples in directory "FILE1/Lb2JpsiLTree"
+Lb2JpsiLTree                                                SUCCESS  ID=mytree        Title="mytree"                                  #items=806{Bs_MINIP,Bs_MINIPCHI2,Bs_MINIPNEXTBEST,Bs_MINIPCHI2NEXTBEST,Bs_ENDVERTEX_X,Bs_END}
+Lb2JpsiLTree                                                SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/Lb2JpsiL"                               |    483456 |      13740 |   0.028420 |    0.18233 |      0.0000 |      6.0000 |
+ | "# input particles"                             |    483456 |      13740 |   0.028420 |    0.18233 |      0.0000 |      6.0000 |
+ |*"#accept"                                       |    483456 |      12583 |(  2.60272 +- 0.0228986)%|   -------   |   -------   |
+ | "Event"                                         |    483456 |     483456 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+RootHistSvc                                                 WARNING no ROOT output file name, Histograms cannot be persistified
+EventLoopMgr                                                   INFO Histograms converted successfully according to request.
+DataOnDemandSvc                                                INFO Handled "DataFault" incidents: 4835484/4740357/50041458(Alg/Node/Total).
+FileRecordCnvSvc                                               INFO Disconnected data IO:020AF1D0-6EE6-E411-A211-02163E012F60 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000019_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:04CB1CB9-DAE4-E411-A9D7-7845C4FC3AFD [root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000005_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:0A8073D9-41E7-E411-B104-02163E00EB96 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000020_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:24D1DF87-92E3-E411-A256-02163E013ABE [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000003_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:3EEB4952-4EE7-E411-BCBD-001E673972AB [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000022_2.AllStreams.dst?svcClass=lhcbDst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:529DEA6F-30E5-E411-BCCC-02163E00E604 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000013_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:5CD8FD44-65E7-E411-B591-00259074AE8C [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000021_2.AllStreams.dst?svcClass=lhcbDst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:60E1E69E-E0E4-E411-98CF-E0CB4E29C4DB [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000009_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:70C7CB85-53E7-E411-A858-3417EBE64B5B [root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000023_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:7A5D060F-97E5-E411-9EE4-1803730B4959 [root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000015_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:8468776A-BFE5-E411-90C7-02163E013E7A [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000016_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:8E10C562-8BE5-E411-BA59-3417EBE2F0B2 [root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000014_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:8E879681-76E3-E411-B8FB-485B39800BF3 [root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000001_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:9C009FE2-E8E4-E411-A6BD-D8D385FF4A7C [root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000008_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:A24047F2-24E7-E411-9272-6CC2173BBE60 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000024_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:A8541A0C-02E5-E411-A9F9-00259059EB7C [root://bw32-4.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000012_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:B2B0D707-E8E4-E411-8939-02163E00F68E [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000007_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:B860F06F-28E6-E411-96CD-6CC2173BBE90 [root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000017_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:C265E999-4AE7-E411-BD0A-00259059DAD8 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000026_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:CCF98BCE-BEE4-E411-A037-089E01DC6CE8 [root://bw32-4.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000006_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:DA06057B-84E3-E411-9264-0025907FD280 [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000002_2.AllStreams.dst?svcClass=lhcbDst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:DE5824E4-E5E4-E411-BAAF-3417EBE644F2 [root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000010_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:DE5EE2F7-52E6-E411-99CC-002590DB925E [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000018_2.AllStreams.dst?svcClass=lhcbDst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:E47F3C02-66E3-E411-9BD6-6CC2173BC1D0 [root://f01-080-123-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000004_2.AllStreams.dst]
+FileRecordCnvSvc                                               INFO Disconnected data IO:FCB9EC5A-25E7-E411-B177-00266CFFA3FC [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000025_2.AllStreams.dst?svcClass=lhcbDst]
+RootCnvSvc                                                     INFO Disconnected data IO:FAE079A8-2AE7-E411-B4CA-089E01DC6F97 [root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/ALLSTREAMS.DST/00044330/0000/00044330_00000027_2.AllStreams.dst?svcClass=lhcbDst]
+TransportSvc                                                SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 1
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Velo/lvVelo                          | mm | 4       -2.9650179          2.0393837 -5.4920139        -0.481404 |
+   | BeforeMagnetRegion/Velo/lvVelo                          | X0 | 4       -0.20653704        0.14205927 -0.38256238      -0.0335336 |
+
+TransportSvc                                                SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 5
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Velo/RFBox/lvRFBoxRight              | mm | 1       0.21582239      1.4817251e-09 0.21582239         0.215822 |
+   | BeforeMagnetRegion/Velo/RFBox/lvRFBoxRight              | X0 | 1       0                           0 0                           |
+   | BeforeMagnetRegion/Velo/RFFoil/lvRFFoil                 | mm | 117     0.0002439606      0.000135452 1.3739239e-06   0.000491403 |
+   | BeforeMagnetRegion/Velo/RFFoil/lvRFFoil                 | X0 | 117     0                           0 0                           |
+   | BeforeMagnetRegion/Velo/lvVelo                          | mm | 16      3.4565941           4.3915359 0.22573943          14.7940 |
+   | BeforeMagnetRegion/Velo/lvVelo                          | X0 | 16      0.20190847          0.2565208 0.013186016        0.864160 |
+   | BeforeMagnetRegion/Velo/lvVeloLeft                      | mm | 11      2.9102926           3.6993747 0.00030175359       7.80573 |
+   | BeforeMagnetRegion/Velo/lvVeloLeft                      | X0 | 11      8.7885886e-05    0.0001162621 0               0.000241771 |
+   | BeforeMagnetRegion/Velo/lvVeloRight                     | mm | 4       4.0150459           3.8143419 0.20005626          7.85648 |
+   | BeforeMagnetRegion/Velo/lvVeloRight                     | X0 | 4       0.00012125111   0.00012125257 0               0.000243343 |
+
+TransportSvc                                                SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
+
+TransportSvc                                                   INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
+ToolSvc                                                        INFO Removing all tools created by ToolSvc
+SplitClustersRec.EcalCovariance                             SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Parameter update"                              |         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+EcalCovar.EcalCovarTool                                     SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Parameter update"                              |         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+EcalClust.CaloClusterizationTool                            SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Cluster energy"                                |   1175340 |4.759341e+09 |     4049.3 |     5586.2 |      30.262 |  5.1995e+05 |
+ | "Cluster size"                                  |   1175340 |1.380883e+07 |     11.749 |     3.4414 |      4.0000 |      51.000 |
+HcalZSup.HcalZSupTool                                       SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "getCaloBanks"                                  |     12583 |      12583 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+PrsFromRaw.PrsFromRawTool                                   SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "getCaloBanks"                                  |     12583 |      12583 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+SpdFromRaw.SpdFromRawTool                                   SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "getCaloBanks"                                  |     12583 |      12583 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+EcalZSup.EcalZSupTool                                       SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "getCaloBanks"                                  |     12583 |      12583 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+Lb2JpsiLTree.LoKi::LifetimeFitter                           SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#iterations"                                   |     13740 |      29896 |     2.1758 |    0.61301 |      1.0000 |      12.000 |
+ToolSvc.LoKi::VertexFitter                                  SUCCESS Number of counters : 7
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#iterations/1"                                 |    215047 |     343154 |     1.5957 |    0.52478 |      1.0000 |      11.000 |
+ | "#iterations/2"                                 |    388312 |    1127116 |     2.9026 |     1.3912 |      2.0000 |      11.000 |
+ | "#iterations/Gen"                               |    254566 |     855492 |     3.3606 |     1.5200 |      1.0000 |      10.000 |
+ | "#iterations/Opt"                               |    223750 |     137878 |    0.61621 |    0.54115 |      0.0000 |      10.000 |
+ | "Seed:case(1)"                                  |    276361 |     276361 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "Seed:case(2)"                                  |        23 |         23 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "Seed:case(3)"                                  |        35 |         35 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ToolSvc.LoKi::VertexFitter                                  SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/14/0
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 1        Message = 'Error from Kalman-step, skip [StdLooseLambdaLL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 23       Message = 'No convergency has been reached [Lb2JpsiL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 21802    Message = 'No convergency has been reached [StdLooseLambdaDD]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 28       Message = 'No convergency has been reached [StdLooseLambdaLL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 23       Message = '_iterate_opt: No convergency has been reached [Lb2JpsiL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 35       Message = '_iterate_opt: No convergency has been reached [StdLooseLambdaLL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 46947    Message = 'fit(): Vertex is outside of fiducial volume [StdLooseLambdaDD]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 275      Message = 'fit(): Vertex is outside of fiducial volume [StdLooseLambdaLL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 23       Message = 'fit(): failure from _iterate() [Lb2JpsiL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 21802    Message = 'fit(): failure from _iterate() [StdLooseLambdaDD]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 28       Message = 'fit(): failure from _iterate() [StdLooseLambdaLL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 23       Message = 'fit(): failure from fit [Lb2JpsiL]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 21802    Message = 'fit(): failure from fit [StdLooseLambdaDD]'
+ToolSvc.LoKi::VertexFitter                                  SUCCESS  #WARNINGS   = 28       Message = 'fit(): failure from fit [StdLooseLambdaLL]'
+ToolSvc.LoKi::PVReFitter                                    SUCCESS Number of counters : 10
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#delta-R"                                      |      1520 | -0.6430206 |-0.00042304 |  0.0029137 |   -0.027853 |    0.036800 |
+ | "#iterations"                                   |        29 |        179 |     6.1724 |    0.83331 |      5.0000 |      9.0000 |
+ | "#loaded"                                       |      1520 |       1553 |     1.0217 |    0.14574 |      1.0000 |      2.0000 |
+ | "#refit-asked"                                  |        29 |         29 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "#removed"                                      |     55346 |       1582 |   0.028584 |    0.17017 |      0.0000 |      2.0000 |
+ | "#toremove"                                     |      1520 |       1553 |     1.0217 |    0.14574 |      1.0000 |      2.0000 |
+ | "#tracks/good"                                  |        29 |        202 |     6.9655 |     1.5421 |      4.0000 |      9.0000 |
+ | "#tracks/null"                                  |        29 |          1 |   0.034483 |    0.18247 |      0.0000 |      1.0000 |
+ | "#tracks/total"                                 |        29 |        203 |     7.0000 |     1.5757 |      4.0000 |      9.0000 |
+ | "track-weight"                                  |       203 |   148.9766 |    0.73387 |    0.28229 |      0.0000 |     0.99962 |
+ToolSvc.HybridFactory                                       SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from CACHE"                           |        23 |         23 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "# loaded from PYTHON"                          |         8 |          8 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ToolSvc.CoreFactory                                         SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from CACHE"                           |         3 |          3 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "# loaded from PYTHON"                          |         3 |          3 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+DaVinciInitAlg.DaVinciMemory                                SUCCESS Booked 4 Histogram(s) : 1D=4 
+DaVinciInitAlg.DaVinciMemory                                SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Delta Memory/MB"                               |    483446 |    757.668 |  0.0015672 |    0.52542 |     -43.200 |      290.12 |
+ | "Total Memory/MB"                               |    483456 |1.29246e+09 |     2673.4 |     54.975 |      1984.4 |      2813.1 |
+DaVinciInitAlg.DaVinciMemory                                SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
+DaVinciInitAlg.DaVinciMemory                                SUCCESS  #WARNINGS   = 27       Message = 'Delta Memory for the event exceeds 3*sigma'
+DaVinciInitAlg.DaVinciMemory                                SUCCESS  #WARNINGS   = 19407    Message = 'Total Memory for the event exceeds 3*sigma'
+LoKiSvc.REPORT                                              SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/4/0
+LoKiSvc.REPORT                                              SUCCESS  #WARNINGS   = 523      Message = 'LoKi::Particles::ChildCTau: 	 Error from IDecayTreeFit [Lb2JpsiLTree]'
+LoKiSvc.REPORT                                              SUCCESS  #WARNINGS   = 523      Message = 'LoKi::Particles::ChildCTauErr: 	 Error from IDecayTreeFit [Lb2JpsiLTree]'
+LoKiSvc.REPORT                                              SUCCESS  #WARNINGS   = 523      Message = 'LoKi::Particles::DecayTreeFitChi2NDoF: 	 Error from IDecayTreeFit, return InvalidChi2 [Lb2JpsiLTree]'
+LoKiSvc.REPORT                                              SUCCESS  #WARNINGS   = 518      Message = 'LoKi::Particles::DecayTreeFitterFun: 	 Error from IDecayTreeFit [Lb2JpsiLTree]'
+SplitClustersRec.EcalClusterTag.DBAccessor                  WARNING  Applied corrections configured via options for  SplitClustersRec.EcalClusterTag.DBAccessor
+SplitClustersRec.EcalCovariance.DBAccessor                  WARNING  Applied corrections configured via options for  SplitClustersRec.EcalCovariance.DBAccessor
+SplitClustersRec.SplitPhotonShowerOverlap.SplitPhotonLCor...SUCCESS Number of counters : 21
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "<delta> Inner"                                 |     95557 |    7763156 |     81.241 | 0.00014033 |      81.241 |      81.241 |
+ | "<delta> Middle"                                |     88550 |    8439169 |     95.304 |     0.0000 |      95.304 |      95.304 |
+ | "<delta> Outer"                                 |    216909 |2.361663e+07 |     108.88 | 0.00028675 |      108.88 |      108.88 |
+ | "<gamma> Inner"                                 |     95557 |    1412123 |     14.778 | 2.5328e-05 |      14.778 |      14.778 |
+ | "<gamma> Middle"                                |     88550 |    1278204 |     14.435 |     0.0000 |      14.435 |      14.435 |
+ | "<gamma> Outer"                                 |    216909 |    3169993 |     14.614 |     0.0000 |      14.614 |      14.614 |
+ | "Delta(Z) Inner"                                |     95557 |1.230524e+07 |     128.77 |     11.375 |      49.366 |      168.15 |
+ | "Delta(Z) Middle"                               |     88550 |1.12987e+07 |     127.60 |     11.029 |      41.826 |      166.57 |
+ | "Delta(Z) Outer"                                |    216909 |2.819303e+07 |     129.98 |     12.452 |      61.825 |      170.70 |
+ | "delta0 correction processing (Inner)"          |     95557 |    2440526 |     25.540 |     0.0000 |      25.540 |      25.540 |
+ | "delta0 correction processing (Middle)"         |     88550 |    2822089 |     31.870 |     0.0000 |      31.870 |      31.870 |
+ | "delta0 correction processing (Outer)"          |    216909 |    6299037 |     29.040 |     0.0000 |      29.040 |      29.040 |
+ | "deltaP correction processing (Inner)"          |     95557 |    5322631 |     55.701 |     0.0000 |      55.701 |      55.701 |
+ | "deltaP correction processing (Middle)"         |     88550 |    5617081 |     63.434 | 6.0350e-05 |      63.434 |      63.434 |
+ | "deltaP correction processing (Outer)"          |    216909 |1.731759e+07 |     79.838 | 0.00025620 |      79.838 |      79.838 |
+ | "gamma0 correction processing (Inner)"          |     95557 |    1713910 |     17.936 | 2.0357e-05 |      17.936 |      17.936 |
+ | "gamma0 correction processing (Middle)"         |     88550 |    1687143 |     19.053 |     0.0000 |      19.053 |      19.053 |
+ | "gamma0 correction processing (Outer)"          |    216909 |    4838155 |     22.305 |     0.0000 |      22.305 |      22.305 |
+ | "gammaP correction processing (Inner)"          |     95557 |   301787.4 |     3.1582 | 3.6422e-06 |      3.1582 |      3.1582 |
+ | "gammaP correction processing (Middle)"         |     88550 |   408939.6 |     4.6182 |     0.0000 |      4.6182 |      4.6182 |
+ | "gammaP correction processing (Outer)"          |    216909 |    1668162 |     7.6906 |     0.0000 |      7.6906 |      7.6906 |
+SplitClustersRec.SplitPhotonShowerOverlap.SplitPhotonSCor...SUCCESS Number of counters : 9
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "residual correction processing (Inner)"        |    191114 |  -478.5752 | -0.0025041 |  0.0090152 |   -0.053356 |    0.032852 |
+ | "residual correction processing (Middle)"       |    177100 |  -224.1794 | -0.0012658 |  0.0087016 |   -0.042080 |    0.031653 |
+ | "residual correction processing (Outer)"        |    433818 |  -198.0175 |-0.00045645 |  0.0029951 |   -0.013271 |   0.0099685 |
+ | "shapeX correction processing (Inner)"          |     95557 |  -560.2432 | -0.0058629 |    0.29758 |    -0.61621 |     0.61621 |
+ | "shapeX correction processing (Middle)"         |     88550 |  -330.7113 | -0.0037347 |    0.29702 |    -0.61022 |     0.61022 |
+ | "shapeX correction processing (Outer)"          |    216909 |   1317.458 |  0.0060738 |    0.31224 |    -0.59435 |     0.59228 |
+ | "shapeY correction processing (Inner)"          |     95557 |   767.9327 |  0.0080364 |    0.30098 |    -0.61621 |     0.61621 |
+ | "shapeY correction processing (Middle)"         |     88550 |   -790.026 | -0.0089218 |    0.29251 |    -0.60791 |     0.61022 |
+ | "shapeY correction processing (Outer)"          |    216909 |   578.1663 |  0.0026655 |    0.30969 |    -0.59228 |     0.58662 |
+SplitClustersRec.SplitPhotonShowerOverlap.ShowerProfile     SUCCESS Number of counters : 6
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "profile correction processing (Inner)"         |    268900 |   29813.21 |    0.11087 |    0.23263 |  6.5722e-05 |     0.86690 |
+ | "profile correction processing (Middle)"        |    271850 |    31750.7 |    0.11679 |    0.24793 |  4.4824e-05 |     0.90647 |
+ | "profile correction processing (Outer)"         |    640175 |   70187.56 |    0.10964 |    0.25885 |  1.6964e-05 |     0.96708 |
+ | "profileC correction processing (Inner)"        |    249475 |   27421.73 |    0.10992 |    0.21568 |  0.00017082 |     0.81195 |
+ | "profileC correction processing (Middle)"       |    197075 |      22263 |    0.11297 |    0.23860 |  0.00019285 |     0.86785 |
+ | "profileC correction processing (Outer)"        |    523025 |   56598.81 |    0.10821 |    0.25139 |  0.00013212 |     0.95297 |
+EcalCovar.EcalCovarTool.DBAccessor                          WARNING  Applied corrections configured via options for  EcalCovar.EcalCovarTool.DBAccessor
+EcalCovar.EcalClusterTag.DBAccessor                         WARNING  Applied corrections configured via options for  EcalCovar.EcalClusterTag.DBAccessor
+EcalShare.EcalClusterTag.DBAccessor                         WARNING  Applied corrections configured via options for  EcalShare.EcalClusterTag.DBAccessor
+EcalShare.PhotonShowerOverlap.PhotonLCorrection             SUCCESS Number of counters : 21
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "<delta> Inner"                                 |   4022710 |3.268094e+08 |     81.241 |     0.0000 |      81.241 |      81.241 |
+ | "<delta> Middle"                                |   3320661 |3.164723e+08 |     95.304 | 0.00075010 |      95.304 |      95.304 |
+ | "<delta> Outer"                                 |   7616629 |8.292836e+08 |     108.88 |  0.0011010 |      108.88 |      108.88 |
+ | "<gamma> Inner"                                 |   4022710 |5.944683e+07 |     14.778 | 0.00018405 |      14.778 |      14.778 |
+ | "<gamma> Middle"                                |   3320661 |4.793315e+07 |     14.435 |     0.0000 |      14.435 |      14.435 |
+ | "<gamma> Outer"                                 |   7616629 |1.113124e+08 |     14.614 | 1.0120e-05 |      14.614 |      14.614 |
+ | "Delta(Z) Inner"                                |   4022710 |4.454371e+08 |     110.73 |     10.614 |      72.645 |      173.57 |
+ | "Delta(Z) Middle"                               |   3320661 |3.682992e+08 |     110.91 |     10.638 |      76.120 |      172.43 |
+ | "Delta(Z) Outer"                                |   7616629 |8.634006e+08 |     113.36 |     11.810 |      76.213 |      177.35 |
+ | "delta0 correction processing (Inner)"          |   4022710 | 1.0274e+08 |     25.540 |     0.0000 |      25.540 |      25.540 |
+ | "delta0 correction processing (Middle)"         |   3320661 |1.058295e+08 |     31.870 |     0.0000 |      31.870 |      31.870 |
+ | "delta0 correction processing (Outer)"          |   7616629 |2.211869e+08 |     29.040 | 0.00023033 |      29.040 |      29.040 |
+ | "deltaP correction processing (Inner)"          |   4022710 |2.240694e+08 |     55.701 |     0.0000 |      55.701 |      55.701 |
+ | "deltaP correction processing (Middle)"         |   3320661 |2.106428e+08 |     63.434 | 0.00090457 |      63.434 |      63.434 |
+ | "deltaP correction processing (Outer)"          |   7616629 |6.080967e+08 |     79.838 |  0.0015326 |      79.838 |      79.838 |
+ | "gamma0 correction processing (Inner)"          |   4022710 |7.215133e+07 |     17.936 | 0.00014485 |      17.936 |      17.936 |
+ | "gamma0 correction processing (Middle)"         |   3320661 |6.326855e+07 |     19.053 |     0.0000 |      19.053 |      19.053 |
+ | "gamma0 correction processing (Outer)"          |   7616629 |1.698889e+08 |     22.305 |     0.0000 |      22.305 |      22.305 |
+ | "gammaP correction processing (Inner)"          |   4022710 |1.270449e+07 |     3.1582 |     0.0000 |      3.1582 |      3.1582 |
+ | "gammaP correction processing (Middle)"         |   3320661 |1.53354e+07 |     4.6182 | 4.4427e-05 |      4.6182 |      4.6182 |
+ | "gammaP correction processing (Outer)"          |   7616629 |5.857652e+07 |     7.6906 |     0.0000 |      7.6906 |      7.6906 |
+EcalShare.PhotonShowerOverlap.PhotonSCorrection             SUCCESS Number of counters : 9
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "residual correction processing (Inner)"        |   8045420 |  -19240.51 | -0.0023915 |  0.0057640 |   -0.082559 |    0.026664 |
+ | "residual correction processing (Middle)"       |   6641322 |  -8764.531 | -0.0013197 |  0.0069628 |   -0.047829 |    0.036214 |
+ | "residual correction processing (Outer)"        |  15233258 |  -8181.418 |-0.00053708 |  0.0027282 |   -0.012347 |    0.010136 |
+ | "shapeX correction processing (Inner)"          |   4022710 |   7499.621 |  0.0018643 |    0.30110 |    -0.59220 |     0.56180 |
+ | "shapeX correction processing (Middle)"         |   3320661 |   3185.923 | 0.00095942 |    0.31505 |    -0.60167 |     0.60417 |
+ | "shapeX correction processing (Outer)"          |   7616629 |   12527.98 |  0.0016448 |    0.33754 |    -0.59603 |     0.58090 |
+ | "shapeY correction processing (Inner)"          |   4022710 |   8292.071 |  0.0020613 |    0.29495 |    -0.57136 |     0.69221 |
+ | "shapeY correction processing (Middle)"         |   3320661 |   8940.378 |  0.0026923 |    0.30591 |    -0.62599 |     0.62791 |
+ | "shapeY correction processing (Outer)"          |   7616629 |   30414.42 |  0.0039932 |    0.32311 |    -0.57318 |     0.58375 |
+EcalShare.PhotonShowerOverlap.ShowerProfile                 SUCCESS Number of counters : 6
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "profile correction processing (Inner)"         |  12179790 |   23179.31 |  0.0019031 |   0.015045 |  4.7730e-09 |     0.66446 |
+ | "profile correction processing (Middle)"        |  12375635 |   22382.29 |  0.0018086 |   0.016557 |  3.0373e-13 |     0.69139 |
+ | "profile correction processing (Outer)"         |  28943955 |   39461.16 |  0.0013634 |   0.015974 |  2.6015e-17 |     0.83083 |
+ | "profileC correction processing (Inner)"        |   8391460 |   23098.44 |  0.0027526 |   0.014439 |  6.5070e-07 |     0.59132 |
+ | "profileC correction processing (Middle)"       |   5346095 |   10841.68 |  0.0020280 |   0.014365 |  1.2664e-11 |     0.63573 |
+ | "profileC correction processing (Outer)"        |  11770335 |   16335.15 |  0.0013878 |   0.013226 |  1.2488e-11 |     0.78129 |
+ToolSvc.FilterTool                                          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Masked Ecal digits"                            |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Masked Hcal digits"                            |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Masked Prs digits"                             |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Masked Spd digits"                             |     12583 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "offset scale (None)"                           |     50332 |1.14068e+07 |     226.63 |     114.54 |      12.000 |      841.00 |
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+Lb2JpsiLTree.Bs.TupleToolMCTruth.MCTupleToolKinematic       SUCCESS  #WARNINGS   = 287      Message = 'NULL end vertex for Bs'
+Lb2JpsiLTree.TupleToolMCBackgroundInfo.BackgroundCategory   SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+Lb2JpsiLTree.TupleToolMCBackgroundInfo.BackgroundCategory   SUCCESS  #WARNINGS   = 3        Message = 'Common mother is stable.'
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO --------------- TCK = 0x0045------------------
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO The configuration 0x0045 matches the hardware limitations 
+ToolSvc.L0DUConfig.TCK_0x0045                                  INFO - Usage : Channels [75.0% ]  |  Conditions [25.0% ]; max/type [75.0% ]; order : OK ; reported  : 32/32
+ToolSvc.L0DUConfig.Template                                    INFO --------------- TCK = 0x10000------------------
+Lb2JpsiLTree.R.TupleToolMCTruth.DaVinciSmartAssociator.Ba...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+Lb2JpsiLTree.R.TupleToolMCTruth.DaVinciSmartAssociator.Ba...SUCCESS  #WARNINGS   = 3        Message = 'Common mother is stable.'
+TimingAuditor.TIMER                                            INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.TIMER                                            INFO This machine has a speed about   3.30 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.TIMER                                            INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max | entries | total (s) |
+TimingAuditor.TIMER                                            INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.TIMER                                            INFO EVENT LOOP                                        |    11.409 |    45.630 |    1.389   24602.4 |  483456 | 22059.922 |
+TimingAuditor.TIMER                                            INFO  DaVinciEventSeq                                  |    10.809 |    45.012 |    0.981   24602.0 |  483456 | 21761.180 |
+TimingAuditor.TIMER                                            INFO   DaVinciInitAlg                                  |     0.060 |     0.063 |    0.036      46.6 |  483456 |    30.227 |
+TimingAuditor.TIMER                                            INFO   FilteredEventSeq                                |    10.740 |    44.940 |    0.936   24601.9 |  483456 | 21726.609 |
+TimingAuditor.TIMER                                            INFO    DaVinciEventInitSeq                            |     0.004 |     0.005 |    0.003       8.0 |  483456 |     2.312 |
+TimingAuditor.TIMER                                            INFO     PhysInitSeq                                   |     0.001 |     0.001 |    0.000       8.0 |  483456 |     0.577 |
+TimingAuditor.TIMER                                            INFO     AnalysisInitSeq                               |     0.001 |     0.001 |    0.000       0.6 |  483456 |     0.532 |
+TimingAuditor.TIMER                                            INFO    DaVinciAnalysisSeq                             |    10.732 |    44.933 |    0.930   24601.9 |  483456 | 21722.922 |
+TimingAuditor.TIMER                                            INFO     DaVinciUserSequence                           |    10.727 |    44.928 |    0.927   24601.9 |  483456 | 21720.844 |
+TimingAuditor.TIMER                                            INFO      StrippingGlobal                              |     5.135 |     5.296 |    0.862   12086.1 |  483456 |  2560.185 |
+TimingAuditor.TIMER                                            INFO       StrippingGlobal_Selection                   |     5.133 |     5.294 |    0.861   12086.1 |  483456 |  2559.201 |
+TimingAuditor.TIMER                                            INFO        StrippingSequenceStreamMyStream            |     5.131 |     5.291 |    0.860   12086.1 |  483456 |  2558.144 |
+TimingAuditor.TIMER                                            INFO         StrippingFullDSTDiMuonJpsi2MuMuDetachedLin|     5.090 |     5.249 |    0.816   12086.1 |  483456 |  2537.585 |
+TimingAuditor.TIMER                                            INFO          StrippingFullDSTDiMuonJpsi2MuMuDetachedLi|     0.002 |     0.002 |    0.001      12.0 |  483456 |     1.172 |
+TimingAuditor.TIMER                                            INFO          StrippingFullDSTDiMuonJpsi2MuMuDetachedLi|     4.553 |     4.701 |    0.236   12085.5 |  483456 |  2272.942 |
+TimingAuditor.TIMER                                            INFO           checkPVmin1                             |     1.004 |     1.072 |    0.234   12082.6 |  483456 |   518.371 |
+TimingAuditor.TIMER                                            INFO           SelFilterPhys_StdLooseJpsi2MuMu_Particle|     3.530 |     3.611 |    0.731    2587.9 |  482931 |  1743.862 |
+TimingAuditor.TIMER                                            INFO           FullDSTDiMuonJpsi2MuMuDetachedLine      |     0.031 |     0.034 |    0.004      16.2 |  130680 |     4.409 |
+TimingAuditor.TIMER                                            INFO          StrippingFullDSTDiMuonJpsi2MuMuDetachedLi|     0.001 |     0.002 |    0.001       0.4 |   89035 |     0.160 |
+TimingAuditor.TIMER                                            INFO         StrippingStreamMyStream                   |     0.036 |     0.039 |    0.015      33.2 |  483456 |    18.620 |
+TimingAuditor.TIMER                                            INFO          StrippingStreamMyStreamPreScaler         |     0.001 |     0.002 |    0.001      14.1 |  483456 |     0.964 |
+TimingAuditor.TIMER                                            INFO          StrippingStreamMyStreamFilterSequence    |     0.008 |     0.008 |    0.005      21.1 |  483456 |     4.070 |
+TimingAuditor.TIMER                                            INFO           checkPVmin0                             |     0.004 |     0.004 |    0.002      21.1 |  483456 |     2.111 |
+TimingAuditor.TIMER                                            INFO           StrippingStreamSeqMyStream              |     0.001 |     0.001 |    0.000       0.6 |  483456 |     0.593 |
+TimingAuditor.TIMER                                            INFO          StrippingStreamMyStreamPostScaler        |     0.001 |     0.001 |    0.000       0.4 |   89035 |     0.108 |
+TimingAuditor.TIMER                                            INFO      SeqLb2JpsiL                                  |     1.262 |     1.287 |    0.004     231.4 |  483456 |   622.115 |
+TimingAuditor.TIMER                                            INFO       SelFilterPhys_FullDSTDiMuonJpsi2MuMuDetached|     0.017 |     0.019 |    0.003      19.1 |  483456 |     8.962 |
+TimingAuditor.TIMER                                            INFO       SeqAllLambda0                               |     6.619 |     6.747 |    0.579     231.1 |   89035 |   600.725 |
+TimingAuditor.TIMER                                            INFO        SelFilterPhys_StdLooseLambdaLL_Particles   |     4.048 |     4.128 |    0.402     165.8 |   89035 |   367.501 |
+TimingAuditor.TIMER                                            INFO        SelFilterPhys_StdLooseLambdaDD_Particles   |     2.509 |     2.557 |    0.132     109.1 |   89035 |   227.631 |
+TimingAuditor.TIMER                                            INFO        AllLambda0                                 |     0.003 |     0.004 |    0.002       0.4 |   89035 |     0.354 |
+TimingAuditor.TIMER                                            INFO       FilterL                                     |     0.005 |     0.007 |    0.002       7.0 |   56504 |     0.380 |
+TimingAuditor.TIMER                                            INFO       Lb2JpsiL                                    |     0.140 |     0.145 |    0.038      11.6 |   42547 |     6.176 |
+TimingAuditor.TIMER                                            INFO      Lb2JpsiLTree                                 |     4.292 |    38.308 |    0.001   24594.2 |  483456 | 18520.088 |
+TimingAuditor.TIMER                                            INFO     MonitoringSequence                            |     0.001 |     0.001 |    0.000      16.0 |  483456 |     0.554 |
+TimingAuditor.TIMER                                            INFO   LumiSeq                                         |     0.003 |     0.004 |    0.002      15.0 |  483456 |     1.710 |
+TimingAuditor.TIMER                                            INFO    EventAccount                                   |     0.001 |     0.001 |    0.000      15.0 |  483456 |     0.643 |
+TimingAuditor.TIMER                                            INFO * createODIN                                      |     0.239 |     0.250 |    0.112     254.6 |  483456 |   121.092 |
+TimingAuditor.TIMER                                            INFO *           UnpackRecVertex                       |     0.982 |     1.050 |    0.213   12082.6 |  483456 |   507.523 |
+TimingAuditor.TIMER                                            INFO *            UnpackTrack                          |     0.625 |     0.684 |    0.153   12082.2 |  482931 |   330.262 |
+TimingAuditor.TIMER                                            INFO *           StdLooseJpsi2MuMu                     |     0.067 |     0.072 |    0.027      38.1 |  482931 |    34.596 |
+TimingAuditor.TIMER                                            INFO *           StdAllLooseMuons                      |     0.062 |     0.065 |    0.002      32.4 |  482931 |    31.414 |
+TimingAuditor.TIMER                                            INFO *           UnpackChargedProtosSeq                |     2.975 |     3.040 |    0.618     913.5 |  482931 |  1468.198 |
+TimingAuditor.TIMER                                            INFO *            UnpackChargedProtos                  |     0.413 |     0.426 |    0.147     341.9 |  482931 |   205.879 |
+TimingAuditor.TIMER                                            INFO *            ProtoParticleCombDLLs                |     0.753 |     0.774 |    0.353     570.5 |  482931 |   373.760 |
+TimingAuditor.TIMER                                            INFO *             CheckChargedProtosExist             |     0.004 |     0.005 |    0.002      20.1 |  482931 |     2.353 |
+TimingAuditor.TIMER                                            INFO *             ChargedProtoPAddMuon                |     0.292 |     0.302 |    0.159     271.2 |  482931 |   146.045 |
+TimingAuditor.TIMER                                            INFO *             ChargedProtoPAddRich                |     0.346 |     0.356 |    0.162     299.2 |  482931 |   171.815 |
+TimingAuditor.TIMER                                            INFO *             ChargedProtoPCombDLL                |     0.100 |     0.104 |    0.003      22.3 |  482931 |    49.987 |
+TimingAuditor.TIMER                                            INFO *            ANNPIDSeq                            |     1.799 |     1.833 |    0.052      76.2 |  482931 |   885.417 |
+TimingAuditor.TIMER                                            INFO *             Reco14Filter                        |     0.021 |     0.023 |    0.012      21.1 |  482931 |    11.026 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongElectron              |     0.228 |     0.232 |    0.002      26.4 |  482931 |   111.844 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongMuon                  |     0.025 |     0.027 |    0.001      22.1 |  482931 |    12.919 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongPion                  |     0.228 |     0.234 |    0.001      23.3 |  482931 |   112.852 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongKaon                  |     0.239 |     0.245 |    0.001      28.4 |  482931 |   118.096 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongProton                |     0.224 |     0.230 |    0.001      23.7 |  482931 |   110.854 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDLongGhost                 |     0.210 |     0.214 |    0.001      33.3 |  482931 |   103.424 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamElectron        |     0.081 |     0.084 |    0.001      30.2 |  482931 |    40.548 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamMuon            |     0.008 |     0.009 |    0.001      15.3 |  482931 |     4.188 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamPion            |     0.068 |     0.069 |    0.001      20.1 |  482931 |    33.509 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamKaon            |     0.070 |     0.072 |    0.001      27.1 |  482931 |    34.997 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamProton          |     0.078 |     0.081 |    0.001      23.3 |  482931 |    38.955 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDDownstreamGhost           |     0.079 |     0.081 |    0.001      21.2 |  482931 |    39.216 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamElectron          |     0.036 |     0.038 |    0.001      31.1 |  482931 |    18.260 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamMuon              |     0.033 |     0.035 |    0.001      20.1 |  482931 |    16.971 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamPion              |     0.033 |     0.035 |    0.001      27.7 |  482931 |    16.787 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamKaon              |     0.034 |     0.035 |    0.001      23.1 |  482931 |    17.131 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamProton            |     0.031 |     0.032 |    0.001      18.1 |  482931 |    15.615 |
+TimingAuditor.TIMER                                            INFO *             ReDoANNPIDUpstreamGhost             |     0.034 |     0.035 |    0.001      21.1 |  482931 |    17.119 |
+TimingAuditor.TIMER                                            INFO *              UnpackMuonPIDSeq                   |     0.223 |     0.231 |    0.129     271.0 |  482931 |   111.595 |
+TimingAuditor.TIMER                                            INFO *               UnpackMuonPIDs                    |     0.214 |     0.223 |    0.123     271.0 |  482931 |   107.644 |
+TimingAuditor.TIMER                                            INFO *               CheckMuonPIDs                     |     0.002 |     0.003 |    0.002       8.1 |  482931 |     1.534 |
+TimingAuditor.TIMER                                            INFO *              UnpackRichPIDSeq                   |     0.250 |     0.258 |    0.131     299.1 |  482931 |   124.467 |
+TimingAuditor.TIMER                                            INFO *               UnpackRichPIDs                    |     0.241 |     0.250 |    0.126     299.1 |  482931 |   120.687 |
+TimingAuditor.TIMER                                            INFO *               CheckRichPIDs                     |     0.002 |     0.003 |    0.001      21.4 |  482931 |     1.516 |
+TimingAuditor.TIMER                                            INFO *        StdLooseLambdaLL                         |     0.357 |     0.369 |    0.114      31.7 |   89035 |    32.819 |
+TimingAuditor.TIMER                                            INFO *        StdLoosePions                            |     0.232 |     0.238 |    0.022      22.8 |   89035 |    21.149 |
+TimingAuditor.TIMER                                            INFO *        StdAllLoosePions                         |     0.109 |     0.112 |    0.013      20.2 |   89035 |     9.987 |
+TimingAuditor.TIMER                                            INFO *        StdLooseProtons                          |     0.145 |     0.150 |    0.002      17.2 |   89035 |    13.327 |
+TimingAuditor.TIMER                                            INFO *        StdAllLooseProtons                       |     0.090 |     0.094 |    0.007     143.5 |   89035 |     8.357 |
+TimingAuditor.TIMER                                            INFO *        StdLooseLambdaDD                         |     0.761 |     0.777 |    0.064      44.8 |   89035 |    69.193 |
+TimingAuditor.TIMER                                            INFO *        StdNoPIDsDownPions                       |     0.041 |     0.045 |    0.003      30.1 |   89035 |     4.006 |
+TimingAuditor.TIMER                                            INFO *        StdNoPIDsDownProtons                     |     0.035 |     0.037 |    0.002      11.1 |   89035 |     3.294 |
+TimingAuditor.TIMER                                            INFO *      UnpackMCParticle                           |    18.683 |   162.246 |    0.398    4348.8 |   12583 |  2041.539 |
+TimingAuditor.TIMER                                            INFO *      ChargedPP2MC                               |     5.722 |   150.539 |    1.207    1687.8 |   12583 |  1894.227 |
+TimingAuditor.TIMER                                            INFO *      NeutralPP2MC                               |    49.363 |   674.466 |    6.068    6818.6 |   12583 |  8486.800 |
+TimingAuditor.TIMER                                            INFO *       CaloClusterMCTruth                        |    35.744 |   292.782 |    5.236    3757.1 |   12583 |  3684.081 |
+TimingAuditor.TIMER                                            INFO *        CaloDigitMCTruth                         |    21.389 |   277.748 |    0.768    3736.0 |   12583 |  3494.907 |
+TimingAuditor.TIMER                                            INFO *         EcalZSup                                |     4.789 |    84.475 |    0.386    1598.4 |   12583 |  1062.943 |
+TimingAuditor.TIMER                                            INFO *         CaloDigitMCLinks2Table                  |    16.573 |   193.253 |    0.352    3010.8 |   12583 |  2431.697 |
+TimingAuditor.TIMER                                            INFO *        ClusterReco                              |    12.998 |    13.573 |    3.697     276.6 |   12583 |   170.789 |
+TimingAuditor.TIMER                                            INFO *         CaloDigits                              |     0.365 |     0.398 |    0.107     130.4 |   12583 |     5.008 |
+TimingAuditor.TIMER                                            INFO *          SpdFromRaw                             |     0.098 |     0.107 |    0.027      21.8 |   12583 |     1.348 |
+TimingAuditor.TIMER                                            INFO *          PrsFromRaw                             |     0.158 |     0.183 |    0.032     130.1 |   12583 |     2.297 |
+TimingAuditor.TIMER                                            INFO *          HcalZSup                               |     0.095 |     0.098 |    0.026      19.1 |   12583 |     1.234 |
+TimingAuditor.TIMER                                            INFO *         CaloDigitFilter                         |     3.799 |     3.984 |    2.976      74.9 |   12583 |    50.130 |
+TimingAuditor.TIMER                                            INFO *         EcalClust                               |     1.328 |     1.389 |    0.212      39.5 |   12583 |    17.483 |
+TimingAuditor.TIMER                                            INFO *         EcalShare                               |     7.197 |     7.499 |    0.013     185.9 |   12583 |    94.366 |
+TimingAuditor.TIMER                                            INFO *         EcalCovar                               |     0.279 |     0.281 |    0.025      17.6 |   12583 |     3.541 |
+TimingAuditor.TIMER                                            INFO *        SplitClusterReco                         |     0.248 |     0.265 |    0.027      34.4 |   12583 |     3.336 |
+TimingAuditor.TIMER                                            INFO *         SplitClustersRec                        |     0.243 |     0.261 |    0.024      34.4 |   12583 |     3.281 |
+TimingAuditor.TIMER                                            INFO *       UnpackNeutralProtos                       |     3.021 |    72.741 |    0.129    1136.6 |   12583 |   915.297 |
+TimingAuditor.TIMER                                            INFO *       UnpackPhotons                             |     4.942 |   148.174 |    0.194    2004.3 |   12583 |  1864.468 |
+TimingAuditor.TIMER                                            INFO *      UnpackMCVertex                             |    18.262 |   193.572 |    0.340    4646.7 |   12583 |  2435.717 |
+TimingAuditor.TIMER                                            INFO *      UnpackMuonTracks                           |     5.243 |   197.551 |    0.127    1576.1 |   12583 |  2485.783 |
+TimingAuditor.TIMER                                            INFO *      L0DecReportsMaker                          |     0.332 |     0.350 |    0.222     113.7 |   12583 |     4.400 |
+TimingAuditor.TIMER                                            INFO *       L0DUFromRaw                               |     0.273 |     0.279 |    0.175      25.3 |   12583 |     3.514 |
+TimingAuditor.TIMER                                            INFO *      L0SelReportsMaker                          |     0.738 |     0.762 |    0.335    1636.0 |   12583 |     9.582 |
+TimingAuditor.TIMER                                            INFO *       L0MuonFromRaw                             |     0.294 |     0.307 |    0.194      11.3 |   12583 |     3.868 |
+TimingAuditor.TIMER                                            INFO *       L0CaloFromRaw                             |     0.085 |     0.092 |    0.040       4.2 |   12583 |     1.158 |
+TimingAuditor.TIMER                                            INFO *      Hlt1DecReportsDecoder                      |     0.080 |     0.086 |    0.034     465.2 |   12583 |     1.078 |
+TimingAuditor.TIMER                                            INFO *      Hlt1SelReportsDecoder                      |     2.301 |     2.414 |    0.046      47.1 |   12583 |    30.374 |
+TimingAuditor.TIMER                                            INFO *      Hlt2DecReportsDecoder                      |     0.162 |     0.170 |    0.133      13.3 |   12583 |     2.134 |
+TimingAuditor.TIMER                                            INFO *      Hlt2SelReportsDecoder                      |     2.243 |     2.338 |    0.028      54.2 |   12583 |    29.419 |
+TimingAuditor.TIMER                                            INFO *       UnpackMergedPi0s                          |     6.682 |   279.783 |    0.111    1282.9 |    3523 |   985.675 |
+TimingAuditor.TIMER                                            INFO *       UnpackSplitPhotons                        |     6.633 |   286.470 |    0.111     940.0 |    3523 |  1009.235 |
+TimingAuditor.TIMER                                            INFO ----------------------------------------------------------------------------------------------------------------------
+ToolSvc.TrackStateProvider                                  SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of states added"                        |     10135 |      76553 |     7.5533 |     3.2571 |      0.0000 |      28.000 |
+ | "Number of tracks seen"                         |    483457 |      21366 |   0.044194 |    0.31970 |      0.0000 |      12.000 |
+ToolSvc.LoKi::DistanceCalculator                            SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
+ToolSvc.LoKi::DistanceCalculator                            SUCCESS  #WARNINGS   = 160712   Message = 'There is no convergency-III [StdLooseLambdaDD]'
+ToolSvc.LoKi::DistanceCalculator                            SUCCESS  #WARNINGS   = 266      Message = 'There is no convergency-III [StdLooseLambdaLL]'
+Lb2JpsiLTree.LoKi::DecayTreeFit                             SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+Lb2JpsiLTree.LoKi::DecayTreeFit                             SUCCESS  #WARNINGS   = 2087     Message = 'Fitter failed status'
+NTupleSvc                                                      INFO NTuples saved successfully
+*****Chrono*****                                               INFO ****************************************************************************************************
+*****Chrono*****                                               INFO  The Final CPU consumption ( Chrono ) Table (ordered)
+*****Chrono*****                                               INFO ****************************************************************************************************
+ToolSvc.LoKi::VertexFitter:seed                                INFO Time User   : Tot=0.513  [s] Ave/Min/Max= 1.86(+- 43.1)/    0/2e+03 [us] #=276419
+ToolSvc.LoKi::VertexFitter:optimized                           INFO Time User   : Tot= 2.33  [s] Ave/Min/Max= 10.4(+-  102)/    0/2e+03 [us] #=223808
+ToolSvc.LoKi::VertexFitter:iterate                             INFO Time User   : Tot= 4.26  [s] Ave/Min/Max= 15.4(+-  124)/    0/2e+03 [us] #=276419
+ToolSvc.LoKi::VertexFitter:fit                                 INFO Time User   : Tot= 11.6  [s] Ave/Min/Max= 23.3(+-  151)/    0/2e+03 [us] #=500169
+DetailedMaterialLocator                                        INFO Time User   : Tot= 41.6  [s] Ave/Min/Max=  459(+-7.92e+04)/    0/2.38e+07 [us] #=90649
+ChronoStatSvc                                                  INFO Time User   : Tot=   91[min]                                             #=  1
+*****Chrono*****                                               INFO ****************************************************************************************************
+ChronoStatSvc.finalize()                                       INFO  Service finalized successfully 
+ApplicationMgr                                                 INFO Application Manager Finalized successfully
+ApplicationMgr                                                ERROR Application Manager Terminated with error code 2
+====================================================
+Finish@:    Thu Apr 7 07:29:52 CEST 2016
+====================================================

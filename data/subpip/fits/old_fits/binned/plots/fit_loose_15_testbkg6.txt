@@ -1,0 +1,10 @@
+Background: Chebychev b1 = 1.814654 +/- 6.496372E+03
+Background: Chebychev b2 = 1.532272 +/- 6.496372E+03
+Background: Chebychev b3 = 1.051695 +/- 6.496372E+03
+Background: Chebychev b4 = 0.657508 +/- 6.496372E+03
+Background: Chebychev b5 = 0.312320 +/- 6.496372E+03
+Background: Chebychev b6 = 0.124842 +/- 6.496372E+03
+Background: Chebychev b7 = 0.030068 +/- 6.496372E+03
+#chi^{2}/N_{DoF} = 18201.520460
+N bkg = 5939.693182 +/- 119877816302849776.000000
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 2.854236E+13

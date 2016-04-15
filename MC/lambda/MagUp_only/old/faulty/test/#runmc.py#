@@ -1,0 +1,145 @@
+import GaudiKernel.SystemOfUnits as Units
+from Gaudi.Configuration import *
+from PhysSelPython.Wrappers import  AutomaticData, DataOnDemand, Selection, SelectionSequence
+from Configurables import  CombineParticles, FilterDesktop,  OfflineVertexFitter
+from Configurables import SelDSTWriter, DaVinci
+
+#--Stripping--------------------------------------------------------
+from StrippingConf.Configuration import StrippingConf, StrippingStream
+from StrippingSettings.Utils import strippingConfiguration
+from StrippingArchive.Utils import buildStreams
+from StrippingArchive import strippingArchive
+
+#----------------------Standard stripping20------------------------- 
+stripping='stripping20'
+config  = strippingConfiguration(stripping)
+archive = strippingArchive(stripping)
+streams = buildStreams(stripping=config, archive=archive) 
+
+#----Select my line-------------------------------------------------
+MyStream = StrippingStream("MyStream")
+MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
+
+for stream in streams: 
+    for line in stream.lines:
+        if line.name() in MyLines:
+            MyStream.appendLines( [ line ] ) 
+
+sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
+#------------------------------------------------------------------------
+
+#DaughtCutK = "(TRCHI2DOF < 4.0) & (PT>250*MeV)  & (TRGHOSTPROB < 0.8)"
+
+#DaughtCutp = "(TRCHI2DOF < 4.0) & (PT>250*MeV)  & (TRGHOSTPROB < 0.8)"
+
+
+#----Jpsi->mumu---------------------------------
+location = "Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles"
+Jpsi2MuMu = AutomaticData(Location = location)
+
+
+#----selection p+ and K- -------------------------
+#kaons = DataOnDemand(Location = "Phys/StdNoPIDsKaons/Particles")
+#protons = DataOnDemand(Location = "Phys/StdNoPIDsProtons/Particles")
+#-----this for prompt J/psi sample (now for all)-----------------------------------
+kaons = DataOnDemand(Location = "Phys/StdNoPIDsKaons/Particles")
+protons = DataOnDemand(Location = "Phys/StdNoPIDsProtons/Particles")
+pions = DataOnDemand(Location = "Phys/StdNoPIDsPions/Particles")
+
+
+DaughtCutK = "(MIPCHI2DV(PRIMARY)>9) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (TRGHOSTPROB < 0.2)"
+DaughtCutp = "(MIPCHI2DV(PRIMARY)>9) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (TRGHOSTPROB < 0.2)"
+
+
+#----selection p+ and K- -------------------------
+_Kst2pK = CombineParticles( "_Kst2pK",
+                              ayDescriptor = "[Lambda(1520)0 -> p+ K-]cc",
+                              CombinationCut = "(ACHILD(PT,1)+ACHILD(PT,2) > 900.*MeV) & (AM < 3500 *MeV) & (ADOCACHI2CUT(20., ''))",
+                              MotherCut       = "(VFASPF(VCHI2) < 16)",
+                              DaughtersCuts   = { 'p+' : DaughtCutp
+                                                ,'K-': DaughtCutK },
+                              ReFitPVs        = False )
+
+Kst2pK = Selection( "Kst2pK",
+                      Algorithm          = _Kst2pK,
+                      RequiredSelections = [ protons, kaons ] )
+
+
+#----Selection /\b -> J/psi p+ K-------------------
+_Lb2JpsipK = CombineParticles( "_Lb2JpsipK",
+                              DecayDescriptor = "[Lambda_b0 -> J/psi(1S) Lambda(1520)0]cc",
+                              CombinationCut = "ADAMASS('Lambda_b0') < 300 *MeV",
+                              MotherCut       = "(VFASPF(VCHI2/VDOF)<25) & (BPVDIRA > 0.999) & (VFASPF(VCHI2PDOF) < 10) & (BPVVD > 1.5 *mm)",
+                              ReFitPVs        = True )
+
+
+
+#---- Refit vertices with Jpsi mass constraint----------------
+#_Lb2JpsipK.addTool( OfflineVertexFitter() )
+#_Lb2JpsipK.VertexFitters.update( { "" : "OfflineVertexFitter"} )
+#_Lb2JpsipK.OfflineVertexFitter.applyDauMassConstraint = True
+
+
+Lb2JpsipK  = Selection( "Lb2JpsipK ",
+                      Algorithm          = _Lb2JpsipK ,
+                      RequiredSelections = [ Jpsi2MuMu, Kst2pK ] )
+
+
+
+### Gaudi sequence----------------------------------------------
+SeqLb2JpsipK = SelectionSequence("SeqLb2JpsipK ", TopSelection = Lb2JpsipK)
+seqLb = SeqLb2JpsipK.sequence()
+
+
+###########################################################################
+# Configure DaVinci
+###########################################################################
+from Configurables import DaVinci
+
+DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
+
+from Configurables import  OfflineVertexFitter
+
+from Configurables import  DecayTreeTuple, MCDecayTreeTuple
+importOptions("Bs2JpsiXTreeMC.py")
+
+
+tupleLb = DecayTreeTuple( "Lb2JpsipKTree" )
+tupleLb.Inputs = [ SeqLb2JpsipK.outputLocation() ]
+#fmc = MCDecayTreeTuple("MyMCDecayTreeTuple")
+
+DaVinci().Simulation   = True
+DaVinci().EvtMax = -1                        # Number of events
+DaVinci().DataType = "2012"
+DaVinci().CondDBtag = "Sim08-20130503-1-vc-md100"
+DaVinci().DDDBtag = "Sim08-20130503-1"
+DaVinci().TupleFile = "mc.root"
+DaVinci().PrintFreq = 50000
+DaVinci().Lumi = False
+#DaVinci().UserAlgorithms = [ seq, tuple, fmc]
+DaVinci().UserAlgorithms = [ seqLb, tupleLb]
+#DaVinci().UserAlgorithms = [ seq, tuple, tuple1]
+
+
+MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
+from Configurables import  DaVinciInit
+DaVinciInit().OutputLevel = ERROR
+MessageSvc().OutputLevel                  = 6
+ToolSvc().OutputLevel                     = 6
+
+#from Gaudi.Configuration import * 
+
+#from GaudiConf import IOHelper
+#IOHelper().inputFiles([
+#"DATAFILE='/tmp/lzhang/00030855_00000002_1.allstreams.dst' TYP='POOL_ROOTTREE' OPT='READ'"
+#], clear=True)
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0998.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0997.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0997.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0995.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0994.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0992.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0991.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0990.dst' TYP='POOL_ROOTTREE' OPT='READ'",
+#"DATAFILE='/data/bkpal/MC12/Lb2JpsipK/MU-p6/Lb2JpsipK-MU-p6_0989.dst' TYP='POOL_ROOTTREE' OPT='READ'"
+#], clear=True)

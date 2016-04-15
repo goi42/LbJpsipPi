@@ -1,0 +1,14 @@
+/\: alpha1 = 2.064 +/- 3.014161E-02
+/\: mean = 5622.742 +/- 3.513313E-02
+/\: n1 = 0.179 +/- 2.920330E-02
+/\: sigma = 10.926 +/- 3.197709E-11
+Background: Chebychev b1 = 12.996 +/- 1.206923E-01
+Background: Chebychev b2 = -0.649 +/- 2.224701E-04
+Background: Chebychev b3 = -14.365 +/- 6.999969E-02
+Background: Chebychev b4 = 17.071 +/- 1.111677E-03
+Background: Chebychev b5 = -10.036 +/- 6.971874E-02
+Background: Chebychev b6 = 2.636 +/- 2.455493E-03
+#chi^{2}/N_{DoF} = 1.337
+Yield #Lambda = 41526.576 +/- 3880.852
+N_{bkg} = 108.944 +/- 1.999
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.321648E-01

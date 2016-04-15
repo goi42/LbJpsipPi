@@ -1,0 +1,6 @@
+Background: Chebychev b1 = -1.090213 +/- 4.046781E-02
+Background: Chebychev b2 = 0.140251 +/- 5.366861E-02
+#chi^{2}/N_{DoF} = 0.285729
+N bkg = 2691.445824 +/- 110.552748
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 5.808967E-02
+limit = 1.085670E+00

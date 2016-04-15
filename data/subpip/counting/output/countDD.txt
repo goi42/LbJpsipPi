@@ -1,0 +1,5 @@
+Sigma region from 5300 to 5620, which, when translated to bins is actually >=5300 to <5620
+Lambda region from 5620 to 5720, which, when translated to bins is actually >=5620 to <5720
+N Sigmas = 20
+N Lambdas = 23
+NS/NL = 0.869565

@@ -1,0 +1,9 @@
+Background: Chebychev b1 = -1.163533 +/- 3.443579E-02
+Background: Chebychev b2 = 0.252689 +/- 5.510729E-02
+Background: Chebychev b3 = -0.096647 +/- 6.635871E-02
+Background: Chebychev b4 = 0.092919 +/- 6.283117E-02
+#chi^{2}/N_{DoF} = inf
+N bkg = 7207.739169 +/- 419.659895
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 8.234048E-02
+limit = 1.123646E+00
+limit at 90% confidence level = 1.797834E+00

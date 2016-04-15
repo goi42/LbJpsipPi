@@ -1,0 +1,478 @@
+=========================================
+START@:		Thu Mar 10 19:44:33 CET 2016
+=========================================
+Configuring DaVinci v39r0p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r0p1
+Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
+Environment for DaVinci v39r0p1 ready.
+(Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
+ DaVinci v39r0p1 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v39r0p1)
+
+Processing rootopts/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = 7_testbkg4
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+tree gotten
+SMC file opened
+SMC hist gotten
+LstMC file opened
+LstMC hist gotten
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,5950]
+mass declared
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 84 out of range events
+data declared
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(LstMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+LstMC hist assigned to RooDataHist
+Lst stuff
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data_bkg1) constructing test statistic for sub-range named bkg1
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeForbkg1' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_data_bkg1' created with bounds [4300,4800]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data_bkg1) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data_bkg2) constructing test statistic for sub-range named bkg2
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeForbkg2' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_data_bkg2' created with bounds [5700,5950]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data_bkg2) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_totalPdf_data) Summation contains a RooNLLVar, using its error level
+ **********
+ **   13 **MIGRAD        3000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -897.136
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -4363.29
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-57.2388) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.05524, b2=0.352938, b3=-0.167651, b4=0.262441, b5=20.1498, nbkg=2165.49
+RooNLLVar::nll_totalPdf_data_bkg1[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4626.95), !pdfs=(bkg = -11.6015/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4330.11), !pdfs=(bkg = 20.6855/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4451.02), !pdfs=(bkg = 8.88978/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4419.41), !pdfs=(bkg = 12.6998/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4579.59), !pdfs=(bkg = -6.87004/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4417.63), !pdfs=(bkg = 12.9049/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4613.44), !pdfs=(bkg = -10.3488/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4580.85), !pdfs=(bkg = -7.00747/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4587.97), !pdfs=(bkg = -7.7732/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4769.44), !pdfs=(bkg = -19.0306/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4364.57), !pdfs=(bkg = 18.2879/-716.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4644.62), !pdfs=(bkg = -13.1109/-716.6), !coefficients=(nbkg = 2165.49)
+    ... (remaining 2038 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-10.155695), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4611.44, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4611.44, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-0.702067), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4526.97, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4526.97, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-2.015748), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4537.69, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4537.69, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-19.000265), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4767.09, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4767.09, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-15.028647), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4670.33, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4670.33, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4363.36, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=4503.49, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+    ... (remaining 2038 messages suppressed)
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5809.76), !pdfs=(bkg = -14.4046/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5830.9), !pdfs=(bkg = -16.3683/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5793.02), !pdfs=(bkg = -12.6576/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5729.84), !pdfs=(bkg = -5.10796/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5768.35), !pdfs=(bkg = -9.84645/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5918.8), !pdfs=(bkg = -19.9799/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5760.57), !pdfs=(bkg = -8.91653/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.46), !pdfs=(bkg = -2.01645/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5921.21), !pdfs=(bkg = -19.9387/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5847.26), !pdfs=(bkg = -17.6597/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5907.61), !pdfs=(bkg = -20.0539/-3485.24), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5887.57), !pdfs=(bkg = -19.7408/-3485.24), !coefficients=(nbkg = 2165.49)
+    ... (remaining 130 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-14.404550), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5809.76, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5809.76, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-16.368293), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5830.9, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5830.9, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-12.657588), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5793.02, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5793.02, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-5.107964), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5729.84, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5729.84, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-9.846446), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5768.35, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5768.35, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f value is less than zero (-19.979863), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5918.8, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5918.8, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 20.1498)
+    ... (remaining 270 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -nan,nll_totalPdf_data_bkg2 = -nan)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-57.2388) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.05524, b2=0.352938, b3=-0.167651, b4=0.262441, b5=-20.1218, nbkg=2165.49
+RooNLLVar::nll_totalPdf_data_bkg1[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4381.48), !pdfs=(bkg = -13.9423/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4438.08), !pdfs=(bkg = -7.94558/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4410.08), !pdfs=(bkg = -11.0979/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4440.71), !pdfs=(bkg = -7.63632/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4303.16), !pdfs=(bkg = -18.3665/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4305.06), !pdfs=(bkg = -18.3391/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4356.38), !pdfs=(bkg = -15.9943/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4320.51), !pdfs=(bkg = -17.944/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4447.65), !pdfs=(bkg = -6.81133/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4344.68), !pdfs=(bkg = -16.7722/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4307.29), !pdfs=(bkg = -18.3008/1885.21), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4500.97), !pdfs=(bkg = -0.24924/1885.21), !coefficients=(nbkg = 2165.49)
+    ... (remaining 1319 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-13.942314), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4381.48, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-7.945576), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4438.08, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-11.097885), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4410.08, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-7.636318), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4440.71, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-18.366496), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4303.16, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-18.339134), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4305.06, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-15.994320), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4356.38, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-17.944041), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4320.51, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-6.811328), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4447.65, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-16.772172), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4344.68, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-18.300838), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4307.29, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+     p.d.f value is less than zero (-0.249240), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4500.97, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -20.1218)
+    ... (remaining 1319 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -nan,nll_totalPdf_data_bkg2 = 4059.45)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -405.054
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-57.2388) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.05524, b2=0.352938, b3=-0.167651, b4=0.262441, b5=2.02758, nbkg=2165.49
+RooNLLVar::nll_totalPdf_data_bkg1[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4620.63), !pdfs=(bkg = -0.175195/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4781.41), !pdfs=(bkg = -1.03769/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4799.16), !pdfs=(bkg = -1.04073/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4748.42), !pdfs=(bkg = -0.983626/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4793.05), !pdfs=(bkg = -1.04171/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4678.54), !pdfs=(bkg = -0.657136/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4686.22), !pdfs=(bkg = -0.707031/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4720.04), !pdfs=(bkg = -0.885777/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4627.76), !pdfs=(bkg = -0.244215/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4652.53), !pdfs=(bkg = -0.463295/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4665.66), !pdfs=(bkg = -0.565882/454.215), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4647.4), !pdfs=(bkg = -0.420637/454.215), !coefficients=(nbkg = 2165.49)
+    ... (remaining 944 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.175195), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4620.63, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.037688), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4781.41, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.040732), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4799.16, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.983626), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4748.42, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.041707), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4793.05, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.657136), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4678.54, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.707031), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4686.22, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.885777), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4720.04, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.244215), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4627.76, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.463295), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4652.53, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.565882), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4665.66, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.420637), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4647.4, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+    ... (remaining 944 messages suppressed)
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5809.76), !pdfs=(bkg = -1.3519/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5830.9), !pdfs=(bkg = -1.55833/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5793.02), !pdfs=(bkg = -1.1671/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5729.84), !pdfs=(bkg = -0.359621/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5768.35), !pdfs=(bkg = -0.867976/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5918.8), !pdfs=(bkg = -1.92189/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5760.57), !pdfs=(bkg = -0.768608/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.46), !pdfs=(bkg = -0.0252526/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5921.21), !pdfs=(bkg = -1.91679/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5847.26), !pdfs=(bkg = -1.693/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5907.61), !pdfs=(bkg = -1.93304/-323.543), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5887.57), !pdfs=(bkg = -1.90524/-323.543), !coefficients=(nbkg = 2165.49)
+    ... (remaining 130 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-1.351901), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5809.76, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5809.76, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.558334), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5830.9, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5830.9, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.167100), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5793.02, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5793.02, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.359621), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5729.84, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5729.84, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-0.867976), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5768.35, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5768.35, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f value is less than zero (-1.921886), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5918.8, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+     p.d.f normalization integral is zero or negative @ x=Bs_LOKI_MASS_JpsiConstr=5918.8, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = 2.02758)
+    ... (remaining 270 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -nan,nll_totalPdf_data_bkg2 = -nan)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-57.2388) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.05524, b2=0.352938, b3=-0.167651, b4=0.262441, b5=-1.99958, nbkg=2165.49
+RooNLLVar::nll_totalPdf_data_bkg1[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958,nbkg = 2165.49)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4381.48), !pdfs=(bkg = -0.128959/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4303.16), !pdfs=(bkg = -0.338705/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4305.06), !pdfs=(bkg = -0.342564/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4356.38), !pdfs=(bkg = -0.267941/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4320.51), !pdfs=(bkg = -0.354828/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4344.68), !pdfs=(bkg = -0.31226/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4307.29), !pdfs=(bkg = -0.34642/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4311.75), !pdfs=(bkg = -0.351972/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4310.64), !pdfs=(bkg = -0.350853/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4363.88), !pdfs=(bkg = -0.232337/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4349.35), !pdfs=(bkg = -0.29626/714.396), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 4326.69), !pdfs=(bkg = -0.350723/714.396), !coefficients=(nbkg = 2165.49)
+    ... (remaining 705 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.128959), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4381.48, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.338705), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4303.16, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.342564), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4305.06, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.267941), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4356.38, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.354828), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4320.51, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.312260), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4344.68, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.346420), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4307.29, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.351972), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4311.75, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.350853), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4310.64, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.232337), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4363.88, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.296260), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4349.35, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+     p.d.f value is less than zero (-0.350723), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=4326.69, coefList=(b1 = -1.05524,b2 = 0.352938,b3 = -0.167651,b4 = 0.262441,b5 = -1.99958)
+    ... (remaining 705 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -nan,nll_totalPdf_data_bkg2 = 406.671)
+
+ FCN=-64.2713 FROM MIGRAD    STATUS=INITIATE       24 CALLS          25 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1          -1.05524e+00   5.27621e-01   1.77405e-01   7.13374e+02
+   2  b2           3.52938e-01   1.76469e-01   9.89331e-02  -5.23047e+02
+   3  b3          -1.67651e-01   4.00000e-01   2.02109e-01  -1.80727e+03
+   4  b4           2.62441e-01   4.00000e-01   2.03215e-01   3.41070e+03
+   5  b5           1.40000e-02   2.00000e+03   2.01358e-01   0.00000e+00
+   6  nbkg         2.16549e+03   1.08275e+03   2.40884e-03  -4.70554e+05
+                               ERR DEF= 0.5
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-52.9114) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.08389, b2=1.39993, b3=-0.0255551, b4=0.120738, b5=0.014, nbkg=5462.68
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014,nbkg = 5462.68)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5729.84), !pdfs=(bkg = -0.0632681/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.46), !pdfs=(bkg = -0.111164/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5717.39), !pdfs=(bkg = -0.0882844/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5713.58), !pdfs=(bkg = -0.0957159/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5735.36), !pdfs=(bkg = -0.0517612/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5715.91), !pdfs=(bkg = -0.0911927/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5727.68), !pdfs=(bkg = -0.0676973/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5720.87), !pdfs=(bkg = -0.0814147/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5734.1), !pdfs=(bkg = -0.0544178/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5713.9), !pdfs=(bkg = -0.0950965/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5714.13), !pdfs=(bkg = -0.0946528/49.2472), !coefficients=(nbkg = 5462.68)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5710.02), !pdfs=(bkg = -0.102552/49.2472), !coefficients=(nbkg = 5462.68)
+    ... (remaining 27 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.063268), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5729.84, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.111164), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5705.46, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.088284), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5717.39, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.095716), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5713.58, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.051761), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5735.36, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.091193), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5715.91, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.067697), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5727.68, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.081415), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5720.87, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.054418), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5734.1, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.095097), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5713.9, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.094653), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5714.13, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+     p.d.f value is less than zero (-0.102552), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5710.02, coefList=(b1 = -1.08389,b2 = 1.39993,b3 = -0.0255551,b4 = 0.120738,b5 = 0.014)
+    ... (remaining 27 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -1748.16,nll_totalPdf_data_bkg2 = -nan)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-52.9114) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.06947, b2=0.795136, b3=-0.0969413, b4=0.191987, b5=0.215358, nbkg=3620.32
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358,nbkg = 3620.32)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5809.76), !pdfs=(bkg = -0.0323976/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5830.9), !pdfs=(bkg = -0.0322941/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5793.02), !pdfs=(bkg = -0.0279801/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5768.35), !pdfs=(bkg = -0.0152669/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5760.57), !pdfs=(bkg = -0.00992445/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5847.26), !pdfs=(bkg = -0.0272688/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5811.76), !pdfs=(bkg = -0.0326724/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5777.79), !pdfs=(bkg = -0.0209302/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5782.9), !pdfs=(bkg = -0.0235971/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5778.27), !pdfs=(bkg = -0.021196/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5797.33), !pdfs=(bkg = -0.0294677/2.09775), !coefficients=(nbkg = 3620.32)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5798.77), !pdfs=(bkg = -0.0299103/2.09775), !coefficients=(nbkg = 3620.32)
+    ... (remaining 64 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.032398), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5809.76, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.032294), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5830.9, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.027980), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5793.02, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.015267), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5768.35, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.009924), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5760.57, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.027269), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5847.26, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.032672), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5811.76, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.020930), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5777.79, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.023597), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5782.9, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.021196), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5778.27, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.029468), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5797.33, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+     p.d.f value is less than zero (-0.029910), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5798.77, coefList=(b1 = -1.06947,b2 = 0.795136,b3 = -0.0969413,b4 = 0.191987,b5 = 0.215358)
+    ... (remaining 64 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -1356.73,nll_totalPdf_data_bkg2 = -nan)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-52.9114) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.11121, b2=2.85094, b3=0.107819, b4=-0.0125654, b5=-2.19883, nbkg=9904.13
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883,nbkg = 9904.13)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.46), !pdfs=(bkg = -0.281299/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5717.39), !pdfs=(bkg = -0.0450217/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5713.58), !pdfs=(bkg = -0.120744/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5715.91), !pdfs=(bkg = -0.0745394/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5713.9), !pdfs=(bkg = -0.114396/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5714.13), !pdfs=(bkg = -0.109852/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5710.02), !pdfs=(bkg = -0.191273/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5707.76), !pdfs=(bkg = -0.235887/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5716.02), !pdfs=(bkg = -0.0722343/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5718.79), !pdfs=(bkg = -0.0172225/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5715.69), !pdfs=(bkg = -0.0789132/462.688), !coefficients=(nbkg = 9904.13)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5706.61), !pdfs=(bkg = -0.258634/462.688), !coefficients=(nbkg = 9904.13)
+    ... (remaining 4 messages suppressed)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.281299), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5705.46, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.045022), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5717.39, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.120744), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5713.58, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.074539), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5715.91, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.114396), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5713.9, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.109852), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5714.13, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.191273), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5710.02, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.235887), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5707.76, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.072234), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5716.02, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.017223), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5718.79, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.078913), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5715.69, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+     p.d.f value is less than zero (-0.258634), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5706.61, coefList=(b1 = -1.11121,b2 = 2.85094,b3 = 0.107819,b4 = -0.0125654,b5 = -2.19883)
+    ... (remaining 4 messages suppressed)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = 36149.6,nll_totalPdf_data_bkg2 = -nan)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-52.9114) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-1.0853, b2=1.45699, b3=-0.018862, b4=0.114105, b5=-0.829833, nbkg=5651.27
+RooNLLVar::nll_totalPdf_data_bkg2[ paramSet=(b1,b2,b3,b4,b5,nbkg) ]
+     function value is NAN @ paramSet=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833,nbkg = 5651.27)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.46), !pdfs=(bkg = -0.0350571/197.577), !coefficients=(nbkg = 5651.27)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5710.02), !pdfs=(bkg = -0.00165992/197.577), !coefficients=(nbkg = 5651.27)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5707.76), !pdfs=(bkg = -0.0182182/197.577), !coefficients=(nbkg = 5651.27)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5706.61), !pdfs=(bkg = -0.026655/197.577), !coefficients=(nbkg = 5651.27)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(Bs_LOKI_MASS_JpsiConstr = 5705.64), !pdfs=(bkg = -0.0337246/197.577), !coefficients=(nbkg = 5651.27)
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2,b3,b4,b5) ]
+     p.d.f value is less than zero (-0.035057), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5705.46, coefList=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833)
+     p.d.f value is less than zero (-0.001660), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5710.02, coefList=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833)
+     p.d.f value is less than zero (-0.018218), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5707.76, coefList=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833)
+     p.d.f value is less than zero (-0.026655), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5706.61, coefList=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833)
+     p.d.f value is less than zero (-0.033725), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5705.64, coefList=(b1 = -1.0853,b2 = 1.45699,b3 = -0.018862,b4 = 0.114105,b5 = -0.829833)
+RooAddition::nll_totalPdf_data[ nll_totalPdf_data_bkg1 + nll_totalPdf_data_bkg2 ]
+     function value is NAN @ !set=(nll_totalPdf_data_bkg1 = -2039.84,nll_totalPdf_data_bkg2 = -nan)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-1869.89 FROM MIGRAD    STATUS=CONVERGED     433 CALLS         434 TOTAL
+                     EDM=8.62428e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1          -1.41849e+00   1.20322e-01   1.03215e-04  -2.01684e-01
+   2  b2           5.13076e-01   7.24505e-02   4.22229e-04   7.35092e-02
+   3  b3          -3.87522e-01   8.97584e-02   1.97581e-04   8.24337e-02
+   4  b4           2.81777e-01   6.33650e-02   1.53753e-04  -8.72016e-02
+   5  b5          -1.87079e-01   6.19568e-02   3.29042e-08   7.49784e+02
+   6  nbkg         7.99829e+03   5.57395e+02   4.91350e-06   1.05165e+01
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  6    ERR DEF=0.5
+  1.448e-02 -5.871e-03  7.998e-03  3.606e-04  7.023e-03  2.034e+01 
+ -5.871e-03  5.251e-03 -5.597e-03  2.395e-03 -3.197e-03  1.120e+01 
+  7.998e-03 -5.597e-03  8.062e-03 -3.461e-03  4.522e-03 -1.928e+01 
+  3.606e-04  2.395e-03 -3.461e-03  4.017e-03 -7.042e-04  3.219e+01 
+  7.023e-03 -3.197e-03  4.522e-03 -7.042e-04  3.839e-03  4.020e+00 
+  2.034e+01  1.120e+01 -1.928e+01  3.219e+01  4.020e+00  3.107e+05 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6
+        1  0.99499   1.000 -0.673  0.740  0.047  0.942  0.303
+        2  0.90334  -0.673  1.000 -0.860  0.522 -0.712  0.277
+        3  0.98949   0.740 -0.860  1.000 -0.608  0.813 -0.385
+        4  0.98698   0.047  0.522 -0.608  1.000 -0.179  0.911
+        5  0.98409   0.942 -0.712  0.813 -0.179  1.000  0.116
+        6  0.96454   0.303  0.277 -0.385  0.911  0.116  1.000
+ **********
+ **   18 **MINOS        3000
+ **********
+ FCN=-1869.89 FROM MINOS     STATUS=SUCCESSFUL   1064 CALLS        1498 TOTAL
+                     EDM=8.62428e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1          -1.41849e+00   1.20322e-01  -1.40714e-01   1.44109e-01
+   2  b2           5.13076e-01   7.24505e-02  -7.65096e-02   7.09116e-02
+   3  b3          -3.87522e-01   8.97584e-02  -8.57312e-02   9.35254e-02
+   4  b4           2.81777e-01   6.33650e-02  -6.27606e-02   5.40210e-02
+   5  b5          -1.87079e-01   6.19568e-02  -6.90970e-02   7.08759e-02
+   6  nbkg         7.99829e+03   5.57395e+02  -5.46868e+02   5.55817e+02
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        3000
+ **********
+ FCN=-1869.89 FROM MINOS     STATUS=SUCCESSFUL   1064 CALLS        2562 TOTAL
+                     EDM=8.62428e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1          -1.41849e+00   1.20322e-01  -1.40714e-01   1.44109e-01
+   2  b2           5.13076e-01   7.24505e-02  -7.65096e-02   7.09116e-02
+   3  b3          -3.87522e-01   8.97584e-02  -8.57312e-02   9.35254e-02
+   4  b4           2.81777e-01   6.33650e-02  -6.27606e-02   5.40210e-02
+   5  b5          -1.87079e-01   6.19568e-02  -6.90970e-02   7.08759e-02
+   6  nbkg         7.99829e+03   5.57395e+02  -5.46868e+02   5.55817e+02
+                               ERR DEF= 0.5
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data_bkg1,fit_nll_totalPdf_data_bkg2'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data_bkg1,fit_nll_totalPdf_data_bkg2'
+Background: Chebychev b1 = -1.418487 +/- 1.441085E-01
+Background: Chebychev b2 = 0.513076 +/- 7.650963E-02
+Background: Chebychev b3 = -0.387522 +/- 9.352542E-02
+Background: Chebychev b4 = 0.281777 +/- 6.276055E-02
+Background: Chebychev b5 = -0.187079 +/- 7.087586E-02
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data_bkg1,fit_nll_totalPdf_data_bkg2'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data_bkg1,fit_nll_totalPdf_data_bkg2'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#chi^{2}/N_{DoF} = 1.238441
+N bkg = 7998.291504 +/- 555.817061
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 9.827649E-02
+limit = 1.149364E+00
+limit at 90% confidence level = 1.838982E+00
+Info in <TCanvas::Print>: eps file plots/fit7_testbkg4.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fit7_testbkg4.C has been generated
+=========================================
+Finish root @	Thu Mar 10 19:44:55 CET 2016
+=========================================

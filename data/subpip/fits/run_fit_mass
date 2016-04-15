@@ -1,0 +1,53 @@
+#! /bin/tcsh -f
+
+#-- set or pass job parameters
+set BASE_NAME = _just_Lambda2
+
+#-- directory and files
+set OUT_DIR = ./plots
+set LOG = ${OUT_DIR}/fit${BASE_NAME}.log
+
+#-- Environment parameters
+if ( ! $?HOME ) then
+    setenv HOME /afs/cern.ch/user/m/mwilkins/
+endif
+
+#-- basic info
+set DATE = `date`
+
+cat -<<EOF> ${LOG}
+=========================================
+START@:		${DATE}
+=========================================
+EOF
+
+#-- setup LHCb environment
+setenv CMTCONFIG x86_64-slc6-gcc48-opt
+source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${LOG}
+
+#-- root
+mkdir rootopts
+cat -<<EOF> rootopts/myRoot.C
+#include "TROOT.h"
+void myRoot(){
+    gROOT->ProcessLine(".x fit_mass.C(\"${BASE_NAME}\")");
+}
+EOF
+
+# echo "============= root script ===============" >> ${LOG}
+# cat rootopts/myRoot.C >> ${LOG}
+
+SetupProject DaVinci >>& ${LOG}
+root -l -q rootopts/myRoot.C >>& ${LOG}
+
+set DATE = `date`
+cat -<<EOF>> ${LOG}
+=========================================
+Finish root @	${DATE}
+=========================================
+EOF
+
+#-- remove stuff
+#cd ../
+#rm -fr ${WORK_DIR}
+rm -rf rootopts/
