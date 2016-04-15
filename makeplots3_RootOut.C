@@ -57,9 +57,9 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   file f[]={								\
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples.root","SMCfile",f3quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
   };
             
@@ -106,7 +106,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       TCut cLL,cDD,coptimized,cgd;
       makecuts(ifile,cLL,cDD,coptimized,cgd);
       //names of cuts below should not have spaces
-      thisbranch->c = {{cgd,"Optimized_and_mother_ID"}};
+      thisbranch->c = {{cgd,"Optimized_and_gd_mother_ID"}};
 
       int nCuts = thisbranch->c.size();
       if(nCuts==0){
@@ -148,53 +148,53 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	  cout<<"spaces are not allowed in cut names. Rename cut "<<thiscut->name<<"!"<<endl;
 	  exit(EXIT_FAILURE);
 	}
-        //create cut trees
-        if(thisfile->t.size()>1){
-          cout<<"tree vector has "<<thisfile->t.size()<<"elements. How did this happen?"<<endl;
-          exit(EXIT_FAILURE);
-        }
-        TString fileoutputlocation="./";
-        if(thisfile->quality["filetype"].Contains("data"))
-          fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
-        if(thisfile->quality["filetype"].Contains("MC"))
-          fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
-        TString tempfilelocation=fileoutputlocation+"temp.root";
-        cout<<"creating tempfile... ";
-        TFile *tempfile = new TFile(tempfilelocation,"recreate");
-        cout<<"done"<<endl<<"copying tree with cuts... ";
-        TTree *temptree = thisfile->t[0]->CopyTree(thiscut->self);
-        cout<<"done"<<endl<<"writing tempfile... ";
-        tempfile->Write();
-        cout<<"done"<<endl<<"deleting "<<thisfile->name<<" in memory... ";
-        delete thisfile->self;
-        cout<<"done"<<endl<<"setting branch statuses... ";
-        temptree->SetBranchStatus("*",0);
-        temptree->SetBranchStatus(massname[ifile],1);
-        cout<<"done"<<endl<<"creating newfile... ";
-        placeholder = fileoutputlocation+"cutfile_"+thiscut->name+"_LMC.root";
-        TFile *newfile = new TFile(placeholder,"recreate");
-        cout<<"done"<<endl<<"copying temptree... ";
-        TTree *newtree = temptree->CopyTree("");
-        cout<<"done"<<endl<<"writing newfile... ";
-        newfile->Write();
-        cout<<"done"<<endl<<"setting branch statuses... ";
-        temptree->SetBranchStatus("*",1);
-        cout<<"done"<<endl<<"deleting tempfile... ";
-        delete tempfile;
-        cout<<"done"<<endl<<"deleting newfile... ";
-        delete newfile;
-        cout<<"done"<<endl<<"removing tempfile... ";
-        placeholder= "rm "+tempfilelocation;
-        gSystem->Exec(placeholder);
-        cout<<"done"<<endl<<"reloading "<<thisfile->name<<" and its tree in memory... ";
-        thisfile->self = TFile::Open(thisfile->location);
-        thisfile->add_tree(thisfile->tname[0]);
-        cout<<"done"<<endl<<"removing extra elements in tree vector, currently size "<<thisfile->t.size()<<"... ";
-        if(thisfile->t.size()>1){
-          thisfile->t.erase(thisfile->t.begin());
-          thisfile->tname.erase(thisfile->tname.begin());
-        }
-        cout<<"done"<<endl;
+        // //create cut trees
+        // if(thisfile->t.size()>1){
+        //   cout<<"tree vector has "<<thisfile->t.size()<<"elements. How did this happen?"<<endl;
+        //   exit(EXIT_FAILURE);
+        // }
+        // TString fileoutputlocation="./";
+        // if(thisfile->quality["filetype"].Contains("data"))
+        //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
+        // if(thisfile->quality["filetype"].Contains("MC"))
+        //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
+        // TString tempfilelocation=fileoutputlocation+"temp.root";
+        // cout<<"creating tempfile... ";
+        // TFile *tempfile = new TFile(tempfilelocation,"recreate");
+        // cout<<"done"<<endl<<"copying tree with cuts... ";
+        // TTree *temptree = thisfile->t[0]->CopyTree(thiscut->self);
+        // cout<<"done"<<endl<<"writing tempfile... ";
+        // tempfile->Write();
+        // cout<<"done"<<endl<<"deleting "<<thisfile->name<<" in memory... ";
+        // delete thisfile->self;
+        // cout<<"done"<<endl<<"setting branch statuses... ";
+        // temptree->SetBranchStatus("*",0);
+        // temptree->SetBranchStatus(massname[ifile],1);
+        // cout<<"done"<<endl<<"creating newfile... ";
+        // placeholder = fileoutputlocation+"cutfile_"+thiscut->name+"_SMC_fullMC_with_gd_info.root";
+        // TFile *newfile = new TFile(placeholder,"recreate");
+        // cout<<"done"<<endl<<"copying temptree... ";
+        // TTree *newtree = temptree->CopyTree("");
+        // cout<<"done"<<endl<<"writing newfile... ";
+        // newfile->Write();
+        // cout<<"done"<<endl<<"setting branch statuses... ";
+        // temptree->SetBranchStatus("*",1);
+        // cout<<"done"<<endl<<"deleting tempfile... ";
+        // delete tempfile;
+        // cout<<"done"<<endl<<"deleting newfile... ";
+        // delete newfile;
+        // cout<<"done"<<endl<<"removing tempfile... ";
+        // placeholder= "rm "+tempfilelocation;
+        // gSystem->Exec(placeholder);
+        // cout<<"done"<<endl<<"reloading "<<thisfile->name<<" and its tree in memory... ";
+        // thisfile->self = TFile::Open(thisfile->location);
+        // thisfile->add_tree(thisfile->tname[0]);
+        // cout<<"done"<<endl<<"removing extra elements in tree vector, currently size "<<thisfile->t.size()<<"... ";
+        // if(thisfile->t.size()>1){
+        //   thisfile->t.erase(thisfile->t.begin());
+        //   thisfile->tname.erase(thisfile->tname.begin());
+        // }
+        // cout<<"done"<<endl;
         //create convenient strings
         TString icutstring = Form("%d",icut);
         TString hname = "h"+cistring+icutstring;
@@ -219,24 +219,24 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       ci++;//iterates every time we finish a branch
     }
       
-    // cout<<"saving histograms... ";
-    // TString fileoutputlocation="./";
-    // if(thisfile->quality["filetype"].Contains("data"))
-    //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
-    // if(thisfile->quality["filetype"].Contains("MC"))
-    //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
-    // placeholder = fileoutputlocation+"histos_"+thisfile->name+".root";
-    // cout<<endl<<"saving "<<placeholder<<"... ";
-    // TFile* histfile = new TFile(placeholder,"recreate");
-    // cout<<"done"<<endl<<"writing histograms... ";
-    // for(int i=(ifile*nBranches);i<h.size();i++){//since there's a canvas per branch
-    //   for(int j=0;j<h[i].size();j++){
-    //     h[i][j]->Write();
-    //   }
-    // }
-    // histfile->Close();
-    // delete histfile;
-    // cout<<"done"<<endl;
+    cout<<"saving histograms... ";
+    TString fileoutputlocation="./";
+    if(thisfile->quality["filetype"].Contains("data"))
+      fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
+    if(thisfile->quality["filetype"].Contains("MC"))
+      fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
+    placeholder = fileoutputlocation+"histos_"+thisfile->name+".root";
+    cout<<endl<<"saving "<<placeholder<<"... ";
+    TFile* histfile = new TFile(placeholder,"recreate");
+    cout<<"done"<<endl<<"writing histograms... ";
+    for(int i=(ifile*nBranches);i<h.size();i++){//since there's a canvas per branch
+      for(int j=0;j<h[i].size();j++){
+        h[i][j]->Write();
+      }
+    }
+    histfile->Close();
+    delete histfile;
+    cout<<"done"<<endl;
   }
   
   gROOT->SetBatch(kFALSE);
