@@ -44,7 +44,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   mass->setRange("tail",5950,6040);
   mass->setRange("tot",4300,6040);
   cout<<"mass declared"<<endl;
-  RooDataSet data_temp = get_L_MC(mass);
+  RooDataSet data_temp = get_data(mass);
   RooDataSet *data = &data_temp;
   cout<<"fit_mass: Mass and data set."<<endl;
 
@@ -58,7 +58,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"SMC hist assigned to RooDataHist"<<endl;
   RooHistPdf sigS = makeroohistpdf(SMC,mass,"sigS","#Sigma^{0} signal (RooHistPdf)");
   // /\
-  // //gaussian
+  // //Gaussian
   // RooRealVar mean1L("mean1L","/\\ gaus 1: mean",5621.351842,5525,5700);
   // RooRealVar sig1L("sig1L","/\\ gaus 1: sigma",8.030005,0,100);
   // RooGaussian gau1L("gau1L","#Lambda signal: gaussian 1",*mass,mean1L,sig1L);
@@ -67,17 +67,23 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooGaussian gau2L("gau2L","#Lambda signal: gaussian 2",*mass,mean2L,sig2L);
   // RooRealVar f1L("f1L","/\\ signal: fraction gaussian 1",0.827146,0,1);
   // RooAddPdf sigL("sigL","#Lambda signal (dbl gaus)",RooArgList(gau1L,gau2L),RooArgList(f1L));
+  // //CB&Gaus
+  // RooRealVar mean3L("mean3L","/\\ CB: mean",5621.063180,5525,5700);
+  // RooRealVar sig3L("sig3L","/\\ CB: sigma",7.683292,0,100);
+  // RooRealVar alphaL3("alphaL3","/\\ CB: alpha",1.524053,0,1000);
+  // RooRealVar nL3("nL1","/\\ CB: n",2.598785,0,1000);
+  // RooCBShape CBL("CBL","#Lambda signal: CB",*mass,mean3L,sig3L,alphaL3,nL3);
+  // RooFormulaVar mean4L("mean4L","@0",mean3L);
+  // RooRealVar sig4L("sig4L","/\\ gaus: sigma",14.799543,0,100);
+  // RooGaussian gauL("gauL","#Lambda signal: gaussian",*mass,mean4L,sig4L);
+  // RooRealVar f1L("f1L","/\\ signal: fraction CB",0.852015,0,1);
+  // RooAddPdf sigL("sigL","#Lambda signal (CB & gaus)",RooArgList(CBL,gauL),RooArgList(f1L));
   //CB
-  RooRealVar mean3L("mean3L","/\\ CB: mean",5621.063180,5525,5700);
-  RooRealVar sig3L("sig3L","/\\ CB: sigma",7.683292,0,100);
-  RooRealVar alphaL3("alphaL3","/\\ CB: alpha",1.524053,0,1000);
-  RooRealVar nL3("nL1","/\\ CB: n",2.598785,0,1000);
-  RooCBShape CBL("CBL","#Lambda signal: CB",*mass,mean3L,sig3L,alphaL3,nL3);
-  RooFormulaVar mean4L("mean4L","@0",mean3L);
-  RooRealVar sig4L("sig4L","/\\ gaus: sigma",14.799543,0,100);
-  RooGaussian gauL("gauL","#Lambda signal: gaussian",*mass,mean4L,sig4L);
-  RooRealVar f1L("f1L","/\\ signal: fraction CB",0.852015,0,1);
-  RooAddPdf sigL("sigL","#Lambda signal (CB & gaus)",RooArgList(CBL,gauL),RooArgList(f1L));
+  RooRealVar mean5L("mean5L","/\\ CB: mean",5621.063180,5525,5700);
+  RooRealVar sig5L("sig5L","/\\ CB: sigma",7.683292,0,100);
+  RooRealVar alphaL5("alphaL5","/\\ CB: alpha",1.524053,0,1000);
+  RooRealVar nL5("nL1","/\\ CB: n",2.598785,0,1000);
+  RooCBShape sigL("CBL","#Lambda signal (CB)",*mass,mean5L,sig5L,alphaL5,nL5);
   // /\*
   // /\*(1405)
   // TFile *Lst1405MChistos= new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/histos_Lst1405MC.root", "READ");
@@ -143,11 +149,11 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"fit_mass: adding shapes and their numbers to totalPdf:"<<endl;
   RooArgList shapes;
   RooArgList yields;
-  // shapes.add(sigS);       yields.add(nsigS);
+  shapes.add(sigS);       yields.add(nsigS);
   shapes.add(sigL);       yields.add(nsigL);
-  // shapes.add(sigLst1405); yields.add(nsigLst1405);
-  // shapes.add(gauLstmisc); yields.add(ngauLstmisc);
-  // shapes.add(bkg);        yields.add(nbkg);
+  shapes.add(sigLst1405); yields.add(nsigLst1405);
+  shapes.add(gauLstmisc); yields.add(ngauLstmisc);
+  shapes.add(bkg);        yields.add(nbkg);
   RooAddPdf totalPdf("totalPdf","totalPdf",shapes,yields);
   cout<<"fit_mass: totalPdf constructed."<<endl;
 
