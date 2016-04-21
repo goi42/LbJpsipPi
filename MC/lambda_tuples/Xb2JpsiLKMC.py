@@ -87,7 +87,6 @@ from Configurables import CondDB #!
 DaVinci().DataType = "2012"
 DaVinci().DDDBtag   = "Sim08-20130503-1" #!
 DaVinci().CondDBtag = "Sim08-20130503-1-vc-md100" #!
-DaVinci().TupleFile = "DVNtuples.root"
 DaVinci().PrintFreq = 50000 #10000 #!
 DaVinci().Lumi = False
 
@@ -95,14 +94,4 @@ DaVinci().Lumi = False
 
 ########################################################################
 MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
-from Configurables import  DaVinciInit#, GetIntegratedLuminosity #!
-#DaVinciInit().OutputLevel = 6 #!
-#MessageSvc().OutputLevel                  = 6
-#GetIntegratedLuminosity().OutputLevel       = INFO #!
-#ToolSvc().OutputLevel                     = 6
-#NTupleSvc().OutputLevel                   = 6 #!
-
-from GaudiConf import IOHelper
-IOHelper().inputFiles(['/afs/cern.ch/work/m/mwilkins/testdst/00044332_00000025_2.AllStreams.dst'
-], clear=True)
-
+from Configurables import  DaVinciInit
