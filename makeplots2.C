@@ -46,11 +46,12 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
-  file f[]={
+  file f[]={								\
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMC",f2quality}, \
+  };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
-  };
+  
   int nFiles = (sizeof(f)/sizeof(f[0]));
   int nBranches=0;//initialized both of these to ensure there are no compiler warnings
   int nCuts=0;
@@ -72,15 +73,15 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
-                {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
-                {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
-                // {placeholder2,"#Lambda_{b} p",160,0,800000},         \
-                // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
-                // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
-                // {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         \
-                // {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      \
-                // {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       \
+    f[ifile].b={{placeholder2,"#Lambda_{b} p",160,0,800000},         \
+                {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
+                {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
+                {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         \
+                {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      \
+                {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       \
+                // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
+                // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
+                // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
                 // {placeholder2,"#Lambda_{b} p",160000,0,800000},      \
                 // {placeholder2,"#Lambda_{b} p LL",160000,0,800000},   \
                 // {placeholder2,"#Lambda_{b} p DD",160000,0,800000},   \
@@ -111,7 +112,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     //declare cuts
     cout<<"cuts... ";
     TCut cLL,cDD,coptimized,cgd;
-    makecuts(ifile,cLL,cDD,coptimized,coptimized_sans_WM);
+    makecuts(ifile,cLL,cDD,coptimized,cgd);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
@@ -241,6 +242,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder = "c"+cistring;
     c[ci] = new TCanvas(placeholder,placeholder,1200,800); //create the canvases
     c[ci]->cd();
+    //gPad->SetLogy();
     gStyle->SetOptStat("");
     leg[ci] = new TLegend(0.16, 0.7, 0.6, 0.9);//create legend
     placeholder = "hs"+cistring;
