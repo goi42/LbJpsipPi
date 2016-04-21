@@ -46,8 +46,10 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
-  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
-	    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
+  file f[]={
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMC",f2quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
   };
   int nFiles = (sizeof(f)/sizeof(f[0]));
   int nBranches=0;//initialized both of these to ensure there are no compiler warnings
@@ -108,7 +110,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,coptimized,coptimized_sans_WM;
+    TCut cLL,cDD,coptimized,cgd;
     makecuts(ifile,cLL,cDD,coptimized,coptimized_sans_WM);
     cout<<"done"<<endl;
     
@@ -117,7 +119,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
       thisbranch->c ={{coptimized,"optimized"},	\
-		      {coptimized_sans_WM,"optimized with no cut on K_{S} mass"},	\
+		      {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
       };
       
                       // {coptimized,"Optimized: cos()>0.999993 with #Lambda_{p_{T}}>1300 LL or >2100 DD"}, \
@@ -174,11 +176,11 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
       }
     }else if(L[i].name=="cut") {
+      L[i].compared=kTRUE;
       cL=i;
       for(int l=0;l<nCuts;l++) {
         L[i].add_element(&f[0].b[0].c[l].name);//all branches of all files have the same named cuts
       }
-      L[i].compared=kTRUE;
     }
     L[i].nL=L[i].element.size();
 

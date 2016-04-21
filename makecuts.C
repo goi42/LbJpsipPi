@@ -83,16 +83,18 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized,TCut &cgd){
   coptimized=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
     &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
     &&cLWM&&ctrigger;
-  if(ifile==0){//cut tails off SMC
-    placeholder=massname[ifile]+">5300&&"+massname[ifile]+"<5655";
-    coptimized=coptimized&&(TCut)placeholder;
-    // ctight=ctight&&(TCut)placeholder;
-    // cloose=cloose&&(TCut)placeholder;
-  }
-  TCut mlambda="abs(R_MC_MOTHER_ID)==3212";//for sigma MC
-  cgd=coptimized&&mlambda;
+  TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
+  cgd=coptimized&&motherL;
   // TCut motherL="abs(R_MC_GD_MOTHER_ID)==5122";//for /\ MC
   // cgd=coptimized&&motherL;
+  // if(ifile==0){//cut tails off SMC
+  //   placeholder=massname[ifile]+">5300&&"+massname[ifile]+"<5655";
+  //   coptimized=coptimized&&(TCut)placeholder;
+  //   // ctight=ctight&&(TCut)placeholder;
+  //   // cloose=cloose&&(TCut)placeholder;
+  // }
+  // TCut mlambda="abs(R_MC_MOTHER_ID)==3212";//for sigma MC
+  // cgd=coptimized&&mlambda;
   // TCut mother1405="abs(R_MC_GD_MOTHER_ID)==13122";//for /\*(1405) MC
   // cgd=coptimized&&mother1405;
 
