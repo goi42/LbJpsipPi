@@ -5,7 +5,6 @@ set DAVINCI_VERSION = v37r2p4
 
 #-- Directory and files
 set GENERAL_LOG = general.log
-set DAVINCI_LOG = davinci.log
 
 #-- basic info
 set DATE = `date`
@@ -26,7 +25,7 @@ cat Xb2JpsiLKMC.py >> ${GENERAL_LOG}
 echo "======================= DaVinci script (Xb2JpsiXTreeMC.py) ====" >> ${GENERAL_LOG}
 cat Xb2JpsiXTreeMC.py >> ${GENERAL_LOG}
 
-SetupProject DaVinci ${DAVINCI_VERSION} >& ${DAVINCI_LOG}
+SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
 
 foreach YEAR (2011 2012)
 foreach POLARITY (Down Up)
@@ -43,6 +42,9 @@ set TCK = 0x409f0045
 set STRIP = 20
 endif
 endif
+
+set DAVINCI_LOG = davinci_${YEAR}_${POLARITY}.log
+
 cat -<<EOF> myDaVinci_TupleFile.py
 from Configurables import DaVinci
 DaVinci().TupleFile = "DVNtuples_${YEAR}_${POLARITY}.root"
