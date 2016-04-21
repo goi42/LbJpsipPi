@@ -1,7 +1,7 @@
 #! /bin/tcsh -f
 
 #-- set or pass job parameters
-set BASE_NAME = _just_Lambda2
+set BASE_NAME = 6
 
 #-- directory and files
 set OUT_DIR = ./plots
@@ -26,19 +26,17 @@ setenv CMTCONFIG x86_64-slc6-gcc48-opt
 source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${LOG}
 
 #-- root
-mkdir rootopts
-cat -<<EOF> rootopts/myRoot.C
+set OPTS_DIR = ./rootopts${BASE_NAME}
+mkdir ${OPTS_DIR}
+cat -<<EOF> ${OPTS_DIR}/myRoot.C
 #include "TROOT.h"
 void myRoot(){
     gROOT->ProcessLine(".x fit_mass.C(\"${BASE_NAME}\")");
 }
 EOF
 
-# echo "============= root script ===============" >> ${LOG}
-# cat rootopts/myRoot.C >> ${LOG}
-
 SetupProject DaVinci >>& ${LOG}
-root -l -q rootopts/myRoot.C >>& ${LOG}
+root -l -q ${OPTS_DIR}/myRoot.C >>& ${LOG}
 
 set DATE = `date`
 cat -<<EOF>> ${LOG}
@@ -48,6 +46,4 @@ Finish root @	${DATE}
 EOF
 
 #-- remove stuff
-#cd ../
-#rm -fr ${WORK_DIR}
-rm -rf rootopts/
+rm -rf ${OPTS_DIR}

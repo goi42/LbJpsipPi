@@ -1,0 +1,284 @@
+=========================================
+START@:		Tue Apr 19 17:54:01 CEST 2016
+=========================================
+Configuring DaVinci v40r0 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r0
+GCCXML_config_version: Undefined variable.
+
+Processing rootopts/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = _try_hypatia_full_range
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named '1405' created with bounds [4220,5460]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tail' created with bounds [5950,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,6040]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 84 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+SMC file opened
+SMC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+Lst1405MC file opened
+Lst1405MC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(Lst1405MC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+Lst1405MC hist assigned to RooDataHist
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named tot
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeFortot' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_data' created with bounds [4300,6040]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr|NormalizationRangeFortot]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of sigL over range (4300,6040) did not converge after 20 steps
+   [1] h = 1 , s = inf
+   [2] h = 0.25 , s = inf
+   [3] h = 0.0625 , s = inf
+   [4] h = 0.015625 , s = inf
+   [5] h = 0.00390625 , s = inf
+   [6] h = 0.000976562 , s = inf
+   [7] h = 0.000244141 , s = inf
+   [8] h = 6.10352e-05 , s = inf
+   [9] h = 1.52588e-05 , s = inf
+   [10] h = 3.8147e-06 , s = inf
+   [11] h = 9.53674e-07 , s = inf
+   [12] h = 2.38419e-07 , s = inf
+   [13] h = 5.96046e-08 , s = inf
+   [14] h = 1.49012e-08 , s = inf
+   [15] h = 3.72529e-09 , s = inf
+   [16] h = 9.31323e-10 , s = inf
+   [17] h = 2.32831e-10 , s = inf
+   [18] h = 5.82077e-11 , s = inf
+   [19] h = 1.45519e-11 , s = inf
+   [20] h = 3.63798e-12 , s = inf
+
+ *** Break *** keyboard interrupt

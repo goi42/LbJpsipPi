@@ -1,0 +1,274 @@
+=========================================
+START@:		Wed Apr 20 19:19:22 CEST 2016
+=========================================
+Configuring DaVinci v40r0 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r0
+GCCXML_config_version: Undefined variable.
+
+Processing ./rootopts6/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = 6
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named '1405' created with bounds [4220,5460]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tail' created with bounds [5950,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'Ltail' created with bounds [5350,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,6040]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 84 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+SMC file opened
+SMC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+Lst1405MC file opened
+Lst1405MC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(Lst1405MC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+Lst1405MC hist assigned to RooDataHist
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named tot
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeFortot' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_data' created with bounds [4300,6040]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr|NormalizationRangeFortot]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+ **********
+ **   13 **MIGRAD        5500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+ FCN=-10638.6 FROM MIGRAD    STATUS=INITIATE       78 CALLS          79 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1          -1.18358e+00   5.91789e-01   0.00000e+00   5.34106e+02
+   2  b2           2.27144e-01   1.13572e-01   0.00000e+00  -5.17386e+02
+   3  meanLst3     4.99835e+03   2.00000e+01   0.00000e+00   1.91494e+02
+   4  muL          5.62000e+03   1.75000e+01   0.00000e+00  -1.01625e+04
+   5  nbkg         2.16549e+03   1.08275e+03   0.00000e+00  -4.92874e+05
+   6  ngauLstmisc   4.39812e+02   2.19906e+02   0.00000e+00** at limit **
+   7  nsigL        1.68964e+03   8.44819e+02   0.00000e+00  -1.79614e+06
+   8  nsigLst1405   1.38979e+03   7.60308e+01   4.98971e-04** at limit **
+   9  nsigS        9.53674e+03   1.00000e-06   0.00000e+00   8.64252e+06
+  10  sigLst3      6.15850e+01   1.00000e+01   0.00000e+00  -1.52202e+01
+  11  sigmaL       9.61734e+00   4.80867e+00   0.00000e+00   5.67569e+02
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=-21389.7 FROM MIGRAD    STATUS=CONVERGED     619 CALLS         620 TOTAL
+                     EDM=3.86916e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1          -1.21398e+00   1.68646e-02   4.53979e-05   1.21502e+00
+   2  b2           2.68165e-01   3.12064e-02  -4.62125e-04  -2.52537e-01
+   3  meanLst3     5.00278e+03   5.20911e+00   5.92499e-04  -2.73567e-02
+   4  muL          5.62127e+03   1.39012e-01   1.00066e-05   2.32726e-01
+   5  nbkg         6.53763e+03   1.29247e+02   2.98035e-06   1.15922e+01
+   6  ngauLstmisc   9.15420e+02   6.04132e+01  -1.72312e-07** at limit **
+   7  nsigL        4.76220e+03   7.06921e+01  -2.08202e-07   3.61846e+01
+   8  nsigLst1405   6.33007e+02   6.37028e+01  -4.32200e-07** at limit **
+   9  nsigS        2.99551e+01   2.82316e+01  -2.15427e-06** at limit **
+  10  sigLst3      6.91203e+01   5.12362e+00  -5.53169e-04   2.20637e-02
+  11  sigmaL       1.06278e+01   1.77819e-01   2.55493e-05   7.40610e-01
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  34    NPAR= 11    ERR DEF=0.5
+  2.844e-04 
+ -3.728e-04  9.740e-04 
+  1.295e-02 -2.224e-02  2.716e+01 
+ -1.080e-04  2.099e-04 -2.068e-02  1.932e-02 
+  5.553e-01 -1.335e+00  1.754e+02 -7.528e-01  1.670e+04 
+ -1.448e-01  5.513e-01  1.595e+01  1.251e-01 -2.731e+03  3.650e+03 
+ -6.253e-02  9.711e-02 -7.073e+00 -2.110e-01 -2.804e+02 -3.748e+01  4.997e+03 
+ -4.879e-01  1.085e+00 -1.352e+02  3.466e-01 -3.358e+03 -4.775e+02  1.348e+02  4.058e+03 
+ -2.715e-01  5.935e-01 -5.799e+00  2.052e-01 -1.293e+03  5.091e+02 -1.262e-01  5.777e+02  7.970e+02 
+  6.862e-03 -3.029e-02 -7.833e-01 -5.622e-03  1.627e+02 -1.905e+02 -4.274e+00  4.533e+01 -2.900e+01  2.636e+01 
+ -2.170e-04  3.545e-04 -6.668e-02  7.625e-04 -1.757e+00 -1.999e-01  5.380e-01  8.657e-01 -2.227e-01 -3.046e-03  3.162e-02 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6      7      8      9     10     11
+        1  0.72987   1.000 -0.708  0.147 -0.046  0.255 -0.142 -0.052 -0.454 -0.570  0.079 -0.072
+        2  0.83624  -0.708  1.000 -0.137  0.048 -0.331  0.292  0.044  0.546  0.674 -0.189  0.064
+        3  0.44593   0.147 -0.137  1.000 -0.029  0.260  0.051 -0.019 -0.407 -0.039 -0.029 -0.072
+        4  0.07397  -0.046  0.048 -0.029  1.000 -0.042  0.015 -0.021  0.039  0.052 -0.008  0.031
+        5  0.61315   0.255 -0.331  0.260 -0.042  1.000 -0.350 -0.031 -0.408 -0.354  0.245 -0.076
+        6  0.70977  -0.142  0.292  0.051  0.015 -0.350  1.000 -0.009 -0.124  0.299 -0.614 -0.019
+        7  0.09118  -0.052  0.044 -0.019 -0.021 -0.031 -0.009  1.000  0.030 -0.000 -0.012  0.043
+        8  0.75160  -0.454  0.546 -0.407  0.039 -0.408 -0.124  0.030  1.000  0.321  0.139  0.076
+        9  0.71928  -0.570  0.674 -0.039  0.052 -0.354  0.299 -0.000  0.321  1.000 -0.200 -0.044
+       10  0.62635   0.079 -0.189 -0.029 -0.008  0.245 -0.614 -0.012  0.139 -0.200  1.000 -0.003
+       11  0.18139  -0.072  0.064 -0.072  0.031 -0.076 -0.019  0.043  0.076 -0.044 -0.003  1.000
+ **********
+ **   18 **MINOS        5500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ FCN=-21389.7 FROM MINOS     STATUS=SUCCESSFUL   3150 CALLS        3770 TOTAL
+                     EDM=3.86916e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.6 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1          -1.21398e+00   1.68646e-02  -1.76983e-02   1.81698e-02
+   2  b2           2.68165e-01   3.12064e-02  -3.37958e-02   3.43865e-02
+   3  meanLst3     5.00278e+03   5.20911e+00  -4.46615e+00   4.46423e+00
+   4  muL          5.62127e+03   1.39012e-01  -1.38748e-01   1.38690e-01
+   5  nbkg         6.53763e+03   1.29247e+02  -1.30449e+02   1.30279e+02
+   6  ngauLstmisc   9.15420e+02   6.04132e+01  -6.05820e+01   6.42966e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+   7  nsigL        4.76220e+03   7.06921e+01  -7.01852e+01   7.07855e+01
+   8  nsigLst1405   6.33007e+02   6.37028e+01  -6.09067e+01   6.16176e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+   9  nsigS        2.99551e+01   2.82316e+01  -2.87820e+01   2.93055e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  10  sigLst3      6.91203e+01   5.12362e+00  -4.89612e+00   5.60992e+00
+  11  sigmaL       1.06278e+01   1.77819e-01  -1.77097e-01   1.79310e-01
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        5500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE9 IS AT ITS LOWER ALLOWED LIMIT.
+ FCN=-21389.7 FROM MINOS     STATUS=SUCCESSFUL   3150 CALLS        6920 TOTAL
+                     EDM=3.86916e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.6 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1          -1.21398e+00   1.68646e-02  -1.76983e-02   1.81698e-02
+   2  b2           2.68165e-01   3.12064e-02  -3.37958e-02   3.43865e-02
+   3  meanLst3     5.00278e+03   5.20911e+00  -4.46615e+00   4.46423e+00
+   4  muL          5.62127e+03   1.39012e-01  -1.38748e-01   1.38690e-01
+   5  nbkg         6.53763e+03   1.29247e+02  -1.30449e+02   1.30279e+02
+   6  ngauLstmisc   9.15420e+02   6.04132e+01  -6.05820e+01   6.42966e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+   7  nsigL        4.76220e+03   7.06921e+01  -7.01852e+01   7.07855e+01
+   8  nsigLst1405   6.33007e+02   6.37028e+01  -6.09067e+01   6.16176e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+   9  nsigS        2.99551e+01   2.82316e+01  -2.87820e+01   2.93055e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  10  sigLst3      6.91203e+01   5.12362e+00  -4.89612e+00   5.60992e+00
+  11  sigmaL       1.06278e+01   1.77819e-01  -1.77097e-01   1.79310e-01
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigS)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+/\ Hypatia: a = 1.727025 +/- [exact]
+/\ Hypatia: fb = 0.000000 +/- [exact]
+/\ Hypatia: l = -1.048729 +/- [exact]
+/\ Hypatia: mu = 5621.273565 +/- 1.387476E-01
+/\ Hypatia: n = 4.661879 +/- [exact]
+/\ Hypatia: sigma = 10.627837 +/- 1.793102E-01
+/\ Hypatia: zeta = 0.000000 +/- [exact]
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigL)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigLst1405)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+/\*(misc.): mean3 = 5002.776316 +/- 4.466146E+00
+/\*(misc.): sigma3 = 69.120256 +/- 5.609923E+00
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (gauLstmisc)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+Background: Chebychev b1 = -1.213978 +/- 1.816977E-02
+Background: Chebychev b2 = 0.268165 +/- 3.438647E-02
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(sigL_Int[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(totalPdf_Int[Bs_LOKI_MASS_JpsiConstr|fit_nll_totalPdf_data]_Norm[Bs_LOKI_MASS_JpsiConstr]) using numeric integrator RooIntegrator1D to calculate Int(Bs_LOKI_MASS_JpsiConstr)
+#chi^{2}/N_{DoF} = 2.188533
+N sigma = 29.955100 +/- 29.305509
+N /\ = 4762.203976 +/- 70.785489
+N /\*(1405) = 633.007449 +/- 61.617554
+N /\*(misc.) = 915.420253 +/- 64.296586
+N bkg = 6537.627322 +/- 130.448549
+Y_{#Sigma^{0}}/Y_{#Lambda} = 6.290176E-03 +/- 6.154480E-03
+limit = 1.263170E-02
+limit at 90% confidence level = 2.021073E-02
+Info in <TCanvas::Print>: eps file plots/fit6.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fit6.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Wed Apr 20 20:31:53 CEST 2016
+=========================================
