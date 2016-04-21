@@ -5,6 +5,7 @@ set DAVINCI_VERSION = v37r2p4
 
 #-- Directory and files
 set GENERAL_LOG = general.log
+set DAVINCI_LOG = davinci.log
 
 #-- basic info
 set DATE = `date`
@@ -25,7 +26,7 @@ cat Xb2JpsiLKMC.py >> ${GENERAL_LOG}
 echo "======================= DaVinci script (Xb2JpsiXTreeMC.py) ====" >> ${GENERAL_LOG}
 cat Xb2JpsiXTreeMC.py >> ${GENERAL_LOG}
 
-SetupProject DaVinci ${DAVINCI_VERSION} >& ${GENERAL_LOG}
+SetupProject DaVinci ${DAVINCI_VERSION} >& ${DAVINCI_LOG}
 
 foreach YEAR (2011 2012)
 foreach POLARITY (Down Up)
@@ -50,7 +51,7 @@ EOF
 
 #-- basic info
 set DATE = `date`
-cat -<<EOF> ${GENERAL_LOG}
+cat -<<EOF> ${DAVINCI_LOG}
 ====================================================
 START@:     ${DATE}
 YEAR:       ${YEAR}
@@ -61,7 +62,7 @@ EOF
 gaudirun.py Xb2JpsiLKMC.py myDaVinci_TupleFile.py MC_${YEAR}_Beam${BEAM}GeV${YEAR}Mag${POLARITY}Nu${NU}Pythia6_Sim08a_Digi13_Trig${TCK}_Reco14a_Stripping${STRIP}NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py pool_xml_catalog_${YEAR}_${POLARITY}.py >>& ${DAVINCI_LOG}
 
 set DATE = `date`
-cat -<<EOF> ${GENERAL_LOG}
+cat -<<EOF> ${DAVINCI_LOG}
 ====================================================
 Finish@:    ${DATE}
 ====================================================
