@@ -73,15 +73,21 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{placeholder2,"#Lambda_{b} p",160,0,800000},         \
-                {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
-                {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
-                {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         \
-                {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      \
-                {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       \
+    f[ifile].b={{"R_P","#Lambda p",144,0,385000},         \
+                {"R_P","#Lambda p LL",144,0,385000},         \
+                {"R_P","#Lambda p DD",144,0,385000},         \
+                {"R_PT","#Lambda p_{T}",148,0,37000},         \
+                {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
+                {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
                 // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
                 // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
                 // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
+                // {placeholder2,"#Lambda_{b} p",160,0,800000},         \
+                // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
+                // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
+                // {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         \
+                // {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      \
+                // {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       \
                 // {placeholder2,"#Lambda_{b} p",160000,0,800000},      \
                 // {placeholder2,"#Lambda_{b} p LL",160000,0,800000},   \
                 // {placeholder2,"#Lambda_{b} p DD",160000,0,800000},   \
@@ -244,7 +250,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     c[ci]->cd();
     //gPad->SetLogy();
     gStyle->SetOptStat("");
-    leg[ci] = new TLegend(0.16, 0.7, 0.6, 0.9);//create legend
+    leg[ci] = new TLegend(0.41, 0.7, 0.85, 0.9);//create legend
     placeholder = "hs"+cistring;
     hs[ci] = new THStack(placeholder,placeholder); //create the stack to hold the histograms
     TString stacktitle="";
