@@ -1,0 +1,56 @@
+#! /bin/tcsh -f
+
+#-- define package/DB versions
+set DAVINCI_VERSION = v37r2p4
+
+#-- Directory and files
+set GENERAL_LOG = general.log
+
+#-- basic info
+set DATE = `date`
+cat -<<EOF> ${GENERAL_LOG}
+====================================================
+START@:     ${DATE}
+====================================================
+EOF
+
+#-- setup LHCb environment
+setenv CMTCONFIG x86_64-slc6-gcc48-opt
+source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${GENERAL_LOG}
+
+#-- DaVinci
+
+echo "======================= DaVinci script ========================" >> ${GENERAL_LOG}
+cat DataXb2JpsiLK.py >> ${GENERAL_LOG}
+echo "======================= DaVinci script (Xb2JpsiXTree.py) ====" >> ${GENERAL_LOG}
+cat Xb2JpsiXTree.py >> ${GENERAL_LOG}
+
+SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
+
+set DAVINCI_LOG = davinci.log
+
+#-- basic info
+set DATE = `date`
+cat -<<EOF> ${DAVINCI_LOG}
+====================================================
+START@:     ${DATE}
+====================================================
+EOF
+
+gaudirun.py DataXb2JpsiLK.py LFNs.py pool.py >>& ${DAVINCI_LOG}
+
+set DATE = `date`
+cat -<<EOF> ${DAVINCI_LOG}
+====================================================
+Finish@:    ${DATE}
+====================================================
+EOF
+
+set DATE = `date`
+cat -<<EOF>> ${GENERAL_LOG}
+====================================================
+Finish Davinci@:    ${DATE}
+====================================================
+EOF
+
+ls -l >> ${GENERAL_LOG}
