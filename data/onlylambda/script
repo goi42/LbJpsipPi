@@ -27,18 +27,14 @@ cat Xb2JpsiXTreeMC.py >> ${GENERAL_LOG}
 
 SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
 
-foreach YEAR (2011 2012)
+foreach YEAR (11 12)
 foreach POLARITY (Down Up)
-if (${YEAR} == 2011) then
+if (${YEAR} == 11) then
 set BEAM = 3500
-set NU = 2
-set TCK = 0x40760037
 set STRIP = 20r1
 else
-if (${YEAR} == 2012) then
+if (${YEAR} == 12) then
 set BEAM = 4000
-set NU = 2.5
-set TCK = 0x409f0045
 set STRIP = 20
 endif
 endif
@@ -61,7 +57,7 @@ POLARITY:   ${POLARITY}
 ====================================================
 EOF
 
-gaudirun.py Xb2JpsiLKMC.py myDaVinci_TupleFile.py MC_${YEAR}_Beam${BEAM}GeV${YEAR}Mag${POLARITY}Nu${NU}Pythia6_Sim08a_Digi13_Trig${TCK}_Reco14a_Stripping${STRIP}NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py pool_xml_catalog_${YEAR}_${POLARITY}.py >>& ${DAVINCI_LOG}
+gaudirun.py DataXb2JpsiLK.py myDaVinci_TupleFile.py LHCb_Collision${YEAR}_Beam${BEAM}GeVVeloClosedMag${POLARITY}_RealData_Reco14_Stripping${STRIP}_90000000_DIMUON.DST.py pool_${YEAR}_${POLARITY}.py >>& ${DAVINCI_LOG}
 
 set DATE = `date`
 cat -<<EOF> ${DAVINCI_LOG}
