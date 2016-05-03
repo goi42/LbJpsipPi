@@ -91,6 +91,10 @@ tuple.R.ToolList = [ "TupleToolMCTruth" ]
 tuple.R.addTool(TupleToolMCTruth())
 tuple.R.TupleToolMCTruth.ToolList = [ "MCTupleToolHierarchy" ]
 
+tuple.addTool(TupleToolDecay, name="J_psi_1S")
+tuple.J_psi_1S.addTool(tistos)
+tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
+
 tuple.ReFitPVs = True
 
 #WM tool to cut away KS

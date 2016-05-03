@@ -47,7 +47,7 @@ set DAVINCI_LOG = davinci_${YEAR}_${POLARITY}.log
 
 cat -<<EOF> myDaVinci_TupleFile.py
 from Configurables import DaVinci
-DaVinci().TupleFile = "DVNtuples_${YEAR}_${POLARITY}.root"
+DaVinci().TupleFile = "DVNtuples_${YEAR}_${POLARITY}_withJpsitrigger.root"
 
 EOF
 
