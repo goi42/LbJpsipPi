@@ -130,10 +130,13 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->c = {{"","no cuts"},		\
-      };
-                      // {coptimized,"optimized"},	\
-		      // {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
+      if(ifile<3)
+	thisbranch->c = {{coptimized,"optimized"},	\
+	};
+      else
+	thisbranch->c = {{"","no cuts"},	\
+	};
+                      // {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
                       // {coptimized,"Optimized: cos()>0.999993 with #Lambda_{p_{T}}>1300 LL or >2100 DD"}, \
                       // {coptimizedbelow,"Optimized with #Lambda_{p_{T}} > #rightarrow <"}, \
                       // {coptimizednoPT,"Optimized without #Lambda_{p_{T}} cut"} \
