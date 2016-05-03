@@ -10,6 +10,30 @@ from Configurables import  DecayTreeTuple, CheckPV
 from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, DataOnDemand, MergedSelection
 from Configurables import   CombineParticles, FilterDesktop,  OfflineVertexFitter
 
+# #--Stripping--------------------------------------------------------
+# from StrippingConf.Configuration import StrippingConf, StrippingStream
+# from StrippingSettings.Utils import strippingConfiguration
+# from StrippingArchive.Utils import buildStreams
+# from StrippingArchive import strippingArchive
+
+# #----------------------Standard stripping20-------------------------
+# stripping='stripping20'
+# config  = strippingConfiguration(stripping)
+# archive = strippingArchive(stripping)
+# streams = buildStreams(stripping=config, archive=archive)
+
+# #----Select my line-------------------------------------------------
+# MyStream = StrippingStream("MyStream")
+# MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
+
+# for stream in streams:
+#     for line in stream.lines:
+#         if line.name() in MyLines:
+#             MyStream.appendLines( [ line ] )
+
+# sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
+# #------------------------------------------------------------------------
+
 #----selection p+ and K- -------------------------
 Lambda0LL = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaLL/Particles")
 Lambda0DD = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaDD/Particles")
@@ -34,6 +58,8 @@ seq = SeqL.sequence()
 # Configure DaVinci
 #-------------------------------------------------------------------------
 from Configurables import DaVinci
+
+# DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
 
 from Configurables import  OfflineVertexFitter
 

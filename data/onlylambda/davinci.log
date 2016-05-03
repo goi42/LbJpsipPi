@@ -1,0 +1,240 @@
+====================================================
+START@:     Tue May 3 14:12:06 CEST 2016
+====================================================
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/DataXb2JpsiLK.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/Xb2JpsiXTree.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/Xb2JpsiXTree.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/DataXb2JpsiLK.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/LFNs.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/LFNs.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/pool.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/pool.py'
+# skipping configuration of RawEventFormatConf
+# applying configuration of DaVinci
+# DaVinci                   INFO    Applying DaVinci configuration
+# DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
+|-MainOptions          = ''
+|-TupleFile            = 'LimDVNtuples.root'  (default: '')
+|-SkipEvents           = 0
+|-RootCompressionLevel = 'LZMA:6'
+|-Input                = []  (default: [])
+|-DDDBtag              = ''
+|-UserAlgorithms       = [<GaudiSequencer/SeqLb2JpsipK at 0x7f7106b66050>, <DecayTreeTuple/Lb2JpsiLTree at 0x4bf5450>]
+|                      (default: [])
+|-RootInTES            = ''
+|-DQFLAGStag           = ''
+|-Lumi                 = True  (default: False)
+|-MoniSequence         = []  (default: [])
+|-VerboseMessages      = False
+|-IgnoreDQFlags        = False
+|-ProductionType       = 'None'
+|-PrintFreq            = 10000  (default: 1000)
+|-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+|                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+|-EvtMax               = -1  (default: -1)
+|-CondDBtag            = ''
+|-Simulation           = False  (default: False)
+|-DataType             = '2012'  (default: '')
+|-RedoMCLinks          = False
+|-InputType            = 'DST'
+|-HistogramFile        = ''
+|-WriteFSR             = True
+|-EnableUnpack         = None
+|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f7106b60410>]  (default: [])
+\----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
+# Apply CaloProcessor configuration for ['Digits', 'Clusters'] and ['InAcceptance', 'Match', 'Energy', 'Chi2', 'DLL', 'NeutralPID']
+# CaloDigits onDemand for ['Ecal', 'Hcal', 'Prs', 'Spd']
+# ClusterReco onDemand
+# Configured Ecal Clusters Reco : ClusterReco 
+# Configured Calo PIDs           : CaloPIDsCaloPIDsForCaloProcessor 
+# CaloProcessor onDemand enabled
+# DaVinci                   INFO    Creating Lumi Algorithms
+# DaVinci                   INFO    No MainOptions specified. DaVinci() will import no options file!
+# DaVinci                   INFO    Creating User Algorithms
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Creating Moni Algorithms
+# DaVinci                   INFO    Append to Moni Sequence has been called
+# /***** User DaVinci/DaVinci ************************************************************************
+# |-MainOptions          = ''
+# |-TupleFile            = 'LimDVNtuples.root'  (default: '')
+# |-SkipEvents           = 0
+# |-RootCompressionLevel = 'LZMA:6'
+# |-Input                = []  (default: [])
+# |-DDDBtag              = ''
+# |-UserAlgorithms       = [<GaudiSequencer/SeqLb2JpsipK at 0x7f7106b66050>, <DecayTreeTuple/Lb2JpsiLTree at 0x4bf5450>]
+# |                      (default: [])
+# |-RootInTES            = ''
+# |-DQFLAGStag           = ''
+# |-Lumi                 = True  (default: False)
+# |-MoniSequence         = []  (default: [])
+# |-VerboseMessages      = False
+# |-IgnoreDQFlags        = False
+# |-ProductionType       = 'None'
+# |-PrintFreq            = 10000  (default: 1000)
+# |-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+# |                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+# |-EvtMax               = -1  (default: -1)
+# |-CondDBtag            = ''
+# |-Simulation           = False  (default: False)
+# |-DataType             = '2012'  (default: '')
+# |-RedoMCLinks          = False
+# |-InputType            = 'DST'
+# |-HistogramFile        = ''
+# |-WriteFSR             = True
+# |-EnableUnpack         = None
+# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f7106b60410>]  (default: [])
+# \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# applying configuration of LumiIntegratorConf
+# /***** User LumiIntegratorConf/LumiIntegratorConf **************************************************
+# |-TupleFile     = 'LimDVNtuples.root'  (default: '')
+# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f7103320240>  (default: None)
+# |-UseOnline     = True
+# |-InputType     = 'DST'
+# |-IgnoreDQFlags = False
+# \----- (End of User LumiIntegratorConf/LumiIntegratorConf) -----------------------------------------
+# applying configuration of AnalysisConf
+# Applying Analysis configuration
+# /***** User AnalysisConf/AnalysisConf **************************************************************
+# |-DataType    = '2012'  (default: '')
+# |-RedoMCLinks = False  (default: False)
+# |-Simulation  = False  (default: False)
+# \----- (End of User AnalysisConf/AnalysisConf) -----------------------------------------------------
+# WARNING: file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43/options/L0DUConfig.opts' already included, ignored.
+# WARNING: Using default tag dddb-20150522-2 for partition DDDB
+# WARNING: Using default tag cond-20150409-1 for partition LHCBCOND
+# WARNING: Using default tag dq-20140822 for partition DQFLAGS
+# WARNING: Property 'DataType' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.DataType'
+# No Writer defined for DIGI
+# WARNING: something else configured a decoder already, Raw/Spd/Digits CaloDigitsFromRaw/SpdFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/Calo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/FullCalo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/L0DUReport L0DUFromRawAlg/L0DUFromRaw
+# WARNING: something else configured a decoder already, Raw/Prs/Digits CaloDigitsFromRaw/PrsFromRaw
+# WARNING: something else configured a decoder already, Raw/Ecal/Digits CaloZSupAlg/EcalZSup
+# WARNING: something else configured a decoder already, Raw/Hcal/Digits CaloZSupAlg/HcalZSup
+# WARNING: something else configured a decoder already, Trig/L0/MuonCtrl L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonBCSU L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonData L0MuonCandidatesFromRaw/L0MuonFromRaw
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v37r2p4
+                                          running on lxplus007.cern.ch on Tue May  3 14:12:25 2016
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+DetectorDataSvc                                             SUCCESS Detector description database: conddb:/lhcb.xml
+DaVinciInitAlg                                              SUCCESS ==================================================================
+DaVinciInitAlg                                              SUCCESS Requested to process all events on input file(s)
+DaVinciInitAlg                                              SUCCESS ==================================================================
+ApplicationMgr                                                 INFO Application Manager Terminated successfully
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'BasicDQFilter/ToolSvc.DQAcceptTool.BasicDQFilter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ChargedProtoParticleMapper/ToolSvc.UnpackChargedPPsMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'CondDBDQScanner/ToolSvc.DQAcceptTool.CondDBDQScanner' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ConversionDODMapper/ToolSvc.LiteClusterMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ConversionDODMapper/ToolSvc.UnpackRecPhysMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DQAcceptTool/ToolSvc.DQAcceptTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DecodeSimpleDecayString/ToolSvc.DecodeSimpleDecayString' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'EvtCounter/ToolSvc.EvtCounter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'GenericParticle2PVRelator<_p2PVWithIPChi2, OfflineDistanceCalculatorName>/ToolSvc.P2PVWithIPChi2' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Decay/Lb2JpsiLTree.LoKi::Decay' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Decay/ToolSvc.Decays' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::DistanceCalculator/ToolSvc.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::DistanceCalculator/ToolSvc.P2PVWithIPChi2.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::CoreFactory/ToolSvc.CoreFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::HltFactory/ToolSvc.HltFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::Tool/ToolSvc.HybridFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::PVReFitter/ToolSvc.LoKi::PVReFitter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Reporter/LoKiSvc.REPORT' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'MemoryTool/DaVinciInitAlg.DaVinciMemory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ODINDecodeTool/EventClockSvc.EventTimeDecoder.OdinTimeDecoder.ODINDecodeTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'OdinTimeDecoder/EventClockSvc.EventTimeDecoder.OdinTimeDecoder' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ParticlesAndVerticesMapper/ToolSvc.UnpackPsAndVsMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'RecEventTime/EventClockSvc.EventTimeDecoder.RecEventTime' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'SequencerTimerTool/TimingAuditor.TIMER' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'SequencerTimerTool/ToolSvc.SequencerTimerTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateElectronEnergyCorrectionTool/ToolSvc.StateElectronEnergyCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TimeDecoderList/EventClockSvc.EventTimeDecoder' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackClustersMapper/ToolSvc.UnpackTkClustersMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackInterpolator/ToolSvc.TrackStateProvider.TrackInterpolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackLinearExtrapolator/ToolSvc.TrackLinearExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'BasicDQFilter/ToolSvc.DQAcceptTool.BasicDQFilter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ChargedProtoParticleMapper/ToolSvc.UnpackChargedPPsMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'CondDBDQScanner/ToolSvc.DQAcceptTool.CondDBDQScanner' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ConversionDODMapper/ToolSvc.LiteClusterMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ConversionDODMapper/ToolSvc.UnpackRecPhysMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DQAcceptTool/ToolSvc.DQAcceptTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DecodeSimpleDecayString/ToolSvc.DecodeSimpleDecayString' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'EvtCounter/ToolSvc.EvtCounter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'GenericParticle2PVRelator<_p2PVWithIPChi2, OfflineDistanceCalculatorName>/ToolSvc.P2PVWithIPChi2' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Decay/Lb2JpsiLTree.LoKi::Decay' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Decay/ToolSvc.Decays' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::DistanceCalculator/ToolSvc.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::DistanceCalculator/ToolSvc.P2PVWithIPChi2.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::CoreFactory/ToolSvc.CoreFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::HltFactory/ToolSvc.HltFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::Tool/ToolSvc.HybridFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::PVReFitter/ToolSvc.LoKi::PVReFitter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Reporter/LoKiSvc.REPORT' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'MemoryTool/DaVinciInitAlg.DaVinciMemory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ODINDecodeTool/EventClockSvc.EventTimeDecoder.OdinTimeDecoder.ODINDecodeTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'OdinTimeDecoder/EventClockSvc.EventTimeDecoder.OdinTimeDecoder' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ParticlesAndVerticesMapper/ToolSvc.UnpackPsAndVsMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'RecEventTime/EventClockSvc.EventTimeDecoder.RecEventTime' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'SequencerTimerTool/TimingAuditor.TIMER' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'SequencerTimerTool/ToolSvc.SequencerTimerTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateElectronEnergyCorrectionTool/ToolSvc.StateElectronEnergyCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TimeDecoderList/EventClockSvc.EventTimeDecoder' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackClustersMapper/ToolSvc.UnpackTkClustersMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackInterpolator/ToolSvc.TrackStateProvider.TrackInterpolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackLinearExtrapolator/ToolSvc.TrackLinearExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
+====================================================
+Finish@:    Tue May 3 14:13:25 CEST 2016
+====================================================

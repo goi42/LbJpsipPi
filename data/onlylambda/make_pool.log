@@ -1,0 +1,8 @@
+====================================================
+START@:     Tue May 3 15:57:49 CEST 2016
+====================================================
+Configuring LHCbDirac v8r2p41 from /cvmfs/lhcb.cern.ch/lib/lhcb/LHCBDIRAC/LHCBDIRAC_v8r2p41
+Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
+Environment for LHCbDirac v8r2p41 ready.
+(Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
+ LHCbDirac v8r2p41 from /cvmfs/lhcb.cern.ch/lib/lhcb/LHCBDIRAC/LHCBDIRAC_v8r2p41)

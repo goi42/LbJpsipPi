@@ -1,10 +1,7 @@
 #! /bin/tcsh -f
 
-#-- define package/DB versions
-set DAVINCI_VERSION = v37r2p4
-
 #-- Directory and files
-set GENERAL_LOG = general.log
+set GENERAL_LOG = make_pool.log
 
 #-- basic info
 set DATE = `date`
@@ -18,33 +15,45 @@ EOF
 setenv CMTCONFIG x86_64-slc6-gcc48-opt
 source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${GENERAL_LOG}
 
-#-- DaVinci
+#-- LHCb Dirac
 
-echo "======================= DaVinci script ========================" >> ${GENERAL_LOG}
-cat DataXb2JpsiLK.py >> ${GENERAL_LOG}
-echo "======================= DaVinci script (Xb2JpsiXTree.py) ====" >> ${GENERAL_LOG}
-cat Xb2JpsiXTree.py >> ${GENERAL_LOG}
+SetupProject LHCbDirac >>& ${GENERAL_LOG}
 
-SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
+foreach YEAR (11 12)
+foreach POLARITY (Down Up)
+if (${YEAR} == 11) then
+set BEAM = 3500
+set STRIP = 20r1
+else
+if (${YEAR} == 12) then
+set BEAM = 4000
+set STRIP = 20
+endif
+endif
 
-set DAVINCI_LOG = davinci.log
+set DIRAC_LOG = LHCbDirac_${YEAR}_${POLARITY}.log
 
 #-- basic info
 set DATE = `date`
-cat -<<EOF> ${DAVINCI_LOG}
+cat -<<EOF> ${DIRAC_LOG}
 ====================================================
 START@:     ${DATE}
+YEAR:       ${YEAR}
+POLARITY:   ${POLARITY}
 ====================================================
 EOF
 
-gaudirun.py DataXb2JpsiLK.py LFNs.py pool.py >>& ${DAVINCI_LOG}
+dirac-bookkeeping-genXMLCatalog --File=LHCb_Collision${YEAR}_Beam${BEAM}GeVVeloClosedMag${POLARITY}_RealData_Reco14_Stripping${STRIP}_90000000_DIMUON.DST.py --Catalog=pool_${YEAR}_${POLARITY} >>& ${DIRAC_LOG}
 
 set DATE = `date`
-cat -<<EOF>> ${DAVINCI_LOG}
+cat -<<EOF> ${DIRAC_LOG}
 ====================================================
 Finish@:    ${DATE}
 ====================================================
 EOF
+
+end
+end
 
 set DATE = `date`
 cat -<<EOF>> ${GENERAL_LOG}

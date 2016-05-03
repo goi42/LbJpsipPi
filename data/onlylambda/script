@@ -21,30 +21,59 @@ source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${GENERAL_LOG}
 #-- DaVinci
 
 echo "======================= DaVinci script ========================" >> ${GENERAL_LOG}
-cat DataXb2JpsiLK.py >> ${GENERAL_LOG}
-echo "======================= DaVinci script (Xb2JpsiXTree.py) ====" >> ${GENERAL_LOG}
-cat Xb2JpsiXTree.py >> ${GENERAL_LOG}
+cat Xb2JpsiLKMC.py >> ${GENERAL_LOG}
+echo "======================= DaVinci script (Xb2JpsiXTreeMC.py) ====" >> ${GENERAL_LOG}
+cat Xb2JpsiXTreeMC.py >> ${GENERAL_LOG}
 
 SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
 
-set DAVINCI_LOG = davinci.log
+foreach YEAR (2011 2012)
+foreach POLARITY (Down Up)
+if (${YEAR} == 2011) then
+set BEAM = 3500
+set NU = 2
+set TCK = 0x40760037
+set STRIP = 20r1
+else
+if (${YEAR} == 2012) then
+set BEAM = 4000
+set NU = 2.5
+set TCK = 0x409f0045
+set STRIP = 20
+endif
+endif
+
+set DAVINCI_LOG = davinci_${YEAR}_${POLARITY}.log
+
+cat -<<EOF> myDaVinci_TupleFile.py
+from Configurables import DaVinci
+DaVinci().TupleFile = "DVNtuples_${YEAR}_${POLARITY}.root"
+
+EOF
 
 #-- basic info
 set DATE = `date`
 cat -<<EOF> ${DAVINCI_LOG}
 ====================================================
 START@:     ${DATE}
+YEAR:       ${YEAR}
+POLARITY:   ${POLARITY}
 ====================================================
 EOF
 
-gaudirun.py DataXb2JpsiLK.py LFNs.py pool.py >>& ${DAVINCI_LOG}
+gaudirun.py Xb2JpsiLKMC.py myDaVinci_TupleFile.py MC_${YEAR}_Beam${BEAM}GeV${YEAR}Mag${POLARITY}Nu${NU}Pythia6_Sim08a_Digi13_Trig${TCK}_Reco14a_Stripping${STRIP}NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py pool_xml_catalog_${YEAR}_${POLARITY}.py >>& ${DAVINCI_LOG}
 
 set DATE = `date`
-cat -<<EOF>> ${DAVINCI_LOG}
+cat -<<EOF> ${DAVINCI_LOG}
 ====================================================
 Finish@:    ${DATE}
 ====================================================
 EOF
+
+rm myDaVinci_TupleFile.py
+
+end
+end
 
 set DATE = `date`
 cat -<<EOF>> ${GENERAL_LOG}
