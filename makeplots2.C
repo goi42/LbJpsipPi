@@ -32,7 +32,7 @@ It suffers from a need for there to be the same number of branches and cuts for 
 
 void makeplots2(TString runmode ="d", TString drawopt=""){
   gROOT->SetBatch(kTRUE);
-  gROOT->ProcessLine(".x /afs/cern.ch/user/m/mwilkins/cmtuser/src/lhcbStyle.C");
+  // gROOT->ProcessLine(".x /afs/cern.ch/user/m/mwilkins/cmtuser/src/lhcbStyle.C");
   TString placeholder;//this is to avoid adding strings in functions; assign right before use
   TString placeholder2;
   TString placeholder3;
@@ -46,10 +46,13 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
+  map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda^{0} only"}};
   file f[]={								\
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMC",f2quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMC",f3quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","LonlyMC",f5quality}, \
   };
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
   
   int nFiles = (sizeof(f)/sizeof(f[0]));
@@ -70,6 +73,10 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   }
   cout<<"done"<<endl;
   for(int ifile=0;ifile<nFiles;ifile++){
+    cout<<"trees... ";
+    if(ifile<3) f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure the names are correct
+    else f[ifile].add_tree("LTree/mytree");
+    cout<<"done"<<endl;
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
@@ -104,8 +111,6 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
                 // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, \
                 // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}
     };
-    cout<<"done"<<endl<<"trees... ";
-    f[ifile].add_tree("Lb2JpsiLTree/mytree");//all 3 files have the same tree
     cout<<"done"<<endl;
     
     nBranches = f[ifile].b.size();
@@ -117,18 +122,18 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,coptimized,cgd;
-    makecuts(ifile,cLL,cDD,coptimized,cgd);
+    TCut cLL,cDD,coptimized;
+    makecuts(ifile,cLL,cDD,coptimized);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->c ={{coptimized,"optimized"},	\
-		      {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
+      thisbranch->c = {{"","no cuts"},		\
       };
-      
+                      // {coptimized,"optimized"},	\
+		      // {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
                       // {coptimized,"Optimized: cos()>0.999993 with #Lambda_{p_{T}}>1300 LL or >2100 DD"}, \
                       // {coptimizedbelow,"Optimized with #Lambda_{p_{T}} > #rightarrow <"}, \
                       // {coptimizednoPT,"Optimized without #Lambda_{p_{T}} cut"} \
@@ -174,6 +179,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   for(int i =0; i<nLayers; i++){
     //assign layers; this is not an algorithm 
     if(L[i].name=="file") {
+      L[i].compared=kTRUE;
       for(int j=0;j<nFiles;j++) {
         L[i].add_element(&f[j].name);
       }
@@ -183,7 +189,6 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
       }
     }else if(L[i].name=="cut") {
-      L[i].compared=kTRUE;
       cL=i;
       for(int l=0;l<nCuts;l++) {
         L[i].add_element(&f[0].b[0].c[l].name);//all branches of all files have the same named cuts
@@ -273,8 +278,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       cout<<"done"<<endl;
       //create histogram
       cout<<"creating histogram "<<hi+1<<"... ";
-      h[ci][hi] = new TH1F(hname,thisbranch->name,thisbranch->nBins,  \
-                           thisbranch->loBin,thisbranch->hiBin);
+      h[ci][hi] = new TH1F(hname,thisbranch->name,thisbranch->nBins,thisbranch->loBin,thisbranch->hiBin);
       cout<<"done"<<endl;
       //draw histograms
       cout<<"drawing histogram "<<hi+1<<"... ";

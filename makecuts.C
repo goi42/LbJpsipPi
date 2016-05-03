@@ -5,9 +5,9 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={"_"};//,"_",""};
+TString Lbname[]={"Bs","Bs","Bs","Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={"","_","_","_"};//,"_",""};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
@@ -39,7 +39,7 @@ TCut cLPTstep(float lo, float hi){
   return output;
 }
 
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized,TCut &cgd){
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -83,8 +83,8 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized,TCut &cgd){
   coptimized=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
     &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
     &&cLWM&&ctrigger;
-  TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
-  cgd=coptimized&&motherL;
+  // TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
+  // cgd=coptimized&&motherL;
   // TCut motherL="abs(R_MC_GD_MOTHER_ID)==5122";//for /\ MC
   // cgd=coptimized&&motherL;
   // if(ifile==0){//cut tails off SMC
