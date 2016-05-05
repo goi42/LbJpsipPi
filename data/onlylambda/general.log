@@ -1,5 +1,5 @@
 ====================================================
-START@:     Tue May 3 14:11:25 CEST 2016
+START@:     Thu May 5 19:06:32 CEST 2016
 ====================================================
 ======================= DaVinci script ========================
 #---------------------------------------------
@@ -14,22 +14,35 @@ from Configurables import  DecayTreeTuple, CheckPV
 from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, DataOnDemand, MergedSelection
 from Configurables import   CombineParticles, FilterDesktop,  OfflineVertexFitter
 
-#DaughtCut = "(TRCHI2DOF < 4.0) & (MIPCHI2DV(PRIMARY)>9) & (TRGHOSTPROB < 0.2)"
-DaughtCutK = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) &  (PIDK-PIDpi>0) &  (PIDK-PIDp>-6) & (TRGHOSTPROB < 0.2)"
-DaughtCutp = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (PIDp-PIDpi>5) & (PIDp-PIDK>0)  & (TRGHOSTPROB < 0.2)"
+# #--Stripping--------------------------------------------------------
+# from StrippingConf.Configuration import StrippingConf, StrippingStream
+# from StrippingSettings.Utils import strippingConfiguration
+# from StrippingArchive.Utils import buildStreams
+# from StrippingArchive import strippingArchive
 
-#----Jpsi->mumu---------------------------------
-location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles"
-Jpsi2MuMu = AutomaticData(Location = location)
+# #----------------------Standard stripping20-------------------------
+# stripping='stripping20'
+# config  = strippingConfiguration(stripping)
+# archive = strippingArchive(stripping)
+# streams = buildStreams(stripping=config, archive=archive)
+
+# #----Select my line-------------------------------------------------
+# MyStream = StrippingStream("MyStream")
+# MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
+
+# for stream in streams:
+#     for line in stream.lines:
+#         if line.name() in MyLines:
+#             MyStream.appendLines( [ line ] )
+
+# sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
+# #------------------------------------------------------------------------
 
 #----selection p+ and K- -------------------------
-kaons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsKaons/Particles")
-protons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsProtons/Particles")
 Lambda0LL = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaLL/Particles")
 Lambda0DD = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaDD/Particles")
 
 #----Selection /\->p+ pi-
-
 
 AllLambda0 = MergedSelection( "AllLambda0", RequiredSelections = [Lambda0LL, Lambda0DD])
 
@@ -41,34 +54,16 @@ FilterL = Selection( "FilterL",
                       Algorithm          = _FilterL ,
                       RequiredSelections = [ AllLambda0 ] )
 
-#----Selection /\b -> J/psi p+ K-------------------
-_Lb2JpsipK = CombineParticles( "_Lb2JpsipK",
-                              DecayDescriptor = "[Lambda_b0 -> J/psi(1S) Lambda0]cc",
-                              CombinationCut = "AM < 6000. * MeV",
-                              MotherCut       = "(VFASPF(VCHI2/VDOF)<25) & (BPVDIRA > 0.999) & (VFASPF(VCHI2PDOF) < 10) & (BPVVD > 1.5 *mm)",
-#                              DaughtersCuts   = {  'K-': DaughtCutK },
-                              ReFitPVs        = True )
-
-
-
-#---- Refit vertices with Jpsi mass constraint----------------
-#_Lb2JpsipK.addTool( OfflineVertexFitter() )
-#_Lb2JpsipK.VertexFitters.update( { "" : "OfflineVertexFitter"} )
-#_Lb2JpsipK.OfflineVertexFitter.applyDauMassConstraint = True
-
-
-Lb2JpsipK  = Selection( "Lb2JpsipK ",
-                      Algorithm          = _Lb2JpsipK ,
-                      RequiredSelections = [ Jpsi2MuMu, FilterL ] )
-
 ### Gaudi sequence
-SeqLb2JpsipK = SelectionSequence("SeqLb2JpsipK", TopSelection = Lb2JpsipK)
-seq = SeqLb2JpsipK.sequence()
+SeqL = SelectionSequence("SeqL", TopSelection = FilterL)
+seq = SeqL.sequence()
 
 #--------------------------------------------------------------------------
 # Configure DaVinci
 #-------------------------------------------------------------------------
 from Configurables import DaVinci
+
+# DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
 
 from Configurables import  OfflineVertexFitter
 
@@ -76,8 +71,8 @@ from Configurables import  DecayTreeTuple, MCDecayTreeTuple
 importOptions("Xb2JpsiXTree.py")
 
 
-tuple = DecayTreeTuple( "Lb2JpsiLTree" )
-tuple.Inputs = [ SeqLb2JpsipK.outputLocation() ]
+tuple = DecayTreeTuple( "LTree" )
+tuple.Inputs = [ SeqL.outputLocation() ]
 
 
 
@@ -96,7 +91,6 @@ from Configurables import CondDB
 DaVinci().DataType = "2012"
 #DaVinci().DDDBtag   = "head-20110914"
 #DaVinci().CondDBtag = "head-20111102"
-DaVinci().TupleFile = "LimDVNtuples.root"
 DaVinci().PrintFreq = 10000
 #For luminosity
 #CondDB().LocalTags["LHCBCOND"] = ['lumi-20100825']
@@ -135,8 +129,7 @@ from Gaudi.Configuration import *
 #
 from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTrigger, TupleToolTISTOS, TupleToolTagging
 from Configurables import FitDecayTrees, TupleToolGeometry
-tuple = DecayTreeTuple('Lb2JpsiLTree') 
-tuple.Inputs = [ 'Phys/Bs2Jpsif0' ]
+tuple = DecayTreeTuple('LTree') 
 
 tuple.TupleName = "mytree"
 
@@ -201,39 +194,18 @@ tuple.TupleToolGeometry.Verbose = True
 #TuneTool(tuple,'Xmass_2011')
 
 ###########################################################################################################################
-tuple.Decay = '[Lambda_b0 -> (^J/psi(1S) -> ^mu+ ^mu-) (^Lambda0 -> ^p+ ^pi-)]cc'
+tuple.Decay = '[^Lambda0 -> ^p+ ^pi-]cc'
 tuple.Branches = {
-    "Bs"   :  "[Lambda_b0]cc : [Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc",
-    "R"    :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (^Lambda0 -> p+ pi-)]cc", 
-    "H1"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> ^p+ pi-)]cc",      
-    "H2"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ ^pi-)]cc",   
-    "J_psi_1S"   :  "[Lambda_b0 -> (^J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc"       
+    "R"    :  "[^Lambda0 -> p+ pi-]cc", 
+    "H1"   :  "[Lambda0 -> ^p+ pi-]cc",      
+    "H2"   :  "[Lambda0 -> p+ ^pi-]cc",   
 }
 
-
-tuple.addTool(TupleToolDecay, name="Bs")
-tuple.Bs.ToolList = [ "TupleToolPropertime" ]
 tuple.addTool(TupleToolDecay, name="J_psi_1S")
-
-tuple.Bs.addTool(tistos)
-tuple.Bs.ToolList+=["TupleToolTISTOS/tistos"]
 tuple.J_psi_1S.addTool(tistos)
 tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
+
 tuple.ReFitPVs = True
-LoKi_Bs=LoKi__Hybrid__TupleTool("LoKi_Bs")
-LoKi_Bs.Variables =  { 
-#        "LOKI_FDCHI2"     : "BPVVDCHI2", 
-#        "LOKI_FDS"        : "BPVDLS", 
-#        "LOKI_DIRA"       : "BPVDIRA" , 
-        "LOKI_DTF_CTAU"        : "DTF_CTAU( 0, True )", 
-#        "LOKI_DTF_CTAUS"       : "DTF_CTAUSIGNIFICANCE( 0, True )", 
-        "LOKI_DTF_CHI2NDOF"    : "DTF_CHI2NDOF( True )", 
-        "LOKI_DTF_CTAUERR"     : "DTF_CTAUERR( 0, True )", 
-        "LOKI_MASS_JpsiConstr" : "DTF_FUN ( M , True , 'J/psi(1S)' )" , 
-        "LOKI_DTF_VCHI2NDOF"   : "DTF_FUN ( VFASPF(VCHI2/VDOF) , True  )"  
-        } 
-tuple.Bs.addTool(LoKi_Bs)         
-tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
 
 tuple.addTool(TupleToolDecay, name="R")
 
@@ -262,16 +234,38 @@ Environment for DaVinci v37r2p4 ready.
 (Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
  DaVinci v37r2p4 from /afs/cern.ch/user/m/mwilkins/cmtuser/DaVinci_v37r2p4)
 ====================================================
-Finish Davinci@:    Tue May 3 14:13:25 CEST 2016
+Finish Davinci@:    Thu May 5 19:15:40 CEST 2016
 ====================================================
-total 26593
--rwxr--r--. 1 mwilkins z5     4584 May  3 14:10 DataXb2JpsiLK.py
+total 52759
+-rwxr--r--. 1 mwilkins z5     4037 May  5 14:25 DataXb2JpsiLK.py
+-rw-r--r--. 1 mwilkins z5    44594 May  5 19:08 davinci_11_Down.log
+-rw-r--r--. 1 mwilkins z5    44578 May  5 19:09 davinci_11_Up.log
+-rw-r--r--. 1 mwilkins z5    44590 May  5 19:13 davinci_12_Down.log
+-rw-r--r--. 1 mwilkins z5    44574 May  5 19:15 davinci_12_Up.log
 -rw-r--r--. 1 mwilkins z5    24423 May  3 14:13 davinci.log
 -rw-r--r--. 1 mwilkins z5     2515 Apr 30 15:17 GangaJob.py
--rw-r--r--. 1 mwilkins z5    10862 May  3 14:13 general.log
+-rw-r--r--. 1 mwilkins z5     9087 May  5 19:15 general.log
 -rw-r--r--. 1 mwilkins z5  2275307 May  3 14:11 LFNs.py
+-rw-r--r--. 1 mwilkins z5   434891 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagDown_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   308899 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagUp_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   786541 May  3 15:47 LHCb_Collision12_Beam4000GeVVeloClosedMagDown_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   695725 May  3 15:47 LHCb_Collision12_Beam4000GeVVeloClosedMagUp_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5      147 May  3 18:00 LHCbDirac_11_Down.log
+-rw-r--r--. 1 mwilkins z5      147 May  3 19:42 LHCbDirac_11_Up.log
+-rw-r--r--. 1 mwilkins z5      147 May  3 22:46 LHCbDirac_12_Down.log
+-rw-r--r--. 1 mwilkins z5      147 May  4 01:19 LHCbDirac_12_Up.log
+-rw-r--r--. 1 mwilkins z5     2762 May  4 01:19 make_pool.log
+-rw-r--r--. 1 mwilkins z5      129 May  5 14:23 pool_11_Down.py
+-rw-r--r--. 1 mwilkins z5  4788915 May  3 18:00 pool_11_Down.xml
+-rw-r--r--. 1 mwilkins z5      127 May  5 14:23 pool_11_Up.py
+-rw-r--r--. 1 mwilkins z5  3488009 May  4 20:11 pool_11_Up.xml
+-rw-r--r--. 1 mwilkins z5      129 May  5 14:23 pool_12_Down.py
+-rw-r--r--. 1 mwilkins z5  8497016 May  3 22:46 pool_12_Down.xml
+-rw-r--r--. 1 mwilkins z5      127 May  5 14:23 pool_12_Up.py
+-rw-r--r--. 1 mwilkins z5  7600599 May  4 01:19 pool_12_Up.xml
 -rw-r--r--. 1 mwilkins z5      121 May  1 15:19 pool.py
 -rw-r--r--. 1 mwilkins z5 24900382 May  1 02:36 pool.xml
--rwxr-xr-x. 1 mwilkins z5     1454 May  1 19:59 script
-drwxr-xr-x. 2 mwilkins z5     2048 May  3 14:10 store
--rw-r--r--. 1 mwilkins z5     5374 May  3 14:10 Xb2JpsiXTree.py
+-rwxr-xr-x. 1 mwilkins z5     2019 May  5 19:06 script
+-rwxr-xr-x. 1 mwilkins z5     1510 May  4 16:25 script_make_pool
+-rwxr-xr-x. 1 mwilkins z5     1454 May  1 19:59 script_old
+-rw-r--r--. 1 mwilkins z5     4146 May  5 14:31 Xb2JpsiXTree.py

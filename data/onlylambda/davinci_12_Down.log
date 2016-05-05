@@ -1,0 +1,605 @@
+====================================================
+START@:     Thu May 5 19:09:52 CEST 2016
+YEAR:       12
+POLARITY:   Down
+====================================================
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/DataXb2JpsiLK.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/Xb2JpsiXTree.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/Xb2JpsiXTree.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/DataXb2JpsiLK.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/myDaVinci_TupleFile.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/myDaVinci_TupleFile.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/LHCb_Collision12_Beam4000GeVVeloClosedMagDown_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/LHCb_Collision12_Beam4000GeVVeloClosedMagDown_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py'
+# --> Including file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/pool_12_Down.py'
+# <-- End of file '/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/onlylambda/pool_12_Down.py'
+# skipping configuration of RawEventFormatConf
+# applying configuration of DaVinci
+# DaVinci                   INFO    Applying DaVinci configuration
+# DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
+|-MainOptions          = ''
+|-TupleFile            = 'DVNtuples_12_Down.root'  (default: '')
+|-SkipEvents           = 0
+|-RootCompressionLevel = 'LZMA:6'
+|-Input                = []  (default: [])
+|-DDDBtag              = ''
+|-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f426e5c8bf0>, <DecayTreeTuple/LTree at 0x2938c00>]
+|                      (default: [])
+|-RootInTES            = ''
+|-DQFLAGStag           = ''
+|-Lumi                 = True  (default: False)
+|-MoniSequence         = []  (default: [])
+|-VerboseMessages      = False
+|-IgnoreDQFlags        = False
+|-ProductionType       = 'None'
+|-PrintFreq            = 10000  (default: 1000)
+|-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+|                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+|-EvtMax               = -1  (default: -1)
+|-CondDBtag            = ''
+|-Simulation           = False  (default: False)
+|-DataType             = '2012'  (default: '')
+|-RedoMCLinks          = False
+|-InputType            = 'DST'
+|-HistogramFile        = ''
+|-WriteFSR             = True
+|-EnableUnpack         = None
+|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f426e5cc410>]  (default: [])
+\----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
+# Apply CaloProcessor configuration for ['Digits', 'Clusters'] and ['InAcceptance', 'Match', 'Energy', 'Chi2', 'DLL', 'NeutralPID']
+# CaloDigits onDemand for ['Ecal', 'Hcal', 'Prs', 'Spd']
+# ClusterReco onDemand
+# Configured Ecal Clusters Reco : ClusterReco 
+# Configured Calo PIDs           : CaloPIDsCaloPIDsForCaloProcessor 
+# CaloProcessor onDemand enabled
+# DaVinci                   INFO    Creating Lumi Algorithms
+# DaVinci                   INFO    No MainOptions specified. DaVinci() will import no options file!
+# DaVinci                   INFO    Creating User Algorithms
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Creating Moni Algorithms
+# DaVinci                   INFO    Append to Moni Sequence has been called
+# /***** User DaVinci/DaVinci ************************************************************************
+# |-MainOptions          = ''
+# |-TupleFile            = 'DVNtuples_12_Down.root'  (default: '')
+# |-SkipEvents           = 0
+# |-RootCompressionLevel = 'LZMA:6'
+# |-Input                = []  (default: [])
+# |-DDDBtag              = ''
+# |-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f426e5c8bf0>, <DecayTreeTuple/LTree at 0x2938c00>]
+# |                      (default: [])
+# |-RootInTES            = ''
+# |-DQFLAGStag           = ''
+# |-Lumi                 = True  (default: False)
+# |-MoniSequence         = []  (default: [])
+# |-VerboseMessages      = False
+# |-IgnoreDQFlags        = False
+# |-ProductionType       = 'None'
+# |-PrintFreq            = 10000  (default: 1000)
+# |-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+# |                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+# |-EvtMax               = -1  (default: -1)
+# |-CondDBtag            = ''
+# |-Simulation           = False  (default: False)
+# |-DataType             = '2012'  (default: '')
+# |-RedoMCLinks          = False
+# |-InputType            = 'DST'
+# |-HistogramFile        = ''
+# |-WriteFSR             = True
+# |-EnableUnpack         = None
+# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f426e5cc410>]  (default: [])
+# \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# applying configuration of PhysConf
+# Applying Phys configuration
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43/options/L0DUConfig.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43/options/L0DUConfig.opts'
+# PhysConf: Configuring EventClockSvc to use RecHeader
+# /***** User PhysConf/PhysConf **********************************************************************
+# |-CaloReProcessing  = False
+# |-DataType          = '2012'  (default: '')
+# |-AllowPIDRecalib   = True
+# |-OutputLevel       = 3
+# |-Simulation        = False  (default: False)
+# |-Detectors         = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+# |                   (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+# |-EnableUnpack      = ['Reconstruction', 'Stripping']  (default: None)
+# |-InputType         = 'DST'
+# |-AllowPIDRerunning = True
+# \----- (End of User PhysConf/PhysConf) -------------------------------------------------------------
+# applying configuration of LumiAlgsConf
+# /***** User LumiAlgsConf/LumiAlgsConf **************************************************************
+# |-UseLumiLow        = False
+# |-ForceFullSequence = False
+# |-InputType         = 'DST'
+# |-DataType          = '2012'  (default: '2012')
+# |-SetFSRStatus      = ''
+# |-OutputLevel       = 3
+# |-MergeFSR          = False
+# |-BXTypes           = ['NoBeam', 'BeamCrossing', 'Beam1', 'Beam2']
+# |                   (default: ['NoBeam', 'BeamCrossing', 'Beam1', 'Beam2'])
+# |-Simulation        = False
+# |-Context           = 'Offline'
+# |-LumiSequencer     = <GaudiSequencer/LumiSeq at 0x7f426aba1de0>  (default: None)
+# |-IgnoreDQFlags     = False
+# \----- (End of User LumiAlgsConf/LumiAlgsConf) -----------------------------------------------------
+# applying configuration of DecodeRawEvent
+# WARNING: something else configured a decoder already, Raw/Spd/Digits CaloDigitsFromRaw/SpdFromRaw
+# WARNING: something else configured a decoder already, Raw/Prs/Digits CaloDigitsFromRaw/PrsFromRaw
+# WARNING: something else configured a decoder already, Raw/Ecal/Digits CaloZSupAlg/EcalZSup
+# WARNING: something else configured a decoder already, Raw/Hcal/Digits CaloZSupAlg/HcalZSup
+# /***** User DecodeRawEvent/DecodeRawEvent **********************************************************
+# |-EvtClockBank   = ''  (default: 'ODIN')
+# |-DataOnDemand   = True  (default: False)
+# |-DecoderDB      = None
+# |-Sequencer      = None
+# |-OverrideInputs = None
+# \----- (End of User DecodeRawEvent/DecodeRawEvent) -------------------------------------------------
+# applying configuration of LHCbApp
+# /***** User LHCbApp/LHCbApp ************************************************************************
+# |-Persistency    = None
+# |-DataType       = '2012'  (default: '2012')
+# |-DDDBtag        = ''
+# |-SkipEvents     = 0
+# |-XMLSummary     = None
+# |-OutputLevel    = 3
+# |-EvtMax         = -1  (default: -1)
+# |-Simulation     = False  (default: False)
+# |-DQFLAGStag     = ''
+# |-IgnoreDQFlags  = False
+# |-Detectors      = []  (default: [])
+# |-LocalDataTypes = []  (default: [])
+# |-TimeStamp      = False
+# |-CondDBtag      = ''
+# |-Monitors       = []  (default: [])
+# \----- (End of User LHCbApp/LHCbApp) ---------------------------------------------------------------
+# applying configuration of L0Conf
+# Applying L0Conf
+# L0 on demand activated (rootInTES : )
+# WARNING: file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v4r43/options/L0DUConfig.opts' already included, ignored.
+# /***** User L0Conf/L0Conf **************************************************************************
+# |-FullL0MuonDecoding         = True  (default: False)
+# |-verbose                    = False
+# |-LinkSequencer              = None
+# |-DecodeL0                   = False
+# |-ETCSequencer               = None
+# |-L0MuonUseTCKFromData       = None
+# |-RootInTESOnDemand          = ['']  (default: [''])
+# |-ETCOutput                  = 'L0ETC.root'
+# |-EnsureKnownTCK             = True
+# |-EnableL0DecodingOnDemand   = True  (default: False)
+# |-TCK                        = None
+# |-FastL0DUDecoding           = False
+# |-DecodeL0DU                 = False
+# |-ReplayL0DU                 = False
+# |-FilterSequencer            = None
+# |-L0Sequencer                = None
+# |-L0MuonForceLUTVersion      = None
+# |-L0EmulatorContext          = None
+# |-FilterL0                   = False
+# |-RawEventLocations          = []  (default: [])
+# |-EnableTAEOnDemand          = False
+# |-SimulateL0                 = False
+# |-FullPileUpSimulation       = False
+# |-ReplaceL0BanksWithEmulated = False
+# |-ForceSingleL0Configuration = False
+# |-MoniSequencer              = None
+# |-MonitorL0                  = False
+# |-DataType                   = ''
+# |-FilterL0FromRaw            = False
+# |-IgnoreL0MuonCondDB         = None
+# |-L0DecodingContext          = None
+# |-EmulateL0                  = False
+# \----- (End of User L0Conf/L0Conf) -----------------------------------------------------------------
+# skipping configuration of XMLSummary
+# applying configuration of CaloProcessor
+# Apply CaloProcessor configuration for ['Digits', 'Clusters'] and ['InAcceptance', 'Match', 'Energy', 'Chi2', 'DLL', 'NeutralPID']
+# WARNING: Data-On-Demand: replace action for location "Raw/Spd/Digits" from "/***** Algorithm CaloDigitsFromRaw/SpdFromRaw ******************************************************
+# WARNING: |-StatTableHeader           = ' |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |'
+# WARNING: |-AuditExecute              = False
+# WARNING: |-AuditStart                = False
+# WARNING: |-StatusOnTES               = True
+# WARNING: |-AuditReinitialize         = False
+# WARNING: |-VetoObjects               = []  (default: [])
+# WARNING: |-AuditRestart              = False
+# WARNING: |-StatEntityList            = []  (default: [])
+# WARNING: |-Enable                    = True
+# WARNING: |-RootOnTES                 = ''
+# WARNING: |-RequireObjects            = []  (default: [])
+# WARNING: |-OutputType                = 'Digits'
+# WARNING: |-RootInTES                 = ''
+# WARNING: |-AuditFinalize             = False
+# WARNING: |-AuditEndRun               = False
+# WARNING: |-ErrorsPrint               = True
+# WARNING: |-AuditBeginRun             = False
+# WARNING: |-ErrorCount                = 0
+# WARNING: |-ErrorMax                  = 1
+# WARNING: |-Extension                 = ''
+# WARNING: |-MonitorService            = 'MonitorSvc'
+# WARNING: |-AuditInitialize           = False
+# WARNING: |-RegularRowFormat          = ' | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |'
+# WARNING: |-TypePrint                 = True
+# WARNING: |-StatPrint                 = True
+# WARNING: |-AuditStop                 = False
+# WARNING: |-Context                   = 'Offline'  (default: '')
+# WARNING: |-PropertiesPrint           = False
+# WARNING: |-GlobalTimeOffset          = 0.0
+# WARNING: |-OutputLevel               = 3  (default: 0)
+# WARNING: |-UseEfficiencyRowFormat    = True
+# WARNING: |-RegisterForContextService = True
+# WARNING: |-AuditAlgorithms           = False
+# WARNING: |-PinContainer              = 'Raw/Ecal/PinAdcs'
+# WARNING: |-AdcsContainer             = 'Raw/Spd/Adcs'  (default: 'Raw/Ecal/Adcs')
+# WARNING: |-DigitsContainer           = 'Raw/Spd/Digits'  (default: 'Raw/Ecal/Digits')
+# WARNING: |-EfficiencyRowFormat       = ' |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |'
+# WARNING: |-ErrorCounter              = 0
+# WARNING: |-CounterList               = ['.*']  (default: ['.*'])
+# WARNING: \----- (End of Algorithm CaloDigitsFromRaw/SpdFromRaw) ---------------------------------------------" to "CaloDigitsFromRaw/SpdFromRaw" 
+# WARNING: Data-On-Demand: replace action for location "Raw/Prs/Digits" from "/***** Algorithm CaloDigitsFromRaw/PrsFromRaw ******************************************************
+# WARNING: |-StatTableHeader           = ' |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |'
+# WARNING: |-AuditExecute              = False
+# WARNING: |-AuditStart                = False
+# WARNING: |-StatusOnTES               = True
+# WARNING: |-AuditReinitialize         = False
+# WARNING: |-VetoObjects               = []  (default: [])
+# WARNING: |-AuditRestart              = False
+# WARNING: |-StatEntityList            = []  (default: [])
+# WARNING: |-Enable                    = True
+# WARNING: |-RootOnTES                 = ''
+# WARNING: |-RequireObjects            = []  (default: [])
+# WARNING: |-OutputType                = 'Digits'
+# WARNING: |-RootInTES                 = ''
+# WARNING: |-AuditFinalize             = False
+# WARNING: |-AuditEndRun               = False
+# WARNING: |-ErrorsPrint               = True
+# WARNING: |-AuditBeginRun             = False
+# WARNING: |-ErrorCount                = 0
+# WARNING: |-ErrorMax                  = 1
+# WARNING: |-Extension                 = ''
+# WARNING: |-MonitorService            = 'MonitorSvc'
+# WARNING: |-AuditInitialize           = False
+# WARNING: |-RegularRowFormat          = ' | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |'
+# WARNING: |-TypePrint                 = True
+# WARNING: |-StatPrint                 = True
+# WARNING: |-AuditStop                 = False
+# WARNING: |-Context                   = 'Offline'  (default: '')
+# WARNING: |-PropertiesPrint           = False
+# WARNING: |-GlobalTimeOffset          = 0.0
+# WARNING: |-OutputLevel               = 3  (default: 0)
+# WARNING: |-UseEfficiencyRowFormat    = True
+# WARNING: |-RegisterForContextService = True
+# WARNING: |-AuditAlgorithms           = False
+# WARNING: |-PinContainer              = 'Raw/Ecal/PinAdcs'
+# WARNING: |-AdcsContainer             = 'Raw/Prs/Adcs'  (default: 'Raw/Ecal/Adcs')
+# WARNING: |-DigitsContainer           = 'Raw/Prs/Digits'  (default: 'Raw/Ecal/Digits')
+# WARNING: |-EfficiencyRowFormat       = ' |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |'
+# WARNING: |-ErrorCounter              = 0
+# WARNING: |-CounterList               = ['.*']  (default: ['.*'])
+# WARNING: \----- (End of Algorithm CaloDigitsFromRaw/PrsFromRaw) ---------------------------------------------" to "CaloDigitsFromRaw/PrsFromRaw" 
+# WARNING: Data-On-Demand: replace action for location "Raw/Ecal/Digits" from "/***** Algorithm CaloZSupAlg/EcalZSup **************************************************************
+# WARNING: |-StatTableHeader           = ' |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |'
+# WARNING: |-OutputDigitData           = 'Raw/Ecal/Digits'  (default: '')
+# WARNING: |-AuditExecute              = False
+# WARNING: |-AuditStart                = False
+# WARNING: |-StatusOnTES               = True
+# WARNING: |-AuditReinitialize         = False
+# WARNING: |-VetoObjects               = []  (default: [])
+# WARNING: |-AuditRestart              = False
+# WARNING: |-StatEntityList            = []  (default: [])
+# WARNING: |-ZsupThreshold             = 0
+# WARNING: |-Enable                    = True
+# WARNING: |-RootOnTES                 = ''
+# WARNING: |-RequireObjects            = []  (default: [])
+# WARNING: |-OutputType                = 'Digits'
+# WARNING: |-RootInTES                 = ''
+# WARNING: |-AuditFinalize             = False
+# WARNING: |-AuditEndRun               = False
+# WARNING: |-ErrorsPrint               = True
+# WARNING: |-AuditBeginRun             = False
+# WARNING: |-ErrorCount                = 0
+# WARNING: |-ErrorMax                  = 1
+# WARNING: |-Extension                 = ''
+# WARNING: |-MonitorService            = 'MonitorSvc'
+# WARNING: |-AuditInitialize           = False
+# WARNING: |-RegularRowFormat          = ' | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |'
+# WARNING: |-DetectorName              = ''
+# WARNING: |-TypePrint                 = True
+# WARNING: |-StatPrint                 = True
+# WARNING: |-ZsupMethod                = ''
+# WARNING: |-AuditStop                 = False
+# WARNING: |-Context                   = 'Offline'  (default: '')
+# WARNING: |-PropertiesPrint           = False
+# WARNING: |-GlobalTimeOffset          = 0.0
+# WARNING: |-OutputLevel               = 3  (default: 0)
+# WARNING: |-UseEfficiencyRowFormat    = True
+# WARNING: |-OutputADCData             = 'Raw/Ecal/Adcs'  (default: '')
+# WARNING: |-RegisterForContextService = True
+# WARNING: |-AuditAlgorithms           = False
+# WARNING: |-ZsupNeighbor              = -256
+# WARNING: |-EfficiencyRowFormat       = ' |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |'
+# WARNING: |-ErrorCounter              = 0
+# WARNING: |-CounterList               = ['.*']  (default: ['.*'])
+# WARNING: \----- (End of Algorithm CaloZSupAlg/EcalZSup) -----------------------------------------------------" to "CaloZSupAlg/EcalZSup" 
+# WARNING: Data-On-Demand: replace action for location "Raw/Hcal/Digits" from "/***** Algorithm CaloZSupAlg/HcalZSup **************************************************************
+# WARNING: |-StatTableHeader           = ' |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |'
+# WARNING: |-OutputDigitData           = 'Raw/Hcal/Digits'  (default: '')
+# WARNING: |-AuditExecute              = False
+# WARNING: |-AuditStart                = False
+# WARNING: |-StatusOnTES               = True
+# WARNING: |-AuditReinitialize         = False
+# WARNING: |-VetoObjects               = []  (default: [])
+# WARNING: |-AuditRestart              = False
+# WARNING: |-StatEntityList            = []  (default: [])
+# WARNING: |-ZsupThreshold             = 0
+# WARNING: |-Enable                    = True
+# WARNING: |-RootOnTES                 = ''
+# WARNING: |-RequireObjects            = []  (default: [])
+# WARNING: |-OutputType                = 'Digits'
+# WARNING: |-RootInTES                 = ''
+# WARNING: |-AuditFinalize             = False
+# WARNING: |-AuditEndRun               = False
+# WARNING: |-ErrorsPrint               = True
+# WARNING: |-AuditBeginRun             = False
+# WARNING: |-ErrorCount                = 0
+# WARNING: |-ErrorMax                  = 1
+# WARNING: |-Extension                 = ''
+# WARNING: |-MonitorService            = 'MonitorSvc'
+# WARNING: |-AuditInitialize           = False
+# WARNING: |-RegularRowFormat          = ' | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |'
+# WARNING: |-DetectorName              = ''
+# WARNING: |-TypePrint                 = True
+# WARNING: |-StatPrint                 = True
+# WARNING: |-ZsupMethod                = ''
+# WARNING: |-AuditStop                 = False
+# WARNING: |-Context                   = 'Offline'  (default: '')
+# WARNING: |-PropertiesPrint           = False
+# WARNING: |-GlobalTimeOffset          = 0.0
+# WARNING: |-OutputLevel               = 3  (default: 0)
+# WARNING: |-UseEfficiencyRowFormat    = True
+# WARNING: |-OutputADCData             = 'Raw/Hcal/Adcs'  (default: '')
+# WARNING: |-RegisterForContextService = True
+# WARNING: |-AuditAlgorithms           = False
+# WARNING: |-ZsupNeighbor              = -256
+# WARNING: |-EfficiencyRowFormat       = ' |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |'
+# WARNING: |-ErrorCounter              = 0
+# WARNING: |-CounterList               = ['.*']  (default: ['.*'])
+# WARNING: \----- (End of Algorithm CaloZSupAlg/HcalZSup) -----------------------------------------------------" to "CaloZSupAlg/HcalZSup" 
+# CaloDigits onDemand for ['Ecal', 'Hcal', 'Prs', 'Spd']
+# ClusterReco onDemand
+# Configured Ecal Clusters Reco : ClusterReco 
+# CaloPIDsConf: LUN 'CaloNeutralPIDs' has been defined already
+# CaloPIDsConf: LUN 'CaloPIDs' has been defined already
+# Configured Calo PIDs           : CaloPIDsCaloPIDsForCaloProcessor 
+# CaloProcessor onDemand enabled
+# /***** User CaloProcessor/CaloProcessor ************************************************************
+# |-UseTracksM                  = True
+# |-NoSpdPrs                    = False
+# |-FastReco                    = False
+# |-UseTracks                   = True
+# |-RecList                     = ['Digits', 'Clusters']
+# |                             (default: ['Digits', 'Clusters', 'Photons', 'MergedPi0s', 'SplitPhotons', 'Electrons'])
+# |-ForceOnDemand               = False
+# |-UseTracksE                  = True
+# |-NeutralID                   = False
+# |-ForceDigits                 = True
+# |-ChargedProtoSequencer       = None
+# |-ElectronPt                  = 50.0
+# |-UseSpd                      = False
+# |-ClusterEnergyMasks          = []  (default: [])
+# |-TrackTypes                  = ['Long', 'Upstream', 'Downstream']  (default: ['Long', 'Upstream', 'Downstream'])
+# |-TrackCuts                   = {'Long': {'Chi2Cut': [0, 10]}, 'Downstream': {'Chi2Cut': [0, 10]}, 'Upstream': {'Chi2Cut': [0, 10]}}
+# |                             (default: {'Downstream': {'Chi2Cut': [0, 10]}, 'Long': {'Chi2Cut': [0, 10]}, 'Upstream': {'Chi2Cut': [0, 10]}})
+# |-SkipCharged                 = False
+# |-ProtoSequencer              = None
+# |-UseSpdE                     = True
+# |-NeutralProtoLocation        = ''
+# |-MakeExternalClustersWithTag = ''
+# |-ClusterPositionMasks        = []  (default: [])
+# |-CaloSequencer               = None
+# |-CaloReco                    = True
+# |-ProtoOnDemand               = False
+# |-ChargedProtoLocation        = ''
+# |-MergedPi0Pt                 = 1500.0
+# |-CaloStandalone              = False
+# |-EnableRecoOnDemand          = True  (default: False)
+# |-OutputLevel                 = 3  (default: 3)
+# |-NeutralProtoSequencer       = None
+# |-CaloPIDs                    = True
+# |-PIDList                     = ['InAcceptance', 'Match', 'Energy', 'Chi2', 'DLL', 'NeutralPID']
+# |                             (default: ['InAcceptance', 'Match', 'Energy', 'Chi2', 'DLL', 'NeutralPID'])
+# |-ExternalClusters            = ''
+# |-Context                     = 'Offline'  (default: '')
+# |-TrackLocations              = []  (default: [])
+# |-Verbose                     = False
+# |-Sequence                    = None
+# |-MeasureTime                 = False
+# |-SkipNeutrals                = False
+# |-ClusterPt                   = 0.0
+# |-EnableOnDemand              = True  (default: False)
+# |-DataType                    = 'MC09'
+# |-UsePrsE                     = True
+# |-PhotonPt                    = 50.0
+# |-UsePrs                      = False
+# |-CreateADCs                  = False
+# \----- (End of User CaloProcessor/CaloProcessor) ---------------------------------------------------
+# applying configuration of DDDBConf
+# WARNING: Using default tag dddb-20150522-2 for partition DDDB
+# WARNING: Using default tag cond-20150409-1 for partition LHCBCOND
+# WARNING: Using default tag dq-20140822 for partition DQFLAGS
+# /***** User DDDBConf/DDDBConf **********************************************************************
+# |-DataType    = '2012'  (default: '2012')
+# |-DbRoot      = 'conddb:/lhcb.xml'
+# |-InitialTime = 'Safe'
+# |-AutoTags    = False
+# |-Simulation  = False  (default: False)
+# \----- (End of User DDDBConf/DDDBConf) -------------------------------------------------------------
+# skipping configuration of CaloProcessor_CaloDigitConf
+# applying configuration of LumiIntegratorConf
+# /***** User LumiIntegratorConf/LumiIntegratorConf **************************************************
+# |-TupleFile     = 'DVNtuples_12_Down.root'  (default: '')
+# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f426aa71050>  (default: None)
+# |-UseOnline     = True
+# |-InputType     = 'DST'
+# |-IgnoreDQFlags = False
+# \----- (End of User LumiIntegratorConf/LumiIntegratorConf) -----------------------------------------
+# applying configuration of DstConf
+# /***** User DstConf/DstConf ************************************************************************
+# |-OutputName          = ''
+# |-Turbo               = False
+# |-SimType             = 'None'
+# |-PackType            = 'TES'
+# |-DstType             = 'NONE'
+# |-EnablePackingChecks = False
+# |-DataType            = '2012'  (default: '')
+# |-Writer              = 'DstWriter'
+# |-Detectors           = ['Velo', 'TT', 'IT', 'OT', 'Rich', 'Tr', 'Calo', 'Muon']
+# |                     (default: ['Velo', 'TT', 'IT', 'OT', 'Rich', 'Tr', 'Calo', 'Muon'])
+# |-WriteFSR            = True
+# |-SplitRawEventOutput = 2.0
+# |-PackSequencer       = None
+# |-SpilloverPaths      = ['Prev', 'PrevPrev', 'Next', 'NextNext']
+# |                     (default: ['Prev', 'PrevPrev', 'Next', 'NextNext'])
+# |-EnableUnpack        = ['Reconstruction', 'Stripping']  (default: [])
+# |-AlwaysCreate        = False
+# \----- (End of User DstConf/DstConf) ---------------------------------------------------------------
+# /***** User DstConf/DstConf ************************************************************************
+# |-OutputName          = ''
+# |-Turbo               = False
+# |-SimType             = 'None'
+# |-PackType            = 'TES'
+# |-DstType             = 'NONE'
+# |-EnablePackingChecks = False
+# |-DataType            = '2012'  (default: '')
+# |-Writer              = 'DstWriter'
+# |-Detectors           = ['Velo', 'TT', 'IT', 'OT', 'Rich', 'Tr', 'Calo', 'Muon']
+# |                     (default: ['Velo', 'TT', 'IT', 'OT', 'Rich', 'Tr', 'Calo', 'Muon'])
+# |-WriteFSR            = True
+# |-SplitRawEventOutput = 2.0
+# |-PackSequencer       = None
+# |-SpilloverPaths      = ['Prev', 'PrevPrev', 'Next', 'NextNext']
+# |                     (default: ['Prev', 'PrevPrev', 'Next', 'NextNext'])
+# |-EnableUnpack        = ['Reconstruction', 'Stripping']  (default: [])
+# |-AlwaysCreate        = False
+# \----- (End of User DstConf/DstConf) ---------------------------------------------------------------
+# applying configuration of DigiConf
+# WARNING: Property 'DataType' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.DataType'
+# No Writer defined for DIGI
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v37r2p4
+                                          running on lxplus007.cern.ch on Thu May  5 19:12:22 2016
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+DetectorDataSvc                                             SUCCESS Detector description database: conddb:/lhcb.xml
+DaVinciInitAlg                                              SUCCESS ==================================================================
+DaVinciInitAlg                                              SUCCESS Requested to process all events on input file(s)
+DaVinciInitAlg                                              SUCCESS ==================================================================
+ApplicationMgr                                                 INFO Application Manager Terminated successfully
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'BasicDQFilter/ToolSvc.DQAcceptTool.BasicDQFilter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ChargedProtoParticleMapper/ToolSvc.UnpackChargedPPsMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'CondDBDQScanner/ToolSvc.DQAcceptTool.CondDBDQScanner' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ConversionDODMapper/ToolSvc.LiteClusterMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ConversionDODMapper/ToolSvc.UnpackRecPhysMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DQAcceptTool/ToolSvc.DQAcceptTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'EvtCounter/ToolSvc.EvtCounter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'GenericParticle2PVRelator<_p2PVWithIPChi2, OfflineDistanceCalculatorName>/ToolSvc.P2PVWithIPChi2' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Decay/LTree.LoKi::Decay' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Decay/ToolSvc.Decays' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::DistanceCalculator/ToolSvc.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::DistanceCalculator/ToolSvc.P2PVWithIPChi2.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::CoreFactory/ToolSvc.CoreFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::HltFactory/ToolSvc.HltFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Hybrid::Tool/ToolSvc.HybridFactory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::PVReFitter/ToolSvc.LoKi::PVReFitter' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'LoKi::Reporter/LoKiSvc.REPORT' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'MemoryTool/DaVinciInitAlg.DaVinciMemory' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ODINDecodeTool/EventClockSvc.EventTimeDecoder.OdinTimeDecoder.ODINDecodeTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'OdinTimeDecoder/EventClockSvc.EventTimeDecoder.OdinTimeDecoder' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ParticlesAndVerticesMapper/ToolSvc.UnpackPsAndVsMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'RecEventTime/EventClockSvc.EventTimeDecoder.RecEventTime' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'SequencerTimerTool/TimingAuditor.TIMER' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'SequencerTimerTool/ToolSvc.SequencerTimerTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateElectronEnergyCorrectionTool/ToolSvc.StateElectronEnergyCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TimeDecoderList/EventClockSvc.EventTimeDecoder' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackClustersMapper/ToolSvc.UnpackTkClustersMapper' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackInterpolator/ToolSvc.TrackStateProvider.TrackInterpolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackLinearExtrapolator/ToolSvc.TrackLinearExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Initialize/Finalize (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'BasicDQFilter/ToolSvc.DQAcceptTool.BasicDQFilter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ChargedProtoParticleMapper/ToolSvc.UnpackChargedPPsMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'CondDBDQScanner/ToolSvc.DQAcceptTool.CondDBDQScanner' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ConversionDODMapper/ToolSvc.LiteClusterMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ConversionDODMapper/ToolSvc.UnpackRecPhysMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DQAcceptTool/ToolSvc.DQAcceptTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'DetailedMaterialLocator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'EvtCounter/ToolSvc.EvtCounter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'GenericParticle2PVRelator<_p2PVWithIPChi2, OfflineDistanceCalculatorName>/ToolSvc.P2PVWithIPChi2' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Decay/LTree.LoKi::Decay' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Decay/ToolSvc.Decays' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::DistanceCalculator/ToolSvc.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::DistanceCalculator/ToolSvc.P2PVWithIPChi2.LoKi::DistanceCalculator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::CoreFactory/ToolSvc.CoreFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::HltFactory/ToolSvc.HltFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Hybrid::Tool/ToolSvc.HybridFactory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::PVReFitter/ToolSvc.LoKi::PVReFitter' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'LoKi::Reporter/LoKiSvc.REPORT' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'MemoryTool/DaVinciInitAlg.DaVinciMemory' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ODINDecodeTool/EventClockSvc.EventTimeDecoder.OdinTimeDecoder.ODINDecodeTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'OdinTimeDecoder/EventClockSvc.EventTimeDecoder.OdinTimeDecoder' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'ParticlesAndVerticesMapper/ToolSvc.UnpackPsAndVsMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'RecEventTime/EventClockSvc.EventTimeDecoder.RecEventTime' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'SequencerTimerTool/TimingAuditor.TIMER' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'SequencerTimerTool/ToolSvc.SequencerTimerTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateDetailedBetheBlochEnergyCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.GeneralDedxTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateElectronEnergyCorrectionTool/ToolSvc.StateElectronEnergyCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'StateThickMSCorrectionTool/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.MaterialLocator.StateMSCorrectionTool' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TimeDecoderList/EventClockSvc.EventTimeDecoder' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackClustersMapper/ToolSvc.UnpackTkClustersMapper' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackDistanceExtraSelector/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackInterpolator/ToolSvc.TrackStateProvider.TrackInterpolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackLinearExtrapolator/ToolSvc.TrackLinearExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackMasterExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackParabolicExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.ShortDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackInterpolator.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
+GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
+====================================================
+Finish@:    Thu May 5 19:13:05 CEST 2016
+====================================================

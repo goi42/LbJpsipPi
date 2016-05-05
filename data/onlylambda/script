@@ -60,7 +60,7 @@ EOF
 gaudirun.py DataXb2JpsiLK.py myDaVinci_TupleFile.py LHCb_Collision${YEAR}_Beam${BEAM}GeVVeloClosedMag${POLARITY}_RealData_Reco14_Stripping${STRIP}_90000000_DIMUON.DST.py pool_${YEAR}_${POLARITY}.py >>& ${DAVINCI_LOG}
 
 set DATE = `date`
-cat -<<EOF> ${DAVINCI_LOG}
+cat -<<EOF>> ${DAVINCI_LOG}
 ====================================================
 Finish@:    ${DATE}
 ====================================================
