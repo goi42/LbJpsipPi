@@ -43,15 +43,15 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   //-----assign files, branches, cuts-------//
   cout<<"files... ";
   map<TString,TString> f1quality {{"filetype","data"},{"decaymode","data (both)"}};
-  map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
+  map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
-  map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda^{0} only"}};
+  map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   file f[]={								\
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMC",f2quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMC",f3quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","LonlyMC",f5quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
   
@@ -122,20 +122,15 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,coptimized;
-    makecuts(ifile,cLL,cDD,coptimized);
+    TCut cLL,cDD,coptimized_forL;
+    makecuts(ifile,cLL,cDD,coptimized_forL);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      if(ifile<3)
-	thisbranch->c = {{coptimized,"optimized"},	\
-	};
-      else
-	thisbranch->c = {{"","no cuts"},	\
-	};
+      thisbranch->c = {{coptimized_forL,"optimized for /\\onlyMC"}};
                       // {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
                       // {coptimized,"Optimized: cos()>0.999993 with #Lambda_{p_{T}}>1300 LL or >2100 DD"}, \
                       // {coptimizedbelow,"Optimized with #Lambda_{p_{T}} > #rightarrow <"}, \
