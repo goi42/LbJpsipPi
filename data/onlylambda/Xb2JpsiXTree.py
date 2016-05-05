@@ -84,6 +84,9 @@ tuple.Branches = {
     "H2"   :  "[Lambda0 -> p+ ^pi-]cc",   
 }
 
+tuple.addTool(TupleToolDecay, name="J_psi_1S")
+tuple.J_psi_1S.addTool(tistos)
+tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
 
 tuple.ReFitPVs = True
 

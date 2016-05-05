@@ -87,7 +87,6 @@ from Configurables import CondDB
 DaVinci().DataType = "2012"
 #DaVinci().DDDBtag   = "head-20110914"
 #DaVinci().CondDBtag = "head-20111102"
-DaVinci().TupleFile = "DVNtuples.root"
 DaVinci().PrintFreq = 10000
 #For luminosity
 #CondDB().LocalTags["LHCBCOND"] = ['lumi-20100825']

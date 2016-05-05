@@ -1,8 +1,38 @@
 ====================================================
-START@:     Tue May 3 15:57:49 CEST 2016
+START@:     Tue May 3 16:07:20 CEST 2016
 ====================================================
 Configuring LHCbDirac v8r2p41 from /cvmfs/lhcb.cern.ch/lib/lhcb/LHCBDIRAC/LHCBDIRAC_v8r2p41
 Using CMTPROJECTPATH = '/afs/cern.ch/user/m/mwilkins/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
 Environment for LHCbDirac v8r2p41 ready.
 (Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
  LHCbDirac v8r2p41 from /cvmfs/lhcb.cern.ch/lib/lhcb/LHCBDIRAC/LHCBDIRAC_v8r2p41)
+====================================================
+Finish Davinci@:    Wed May 4 01:19:07 CEST 2016
+====================================================
+total 49175
+-rwxr--r--. 1 mwilkins z5     4076 May  1 21:23 DataXb2JpsiLK.py
+-rw-r--r--. 1 mwilkins z5    24423 May  3 14:13 davinci.log
+-rw-r--r--. 1 mwilkins z5     2515 Apr 30 15:17 GangaJob.py
+-rw-r--r--. 1 mwilkins z5    11461 May  3 14:13 general.log
+-rw-r--r--. 1 mwilkins z5  2275307 May  3 14:11 LFNs.py
+-rw-r--r--. 1 mwilkins z5   434891 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagDown_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   308899 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagUp_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   786541 May  3 15:47 LHCb_Collision12_Beam4000GeVVeloClosedMagDown_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5   695725 May  3 15:47 LHCb_Collision12_Beam4000GeVVeloClosedMagUp_RealData_Reco14_Stripping20_90000000_DIMUON.DST.py
+-rw-r--r--. 1 mwilkins z5      147 May  3 18:00 LHCbDirac_11_Down.log
+-rw-r--r--. 1 mwilkins z5      147 May  3 19:42 LHCbDirac_11_Up.log
+-rw-r--r--. 1 mwilkins z5      147 May  3 22:46 LHCbDirac_12_Down.log
+-rw-r--r--. 1 mwilkins z5      147 May  4 01:19 LHCbDirac_12_Up.log
+-rw-r--r--. 1 mwilkins z5      792 May  4 01:19 make_pool.log
+-rw-r--r--. 1 mwilkins z5       64 May  3 18:00 pool_11_Down.py
+-rw-r--r--. 1 mwilkins z5  4788915 May  3 18:00 pool_11_Down.xml
+-rw-r--r--. 1 mwilkins z5       64 May  3 22:46 pool_12_Down.py
+-rw-r--r--. 1 mwilkins z5  8497016 May  3 22:46 pool_12_Down.xml
+-rw-r--r--. 1 mwilkins z5       62 May  4 01:19 pool_12_Up.py
+-rw-r--r--. 1 mwilkins z5  7600599 May  4 01:19 pool_12_Up.xml
+-rw-r--r--. 1 mwilkins z5      121 May  1 15:19 pool.py
+-rw-r--r--. 1 mwilkins z5 24900382 May  1 02:36 pool.xml
+-rwxr-xr-x. 1 mwilkins z5     2020 May  3 16:04 script
+-rwxr-xr-x. 1 mwilkins z5     1517 May  3 15:57 script_make_pool
+-rwxr-xr-x. 1 mwilkins z5     1454 May  1 19:59 script_old
+-rw-r--r--. 1 mwilkins z5     4016 May  1 15:27 Xb2JpsiXTree.py

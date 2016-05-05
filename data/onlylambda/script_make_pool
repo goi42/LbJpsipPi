@@ -46,7 +46,7 @@ EOF
 dirac-bookkeeping-genXMLCatalog --File=LHCb_Collision${YEAR}_Beam${BEAM}GeVVeloClosedMag${POLARITY}_RealData_Reco14_Stripping${STRIP}_90000000_DIMUON.DST.py --Catalog=pool_${YEAR}_${POLARITY} >>& ${DIRAC_LOG}
 
 set DATE = `date`
-cat -<<EOF> ${DIRAC_LOG}
+cat -<<EOF>> ${DIRAC_LOG}
 ====================================================
 Finish@:    ${DATE}
 ====================================================
@@ -58,7 +58,7 @@ end
 set DATE = `date`
 cat -<<EOF>> ${GENERAL_LOG}
 ====================================================
-Finish Davinci@:    ${DATE}
+Finish@:    ${DATE}
 ====================================================
 EOF
 
