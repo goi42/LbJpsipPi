@@ -60,8 +60,14 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
-  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}};
-  // file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile_with_gd_info",f3quality}};
+  map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
+  file f[]={								\
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
+  };
+
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != sizeof(Lbname)/sizeof(Lbname[0])){
@@ -83,15 +89,28 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   int iSMCfile;//to store the index of the sig0 file
   cout<<"Starting file loop..."<<endl;
   for(int ifile=0;ifile<nFiles;ifile++){
+    cout<<"trees... ";
+    if(ifile<3) f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure the names are correct
+    else f[ifile].add_tree("LTree/mytree");
+    cout<<"done"<<endl;
     //store file indices
     if(f[ifile].name=="data") idatafile = ifile;
     if(f[ifile].name=="#Lambda^{0} MC") iLMCfile = ifile;
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
-                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-                {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+    f[ifile].b={{"R_P","#Lambda p",144,0,385000},         \
+                {"R_P","#Lambda p LL",144,0,385000},         \
+                {"R_P","#Lambda p DD",144,0,385000},         \
+                {"R_PT","#Lambda p_{T}",148,0,37000},         \
+                {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
+                {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
+                {"R_MM","#Lambda MM",300,1086,1146},     \
+                {"R_MM","#Lambda MM LL",300,1086,1146},  \
+                {"R_MM","#Lambda MM DD",300,1086,1146}   \
+                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
+                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+                // {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
                 // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},        \
                 // {placeholder3,"#Lambda_{b} p_{T} LL",4000,0,20000},     \
                 // {placeholder3,"#Lambda_{b} p_{T} DD",4000,0,20000},     \
@@ -107,10 +126,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
                 // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, \
                 // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}};
     };
-    cout<<"branches declared"<<endl;
-    f[ifile].add_tree("Lb2JpsiLTree/mytree");//all 3 files have the same tree
-    cout<<"tree added"<<endl;
-    
+    cout<<"branches declared"<<endl;    
     int nBranches = f[ifile].b.size();
     
     cout<<endl<<"Starting branch loop..."<<endl;

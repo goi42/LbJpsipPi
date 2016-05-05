@@ -51,8 +51,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
   };
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
   
   int nFiles = (sizeof(f)/sizeof(f[0]));
@@ -80,15 +80,18 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_P","#Lambda p",144,0,385000},         \
-                {"R_P","#Lambda p LL",144,0,385000},         \
-                {"R_P","#Lambda p DD",144,0,385000},         \
-                {"R_PT","#Lambda p_{T}",148,0,37000},         \
-                {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
-                {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
-                // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
-                // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
-                // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
+    f[ifile].b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
+		{"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
+		{"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
+                {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
+                {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
+                {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
+                // {"R_P","#Lambda p",144,0,385000},					\
+                // {"R_P","#Lambda p LL",144,0,385000},			\
+                // {"R_P","#Lambda p DD",144,0,385000},         \
+                // {"R_PT","#Lambda p_{T}",148,0,37000},         \
+                // {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
+                // {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
                 // {placeholder2,"#Lambda_{b} p",160,0,800000},         \
                 // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
                 // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
@@ -105,7 +108,6 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
                 // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},     \
                 // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},        \
                 // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, \
-                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
                 // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1}, \
                 // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},  \
                 // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, \
@@ -122,20 +124,27 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,coptimized_forL;
-    makecuts(ifile,cLL,cDD,coptimized_forL);
+    TCut cLL,cDD,coptimized_noWM;
+    makecuts(ifile,cLL,cDD,coptimized_noWM);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->c = {{coptimized_forL,"optimized for /\\onlyMC"}};
+      // thisbranch->c = {
+		       // {coptimized_forL,"optimized for /\\onlyMC"},	\
                       // {cgd,"optimized and #Lambda mother = #Lambda_{b}"},	\
                       // {coptimized,"Optimized: cos()>0.999993 with #Lambda_{p_{T}}>1300 LL or >2100 DD"}, \
                       // {coptimizedbelow,"Optimized with #Lambda_{p_{T}} > #rightarrow <"}, \
-                      // {coptimizednoPT,"Optimized without #Lambda_{p_{T}} cut"} \
-      
+                      // {coptimizednoPT,"Optimized without #Lambda_{p_{T}} cut"} 
+      for(int i=0; i<40; i+=5){
+	TCut WM = cLWM(-i,i);
+	placeholder2="optimized with #Lambda_{WM} cut window of ";
+	placeholder3=Form("%i",i);
+	placeholder=placeholder2+placeholder3;
+	thisbranch->add_cut(coptimized_noWM&&WM,placeholder);
+      }
       // if(f[ifile].name=="SMCfile_with_gd_info") thisbranch->add_cut(cgd,"optimized + mother cut");
       nCuts = thisbranch->c.size();
       
@@ -177,7 +186,6 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   for(int i =0; i<nLayers; i++){
     //assign layers; this is not an algorithm 
     if(L[i].name=="file") {
-      L[i].compared=kTRUE;
       for(int j=0;j<nFiles;j++) {
         L[i].add_element(&f[j].name);
       }
@@ -187,6 +195,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
       }
     }else if(L[i].name=="cut") {
+      L[i].compared=kTRUE;
       cL=i;
       for(int l=0;l<nCuts;l++) {
         L[i].add_element(&f[0].b[0].c[l].name);//all branches of all files have the same named cuts
@@ -253,7 +262,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     c[ci]->cd();
     //gPad->SetLogy();
     gStyle->SetOptStat("");
-    leg[ci] = new TLegend(0.41, 0.7, 0.85, 0.9);//create legend
+    // leg[ci] = new TLegend(0.41, 0.7, 0.85, 0.9);//create legend
+    leg[ci] = new TLegend(0.75, 0.7, 1, 0.9);//create legend
     placeholder = "hs"+cistring;
     hs[ci] = new THStack(placeholder,placeholder); //create the stack to hold the histograms
     TString stacktitle="";
