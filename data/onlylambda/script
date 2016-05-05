@@ -21,9 +21,9 @@ source /cvmfs/lhcb.cern.ch/group_login.csh >>& ${GENERAL_LOG}
 #-- DaVinci
 
 echo "======================= DaVinci script ========================" >> ${GENERAL_LOG}
-cat Xb2JpsiLKMC.py >> ${GENERAL_LOG}
-echo "======================= DaVinci script (Xb2JpsiXTreeMC.py) ====" >> ${GENERAL_LOG}
-cat Xb2JpsiXTreeMC.py >> ${GENERAL_LOG}
+cat DataXb2JpsiLK.py >> ${GENERAL_LOG}
+echo "======================= DaVinci script (Xb2JpsiXTree.py) ====" >> ${GENERAL_LOG}
+cat Xb2JpsiXTree.py >> ${GENERAL_LOG}
 
 SetupProject DaVinci ${DAVINCI_VERSION} >>& ${GENERAL_LOG}
 
