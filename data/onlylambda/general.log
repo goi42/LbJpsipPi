@@ -1,5 +1,5 @@
 ====================================================
-START@:     Fri May 6 16:14:51 CEST 2016
+START@:     Fri May 6 18:37:36 CEST 2016
 ====================================================
 ======================= DaVinci script ========================
 #---------------------------------------------
@@ -194,9 +194,9 @@ tuple.TupleToolGeometry.Verbose = True
 #TuneTool(tuple,'Xmass_2011')
 
 ###########################################################################################################################
-tuple.Decay = '[^Lambda0 -> ^p+ ^pi-]cc'
+tuple.Decay = '[Lambda0 -> ^p+ ^pi-]cc'
 tuple.Branches = {
-    "R"    :  "[^Lambda0 -> p+ pi-]cc", 
+    "R"    :  "^[Lambda0 -> p+ pi-]cc", 
     "H1"   :  "[Lambda0 -> ^p+ pi-]cc",      
     "H2"   :  "[Lambda0 -> p+ ^pi-]cc",   
 }
@@ -234,17 +234,17 @@ Environment for DaVinci v37r2p4 ready.
 (Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
  DaVinci v37r2p4 from /afs/cern.ch/user/m/mwilkins/cmtuser/DaVinci_v37r2p4)
 ====================================================
-Finish Davinci@:    Fri May 6 16:24:09 CEST 2016
+Finish Davinci@:    Fri May 6 18:46:51 CEST 2016
 ====================================================
 total 52783
 -rwxr--r--. 1 mwilkins z5     4047 May  6 16:14 DataXb2JpsiLK.py
--rw-r--r--. 1 mwilkins z5    51186 May  6 16:16 davinci_11_Down.log
--rw-r--r--. 1 mwilkins z5    51168 May  6 16:17 davinci_11_Up.log
--rw-r--r--. 1 mwilkins z5    51182 May  6 16:21 davinci_12_Down.log
--rw-r--r--. 1 mwilkins z5    51164 May  6 16:24 davinci_12_Up.log
+-rw-r--r--. 1 mwilkins z5    51182 May  6 18:39 davinci_11_Down.log
+-rw-r--r--. 1 mwilkins z5    51164 May  6 18:41 davinci_11_Up.log
+-rw-r--r--. 1 mwilkins z5    51178 May  6 18:44 davinci_12_Down.log
+-rw-r--r--. 1 mwilkins z5    51160 May  6 18:46 davinci_12_Up.log
 -rw-r--r--. 1 mwilkins z5    24423 May  3 14:13 davinci.log
 -rw-r--r--. 1 mwilkins z5     2515 Apr 30 15:17 GangaJob.py
--rw-r--r--. 1 mwilkins z5     9097 May  6 16:24 general.log
+-rw-r--r--. 1 mwilkins z5     9096 May  6 18:46 general.log
 -rw-r--r--. 1 mwilkins z5  2275307 May  3 14:11 LFNs.py
 -rw-r--r--. 1 mwilkins z5   434891 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagDown_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
 -rw-r--r--. 1 mwilkins z5   308899 May  3 15:47 LHCb_Collision11_Beam3500GeVVeloClosedMagUp_RealData_Reco14_Stripping20r1_90000000_DIMUON.DST.py
@@ -268,4 +268,4 @@ total 52783
 -rwxr-xr-x. 1 mwilkins z5     2019 May  5 19:06 script
 -rwxr-xr-x. 1 mwilkins z5     1510 May  4 16:25 script_make_pool
 -rwxr-xr-x. 1 mwilkins z5     1454 May  1 19:59 script_old
--rw-r--r--. 1 mwilkins z5     4146 May  5 14:31 Xb2JpsiXTree.py
+-rw-r--r--. 1 mwilkins z5     4145 May  6 18:35 Xb2JpsiXTree.py

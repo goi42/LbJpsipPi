@@ -1,5 +1,5 @@
 ====================================================
-START@:     Fri May 6 16:21:36 CEST 2016
+START@:     Fri May 6 18:44:19 CEST 2016
 YEAR:       12
 POLARITY:   Up
 ====================================================
@@ -24,7 +24,7 @@ POLARITY:   Up
 |-RootCompressionLevel = 'LZMA:6'
 |-Input                = []  (default: [])
 |-DDDBtag              = ''
-|-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f611e946bf0>, <DecayTreeTuple/LTree at 0x571d440>]
+|-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f04efbafbf0>, <DecayTreeTuple/LTree at 0x4154500>]
 |                      (default: [])
 |-RootInTES            = ''
 |-DQFLAGStag           = ''
@@ -45,7 +45,7 @@ POLARITY:   Up
 |-HistogramFile        = ''
 |-WriteFSR             = True
 |-EnableUnpack         = None
-|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f611e949410>]  (default: [])
+|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f04efbb2410>]  (default: [])
 \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
 # --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
 # --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
@@ -70,7 +70,7 @@ POLARITY:   Up
 # |-RootCompressionLevel = 'LZMA:6'
 # |-Input                = []  (default: [])
 # |-DDDBtag              = ''
-# |-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f611e946bf0>, <DecayTreeTuple/LTree at 0x571d440>]
+# |-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f04efbafbf0>, <DecayTreeTuple/LTree at 0x4154500>]
 # |                      (default: [])
 # |-RootInTES            = ''
 # |-DQFLAGStag           = ''
@@ -91,7 +91,7 @@ POLARITY:   Up
 # |-HistogramFile        = ''
 # |-WriteFSR             = True
 # |-EnableUnpack         = None
-# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f611e949410>]  (default: [])
+# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f04efbb2410>]  (default: [])
 # \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
 # applying configuration of PhysConf
 # Applying Phys configuration
@@ -123,7 +123,7 @@ POLARITY:   Up
 # |                   (default: ['NoBeam', 'BeamCrossing', 'Beam1', 'Beam2'])
 # |-Simulation        = False
 # |-Context           = 'Offline'
-# |-LumiSequencer     = <GaudiSequencer/LumiSeq at 0x7f611adea810>  (default: None)
+# |-LumiSequencer     = <GaudiSequencer/LumiSeq at 0x7f04ec053810>  (default: None)
 # |-IgnoreDQFlags     = False
 # \----- (End of User LumiAlgsConf/LumiAlgsConf) -----------------------------------------------------
 # applying configuration of DecodeRawEvent
@@ -440,7 +440,7 @@ POLARITY:   Up
 # applying configuration of LumiIntegratorConf
 # /***** User LumiIntegratorConf/LumiIntegratorConf **************************************************
 # |-TupleFile     = 'DVNtuples_12_Up.root'  (default: '')
-# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f611adeaa00>  (default: None)
+# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f04ec053a00>  (default: None)
 # |-UseOnline     = True
 # |-InputType     = 'DST'
 # |-IgnoreDQFlags = False
@@ -490,7 +490,7 @@ POLARITY:   Up
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v37r2p4
-                                          running on lxplus007.cern.ch on Fri May  6 16:23:29 2016
+                                          running on lxplus007.cern.ch on Fri May  6 18:46:11 2016
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 DetectorPersistencySvc                                         INFO Added successfully Conversion service:XmlCnvSvc
@@ -498,7 +498,7 @@ DetectorDataSvc                                             SUCCESS Detector des
 RndmGenSvc.Engine                                              INFO Generator engine type:CLHEP::RanluxEngine
 RndmGenSvc.Engine                                              INFO Current Seed:1234567 Luxury:3
 RndmGenSvc                                                     INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
-TimingAuditor.TIMER                                            INFO This machine has a speed about   3.32 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.TIMER                                            INFO This machine has a speed about   3.37 times the speed of a 2.8 GHz Xeon.
 NTupleSvc                                                      INFO Added stream file:DVNtuples_12_Up.root as FILE1
 DaVinciEventSeq                                                INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq, GaudiSequencer/IntegratorSeq
 DaVinciInitAlg                                              SUCCESS ==================================================================
@@ -533,10 +533,10 @@ MagneticFieldSvc                                               INFO Opened magne
 MagneticFieldSvc                                               INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
 TransportSvc                                                   INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
 TransportSvc                                                   INFO Recovery of geometry errors is  ENABLED
-LTree.LoKi::Decay                                             ERROR PARSE ERROR at: ##( [^Lambda0 -> ^p+ ^pi-]cc )##
-LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Unable to parse '( [^Lambda0 -> ^p+ ^pi-]cc )' StatusCode=FAILURE
-LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Error from _parse('[^Lambda0 -> ^p+ ^pi-]cc') StatusCode=FAILURE
-LTree                                                         ERROR DecayTreeTuple:: Unable to decode/parse decay descriptor '[^Lambda0 -> ^p+ ^pi-]cc'. StatusCode=FAILURE
+LTree.LoKi::Decay                                             ERROR PARSE ERROR at: ##( [Lambda0 -> ^p+ ^pi-]cc )##
+LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Unable to parse '( [Lambda0 -> ^p+ ^pi-]cc )' StatusCode=FAILURE
+LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Error from _parse('[Lambda0 -> ^p+ ^pi-]cc') StatusCode=FAILURE
+LTree                                                         ERROR DecayTreeTuple:: Unable to decode/parse decay descriptor '[Lambda0 -> ^p+ ^pi-]cc'. StatusCode=FAILURE
 LTree                                                         ERROR DecayTreeTuple:: Error from initializeDecays(false) StatusCode=FAILURE
 DaVinciUserSequence                                           ERROR GaudiSequencer:: Can not initialize LTree StatusCode=FAILURE
 DaVinciAnalysisSeq                                            ERROR GaudiSequencer:: Can not initialize DaVinciUserSequence StatusCode=FAILURE
@@ -648,5 +648,5 @@ GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtra
 GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
 GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
 ====================================================
-Finish@:    Fri May 6 16:24:09 CEST 2016
+Finish@:    Fri May 6 18:46:51 CEST 2016
 ====================================================
