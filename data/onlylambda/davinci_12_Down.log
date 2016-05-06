@@ -1,5 +1,5 @@
 ====================================================
-START@:     Thu May 5 19:09:52 CEST 2016
+START@:     Fri May 6 16:17:53 CEST 2016
 YEAR:       12
 POLARITY:   Down
 ====================================================
@@ -24,7 +24,7 @@ POLARITY:   Down
 |-RootCompressionLevel = 'LZMA:6'
 |-Input                = []  (default: [])
 |-DDDBtag              = ''
-|-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f426e5c8bf0>, <DecayTreeTuple/LTree at 0x2938c00>]
+|-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f43e8c9abf0>, <DecayTreeTuple/LTree at 0x1e22c00>]
 |                      (default: [])
 |-RootInTES            = ''
 |-DQFLAGStag           = ''
@@ -45,7 +45,7 @@ POLARITY:   Down
 |-HistogramFile        = ''
 |-WriteFSR             = True
 |-EnableUnpack         = None
-|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f426e5cc410>]  (default: [])
+|-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f43e8c9d410>]  (default: [])
 \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
 # --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/PreloadUnits.opts'
 # --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v37r2p4/GaudiConf/options/units.opts'
@@ -70,7 +70,7 @@ POLARITY:   Down
 # |-RootCompressionLevel = 'LZMA:6'
 # |-Input                = []  (default: [])
 # |-DDDBtag              = ''
-# |-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f426e5c8bf0>, <DecayTreeTuple/LTree at 0x2938c00>]
+# |-UserAlgorithms       = [<GaudiSequencer/SeqL at 0x7f43e8c9abf0>, <DecayTreeTuple/LTree at 0x1e22c00>]
 # |                      (default: [])
 # |-RootInTES            = ''
 # |-DQFLAGStag           = ''
@@ -91,7 +91,7 @@ POLARITY:   Down
 # |-HistogramFile        = ''
 # |-WriteFSR             = True
 # |-EnableUnpack         = None
-# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f426e5cc410>]  (default: [])
+# |-EventPreFilters      = [<LoKi::HDRFilter/Filter_STRIP at 0x7f43e8c9d410>]  (default: [])
 # \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
 # applying configuration of PhysConf
 # Applying Phys configuration
@@ -123,7 +123,7 @@ POLARITY:   Down
 # |                   (default: ['NoBeam', 'BeamCrossing', 'Beam1', 'Beam2'])
 # |-Simulation        = False
 # |-Context           = 'Offline'
-# |-LumiSequencer     = <GaudiSequencer/LumiSeq at 0x7f426aba1de0>  (default: None)
+# |-LumiSequencer     = <GaudiSequencer/LumiSeq at 0x7f43e51ab810>  (default: None)
 # |-IgnoreDQFlags     = False
 # \----- (End of User LumiAlgsConf/LumiAlgsConf) -----------------------------------------------------
 # applying configuration of DecodeRawEvent
@@ -440,7 +440,7 @@ POLARITY:   Down
 # applying configuration of LumiIntegratorConf
 # /***** User LumiIntegratorConf/LumiIntegratorConf **************************************************
 # |-TupleFile     = 'DVNtuples_12_Down.root'  (default: '')
-# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f426aa71050>  (default: None)
+# |-LumiSequencer = <GaudiSequencer/IntegratorSeq at 0x7f43e51aba00>  (default: None)
 # |-UseOnline     = True
 # |-InputType     = 'DST'
 # |-IgnoreDQFlags = False
@@ -490,13 +490,60 @@ POLARITY:   Down
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v37r2p4
-                                          running on lxplus007.cern.ch on Thu May  5 19:12:22 2016
+                                          running on lxplus007.cern.ch on Fri May  6 16:20:56 2016
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
+DetectorPersistencySvc                                         INFO Added successfully Conversion service:XmlCnvSvc
 DetectorDataSvc                                             SUCCESS Detector description database: conddb:/lhcb.xml
+RndmGenSvc.Engine                                              INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine                                              INFO Current Seed:1234567 Luxury:3
+RndmGenSvc                                                     INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.TIMER                                            INFO This machine has a speed about   3.37 times the speed of a 2.8 GHz Xeon.
+NTupleSvc                                                      INFO Added stream file:DVNtuples_12_Down.root as FILE1
+DaVinciEventSeq                                                INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq, GaudiSequencer/IntegratorSeq
 DaVinciInitAlg                                              SUCCESS ==================================================================
 DaVinciInitAlg                                              SUCCESS Requested to process all events on input file(s)
 DaVinciInitAlg                                              SUCCESS ==================================================================
+RootHistSvc                                                    INFO Writing ROOT histograms to: UndefinedROOTOutputFileName
+HistogramPersistencySvc                                        INFO Added successfully Conversion service:RootHistSvc
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r19/data/PhotonPdf.root as CaloNeutralPIDs
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r19/data/CaloPIDs_DC09_v1.root as CaloPIDs
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r19/data/JetEnergyCorrections_R05_v3.root as JEC14R05
+HistogramDataSvc                                               INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r19/data/JetEnergyCorrections_R07_v3.root as JEC14R07
+FilteredEventSeq                                               INFO Member list: LoKi::HDRFilter/Filter_STRIP, GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
+DaVinciEventInitSeq                                            INFO Member list: GaudiSequencer/PhysInitSeq, GaudiSequencer/AnalysisInitSeq
+PhysInitSeq                                                    INFO Member list: 
+AnalysisInitSeq                                                INFO Member list: 
+DaVinciAnalysisSeq                                             INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
+DaVinciUserSequence                                            INFO Member list: GaudiSequencer/SeqL, DecayTreeTuple/LTree
+SeqL                                                           INFO Member list: GaudiSequencer/SeqAllLambda0, FilterDesktop/FilterL
+SeqAllLambda0                                                  INFO OR Member list: LoKi::VoidFilter/SelFilter_Event_Phys_StdLooseLambdaLL_Particles, LoKi::VoidFilter/SelFilter_Event_Phys_StdLooseLambdaDD_Particles, FilterDesktop/AllLambda0
+COOLConfSvc                                                    INFO CORAL Connection Retrial Period set to 60s
+COOLConfSvc                                                    INFO CORAL Connection Retrial Time-Out set to 900s
+DDDB                                                           INFO Connected to database "sqlite_file:/cvmfs/lhcb.cern.ch/lib/lhcb/SQLite/SQLDDDB/db/DDDB.db/DDDB"
+DDDB                                                           INFO Using TAG "dddb-20150522-2"
+LHCBCOND                                                       INFO Connected to database "sqlite_file:/cvmfs/lhcb.cern.ch/lib/lhcb/SQLite/SQLDDDB/db/LHCBCOND.db/LHCBCOND"
+LHCBCOND                                                       INFO Using TAG "cond-20150409-1"
+ONLINE_2012                                                    INFO Connected to database "sqlite_file:/cvmfs/lhcb.cern.ch/lib/lhcb/SQLite/SQLDDDB/db/ONLINE-2012.db/ONLINE"
+ONLINE_2012                                                    INFO Using TAG ""
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field101.c1.down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field101.c2.down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field101.c3.down.cdf
+MagneticFieldSvc                                               INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field101.c4.down.cdf
+MagneticFieldSvc                                               INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
+TransportSvc                                                   INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
+TransportSvc                                                   INFO Recovery of geometry errors is  ENABLED
+LTree.LoKi::Decay                                             ERROR PARSE ERROR at: ##( [^Lambda0 -> ^p+ ^pi-]cc )##
+LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Unable to parse '( [^Lambda0 -> ^p+ ^pi-]cc )' StatusCode=FAILURE
+LTree.LoKi::Decay                                             ERROR LoKi::Decay:: Error from _parse('[^Lambda0 -> ^p+ ^pi-]cc') StatusCode=FAILURE
+LTree                                                         ERROR DecayTreeTuple:: Unable to decode/parse decay descriptor '[^Lambda0 -> ^p+ ^pi-]cc'. StatusCode=FAILURE
+LTree                                                         ERROR DecayTreeTuple:: Error from initializeDecays(false) StatusCode=FAILURE
+DaVinciUserSequence                                           ERROR GaudiSequencer:: Can not initialize LTree StatusCode=FAILURE
+DaVinciAnalysisSeq                                            ERROR GaudiSequencer:: Can not initialize DaVinciUserSequence StatusCode=FAILURE
+FilteredEventSeq                                              ERROR GaudiSequencer:: Can not initialize DaVinciAnalysisSeq StatusCode=FAILURE
+DaVinciEventSeq                                               ERROR GaudiSequencer:: Can not initialize FilteredEventSeq StatusCode=FAILURE
+EventLoopMgr                                                  ERROR Unable to initialize Algorithm: DaVinciEventSeq
+ServiceManager                                                ERROR Unable to initialize Service: EventLoopMgr
 ApplicationMgr                                                 INFO Application Manager Terminated successfully
 GaudiTool       WARNING   Initialize/Finalize (mis)balance 'BasicDQFilter/ToolSvc.DQAcceptTool.BasicDQFilter' Counts = 1
 GaudiTool       WARNING   Initialize/Finalize (mis)balance 'ChargedProtoParticleMapper/ToolSvc.UnpackChargedPPsMapper' Counts = 1
@@ -601,5 +648,5 @@ GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtra
 GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackRungeKuttaExtrapolator/ToolSvc.TrackStateProvider.TrackMasterExtrapolator.TrackDistanceExtraSelector.LongDistanceExtrapolator' Counts = 1
 GaudiTool       WARNING   Create/Destroy      (mis)balance 'TrackStateProvider/ToolSvc.TrackStateProvider' Counts = 1
 ====================================================
-Finish@:    Thu May 5 19:13:05 CEST 2016
+Finish@:    Fri May 6 16:21:36 CEST 2016
 ====================================================

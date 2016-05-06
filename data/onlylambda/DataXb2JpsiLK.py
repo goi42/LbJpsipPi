@@ -96,11 +96,11 @@ DaVinci().Lumi = True
 ########################################################################
 MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
 from Configurables import  DaVinciInit, GetIntegratedLuminosity
-DaVinciInit().OutputLevel = 6
-MessageSvc().OutputLevel                  = 6
-GetIntegratedLuminosity().OutputLevel       = INFO
-ToolSvc().OutputLevel                     = 6
-NTupleSvc().OutputLevel                   = 6
+# DaVinciInit().OutputLevel = 6
+# MessageSvc().OutputLevel                  = 6
+# GetIntegratedLuminosity().OutputLevel       = INFO
+# ToolSvc().OutputLevel                     = 6
+# NTupleSvc().OutputLevel                   = 6
 
 
 

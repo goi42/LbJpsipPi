@@ -77,9 +77,9 @@ tuple.TupleToolGeometry.Verbose = True
 #TuneTool(tuple,'Xmass_2011')
 
 ###########################################################################################################################
-tuple.Decay = '[^Lambda0 -> ^p+ ^pi-]cc'
+tuple.Decay = '[Lambda0 -> ^p+ ^pi-]cc'
 tuple.Branches = {
-    "R"    :  "[^Lambda0 -> p+ pi-]cc", 
+    "R"    :  "^[Lambda0 -> p+ pi-]cc", 
     "H1"   :  "[Lambda0 -> ^p+ pi-]cc",      
     "H2"   :  "[Lambda0 -> p+ ^pi-]cc",   
 }
