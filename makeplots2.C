@@ -51,8 +51,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality},
   };
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}, \
   
   int nFiles = (sizeof(f)/sizeof(f[0]));
@@ -80,12 +80,15 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
-		{"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
-		{"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
-                {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
-                {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
-                {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
+    f[ifile].b={{"R_M","#Lambda^{0} M",70,1085,1155}, \
+		{"R_M","#Lambda^{0} M LL",70,1085,1155}, \
+		{"R_M","#Lambda^{0} M DD",70,1085,1155}, \
+                // {"R_WM","#Lambda^{0} M with p#rightarrow#pi",80,300,700}, \
+		// {"R_WM","#Lambda^{0} M with p#rightarrow#pi LL",80,300,700}, \
+		// {"R_WM","#Lambda^{0} M with p#rightarrow#pi DD",80,300,700}, \
+                // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       \
+                // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    \
+                // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     \
                 // {"R_P","#Lambda p",144,0,385000},					\
                 // {"R_P","#Lambda p LL",144,0,385000},			\
                 // {"R_P","#Lambda p DD",144,0,385000},         \
