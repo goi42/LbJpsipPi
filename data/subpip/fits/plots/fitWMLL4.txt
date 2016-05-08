@@ -1,0 +1,14 @@
+K_{S}: fraction Gaussian 1 = 0.793078 +/- 2.483632E-02
+K_{S}: mean1 = 498.333455 +/- 3.894796E-01
+K_{S}: sigma1 = 27.302224 +/- 1.329177E+00
+K_{S}: sigma2 = 3.140330 +/- 3.931031E-01
+Background: Chebychev b1 = -110.175846 +/- 1.588796E-08
+Background: Chebychev b2 = -103.966504 +/- 1.499302E-08
+Background: Chebychev b3 = 38.083854 +/- 7.753442E-09
+Background: Chebychev b4 = -24.813151 +/- 2.946763E-10
+#chi^{2}/N_{DoF} = 3.226930
+N K_{S} = 1026.891431 +/- 47.510234
+N bkg = 3746.830824 +/- 57.342655
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 6.543011E-02
+limit = 1.097021E+00
+limit at 90% confidence level = 1.755233E+00

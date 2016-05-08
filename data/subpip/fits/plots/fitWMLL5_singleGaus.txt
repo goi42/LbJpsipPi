@@ -1,0 +1,13 @@
+K_{S}: mean1 = 497.929897 +/- 5.721960E-01
+K_{S}: sigma1 = 3.999547 +/- 7.512562E-01
+Background: Chebychev b1 = 1.564135 +/- 2.691860E-03
+Background: Chebychev b2 = 1.007090 +/- 1.695709E-02
+Background: Chebychev b3 = 1.284402 +/- 1.377044E-02
+Background: Chebychev b4 = 0.462659 +/- 1.751529E-02
+Background: Chebychev b5 = 0.309080 +/- 1.087276E-03
+#chi^{2}/N_{DoF} = 2.074291
+N K_{S} = 281.963468 +/- 41.184089
+N bkg = 16018.815449 +/- 237.041963
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 2.065626E-01
+limit = 1.342090E+00
+limit at 90% confidence level = 2.147344E+00

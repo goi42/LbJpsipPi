@@ -137,14 +137,20 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooGaussian gauLstmisc("gauLstmisc","#Lambda*(misc.) (gaussian)",*mass,meanLst3,sigLst3);
   // WM
   //gaussian
-  RooRealVar meanWM1("meanWM1","K_{S}: mean1",500,460,540);
-  RooRealVar sigWM1("sigWM1","K_{S}: sigma1",10,0,100);
+  RooRealVar meanWM1("meanWM1","K_{S}: mean1",498.333455,460,540);
+  RooRealVar sigWM1("sigWM1","K_{S}: sigma1",27.302224,0,100);
   RooGaussian gauWM1("gauWM1","K_{S}: Gaussian1",*mass,meanWM1,sigWM1);
   RooFormulaVar meanWM2("meanWM2","@0",meanWM1);
-  RooRealVar sigWM2("sigWM2","K_{S}: sigma2",10,0,100);
+  RooRealVar sigWM2("sigWM2","K_{S}: sigma2",3.140330,0,100);
   RooGaussian gauWM2("gauWM2","K_{S}: Gaussian2",*mass,meanWM2,sigWM2);
-  RooRealVar fWM1("fWM1","K_{S}: fraction Gaussian 1",0.827146,0,1);
+  RooRealVar fWM1("fWM1","K_{S}: fraction Gaussian 1",0.793078,0,1);
   RooAddPdf sigWM("sigWM","K_{S} (dbl Gaus)",RooArgList(gauWM1,gauWM2),RooArgList(fWM1));
+  // //CB
+  // RooRealVar meanWM1("meanWM1","K_{S}: mean1",5290.815782,5000,5400);
+  // RooRealVar sigWM1("sigWM1","K_{S}: sigma1",75.880004,0,10000);
+  // RooRealVar alphaWM1("alphaWM1","K_{S}: alpha1",0.586106,0,10000);
+  // RooRealVar nWM1("nWM1","K_{S}: n1",126.153761,0,10000);
+  // RooCBShape sigWM("sigWM","K_{S} (CB)",*mass,meanWM1,sigWM1,alphaWM1,nWM1);
 
   // bkg
   // // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
@@ -158,14 +164,14 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooArgList bList(b1,b2);
   // RooChebychev bkg("bkg","Background", *mass, bList);
   // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
-  RooRealVar b1("b1","Background: Chebychev b1",1,-100,100);
-  RooRealVar b2("b2","Background: Chebychev b2",-1,-100,100);
-  RooRealVar b3("b3","Background: Chebychev b3",-0.387522,-100,100);
-  RooRealVar b4("b4","Background: Chebychev b4",0.281777,-100,100);
-  RooRealVar b5("b5","Background: Chebychev b5",0.187079,-100,100);
+  RooRealVar b1("b1","Background: Chebychev b1",1.453099,-10000,10000);
+  RooRealVar b2("b2","Background: Chebychev b2",0.690002,-10000,10000);
+  RooRealVar b3("b3","Background: Chebychev b3",0.300899,-10000,10000);
+  RooRealVar b4("b4","Background: Chebychev b4",-24.813151,-10000,10000);
+  RooRealVar b5("b5","Background: Chebychev b5",0.187079,-10000,10000);
   RooRealVar b6("b6","Background: Chebychev b6",-0.015,-10000,10000);
   RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
-  RooArgList bList(b1,b2,b3,b4);
+  RooArgList bList(b1,b2,b3);
   RooChebychev bkg("bkg","Background", *mass, bList);
   // TF1 *ep = new TF1("ep","[2]*exp([0]*x+[1]*x*x)",4300,5950);
   // ep->SetParameter(0,1);

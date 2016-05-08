@@ -145,14 +145,14 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
   pad2->Draw();
   pad1->Draw();
   pad1->cd();
-  framex->SetMinimum(1);
-  framex->SetMaximum(7500);
+  // framex->SetMinimum(1);
+  // framex->SetMaximum(7500);
   
   framex->addObject(leg);//add legend to frame
   //framex->addObject(txt);//add text to frame
 
   gPad->SetTopMargin(0.06);
-  pad1->SetLogy();
+  // pad1->SetLogy();
   // pad1->Range(4100,0,6100,0.0005);
   pad1->Update();
   framex->Draw();
