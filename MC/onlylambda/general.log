@@ -1,5 +1,5 @@
 ====================================================
-START@:     Thu Apr 21 17:20:26 CEST 2016
+START@:     Wed May 4 16:21:47 CEST 2016
 ====================================================
 ======================= DaVinci script ========================
 #---------------------------------------------
@@ -192,6 +192,10 @@ tuple.R.ToolList = [ "TupleToolMCTruth" ]
 tuple.R.addTool(TupleToolMCTruth())
 tuple.R.TupleToolMCTruth.ToolList = [ "MCTupleToolHierarchy" ]
 
+tuple.addTool(TupleToolDecay, name="J_psi_1S")
+tuple.J_psi_1S.addTool(tistos)
+tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
+
 tuple.ReFitPVs = True
 
 #WM tool to cut away KS
@@ -224,18 +228,18 @@ Environment for DaVinci v37r2p4 ready.
 (Compat v1r19 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r19,
  DaVinci v37r2p4 from /afs/cern.ch/user/m/mwilkins/cmtuser/DaVinci_v37r2p4)
 ====================================================
-Finish Davinci@:    Sat Apr 23 04:34:12 CEST 2016
+Finish Davinci@:    Fri May 6 04:49:32 CEST 2016
 ====================================================
 total 1294502
--rw-r--r--. 1 mwilkins z5       148 Apr 21 21:59 davinci_2011_Down.log
--rw-r--r--. 1 mwilkins z5       148 Apr 22 02:42 davinci_2011_Up.log
--rw-r--r--. 1 mwilkins z5       148 Apr 22 15:22 davinci_2012_Down.log
--rw-r--r--. 1 mwilkins z5       148 Apr 23 04:34 davinci_2012_Up.log
--rw-r--r--. 1 mwilkins z5 170350344 Apr 21 21:59 DVNtuples_2011_Down.root
--rw-r--r--. 1 mwilkins z5 186581933 Apr 22 02:42 DVNtuples_2011_Up.root
--rw-r--r--. 1 mwilkins z5 466993979 Apr 22 15:22 DVNtuples_2012_Down.root
--rw-r--r--. 1 mwilkins z5 501510208 Apr 23 04:34 DVNtuples_2012_Up.root
--rw-r--r--. 1 mwilkins z5      8523 Apr 23 04:34 general.log
+-rw-r--r--. 1 mwilkins z5       147 May  4 21:01 davinci_2011_Down.log
+-rw-r--r--. 1 mwilkins z5       147 May  5 01:50 davinci_2011_Up.log
+-rw-r--r--. 1 mwilkins z5       147 May  5 15:25 davinci_2012_Down.log
+-rw-r--r--. 1 mwilkins z5       147 May  6 04:49 davinci_2012_Up.log
+-rw-r--r--. 1 mwilkins z5 170350352 May  4 21:01 DVNtuples_2011_Down_withJpsitrigger.root
+-rw-r--r--. 1 mwilkins z5 186581944 May  5 01:50 DVNtuples_2011_Up_withJpsitrigger.root
+-rw-r--r--. 1 mwilkins z5 466993965 May  5 15:25 DVNtuples_2012_Down_withJpsitrigger.root
+-rw-r--r--. 1 mwilkins z5 501510266 May  6 04:49 DVNtuples_2012_Up_withJpsitrigger.root
+-rw-r--r--. 1 mwilkins z5      8656 May  6 04:49 general.log
 -rw-r--r--. 1 mwilkins z5      4448 Apr 21 16:35 MC_2011_Beam3500GeV2011MagDownNu2Pythia6_Sim08a_Digi13_Trig0x40760037_Reco14a_Stripping20r1NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py
 -rw-r--r--. 1 mwilkins z5      4278 Apr 21 16:35 MC_2011_Beam3500GeV2011MagUpNu2Pythia6_Sim08a_Digi13_Trig0x40760037_Reco14a_Stripping20r1NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py
 -rw-r--r--. 1 mwilkins z5      6137 Apr 21 16:35 MC_2012_Beam4000GeV2012MagDownNu2.5Pythia6_Sim08a_Digi13_Trig0x409f0045_Reco14a_Stripping20NoPrescalingFlagged_15144103_ALLSTREAMS.DST.py
@@ -248,6 +252,6 @@ total 1294502
 -rw-r--r--. 1 mwilkins z5     28236 Apr 21 16:35 pool_xml_catalog_2012_Down.xml
 -rw-r--r--. 1 mwilkins z5       141 Apr 21 16:35 pool_xml_catalog_2012_Up.py
 -rw-r--r--. 1 mwilkins z5     26673 Apr 21 16:35 pool_xml_catalog_2012_Up.xml
--rwxr-xr-x. 1 mwilkins z5      2144 Apr 21 17:18 script
+-rwxr-xr-x. 1 mwilkins z5      2160 May  3 16:32 script
 -rw-r--r--. 1 mwilkins z5      3827 Apr 21 16:58 Xb2JpsiLKMC.py
--rw-r--r--. 1 mwilkins z5      3788 Apr 21 16:50 Xb2JpsiXTreeMC.py
+-rw-r--r--. 1 mwilkins z5      3923 May  3 16:31 Xb2JpsiXTreeMC.py
