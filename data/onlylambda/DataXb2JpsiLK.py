@@ -76,6 +76,7 @@ from PhysConf.Filters import LoKi_Filters
 fltrs = LoKi_Filters(STRIP_Code = "(HLT_PASS_RE('StrippingFullDSTDiMuonJpsi2MuMuDetachedLineDecision'))" )
 
 from Configurables import DaVinci
+DaVinci().TupleFile = "DVNtuples.root"
 DaVinci().Simulation   = False
 DaVinci().EvtMax = -1                        # Number of events
 DaVinci().EventPreFilters = fltrs.filters('Filter')
