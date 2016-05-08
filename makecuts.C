@@ -5,16 +5,26 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs"};//,"Bs","Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={""};//,"_","_"};//,"_",""};
+TString Lbname[]={"Bs","Bs","Bs"};//,"Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={"","_","_"};//,"_"};//,"_",""};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
   TCut output=(TCut)place;
   return output;
 }
-TCut cgprob(TString input="0.2"){
+TCut cLbendv(int ifile){
+  TString place=Lbname[ifile]+"_ENDVERTEX_CHI2/"+Lbname[ifile]+"_ENDVERTEX_NDOF<10";
+  TCut output =(TCut)place;
+  return output;
+}
+TCut cJpsiMM(){
+  TCut output= "((J_psi_1S_MM-3096.92)>-48)&&((J_psi_1S_MM-3096.92)<43)";
+  return output;
+}
+TCut cgprob(float in=0.2){
+  TString input = Form("%f",in);
   TString place="(H1_TRACK_GhostProb<"+input+")&&(H2_TRACK_GhostProb<"+input+")";
   TCut output=(TCut)place;
   return output;
@@ -38,14 +48,27 @@ TCut cLPTstep(float lo, float hi){
   TCut output=(TCut)place;
   return output;
 }
-TCut cLWM(float lo=-40, float hi=40){
+TCut cLWM(float lo=-40, float hi=40, float mass=497.611){//mass was 497.614 before 5/5/16
   TString lostring = Form("%f",lo);
   TString histring = Form("%f",hi);
-  TString place = "(R_WM-497.611<"+lostring+")||(R_WM-497.611>"+histring+")";//was 497.614 before 5/5/16
+  TString massstring = Form("%f",mass);
+  TString place = "(R_WM-"+massstring+"<"+lostring+")||(R_WM-"+massstring+">"+histring+")";
   TCut output=(TCut)place;
   return output;
 }
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized_noWM){
+TCut cLZ(float Lvz=500){
+  TString Lvzstring = Form("%f",Lvz);
+  TString place = "R_ENDVERTEX_Z>"+Lvzstring;
+  TCut output = (TCut)place;
+  return output;
+}
+TCut cLFD(float LFDchi=50){
+  TString LFDchistring = Form("%f",LFDchi);
+  TString place = "R_FDCHI2_ORIVX>"+LFDchistring;
+  TCut output = (TCut)place;
+  return output;
+}
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &cbase,TCut &ctrigger){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -63,11 +86,8 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized_noWM){
   TCut cpiTRUEID = "H2_TRUEID==211||H2_TRUEID==-211";
   TCut cJpsiBKGCAT = "J_psi_1S_BKGCAT==0";
     
-  TCut cLFD = "R_FDCHI2_ORIVX>50";
   TCut cLMM1 = "(R_MM>1112)&&(R_MM<1120)";
   TCut cLMM2 = "(R_MM>1110)&&(R_MM<1122)";
-  TCut cLZ = "R_ENDVERTEX_Z>500";
-  TCut cJpsiMM = "((J_psi_1S_MM-3096.92)>-48)&&((J_psi_1S_MM-3096.92)<43)";
     
   placeholder = "(J_psi_1S"+Jpsi_[ifile]+"Hlt1DiMuonHighMassDecision_TOS==1)||(J_psi_1S"+Jpsi_[ifile]+"Hlt1TrackMuonDecision_TOS==1)";
   TCut ctriggerHlt1part1=(TCut)placeholder;
@@ -76,22 +96,26 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized_noWM){
   TCut ctriggerHlt1=ctriggerHlt1part1||ctriggerHlt1part2;
   placeholder="J_psi_1S"+Jpsi_[ifile]+"Hlt2DiMuonDetachedJPsiDecision_TOS==1";
   TCut ctriggerHlt2=(TCut)placeholder;
-  TCut ctrigger = ctriggerHlt1&&ctriggerHlt2;
+  ctrigger = ctriggerHlt1&&ctriggerHlt2;
+  
+  cbase=((cLL&&cLWM(-2.759994,2.759994,497.742391))||(cDD&&cLWM(-21.321261,21.321261,498.289686)))&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&((cLL&&cgprob())||(cDD&&cLbendv(ifile)&&cLZ()))&&ctrigger;
+  // coptimized=((cLL&&cLPT(1300)&&cLWM(-2.759994,2.759994,497.742391)||(cDD&&cLPT(2100)&&cLWM(-21.321261,21.321261,498.289686))) \
+  // 	 &&cLbDIRA(ifile,0.999993)&&cLFD()&&cJpsiMM()&&ctrigger		\
+  // 	 &&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile)));
+
+  //---------------old stuff--------------------//
   //cuts whose name varies by file:
-  placeholder=Lbname[ifile]+"_ENDVERTEX_CHI2/"+Lbname[ifile]+"_ENDVERTEX_NDOF<10";
-  TCut cLbendv=(TCut)placeholder;
-  TCut cLiming = cLPT()&&cLbDIRA(ifile)&&cLFD&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv&&cJpsiMM));
+  TCut cLiming = cLPT()&&cLbDIRA(ifile)&&cLFD()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile)&&cJpsiMM()));
   TCut cWMtot = cLiming&&cLWM();
   TCut ctriggertot = cWMtot&&ctrigger;
-
   // coptimized=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
-  coptimized_noWM=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
-    &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
-    &&ctrigger;
+  // coptimized_noWM=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
+  //   &&ctrigger;
   // coptimized_forL=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))		\
-  //   &&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2))			\
+  //   &&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2))			\
   //   &&cLWM();
   // TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
   // cgd=coptimized&&motherL;
@@ -109,32 +133,32 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &coptimized_noWM){
   // cgd=coptimized&&mother1405;
 
   // coptimized_sans_WM=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&ctrigger;
   // ctight=((cLL&&cLPT(6000))||(cDD&&cLPT(7000)))&&cLbDIRA(ifile,0.999999) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // cloose=                                                               \
-  //   cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // cold=((cLL&&cLPT(1000))||(cDD&&cLPT(1000)))&&cLbDIRA(ifile,0.9999) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // coptimizedbelow=((cLL&&cLPTbelow(1300))||(cDD&&cLPTbelow(2100)))&&cLbDIRA(ifile,0.999993) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // ctightbelow=((cLL&&cLPTbelow(6000))||(cDD&&cLPTbelow(7000)))&&cLbDIRA(ifile,0.999999) \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // coptimizednoPT=cLbDIRA(ifile,0.999993)                                \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
   // ctightnoPT=cLbDIRA(ifile,0.999999)                                    \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
 
   // coptimizedLPTstep=cLPTstep(lo,hi)&&cLbDIRA(ifile,0.999993)            \
-  //   &&cLFD&&cJpsiMM&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ&&cLMM2&&cLbendv)) \
+  //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \
   //   &&cLWM()&&ctrigger;
 
 }  

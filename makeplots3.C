@@ -65,9 +65,8 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality}, \
   };
-
+  //    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality}, \
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != sizeof(Lbname)/sizeof(Lbname[0])){
@@ -99,18 +98,18 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_P","#Lambda p",144,0,385000},         \
-                {"R_P","#Lambda p LL",144,0,385000},         \
-                {"R_P","#Lambda p DD",144,0,385000},         \
-                {"R_PT","#Lambda p_{T}",148,0,37000},         \
-                {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
-                {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
-                {"R_MM","#Lambda MM",300,1086,1146},     \
-                {"R_MM","#Lambda MM LL",300,1086,1146},  \
-                {"R_MM","#Lambda MM DD",300,1086,1146}   \
-                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
-                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-                // {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+    f[ifile].b={{"R_M","#Lambda M",300,1086,1146},			\
+                {"R_M","#Lambda M LL",300,1086,1146},			\
+                {"R_M","#Lambda M DD",300,1086,1146},			\
+                {massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
+                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+                {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+                // {"R_P","#Lambda p",144,0,385000},			\
+                // {"R_P","#Lambda p LL",144,0,385000},         \
+                // {"R_P","#Lambda p DD",144,0,385000},         \
+                // {"R_PT","#Lambda p_{T}",148,0,37000},         \
+                // {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
+                // {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
                 // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},        \
                 // {placeholder3,"#Lambda_{b} p_{T} LL",4000,0,20000},     \
                 // {placeholder3,"#Lambda_{b} p_{T} DD",4000,0,20000},     \
@@ -134,11 +133,17 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<f[ifile].b[ibranch].name<<" for file "<<f[ifile].name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,coptimized,cgd;
-      makecuts(ifile,cLL,cDD,coptimized,cgd);
-      f[ifile].b[ibranch].c ={{coptimized,"Optimized"},	\
-			      {cgd,"Optimized with mother cut"} \
-      }; 
+      TCut cLL,cDD,cbase,ctrigger;
+      makecuts(ifile,cLL,cDD,cbase,ctrigger);
+      for(int i=0; i<3300; i+=300){
+        TCut thecut = cbase&&cLFD()&&cLPT(i);
+	placeholder2 = Form("%i",i);
+	placeholder = "#Lambda_{p}_{T} > "+placeholder2+" MeV";
+	f[ifile].b[ibranch].add_cut(thecut,placeholder);
+      }
+      // f[ifile].b[ibranch].c ={{coptimized,"Optimized"},	\
+      // 			      {cgd,"Optimized with mother cut"} \
+      // }; 
         
       int nCuts = f[ifile].b[ibranch].c.size();
       if(nCuts==0){
