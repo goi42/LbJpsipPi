@@ -82,13 +82,16 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   for(int ifile=0;ifile<nFiles;ifile++){
     file * thisfile = &f[ifile];
     cout<<"Using "<<thisfile->name<<"..."<<endl;
-    // thisfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
-    //              {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, \
-    //              {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}  \
-    // };
-    thisfile->b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
-		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
-		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}};
+    thisfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+                 {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, \
+                 {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}  \
+    };
+    // thisfile->b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
+    // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
+    // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}};
+    // thisfile->b={{"R_M","#Lambda^{0} M",300,1086,1146}, \
+    // 		 {"R_M","#Lambda^{0} M LL",300,1086,1146}, \
+    // 		 {"R_M","#Lambda^{0} M DD",300,1086,1146}};
     cout<<"branches declared"<<endl;
     thisfile->add_tree("Lb2JpsiLTree/mytree");//all 3 files have the same tree
     cout<<"tree added"<<endl;
@@ -107,10 +110,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<thisbranch->name<<" for file "<<thisfile->name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,coptimized_noWM;
-      makecuts(ifile,cLL,cDD,coptimized_noWM);
+      TCut cLL,cDD,cnewopt;
+      makecuts(ifile,cLL,cDD,cnewopt);
 
-      thisbranch->c = {{coptimized_noWM,"Optimized_with_no_WM"}};
+      thisbranch->c = {{cnewopt,"newly_optimized"}};
       int nCuts = thisbranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 

@@ -39,13 +39,15 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   TString placeholder3;
   TString outputlocation="./";
   TString filename="plots.pdf";
-  // ofstream myfile;
+  ofstream myfile;
   // TString trueratiostring="";//holds information to be put at end of myfile
-  // myfile.open(outputlocation+"sigbkg.csv");
-  // myfile<<"dataset,cuts,number signal,number background"<<endl;
-  // float bkgcutofflo = 5100;
-  // float bkgcutoffhi = 0;
-  // cout<<"using "<<bkgcutofflo<<" and "<<bkgcutoffhi<<" as the boundaries between bkg and sig for ratio calculation"<<endl;
+  myfile.open(outputlocation+"sigbkg.csv");
+  myfile<<"dataset,cuts,number signal,number background,Nsig^2/Nbkg"<<endl;
+  float sigcutofflo = 1112.491056;
+  float sigcutoffhi = 1119.284328;
+  float bkgcutofflo = 1105.697784;
+  float bkgcutoffhi = 1126.0776;
+  cout<<"using "<<sigcutofflo<<" to "<<sigcutoffhi<<" as the signal region and "<<bkgcutofflo<<" and "<<bkgcutoffhi<<" as the upper and lower bounds of the bkg"<<endl;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
   vector<TCanvas*> c;//each canvas holds one stack of histograms
@@ -63,10 +65,10 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   file f[]={								\
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
   };
-  //    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality}, \
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != sizeof(Lbname)/sizeof(Lbname[0])){
@@ -88,9 +90,11 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   int iSMCfile;//to store the index of the sig0 file
   cout<<"Starting file loop..."<<endl;
   for(int ifile=0;ifile<nFiles;ifile++){
+    myfile<<f[ifile].name;
     cout<<"trees... ";
-    if(ifile<3) f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure the names are correct
-    else f[ifile].add_tree("LTree/mytree");
+    if(ifile<3){
+      f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure the names are correct
+    }else f[ifile].add_tree("LTree/mytree");
     cout<<"done"<<endl;
     //store file indices
     if(f[ifile].name=="data") idatafile = ifile;
@@ -101,9 +105,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     f[ifile].b={{"R_M","#Lambda M",300,1086,1146},			\
                 {"R_M","#Lambda M LL",300,1086,1146},			\
                 {"R_M","#Lambda M DD",300,1086,1146},			\
-                {massname[ifile],"#Lambda_{b} mass",400,4100,6100},     \
-                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-                {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
+		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
+                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
+                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+                // {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
                 // {"R_P","#Lambda p",144,0,385000},			\
                 // {"R_P","#Lambda p LL",144,0,385000},         \
                 // {"R_P","#Lambda p DD",144,0,385000},         \
@@ -119,7 +126,6 @@ void makeplots3(TString runmode="d", TString drawopt=""){
                 // {placeholder2,"#Lambda_{b} BKGCAT",131,0,131}                    \
                 // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},                    \
                 // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, \
-                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
                 // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1},   \
                 // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},      \
                 // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, \
@@ -135,10 +141,11 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       //assign cuts
       TCut cLL,cDD,cbase,ctrigger;
       makecuts(ifile,cLL,cDD,cbase,ctrigger);
-      for(int i=0; i<3300; i+=300){
-        TCut thecut = cbase&&cLFD()&&cLPT(i);
-	placeholder2 = Form("%i",i);
-	placeholder = "#Lambda_{p}_{T} > "+placeholder2+" MeV";
+      for(float i=0; i<3000; i+=200){
+	TCut thecut = cbase&&cLPT(i);
+	if(ifile<3) thecut = thecut&&cLFD()&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
+	placeholder2 = Form("%.1f",i);
+	placeholder = "p & #pi ghost prob <"+placeholder2+"";
 	f[ifile].b[ibranch].add_cut(thecut,placeholder);
       }
       // f[ifile].b[ibranch].c ={{coptimized,"Optimized"},	\
@@ -193,18 +200,26 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         cout<<"\rdrawing histogram "<<icut+1<<"/"<<nCuts<<"...";
         while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
           icolor++;//skip bad colors 
-        h[ci][icut]->SetLineColor(icolor);
-        placeholder = f[ifile].b[ibranch].self+">>"+hname;
-        TCut * thiscut = &f[ifile].b[ibranch].c[icut].self;
-        cut * mycut = &f[ifile].b[ibranch].c[icut];
-        f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
-        // //calculate sig/bkg
-        // cout<<"\rcalculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
-        // int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
-        // int nent = (int)f[ifile].t[0]->GetEntries(*thiscut);//total number
-        // int nsig = nent - nbkg;
-        // mycut->nbkg = nbkg;
-        // mycut->nsig = nsig;
+	h[ci][icut]->SetLineColor(icolor);
+	placeholder = f[ifile].b[ibranch].self+">>"+hname;
+	TCut * thiscut = &f[ifile].b[ibranch].c[icut].self;
+	cut * mycut = &f[ifile].b[ibranch].c[icut];
+	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
+	//calculate sig/bkg
+        cout<<"\rcalculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
+	TString sigcutofflostring = Form("%.0f",sigcutofflo);
+	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
+	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
+	TString bkgcutoffhistring = Form("%.0f",bkgcutoffhi);
+	placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
+	TCut cbkg = (TCut)placeholder;
+        int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
+        int nent = (int)f[ifile].t[0]->GetEntries(*thiscut);//total number
+        int nsig = nent - nbkg;
+        mycut->nbkg = nbkg;
+        mycut->nsig = nsig;
+	float nsig2= (float)nsig*(float)nsig;
+	float ratio = nsig2/(float)nbkg;
         // mycut->nL = (int)f[ifile].t[0]->GetEntries(*thiscut&&cLreg);//number in /\ region
         // mycut->nS = (int)f[ifile].t[0]->GetEntries(*thiscut&&cSreg);//number in S region
         // mycut->nb = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkgreg);//number in bkg region
@@ -217,10 +232,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
         hs[ci]->Add(h[ci][icut]);//stack histogram
         //store calculations
-        // myfile<<","<<leglabel<<","                                      \
-        //       <<Form("%i",nsig)<<","                                    \
-        //       <<Form("%i",nbkg)<<endl;
-        //calculate SMC sig/data bkg
+        myfile<<","<<leglabel<<","                                      \
+              <<Form("%i",nsig)<<","                                    \
+              <<Form("%i",nbkg)<<","					\
+	      <<Form("%f",ratio)<<endl;
+
+        // //calculate SMC sig/data bkg
         // if(ifile==(nFiles-1)){//ensure everything's been calculated
         //   if(ibranch==0&&icut==0){
         //     trueratiostring +="summary,cuts,L0 sig,L0 bkg,S0 sig,S0 bkg,data sig,data bkg";
@@ -281,7 +298,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   placeholder = outputlocation+filename+")";
   cf->Print(placeholder);
   // myfile<<trueratiostring;//include at end of CSV file
-  // myfile.close();
+  myfile.close();
   gROOT->SetBatch(kFALSE);
   cout<<"done"<<endl;
 }
