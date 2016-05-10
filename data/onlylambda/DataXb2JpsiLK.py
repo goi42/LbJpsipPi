@@ -91,7 +91,7 @@ DaVinci().DataType = "2012"
 DaVinci().PrintFreq = 10000
 #For luminosity
 #CondDB().LocalTags["LHCBCOND"] = ['lumi-20100825']
-DaVinci().Lumi = True
+# DaVinci().Lumi = True #got error saying 'method lumi not available for this job'
 
 
 ########################################################################
