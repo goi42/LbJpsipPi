@@ -44,6 +44,19 @@ RooDataSet get_data_no_WM(RooRealVar* mass){
   cout<<"data declared"<<endl;
   return data;
 }
+RooDataSet get_data_LM(RooRealVar* mass){
+  //unbinned
+  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized_LM_noLMcut_DD.root", "READ");
+  TTree * h100 = (TTree*)hastree->Get("mytree");
+  // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
+  // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
+  cout<<"tree gotten"<<endl;
+  // RooDataHist *data = new RooDataHist("data","1D",RooArgList(*mass),h100);
+  //unbinned
+  RooDataSet data("data","1D",h100,*mass);
+  cout<<"data declared"<<endl;
+  return data;
+}
 
 RooDataSet get_Lst_MC(RooRealVar* mass){
   // TFile *hasLsttree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lst_1405_JpsiLmass.root","READ");

@@ -1,0 +1,1625 @@
+=========================================
+START@:		Tue May 10 14:51:46 CEST 2016
+=========================================
+Configuring DaVinci v40r1p3 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r1p3
+GCCXML_config_version: Undefined variable.
+
+Processing ./rootoptsLMLL1testbkg/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = LMLL1testbkg
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMbkglo' created with bounds [1090,1106]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMtot' created with bounds [1090,1136]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 13 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named LMbkglo
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'NormalizationRangeForLMbkglo' created with bounds [1086,1146]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'fit_nll_totalPdf_data' created with bounds [1090,1106]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        1000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-1e+30) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 2165.49)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 2165.49)
+
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -692873
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-1e+30) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=2001.42, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-1268.448749), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 2001.42)
+     p.d.f value is less than zero (-1159.946545), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 2001.42)
+     p.d.f value is less than zero (-1453.110469), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 2001.42)
+     p.d.f value is less than zero (-937.824214), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 2001.42)
+     p.d.f value is less than zero (-1207.972297), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 2001.42)
+     p.d.f value is less than zero (-1362.829114), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 2001.42)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 2001.42)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -1268.45/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -1159.95/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -1453.11/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -937.824/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -1207.97/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -1362.83/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -751.032/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -1289.63/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -954.518/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -823.03/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -1066.79/-19197.7), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -1378.04/-19197.7), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 2001.42,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -69687.4
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=202.797, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-127.628707), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 202.797)
+     p.d.f value is less than zero (-116.634567), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 202.797)
+     p.d.f value is less than zero (-146.339820), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 202.797)
+     p.d.f value is less than zero (-94.127704), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 202.797)
+     p.d.f value is less than zero (-121.500845), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 202.797)
+     p.d.f value is less than zero (-137.191933), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 202.797)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 202.797)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -127.629/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -116.635/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -146.34/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -94.1277/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -121.501/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -137.192/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -75.2007/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -129.775/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -95.8192/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -82.496/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -107.195/-1930.85), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -138.734/-1930.85), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 202.797,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -6902.62
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=21.5889, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-12.693237), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-11.522850), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-14.685138), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-9.126870), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-12.040892), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-13.711295), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 21.5889)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -12.6932/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -11.5229/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -14.6851/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -9.12687/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -12.0409/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -13.7113/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -7.11198/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -12.9217/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -9.30694/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -7.88861/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -10.518/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -13.8754/-191.253), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 21.5889,nbkg = 2165.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=3431.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 3431.49)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 3431.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=1189.61
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 1189.61)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 1189.61)
+
+ FCN=-1e+30 FROM MIGRAD    STATUS=INITIATE        8 CALLS           9 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1           1.45310e+00   2.00000e+03   2.01358e-01   1.69377e+08
+   2  nbkg         2.16549e+03   1.08275e+03   2.40884e-03   0.00000e+00
+                               ERR DEF= 0.5
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 2165.49)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 2165.49)
+
+ MIGRAD FAILS TO FIND IMPROVEMENT
+ MACHINE ACCURACY LIMITS FURTHER IMPROVEMENT.
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -6902.62
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=21.5889, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-12.693237), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-11.522850), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-14.685138), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-9.126870), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-12.040892), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 21.5889)
+     p.d.f value is less than zero (-13.711295), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 21.5889)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 21.5889)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -12.6932/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -11.5229/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -14.6851/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -9.12687/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -12.0409/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -13.7113/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -7.11198/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -12.9217/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -9.30694/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -7.88861/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -10.518/-191.253), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -13.8754/-191.253), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 21.5889,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -706538
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (684056) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=2040.86, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-1293.464740), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 2040.86)
+     p.d.f value is less than zero (-1182.824373), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 2040.86)
+     p.d.f value is less than zero (-1481.765439), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 2040.86)
+     p.d.f value is less than zero (-956.324858), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 2040.86)
+     p.d.f value is less than zero (-1231.796528), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 2040.86)
+     p.d.f value is less than zero (-1389.704983), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 2040.86)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 2040.86)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -1293.46/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -1182.82/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -1481.77/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -956.325/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -1231.8/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -1389.7/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -765.851/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -1315.06/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -973.348/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -839.269/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -1087.83/-19576.3), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -1405.22/-19576.3), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 2040.86,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -1.66097e+06
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (697705) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=4795.53, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-3040.674849), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2780.697104), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-3483.135335), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2248.478762), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2895.769666), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-3266.815828), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 4795.53)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -3040.67/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -2780.7/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -3483.14/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -2248.48/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -2895.77/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -3266.82/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -1800.91/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -3091.42/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -2288.48/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -1973.43/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -2557.48/-46021.1), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -3303.27/-46021.1), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 4795.53,nbkg = 2165.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=3431.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 3431.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 3431.49)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 3431.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=1189.61
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 1189.61)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 1189.61)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 1189.61)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=1.61695e+06
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 1.61695e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 1.61695e+06)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 1.61695e+06)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=1.39057e+06
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 1.39057e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 1.39057e+06)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 1.39057e+06)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=6.34587e+06
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 6.34587e+06)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 6.34587e+06)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=5.89967e+06
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 5.89967e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 5.89967e+06)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 5.89967e+06)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -345825
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=999.78, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-633.133311), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 999.78)
+     p.d.f value is less than zero (-578.932729), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 999.78)
+     p.d.f value is less than zero (-725.378192), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 999.78)
+     p.d.f value is less than zero (-467.974985), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 999.78)
+     p.d.f value is less than zero (-602.923243), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 999.78)
+     p.d.f value is less than zero (-680.279550), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 999.78)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 999.78)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -633.133/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -578.933/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -725.378/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -467.975/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -602.923/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -680.28/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -374.666/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -643.714/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -476.314/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -410.631/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -532.396/-9581.89), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -687.88/-9581.89), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 999.78,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -69217
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=201.439, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-126.767590), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 201.439)
+     p.d.f value is less than zero (-115.847050), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 201.439)
+     p.d.f value is less than zero (-145.353439), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 201.439)
+     p.d.f value is less than zero (-93.490862), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 201.439)
+     p.d.f value is less than zero (-120.680750), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 201.439)
+     p.d.f value is less than zero (-136.266793), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 201.439)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 201.439)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -126.768/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -115.847/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -145.353/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -93.4909/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -120.681/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -136.267/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -74.6905/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -128.899/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -95.1711/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -81.9371/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -106.471/-1917.82), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -137.798/-1917.82), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 201.439,nbkg = 2165.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=298403
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 298403)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 298403)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 298403)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=205490
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 205490)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 205490)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 205490)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -4.8674e+09
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=4795.53, nbkg=6.34587e+06
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-3040.674849), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2780.697104), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-3483.135335), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2248.478762), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-2895.769666), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 4795.53)
+     p.d.f value is less than zero (-3266.815828), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 4795.53)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 4795.53)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -3040.67/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -2780.7/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -3483.14/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -2248.48/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -2895.77/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -3266.82/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -1800.91/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -3091.42/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -2288.48/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -1973.43/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -2557.48/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -3303.27/-46021.1), !coefficients=(nbkg = 6.34587e+06)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 4795.53,nbkg = 6.34587e+06)
+
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING -nan TO DIAGONAL.
+ FCN=-nan FROM MIGRAD    STATUS=CONVERGED      29 CALLS          30 TOTAL
+                     EDM=-nan    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1           1.45310e+00           nan   5.00000e-01   3.97296e+07
+   2  nbkg         2.16549e+03           nan   5.00000e-01   0.00000e+00
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  2    ERR DEF=0.5
+        nan        nan 
+        nan       -nan 
+ERR MATRIX NOT POS-DEF
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2
+        1     -nan     nan    nan
+        2      nan     nan   -nan
+ ERR MATRIX NOT POS-DEF
+ **********
+ **   18 **MINOS        1000
+ **********
+ FUNCTION MUST BE MINIMIZED BEFORE CALLING MINOs     
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 2165.49)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 2165.49)
+
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 5.00e-05
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -615744
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1778.82, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-1127.254344), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 1778.82)
+     p.d.f value is less than zero (-1030.820296), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 1778.82)
+     p.d.f value is less than zero (-1291.377069), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 1778.82)
+     p.d.f value is less than zero (-833.403515), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 1778.82)
+     p.d.f value is less than zero (-1073.504384), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 1778.82)
+     p.d.f value is less than zero (-1211.137256), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 1778.82)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 1778.82)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -1127.25/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -1030.82/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -1291.38/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -833.404/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -1073.5/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -1211.14/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -667.387/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -1146.08/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -848.241/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -731.377/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -948.023/-17060.6), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -1224.66/-17060.6), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1778.82,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -61834.1
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=180.131, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-113.252386), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 180.131)
+     p.d.f value is less than zero (-103.487017), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 180.131)
+     p.d.f value is less than zero (-129.872232), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 180.131)
+     p.d.f value is less than zero (-83.495657), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 180.131)
+     p.d.f value is less than zero (-107.809410), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 180.131)
+     p.d.f value is less than zero (-121.746767), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 180.131)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 180.131)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -113.252/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -103.487/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -129.872/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -83.4957/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -107.809/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -121.747/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -66.684/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -115.159/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -84.9981/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -73.164/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -95.1025/-1713.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -123.116/-1713.26), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 180.131,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -6117.15
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=19.3219, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-11.255344), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 19.3219)
+     p.d.f value is less than zero (-10.207856), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 19.3219)
+     p.d.f value is less than zero (-13.038081), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 19.3219)
+     p.d.f value is less than zero (-8.063472), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 19.3219)
+     p.d.f value is less than zero (-10.671500), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 19.3219)
+     p.d.f value is less than zero (-12.166498), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 19.3219)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 19.3219)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -11.2553/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -10.2079/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -13.0381/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -8.06347/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -10.6715/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -12.1665/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -6.26016/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -11.4598/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -8.22464/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -6.95524/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -9.30849/-169.49), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -12.3134/-169.49), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 19.3219,nbkg = 2165.49)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=3274.46
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 3274.46)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 3274.46)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 3274.46)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=1284.99
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 1284.99)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 1284.99)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 1284.99)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=23535
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 23535)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 23535)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 23535)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.4531, nbkg=3641.74
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.055732), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.001231), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.046530), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.117595), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122360), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.063644), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.128991), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.122203), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.189937), forcing value to zero @ x=R_M=1091.43, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.150781), forcing value to zero @ x=R_M=1092.24, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.149187), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 1.4531)
+     p.d.f value is less than zero (-0.094711), forcing value to zero @ x=R_M=1093.4, coefList=(b1 = 1.4531)
+    ... (remaining 221 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.0557317/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.00123123/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.0465305/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.117595/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.12236/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.0636439/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.128991/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.122203/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1091.43), !pdfs=(bkg = -0.189937/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.24), !pdfs=(bkg = -0.150781/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.27), !pdfs=(bkg = -0.149187/2.05025), !coefficients=(nbkg = 3641.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1093.4), !pdfs=(bkg = -0.0947108/2.05025), !coefficients=(nbkg = 3641.74)
+    ... (remaining 221 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.4531,nbkg = 3641.74)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -24690.4
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=72.9276, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-45.256013), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 72.9276)
+     p.d.f value is less than zero (-41.302423), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 72.9276)
+     p.d.f value is less than zero (-51.984693), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 72.9276)
+     p.d.f value is less than zero (-33.208758), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 72.9276)
+     p.d.f value is less than zero (-43.052380), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 72.9276)
+     p.d.f value is less than zero (-48.695033), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 72.9276)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 72.9276)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -45.256/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -41.3024/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -51.9847/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -33.2088/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -43.0524/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -48.695/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -26.4024/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -46.0278/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -33.817/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -29.0259/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -37.9079/-684.105), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -49.2494/-684.105), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 72.9276,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -9212.72
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=28.2563, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-16.922173), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 28.2563)
+     p.d.f value is less than zero (-15.390331), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 28.2563)
+     p.d.f value is less than zero (-19.529241), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 28.2563)
+     p.d.f value is less than zero (-12.254391), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 28.2563)
+     p.d.f value is less than zero (-16.068362), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 28.2563)
+     p.d.f value is less than zero (-18.254642), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 28.2563)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 28.2563)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -16.9222/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -15.3903/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -19.5292/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -12.2544/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -16.0684/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -18.2546/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -9.61724/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -17.2212/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -12.4901/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -10.6337/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -14.0751/-255.26), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -18.4695/-255.26), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 28.2563,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -1473.79
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=5.9203, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-2.755084), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-2.434129), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-3.301321), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-1.777082), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-2.576192), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-3.034265), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 5.9203)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -2.75508/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -2.43413/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -3.30132/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -1.77708/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -2.57619/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -3.03426/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -1.22454/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -2.81774/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -1.82646/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -1.43752/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -2.15856/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -3.07927/-40.8349), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 5.9203,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -28559.7
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=84.0953, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-52.339351), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 84.0953)
+     p.d.f value is less than zero (-47.780335), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 84.0953)
+     p.d.f value is less than zero (-60.098416), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 84.0953)
+     p.d.f value is less than zero (-38.447259), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 84.0953)
+     p.d.f value is less than zero (-49.798268), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 84.0953)
+     p.d.f value is less than zero (-56.304999), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 84.0953)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 84.0953)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -52.3394/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -47.7803/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -60.0984/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -38.4473/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -49.7983/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -56.305/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -30.5987/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -53.2293/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -39.1487/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -33.6239/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -43.866/-791.315), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -56.9443/-791.315), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 84.0953,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -13082.2
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=39.4242, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-24.005689), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 39.4242)
+     p.d.f value is less than zero (-21.868405), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 39.4242)
+     p.d.f value is less than zero (-27.643168), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 39.4242)
+     p.d.f value is less than zero (-17.493024), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 39.4242)
+     p.d.f value is less than zero (-22.814419), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 39.4242)
+     p.d.f value is less than zero (-25.864800), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 39.4242)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 39.4242)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -24.0057/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -21.8684/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -27.6432/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -17.493/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -22.8144/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -25.8648/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -13.8136/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -24.4229/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -17.8219/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -15.2318/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -20.0333/-362.472), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -26.1645/-362.472), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 39.4242,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -5343.26
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=17.0883, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-9.838635), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 17.0883)
+     p.d.f value is less than zero (-8.912236), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 17.0883)
+     p.d.f value is less than zero (-11.415289), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 17.0883)
+     p.d.f value is less than zero (-7.015742), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 17.0883)
+     p.d.f value is less than zero (-9.322283), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 17.0883)
+     p.d.f value is less than zero (-10.644461), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 17.0883)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 17.0883)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -9.83864/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -8.91224/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -11.4153/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -7.01574/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -9.32228/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -10.6445/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -5.42089/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -10.0195/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -7.15827/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -6.03562/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -8.11684/-148.048), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -10.7744/-148.048), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 17.0883,nbkg = 2165.49)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -1473.79
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=5.9203, nbkg=2165.49
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-2.755084), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-2.434129), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-3.301321), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-1.777082), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-2.576192), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 5.9203)
+     p.d.f value is less than zero (-3.034265), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 5.9203)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 5.9203)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -2.75508/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -2.43413/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -3.30132/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -1.77708/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -2.57619/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -3.03426/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -1.22454/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -2.81774/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -1.82646/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -1.43752/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -2.15856/-40.8349), !coefficients=(nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -3.07927/-40.8349), !coefficients=(nbkg = 2165.49)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 5.9203,nbkg = 2165.49)
+
+ FCN=-1806.54 FROM MIGRAD    STATUS=INITIATE       31 CALLS          62 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1          -5.24770e+00   2.00000e+03  -6.70080e-04  -2.26769e+06
+   2  nbkg         2.16549e+03   1.08275e+03   0.00000e+00   3.29271e+05
+                               ERR DEF= 0.5
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -629.116
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=8.10739, nbkg=610.487
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-4.142295), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 8.10739)
+     p.d.f value is less than zero (-3.702774), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 8.10739)
+     p.d.f value is less than zero (-4.890325), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 8.10739)
+     p.d.f value is less than zero (-2.802998), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 8.10739)
+     p.d.f value is less than zero (-3.897317), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 8.10739)
+     p.d.f value is less than zero (-4.524612), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 8.10739)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 8.10739)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -4.1423/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -3.70277/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -4.89032/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -2.803/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -3.89732/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -4.52461/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -2.04634/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -4.22809/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -2.87062/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -2.33799/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -3.3254/-61.8309), !coefficients=(nbkg = 610.487)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -4.58625/-61.8309), !coefficients=(nbkg = 610.487)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 8.10739,nbkg = 610.487)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.57689, nbkg=1956.78
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.000177), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.145669), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.074538), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.016865), forcing value to zero @ x=R_M=1096.65, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.086526), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.049677), forcing value to zero @ x=R_M=1096.03, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.135684), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.212803), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.022846), forcing value to zero @ x=R_M=1096.54, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.217973), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.154255), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.57689)
+     p.d.f value is less than zero (-0.225169), forcing value to zero @ x=R_M=1092.69, coefList=(b1 = 1.57689)
+    ... (remaining 308 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -0.000177332/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.145669/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -0.074538/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -0.0168651/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.0865259/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.03), !pdfs=(bkg = -0.0496765/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.135684/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.212803/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.54), !pdfs=(bkg = -0.0228461/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.217973/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.154255/0.861874), !coefficients=(nbkg = 1956.78)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.69), !pdfs=(bkg = -0.225169/0.861874), !coefficients=(nbkg = 1956.78)
+    ... (remaining 308 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.57689,nbkg = 1956.78)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -2421.37
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=7.43166, nbkg=2625.07
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-3.713700), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 7.43166)
+     p.d.f value is less than zero (-3.310811), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 7.43166)
+     p.d.f value is less than zero (-4.399383), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 7.43166)
+     p.d.f value is less than zero (-2.486029), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 7.43166)
+     p.d.f value is less than zero (-3.489139), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 7.43166)
+     p.d.f value is less than zero (-4.064152), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 7.43166)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 7.43166)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -3.7137/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -3.31081/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -4.39938/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -2.48603/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -3.48914/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -4.06415/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -1.79243/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -3.79235/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -2.54802/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -2.05978/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -2.96489/-55.3439), !coefficients=(nbkg = 2625.07)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -4.12065/-55.3439), !coefficients=(nbkg = 2625.07)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 7.43166,nbkg = 2625.07)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -9257.12
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=16.8692, nbkg=3805.74
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-9.699688), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 16.8692)
+     p.d.f value is less than zero (-8.785165), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 16.8692)
+     p.d.f value is less than zero (-11.256130), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 16.8692)
+     p.d.f value is less than zero (-6.912983), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 16.8692)
+     p.d.f value is less than zero (-9.189956), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 16.8692)
+     p.d.f value is less than zero (-10.495183), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 16.8692)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 16.8692)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -9.69969/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -8.78517/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -11.2561/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -6.91298/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -9.18996/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -10.4952/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -5.33858/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -9.87821/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -7.05369/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -5.94543/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -7.99996/-145.945), !coefficients=(nbkg = 3805.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -10.6234/-145.945), !coefficients=(nbkg = 3805.74)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 16.8692,nbkg = 3805.74)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -4571.83
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=9.95559, nbkg=3447.24
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-5.314563), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 9.95559)
+     p.d.f value is less than zero (-4.774845), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 9.95559)
+     p.d.f value is less than zero (-6.233118), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 9.95559)
+     p.d.f value is less than zero (-3.669952), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 9.95559)
+     p.d.f value is less than zero (-5.013738), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 9.95559)
+     p.d.f value is less than zero (-5.784035), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 9.95559)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 9.95559)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -5.31456/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -4.77485/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -6.23312/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -3.66995/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -5.01374/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -5.78404/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -2.7408/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -5.41992/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -3.75299/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -3.09894/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -4.31145/-79.5737), !coefficients=(nbkg = 3447.24)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -5.85972/-79.5737), !coefficients=(nbkg = 3447.24)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 9.95559,nbkg = 3447.24)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -796.473
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=3.42707, nbkg=2827.74
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-1.173697), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1096.97, coefList=(b1 = 3.42707)
+     p.d.f value is less than zero (-0.987907), forcing value to zero @ x=R_M=1098.6, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1098.6, coefList=(b1 = 3.42707)
+     p.d.f value is less than zero (-1.489896), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1094.2, coefList=(b1 = 3.42707)
+     p.d.f value is less than zero (-0.607563), forcing value to zero @ x=R_M=1101.93, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1101.93, coefList=(b1 = 3.42707)
+     p.d.f value is less than zero (-1.070142), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1097.88, coefList=(b1 = 3.42707)
+     p.d.f value is less than zero (-1.335305), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 3.42707)
+     p.d.f normalization integral is zero or negative @ x=R_M=1095.56, coefList=(b1 = 3.42707)
+    ... (remaining 1686 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -1.1737/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1098.6), !pdfs=(bkg = -0.987907/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -1.4899/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.93), !pdfs=(bkg = -0.607563/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -1.07014/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -1.33531/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1104.73), !pdfs=(bkg = -0.287715/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -1.20996/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1101.68), !pdfs=(bkg = -0.636148/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1103.65), !pdfs=(bkg = -0.410999/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1099.99), !pdfs=(bkg = -0.828388/-16.8999), !coefficients=(nbkg = 2827.74)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -1.36136/-16.8999), !coefficients=(nbkg = 2827.74)
+    ... (remaining 838 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 3.42707,nbkg = 2827.74)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (1.65151e+06) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=1.66087, nbkg=2663.55
+RooChebychev::bkg[ x=R_M coefList=(b1) ]
+     p.d.f value is less than zero (-0.053445), forcing value to zero @ x=R_M=1096.97, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.206685), forcing value to zero @ x=R_M=1094.2, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.003259), forcing value to zero @ x=R_M=1097.88, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.131766), forcing value to zero @ x=R_M=1095.56, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.071021), forcing value to zero @ x=R_M=1096.65, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.144392), forcing value to zero @ x=R_M=1095.33, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.105580), forcing value to zero @ x=R_M=1096.03, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.196169), forcing value to zero @ x=R_M=1094.39, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.277395), forcing value to zero @ x=R_M=1092.93, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.077321), forcing value to zero @ x=R_M=1096.54, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.282840), forcing value to zero @ x=R_M=1092.83, coefList=(b1 = 1.66087)
+     p.d.f value is less than zero (-0.215729), forcing value to zero @ x=R_M=1094.04, coefList=(b1 = 1.66087)
+    ... (remaining 358 messages suppressed)
+RooAddPdf::totalPdf[ nbkg * bkg ]
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.97), !pdfs=(bkg = -0.0534449/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.2), !pdfs=(bkg = -0.206685/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1097.88), !pdfs=(bkg = -0.00325889/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.56), !pdfs=(bkg = -0.131766/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.65), !pdfs=(bkg = -0.0710215/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1095.33), !pdfs=(bkg = -0.144392/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.03), !pdfs=(bkg = -0.10558/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.39), !pdfs=(bkg = -0.196169/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.93), !pdfs=(bkg = -0.277395/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1096.54), !pdfs=(bkg = -0.077321/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1092.83), !pdfs=(bkg = -0.28284/0.0556453), !coefficients=(nbkg = 2663.55)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1094.04), !pdfs=(bkg = -0.215729/0.0556453), !coefficients=(nbkg = 2663.55)
+    ... (remaining 358 messages suppressed)
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,nbkg) ]
+     function value is NAN @ paramSet=(b1 = 1.66087,nbkg = 2663.55)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-2531.45 FROM MIGRAD    STATUS=CONVERGED     164 CALLS         195 TOTAL
+                     EDM=2.0357e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1           6.73324e-01   7.83041e-02   1.08587e-07   3.24977e+00
+   2  nbkg         5.33552e+03   4.58884e+02   8.71682e-06  -1.07109e-01
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  2    ERR DEF=0.5
+  6.132e-03  3.294e+01 
+  3.294e+01  2.106e+05 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2
+        1  0.91683   1.000  0.917
+        2  0.91683   0.917  1.000
+ FCN=-2531.45 FROM MINOS     STATUS=SUCCESSFUL     68 CALLS         263 TOTAL
+                     EDM=2.0357e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1           6.73324e-01   7.83041e-02  -8.54456e-02   7.19757e-02
+   2  nbkg         5.33552e+03   4.58884e+02  -4.54983e+02   4.61368e+02
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        1000
+ **********
+ FCN=-2531.45 FROM MINOS     STATUS=SUCCESSFUL     64 CALLS         327 TOTAL
+                     EDM=2.0357e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1           6.73324e-01   7.83041e-02  -8.54456e-02   7.19757e-02
+   2  nbkg         5.33552e+03   4.58884e+02  -4.54983e+02   4.61368e+02
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+Background: Chebychev b1 = 0.673324 +/- 8.544560E-02
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#chi^{2}/N_{DoF} = 0.999438
+N bkg = 5335.517777 +/- 461.368424
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.222887E-01
+limit = 1.189312E+00
+limit at 90% confidence level = 1.902900E+00
+Info in <TCanvas::Print>: eps file plots/fitLMLL1testbkg.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fitLMLL1testbkg.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Tue May 10 14:52:04 CEST 2016
+=========================================

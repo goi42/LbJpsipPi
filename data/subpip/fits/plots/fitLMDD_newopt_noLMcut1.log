@@ -1,0 +1,403 @@
+=========================================
+START@:		Tue May 10 19:42:29 CEST 2016
+=========================================
+Configuring DaVinci v40r1p3 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r1p3
+GCCXML_config_version: Undefined variable.
+
+Processing ./rootoptsLMDD_newopt_noLMcut1/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = LMDD_newopt_noLMcut1
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMbkglo' created with bounds [1090,1106]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMbkghi' created with bounds [1124,1136]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMtot' created with bounds [1090,1136]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 14 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named LMtot
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'NormalizationRangeForLMtot' created with bounds [1086,1146]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'fit_nll_totalPdf_data' created with bounds [1090,1136]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        4000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -42530.9
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=279.958, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,b2,fLM1,meanLM1,nbkg,ngauLM,sigLM1,sigLM2) ]
+     function value is NAN @ paramSet=(b1 = 279.958,b2 = -0.144059,fLM1 = 0.793078,meanLM1 = 1115.5,nbkg = 2165.49,ngauLM = 100,sigLM1 = 2,sigLM2 = 3.14033)
+RooAddPdf::totalPdf[ ngauLM * sigLM + nbkg * bkg ]
+     p.d.f value is less than zero (-0.000074), forcing value to zero @ !refCoefNorm=(R_M = 1119.57), !pdfs=(sigLM = 0.0313081/1,bkg = 34.4519/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1119.57), !pdfs=(sigLM = 0.0313081/1,bkg = 34.4519/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.000379), forcing value to zero @ !refCoefNorm=(R_M = 1116.59), !pdfs=(sigLM = 0.161211/1,bkg = 6.62706/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1116.59), !pdfs=(sigLM = 0.161211/1,bkg = 6.62706/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.000253), forcing value to zero @ !refCoefNorm=(R_M = 1113.31), !pdfs=(sigLM = 0.107687/1,bkg = -23.9231/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1113.31), !pdfs=(sigLM = 0.107687/1,bkg = -23.9231/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.000308), forcing value to zero @ !refCoefNorm=(R_M = 1117.24), !pdfs=(sigLM = 0.130838/1,bkg = 12.7262/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1117.24), !pdfs=(sigLM = 0.130838/1,bkg = 12.7262/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.000430), forcing value to zero @ !refCoefNorm=(R_M = 1115.21), !pdfs=(sigLM = 0.182777/1,bkg = -6.18215/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1115.21), !pdfs=(sigLM = 0.182777/1,bkg = -6.18215/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.000410), forcing value to zero @ !refCoefNorm=(R_M = 1114.8), !pdfs=(sigLM = 0.174546/1,bkg = -10.0189/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1114.8), !pdfs=(sigLM = 0.174546/1,bkg = -10.0189/-1237.91), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+    ... (remaining 2038 messages suppressed)
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-45.770098), forcing value to zero @ x=R_M=1110.97, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1110.97, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f value is less than zero (-14.403487), forcing value to zero @ x=R_M=1114.33, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1114.33, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f value is less than zero (-12.785220), forcing value to zero @ x=R_M=1114.51, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1114.51, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1117.33, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1119.1, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f value is less than zero (-0.343707), forcing value to zero @ x=R_M=1115.84, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1115.84, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f value is less than zero (-89.120876), forcing value to zero @ x=R_M=1106.33, coefList=(b1 = 279.958,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1106.33, coefList=(b1 = 279.958,b2 = -0.144059)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-278.906, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-2.232415), forcing value to zero @ x=R_M=1116.36, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-4.560044), forcing value to zero @ x=R_M=1116.61, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-35.310817), forcing value to zero @ x=R_M=1119.92, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-58.755114), forcing value to zero @ x=R_M=1122.44, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-0.053789), forcing value to zero @ x=R_M=1116.13, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-49.409093), forcing value to zero @ x=R_M=1121.44, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-0.298953), forcing value to zero @ x=R_M=1116.16, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-21.120770), forcing value to zero @ x=R_M=1118.39, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-20.570542), forcing value to zero @ x=R_M=1118.34, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-22.284047), forcing value to zero @ x=R_M=1118.52, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-26.445235), forcing value to zero @ x=R_M=1118.97, coefList=(b1 = -278.906,b2 = -0.144059)
+     p.d.f value is less than zero (-84.585059), forcing value to zero @ x=R_M=1125.22, coefList=(b1 = -278.906,b2 = -0.144059)
+    ... (remaining 2038 messages suppressed)
+
+[#0] ERROR:InputArguments -- totalPdf: calculated negative expected events: -2692.19
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=28.4732, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooNLLVar::nll_totalPdf_data[ paramSet=(b1,b2,fLM1,meanLM1,nbkg,ngauLM,sigLM1,sigLM2) ]
+     function value is NAN @ paramSet=(b1 = 28.4732,b2 = -0.144059,fLM1 = 0.793078,meanLM1 = 1115.5,nbkg = 2165.49,ngauLM = 100,sigLM1 = 2,sigLM2 = 3.14033)
+RooAddPdf::totalPdf[ ngauLM * sigLM + nbkg * bkg ]
+     p.d.f value is less than zero (-0.001163), forcing value to zero @ !refCoefNorm=(R_M = 1119.57), !pdfs=(sigLM = 0.0313081/1,bkg = 4.52798/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1119.57), !pdfs=(sigLM = 0.0313081/1,bkg = 4.52798/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.005988), forcing value to zero @ !refCoefNorm=(R_M = 1116.59), !pdfs=(sigLM = 0.161211/1,bkg = 1.70161/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1116.59), !pdfs=(sigLM = 0.161211/1,bkg = 1.70161/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.004000), forcing value to zero @ !refCoefNorm=(R_M = 1113.31), !pdfs=(sigLM = 0.107687/1,bkg = -1.40748/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1113.31), !pdfs=(sigLM = 0.107687/1,bkg = -1.40748/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.004860), forcing value to zero @ !refCoefNorm=(R_M = 1117.24), !pdfs=(sigLM = 0.130838/1,bkg = 2.32158/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1117.24), !pdfs=(sigLM = 0.130838/1,bkg = 2.32158/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.006789), forcing value to zero @ !refCoefNorm=(R_M = 1115.21), !pdfs=(sigLM = 0.182777/1,bkg = 0.398769/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1115.21), !pdfs=(sigLM = 0.182777/1,bkg = 0.398769/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     p.d.f value is less than zero (-0.006483), forcing value to zero @ !refCoefNorm=(R_M = 1114.8), !pdfs=(sigLM = 0.174546/1,bkg = 0.00831656/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+     getLogVal() top-level p.d.f evaluates to zero @ !refCoefNorm=(R_M = 1114.8), !pdfs=(sigLM = 0.174546/1,bkg = 0.00831656/-81.0792), !coefficients=(ngauLM = 100,nbkg = 2165.49)
+    ... (remaining 2038 messages suppressed)
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f normalization integral is zero or negative @ x=R_M=1114.32, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1126.76, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1125.83, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1115.39, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f value is less than zero (-1.171299), forcing value to zero @ x=R_M=1113.56, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1113.56, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1119.14, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1115.85, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1114.81, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1119.46, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1115.84, coefList=(b1 = 28.4732,b2 = -0.144059)
+     p.d.f normalization integral is zero or negative @ x=R_M=1133.07, coefList=(b1 = 28.4732,b2 = -0.144059)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-27.4204, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-1.584643), forcing value to zero @ x=R_M=1118.98, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.708899), forcing value to zero @ x=R_M=1118.03, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.058613), forcing value to zero @ x=R_M=1117.32, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.566297), forcing value to zero @ x=R_M=1117.87, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-7.652136), forcing value to zero @ x=R_M=1125.59, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.136945), forcing value to zero @ x=R_M=1117.4, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-13.012581), forcing value to zero @ x=R_M=1131.41, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.138623), forcing value to zero @ x=R_M=1117.4, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-0.278066), forcing value to zero @ x=R_M=1117.56, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-2.480295), forcing value to zero @ x=R_M=1119.96, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-1.605777), forcing value to zero @ x=R_M=1119.01, coefList=(b1 = -27.4204,b2 = -0.144059)
+     p.d.f value is less than zero (-3.959049), forcing value to zero @ x=R_M=1121.57, coefList=(b1 = -27.4204,b2 = -0.144059)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=279.288, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-240.172873), forcing value to zero @ x=R_M=1123.82, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1123.82, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f value is less than zero (-278.176268), forcing value to zero @ x=R_M=1116.41, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.41, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f value is less than zero (-270.316849), forcing value to zero @ x=R_M=1119.57, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1119.57, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f value is less than zero (-278.063439), forcing value to zero @ x=R_M=1116.59, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.59, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f value is less than zero (-273.857723), forcing value to zero @ x=R_M=1113.31, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1113.31, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f value is less than zero (-277.310112), forcing value to zero @ x=R_M=1117.24, coefList=(b1 = 0.526392,b2 = 279.288)
+     p.d.f normalization integral is zero or negative @ x=R_M=1117.24, coefList=(b1 = 0.526392,b2 = 279.288)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=-279.576, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-83.952640), forcing value to zero @ x=R_M=1091.79, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-69.203183), forcing value to zero @ x=R_M=1092.29, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-120.076114), forcing value to zero @ x=R_M=1090.62, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-24.399849), forcing value to zero @ x=R_M=1093.86, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-26.570166), forcing value to zero @ x=R_M=1093.78, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-95.411482), forcing value to zero @ x=R_M=1091.41, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-4.053956), forcing value to zero @ x=R_M=1094.61, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-44.362440), forcing value to zero @ x=R_M=1093.14, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-118.252945), forcing value to zero @ x=R_M=1090.68, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-93.980097), forcing value to zero @ x=R_M=1091.46, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-87.540996), forcing value to zero @ x=R_M=1091.67, coefList=(b1 = 0.526392,b2 = -279.576)
+     p.d.f value is less than zero (-107.021434), forcing value to zero @ x=R_M=1091.04, coefList=(b1 = 0.526392,b2 = -279.576)
+    ... (remaining 94 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=27.8027, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-22.884841), forcing value to zero @ x=R_M=1123.82, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1123.82, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f value is less than zero (-26.785136), forcing value to zero @ x=R_M=1116.41, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.41, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f value is less than zero (-25.952826), forcing value to zero @ x=R_M=1119.57, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1119.57, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f value is less than zero (-26.771105), forcing value to zero @ x=R_M=1116.59, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.59, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f value is less than zero (-26.404152), forcing value to zero @ x=R_M=1113.31, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1113.31, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f value is less than zero (-26.685785), forcing value to zero @ x=R_M=1117.24, coefList=(b1 = 0.526392,b2 = 27.8027)
+     p.d.f normalization integral is zero or negative @ x=R_M=1117.24, coefList=(b1 = 0.526392,b2 = 27.8027)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-40397.3) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=-28.0909, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=100, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-7.917850), forcing value to zero @ x=R_M=1091.79, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-6.428059), forcing value to zero @ x=R_M=1092.29, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-11.565911), forcing value to zero @ x=R_M=1090.62, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-1.901564), forcing value to zero @ x=R_M=1093.86, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-2.120872), forcing value to zero @ x=R_M=1093.78, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-9.075158), forcing value to zero @ x=R_M=1091.41, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-3.918602), forcing value to zero @ x=R_M=1093.14, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-11.381812), forcing value to zero @ x=R_M=1090.68, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-8.930598), forcing value to zero @ x=R_M=1091.46, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-8.280273), forcing value to zero @ x=R_M=1091.67, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-10.247637), forcing value to zero @ x=R_M=1091.04, coefList=(b1 = 0.526392,b2 = -28.0909)
+     p.d.f value is less than zero (-12.107296), forcing value to zero @ x=R_M=1090.45, coefList=(b1 = 0.526392,b2 = -28.0909)
+    ... (remaining 92 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-39886.4) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=3.69816, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=2108.83, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-0.233107), forcing value to zero @ x=R_M=1105.13, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-2.027792), forcing value to zero @ x=R_M=1091.79, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-1.959163), forcing value to zero @ x=R_M=1092.29, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-0.792879), forcing value to zero @ x=R_M=1100.88, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-0.326916), forcing value to zero @ x=R_M=1104.42, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-1.425470), forcing value to zero @ x=R_M=1096.18, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-1.109945), forcing value to zero @ x=R_M=1098.51, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-2.190850), forcing value to zero @ x=R_M=1090.62, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-0.515156), forcing value to zero @ x=R_M=1102.98, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-0.559094), forcing value to zero @ x=R_M=1102.65, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-1.742346), forcing value to zero @ x=R_M=1093.86, coefList=(b1 = 3.69816,b2 = -0.144059)
+     p.d.f value is less than zero (-0.707299), forcing value to zero @ x=R_M=1101.53, coefList=(b1 = 3.69816,b2 = -0.144059)
+    ... (remaining 469 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-39886.4) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=-2.64537, b2=-0.144059, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=2108.83, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-0.090915), forcing value to zero @ x=R_M=1129.36, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.403614), forcing value to zero @ x=R_M=1132.56, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.086473), forcing value to zero @ x=R_M=1129.31, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.036047), forcing value to zero @ x=R_M=1128.79, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.704045), forcing value to zero @ x=R_M=1135.57, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.332745), forcing value to zero @ x=R_M=1131.84, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.432829), forcing value to zero @ x=R_M=1132.85, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.057677), forcing value to zero @ x=R_M=1129.01, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.673730), forcing value to zero @ x=R_M=1135.27, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.187397), forcing value to zero @ x=R_M=1130.35, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.032981), forcing value to zero @ x=R_M=1128.76, coefList=(b1 = -2.64537,b2 = -0.144059)
+     p.d.f value is less than zero (-0.402900), forcing value to zero @ x=R_M=1132.55, coefList=(b1 = -2.64537,b2 = -0.144059)
+    ... (remaining 264 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-39886.4) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=3.02771, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=2108.83, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-1.351688), forcing value to zero @ x=R_M=1124.8, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1124.8, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f value is less than zero (-2.033726), forcing value to zero @ x=R_M=1115.59, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1115.59, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f value is less than zero (-1.953363), forcing value to zero @ x=R_M=1118.27, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1118.27, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f value is less than zero (-2.019176), forcing value to zero @ x=R_M=1116.42, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.42, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f value is less than zero (-1.970611), forcing value to zero @ x=R_M=1117.89, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1117.89, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f value is less than zero (-2.026978), forcing value to zero @ x=R_M=1116.04, coefList=(b1 = 0.526392,b2 = 3.02771)
+     p.d.f normalization integral is zero or negative @ x=R_M=1116.04, coefList=(b1 = 0.526392,b2 = 3.02771)
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (-39886.4) to force MIGRAD to back out of this region. Error log follows
+Parameter values: b1=0.526392, b2=-3.31583, fLM1=0.793078, meanLM1=1115.5, nbkg=2165.49, ngauLM=2108.83, sigLM1=2, sigLM2=3.14033
+RooChebychev::bkg[ x=R_M coefList=(b1,b2) ]
+     p.d.f value is less than zero (-0.427290), forcing value to zero @ x=R_M=1091.79, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.243774), forcing value to zero @ x=R_M=1092.29, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.876039), forcing value to zero @ x=R_M=1090.62, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.569744), forcing value to zero @ x=R_M=1091.41, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.853413), forcing value to zero @ x=R_M=1090.68, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.551955), forcing value to zero @ x=R_M=1091.46, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.471910), forcing value to zero @ x=R_M=1091.67, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.713975), forcing value to zero @ x=R_M=1091.04, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.942564), forcing value to zero @ x=R_M=1090.45, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.092052), forcing value to zero @ x=R_M=1092.7, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.249401), forcing value to zero @ x=R_M=1092.27, coefList=(b1 = 0.526392,b2 = -3.31583)
+     p.d.f value is less than zero (-0.928320), forcing value to zero @ x=R_M=1090.49, coefList=(b1 = 0.526392,b2 = -3.31583)
+    ... (remaining 60 messages suppressed)
+
+ FCN=-54024.8 FROM MIGRAD    STATUS=INITIATE       65 CALLS          66 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1           5.26392e-01   2.00000e+03   0.00000e+00   0.00000e+00
+   2  b2          -1.44059e-01   2.00000e+03   0.00000e+00   0.00000e+00
+   3  fLM1         7.93078e-01   1.00000e-01   0.00000e+00  -2.08217e+02
+   4  meanLM1      1.11550e+03   8.00000e-01   0.00000e+00  -2.09725e+03
+   5  nbkg         2.16549e+03   1.08275e+03   0.00000e+00  -3.00100e+05
+   6  ngauLM       2.10883e+03   5.00000e+01   2.27191e-03  -3.90700e+06
+   7  sigLM1       2.00000e+00   1.00000e+00   0.00000e+00   5.28125e+03
+   8  sigLM2       3.14033e+00   1.57017e+00   0.00000e+00   1.61577e+03
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=-59687 FROM MIGRAD    STATUS=CONVERGED     486 CALLS         487 TOTAL
+                     EDM=8.13845e-06    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   3.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  b1           3.20189e-01   7.31466e-02   3.88820e-08  -3.44863e+02
+   2  b2          -3.00220e-01   1.46414e-01   1.65552e-07  -3.80582e+01
+   3  fLM1         4.18618e-01   4.95867e-02  -2.03603e-03  -4.82282e-02
+   4  meanLM1      1.11597e+03   2.54669e-02   1.45623e-05  -1.12751e-02
+   5  nbkg         1.98101e+03   7.98763e+01  -8.33591e-07   1.09526e+00
+   6  ngauLM       9.23387e+03   1.16990e+02   1.86929e-07   1.55494e+01
+   7  sigLM1       3.55174e+00   2.10468e-01   1.97563e-04  -4.54878e-01
+   8  sigLM2       1.59522e+00   7.26592e-02   1.26124e-04  -4.75947e-03
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  8    ERR DEF=0.5
+  5.350e-03  5.977e-03 -1.088e-04 -1.247e-04  1.762e+00  9.955e-01  1.648e-03  2.760e-04 
+  5.977e-03  2.144e-02 -1.838e-03 -1.621e-04  7.198e-01  6.713e+00  1.360e-02  2.733e-03 
+ -1.088e-04 -1.838e-03  2.467e-03  4.343e-05  1.311e+00 -1.723e+00 -9.442e-03 -3.326e-03 
+ -1.247e-04 -1.621e-04  4.343e-05  6.486e-04 -6.635e-02  2.515e-02 -1.816e-04 -3.233e-05 
+  1.762e+00  7.198e-01  1.311e+00 -6.635e-02  6.380e+03 -2.968e+03 -7.263e+00 -1.738e+00 
+  9.955e-01  6.713e+00 -1.723e+00  2.515e-02 -2.968e+03  1.369e+04  1.050e+01  2.372e+00 
+  1.648e-03  1.360e-02 -9.442e-03 -1.816e-04 -7.263e+00  1.050e+01  4.430e-02  1.249e-02 
+  2.760e-04  2.733e-03 -3.326e-03 -3.233e-05 -1.738e+00  2.372e+00  1.249e-02  5.279e-03 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6      7      8
+        1  0.62100   1.000  0.558 -0.030 -0.067  0.302  0.116  0.107  0.052
+        2  0.76274   0.558  1.000 -0.253 -0.043  0.062  0.392  0.441  0.257
+        3  0.96604  -0.030 -0.253  1.000  0.034  0.330 -0.297 -0.903 -0.921
+        4  0.09123  -0.067 -0.043  0.034  1.000 -0.033  0.008 -0.034 -0.017
+        5  0.64356   0.302  0.062  0.330 -0.033  1.000 -0.318 -0.432 -0.299
+        6  0.53920   0.116  0.392 -0.297  0.008 -0.318  1.000  0.426  0.279
+        7  0.94909   0.107  0.441 -0.903 -0.034 -0.432  0.426  1.000  0.816
+        8  0.92436   0.052  0.257 -0.921 -0.017 -0.299  0.279  0.816  1.000
+ **********
+ **   18 **MINOS        4000
+ **********
+ FCN=-59687 FROM MINOS     STATUS=SUCCESSFUL   1397 CALLS        1884 TOTAL
+                     EDM=8.13845e-06    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   3.7 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1           3.20189e-01   7.31466e-02  -7.19693e-02   6.81445e-02
+   2  b2          -3.00220e-01   1.46414e-01  -1.44282e-01   1.36915e-01
+   3  fLM1         4.18618e-01   4.95867e-02  -4.71787e-02   5.08275e-02
+   4  meanLM1      1.11597e+03   2.54669e-02  -2.53931e-02   2.53978e-02
+   5  nbkg         1.98101e+03   7.98763e+01  -8.06869e+01   8.17157e+01
+   6  ngauLM       9.23387e+03   1.16990e+02  -1.18341e+02   1.20379e+02
+   7  sigLM1       3.55174e+00   2.10468e-01  -1.99397e-01   2.27048e-01
+   8  sigLM2       1.59522e+00   7.26592e-02  -7.45326e-02   7.01607e-02
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        4000
+ **********
+ FCN=-59687 FROM MINOS     STATUS=SUCCESSFUL   1397 CALLS        3281 TOTAL
+                     EDM=8.13845e-06    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   3.7 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  b1           3.20189e-01   7.31466e-02  -7.19693e-02   6.81445e-02
+   2  b2          -3.00220e-01   1.46414e-01  -1.44282e-01   1.36915e-01
+   3  fLM1         4.18618e-01   4.95867e-02  -4.71787e-02   5.08275e-02
+   4  meanLM1      1.11597e+03   2.54669e-02  -2.53931e-02   2.53978e-02
+   5  nbkg         1.98101e+03   7.98763e+01  -8.06869e+01   8.17157e+01
+   6  ngauLM       9.23387e+03   1.16990e+02  -1.18341e+02   1.20379e+02
+   7  sigLM1       3.55174e+00   2.10468e-01  -1.99397e-01   2.27048e-01
+   8  sigLM2       1.59522e+00   7.26592e-02  -7.45326e-02   7.01607e-02
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+#Lambda M: fraction Gaussian 1 = 0.418618 +/- 5.082746E-02
+#Lambda M: mean1 = 1115.966524 +/- 2.539782E-02
+#Lambda M: sigma1 = 3.551735 +/- 2.270476E-01
+#Lambda M: sigma2 = 1.595216 +/- 7.453259E-02
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigLM)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: (gauLM1,gauLM2,meanLM2)
+Background: Chebychev b1 = 0.320189 +/- 7.196935E-02
+Background: Chebychev b2 = -0.300220 +/- 1.442821E-01
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#chi^{2}/N_{DoF} = 1.418846
+N /\ (/\ mass) = 9233.871280 +/- 120.379328
+N bkg = 1981.007253 +/- 81.715738
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.843670E-02
+limit = 1.026418E+00
+limit at 90% confidence level = 1.642269E+00
+Info in <TCanvas::Print>: eps file plots/fitLMDD_newopt_noLMcut1.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fitLMDD_newopt_noLMcut1.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Tue May 10 19:43:07 CEST 2016
+=========================================

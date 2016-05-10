@@ -37,7 +37,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   
   cout<<"fit_mass: Set mass and data:"<<endl;
   //RooRealVar *mass = new RooRealVar("Bs_LOKI_MASS_JpsiConstr","m(J/#psi #Lambda)",4100,6100,"MeV");
-  RooRealVar *mass = new RooRealVar("R_WM","m(#pi p#rightarrow#pi)",300,700,"MeV");
+  RooRealVar *mass = new RooRealVar("R_M","#Lambda mass",1086,1146,"MeV");
   // mass->setRange("bkg1",4300,4800);
   // mass->setRange("bkg2",5700,5950);
   // mass->setRange("bkg3",4300,5500);
@@ -47,10 +47,13 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // mass->setRange("tail",5950,6040);
   // mass->setRange("Ltail",5350,6040);
   // mass->setRange("tot",4300,6040);
-  mass->setRange("WMbkglo",320,460);
-  mass->setRange("WMtot",320,585);
+  // mass->setRange("WMbkglo",320,460);
+  // mass->setRange("WMtot",320,585);
+  mass->setRange("LMbkglo",1090,1106);
+  mass->setRange("LMbkghi",1124,1136);
+  mass->setRange("LMtot",1090,1136);
   cout<<"mass declared"<<endl;
-  RooDataSet data_temp = get_data_no_WM(mass);
+  RooDataSet data_temp = get_data_LM(mass);
   RooDataSet *data = &data_temp;
   cout<<"fit_mass: Mass and data set."<<endl;
 
@@ -135,22 +138,32 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooRealVar meanLst3("meanLst3","/\\*(misc.): mean3",4998.348223,4900,5100);
   // RooRealVar sigLst3("sigLst3","/\\*(misc.): sigma3",61.585037,0,100);
   // RooGaussian gauLstmisc("gauLstmisc","#Lambda*(misc.) (gaussian)",*mass,meanLst3,sigLst3);
-  // WM
+  // // WM
+  // //gaussian
+  // RooRealVar meanWM1("meanWM1","K_{S}: mean1",498.333455,460,540);
+  // RooRealVar sigWM1("sigWM1","K_{S}: sigma1",27.302224,0,100);
+  // RooGaussian gauWM1("gauWM1","K_{S}: Gaussian1",*mass,meanWM1,sigWM1);
+  // RooFormulaVar meanWM2("meanWM2","@0",meanWM1);
+  // RooRealVar sigWM2("sigWM2","K_{S}: sigma2",3.140330,0,100);
+  // RooGaussian gauWM2("gauWM2","K_{S}: Gaussian2",*mass,meanWM2,sigWM2);
+  // RooRealVar fWM1("fWM1","K_{S}: fraction Gaussian 1",0.793078,0,1);
+  // RooAddPdf sigWM("sigWM","K_{S} (dbl Gaus)",RooArgList(gauWM1,gauWM2),RooArgList(fWM1));
+  // // //CB
+  // // RooRealVar meanWM1("meanWM1","K_{S}: mean1",5290.815782,5000,5400);
+  // // RooRealVar sigWM1("sigWM1","K_{S}: sigma1",75.880004,0,10000);
+  // // RooRealVar alphaWM1("alphaWM1","K_{S}: alpha1",0.586106,0,10000);
+  // // RooRealVar nWM1("nWM1","K_{S}: n1",126.153761,0,10000);
+  // // RooCBShape sigWM("sigWM","K_{S} (CB)",*mass,meanWM1,sigWM1,alphaWM1,nWM1);
+  // /\ M
   //gaussian
-  RooRealVar meanWM1("meanWM1","K_{S}: mean1",498.333455,460,540);
-  RooRealVar sigWM1("sigWM1","K_{S}: sigma1",27.302224,0,100);
-  RooGaussian gauWM1("gauWM1","K_{S}: Gaussian1",*mass,meanWM1,sigWM1);
-  RooFormulaVar meanWM2("meanWM2","@0",meanWM1);
-  RooRealVar sigWM2("sigWM2","K_{S}: sigma2",3.140330,0,100);
-  RooGaussian gauWM2("gauWM2","K_{S}: Gaussian2",*mass,meanWM2,sigWM2);
-  RooRealVar fWM1("fWM1","K_{S}: fraction Gaussian 1",0.793078,0,1);
-  RooAddPdf sigWM("sigWM","K_{S} (dbl Gaus)",RooArgList(gauWM1,gauWM2),RooArgList(fWM1));
-  // //CB
-  // RooRealVar meanWM1("meanWM1","K_{S}: mean1",5290.815782,5000,5400);
-  // RooRealVar sigWM1("sigWM1","K_{S}: sigma1",75.880004,0,10000);
-  // RooRealVar alphaWM1("alphaWM1","K_{S}: alpha1",0.586106,0,10000);
-  // RooRealVar nWM1("nWM1","K_{S}: n1",126.153761,0,10000);
-  // RooCBShape sigWM("sigWM","K_{S} (CB)",*mass,meanWM1,sigWM1,alphaWM1,nWM1);
+  RooRealVar meanLM1("meanLM1","#Lambda M: mean1",1115.5,1112,1120);
+  RooRealVar sigLM1("sigLM1","#Lambda M: sigma1",2,0,100);
+  RooGaussian gauLM1("gauLM1","#Lambda M: Gaussian1",*mass,meanLM1,sigLM1);
+  RooFormulaVar meanLM2("meanLM2","@0",meanLM1);
+  RooRealVar sigLM2("sigLM2","#Lambda M: sigma2",3.140330,0,100);
+  RooGaussian gauLM2("gauLM2","#Lambda M: Gaussian2",*mass,meanLM2,sigLM2);
+  RooRealVar fLM1("fLM1","#Lambda M: fraction Gaussian 1",0.793078,0,1);
+  RooAddPdf sigLM("sigLM","#Lambda M (dbl Gaus)",RooArgList(gauLM1,gauLM2),RooArgList(fLM1));
 
   // bkg
   // // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
@@ -164,14 +177,14 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooArgList bList(b1,b2);
   // RooChebychev bkg("bkg","Background", *mass, bList);
   // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
-  RooRealVar b1("b1","Background: Chebychev b1",1.453099,-10000,10000);
-  RooRealVar b2("b2","Background: Chebychev b2",0.690002,-10000,10000);
+  RooRealVar b1("b1","Background: Chebychev b1",0.526392,-10000,10000);
+  RooRealVar b2("b2","Background: Chebychev b2",-0.144059,-10000,10000);
   RooRealVar b3("b3","Background: Chebychev b3",0.300899,-10000,10000);
   RooRealVar b4("b4","Background: Chebychev b4",-24.813151,-10000,10000);
   RooRealVar b5("b5","Background: Chebychev b5",0.187079,-10000,10000);
   RooRealVar b6("b6","Background: Chebychev b6",-0.015,-10000,10000);
   RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
-  RooArgList bList(b1,b2,b3);
+  RooArgList bList(b1,b2);
   RooChebychev bkg("bkg","Background", *mass, bList);
   // TF1 *ep = new TF1("ep","[2]*exp([0]*x+[1]*x*x)",4300,5950);
   // ep->SetParameter(0,1);
@@ -195,6 +208,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   RooRealVar ngauLstmisc("ngauLstmisc","N /\\*(misc.)",439.812103,0,10000000000);
   RooRealVar nbkgLst("nbkgLst","N /\\*",591.828,0,1000000000);
   RooRealVar nsigWM("ngauWM","N K_{S}",100,0,1000000000);
+  RooRealVar nsigLM("ngauLM","N /\\ (/\\ mass)",100,0,1000000000);
   cout<<"fit_mass: Numbers declared."<<endl;
 
   //add shapes and their number to a totalPdf
@@ -205,14 +219,15 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // shapes.add(sigL);       yields.add(nsigL);
   // shapes.add(sigLst1405); yields.add(nsigLst1405);
   // shapes.add(gauLstmisc); yields.add(ngauLstmisc);
-  shapes.add(sigWM);         yields.add(nsigWM);
+  // shapes.add(sigWM);         yields.add(nsigWM);
+  shapes.add(sigLM);         yields.add(nsigLM);
   shapes.add(bkg);           yields.add(nbkg);
   RooAddPdf totalPdf("totalPdf","totalPdf",shapes,yields);
   cout<<"fit_mass: totalPdf constructed."<<endl;
 
   //fit the totalPdf
   cout<<"fit_mass: Starting the fit:"<<endl;
-  RooAbsReal * nll = totalPdf.createNLL(*data,Extended(kTRUE),Range("WMtot"));
+  RooAbsReal * nll = totalPdf.createNLL(*data,Extended(kTRUE),Range("LMtot"));
   RooMinuit m(*nll);
   m.setVerbose(kFALSE);
   m.migrad();

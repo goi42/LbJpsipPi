@@ -1,0 +1,10 @@
+#Lambda M: mean1 = 1115.887692 +/- 1.652552E-02
+#Lambda M: sigma1 = 1.698318 +/- 1.644027E-02
+Background: Chebychev b1 = 0.412377 +/- 3.727192E-02
+Background: Chebychev b2 = -0.600685 +/- 6.599953E-02
+#chi^{2}/N_{DoF} = 8.239631
+N /\ (/\ mass) = 14262.517066 +/- 134.272172
+N bkg = 7319.442072 +/- 132.432350
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.331389E-02
+limit = 1.019008E+00
+limit at 90% confidence level = 1.630412E+00
