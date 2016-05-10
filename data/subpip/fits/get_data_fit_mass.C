@@ -33,7 +33,7 @@ RooDataSet get_data(RooRealVar* mass){
 
 RooDataSet get_data_no_WM(RooRealVar* mass){
   //unbinned
-  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized_with_no_WM_DD.root", "READ");
+  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized_with_no_WM.root", "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
   // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
