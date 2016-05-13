@@ -57,12 +57,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
-  file f[]={					\
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality},
-  };
+  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
+	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
+// {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality}, \
+	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}};
             
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != (sizeof(Lbname)/sizeof(Lbname[0]))){
@@ -110,10 +108,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<thisbranch->name<<" for file "<<thisfile->name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,cnewopt;
-      makecuts(ifile,cLL,cDD,cnewopt);
+      TCut cLL,cDD,cnew;
+      makecuts(ifile,cLL,cDD,cnew);
 
-      thisbranch->c = {{cnewopt,"newly_optimized"}};
+      thisbranch->c = {{cnew,"new"}};
       int nCuts = thisbranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
@@ -231,7 +229,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
     //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
     // if(thisfile->quality["filetype"].Contains("MC"))
     //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
-    // placeholder = fileoutputlocation+"histos_"+thisfile->name+".root";
+    // placeholder = fileoutputlocation+"histos_"+thisfile->name+"_new.root";
     // cout<<endl<<"saving "<<placeholder<<"... ";
     // TFile* histfile = new TFile(placeholder,"recreate");
     // cout<<"done"<<endl<<"writing histograms... ";
