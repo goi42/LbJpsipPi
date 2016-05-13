@@ -13,13 +13,16 @@
 using namespace RooFit;
 
 
-RooDataSet get_data(RooRealVar* mass){
+RooDataSet get_data(RooRealVar* mass, TString tracktype){
   // //open file and get histogram
   // TFile *inHistos = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/histos_data.root", "READ");
   // TH1F * h100 = (TH1F*)inHistos->Get("h70");
   // cout<<"data histogram gotten"<<endl;
   //unbinned
-  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized.root", "READ");
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized";
+  if(tracktype!="") placeholder+="_"+tracktype;
+  placeholder+=".root";
+  TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
   // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
@@ -31,9 +34,12 @@ RooDataSet get_data(RooRealVar* mass){
   return data;
 }
 
-RooDataSet get_data_no_WM(RooRealVar* mass){
+RooDataSet get_data_no_WM(RooRealVar* mass, TString tracktype){
   //unbinned
-  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized_with_no_WM.root", "READ");
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized_with_no_WM";
+  if(tracktype!="") placeholder+="_"+tracktype;
+  placeholder+=".root";
+  TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
   // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
@@ -44,9 +50,12 @@ RooDataSet get_data_no_WM(RooRealVar* mass){
   cout<<"data declared"<<endl;
   return data;
 }
-RooDataSet get_data_LM(RooRealVar* mass){
+RooDataSet get_data_LM(RooRealVar* mass, TString tracktype){
   //unbinned
-  TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized_LM_noLMcut_DD.root", "READ");
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
+  if(tracktype!="") placeholder+="_"+tracktype;
+  placeholder+=".root";
+  TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
   // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");

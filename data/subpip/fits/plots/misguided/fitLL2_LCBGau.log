@@ -1,0 +1,323 @@
+=========================================
+START@:		Tue May 10 21:50:09 CEST 2016
+=========================================
+Configuring DaVinci v40r1p3 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r1p3
+GCCXML_config_version: Undefined variable.
+
+Processing ./rootoptsLL2_LCBGau/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = LL2_LCBGau
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg1' created with bounds [4300,4800]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg2' created with bounds [5700,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg3' created with bounds [4300,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'bkg4' created with bounds [5100,5500]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named '1405' created with bounds [4220,5460]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'L' created with bounds [5350,5950]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tail' created with bounds [5950,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'Ltail' created with bounds [5350,6040]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'tot' created with bounds [4300,6040]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 27 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+SMC file opened
+SMC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(SMC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+SMC hist assigned to RooDataHist
+Lst1405MC file opened
+Lst1405MC hist gotten
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(Lst1405MC): fit range of variable Bs_LOKI_MASS_JpsiConstr expanded to nearest bin boundaries: [4100,6100] --> [4100,6100]
+Lst1405MC hist assigned to RooDataHist
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named tot
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'NormalizationRangeFortot' created with bounds [4100,6100]
+[#1] INFO:Eval -- RooRealVar::setRange(Bs_LOKI_MASS_JpsiConstr) new range named 'fit_nll_totalPdf_data' created with bounds [4300,6040]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        7500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+ FCN=5284.12 FROM MIGRAD    STATUS=INITIATE       62 CALLS          63 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alphaL3      1.52405e+00   7.62027e-01   2.02229e-02  -5.97681e+03
+   2  b1          -1.18358e+00   5.91789e-01   1.89202e-01   2.96424e+02
+   3  b2           2.27144e-01   1.13572e-01   7.88766e-02  -3.08160e+02
+   4  f1L          8.52015e-01   7.39925e-02   2.15101e-01  -2.70833e+01
+   5  mean3L       5.62106e+03   1.75000e+01   2.02384e-01  -1.42946e+03
+   6  meanLst3     4.99835e+03   2.00000e+01   2.01387e-01  -7.42269e+00
+   7  nL1          2.59878e+00   1.29939e+00   2.64211e-02  -1.61002e+03
+   8  nbkg         2.16549e+03   1.08275e+03   2.40884e-03  -7.32180e+04
+   9  ngauLstmisc   4.39812e+02   2.19906e+02   1.08557e-04** at limit **
+  10  nsigL        1.68964e+03   8.44819e+02   6.72858e-04   1.36369e+05
+  11  nsigLst1405   1.52062e+02   7.60308e+01   8.80963e-04** at limit **
+  12  nsigS        9.53674e+03   1.00000e-06   1.13687e-13   9.55192e+06
+  13  sig3L        7.68329e+00   3.84165e+00   1.49090e-01   6.48812e+02
+  14  sig4L        1.47995e+01   7.39977e+00   2.15110e-01   9.82457e+01
+  15  sigLst3      6.15850e+01   1.00000e+01   2.07336e-01  -4.50316e+01
+                               ERR DEF= 0.5
+[#0] WARNING:Minization -- RooMinuitGlue: Minimized function has error status.
+Returning maximum FCN so far (5305.75) to force MIGRAD to back out of this region. Error log follows
+Parameter values: alphaL3=1.9426, b1=-1.1889, b2=0.0544619, f1L=0.778033, mean3L=5621.02, meanLst3=5002.41, nL1=3.76946, nbkg=2922.16, ngauLstmisc=468.74, nsigL=1542.63, nsigLst1405=343.06, nsigS=0.471431, sig3L=10.2417, sig4L=34.8167, sigLst3=76.0095
+RooChebychev::bkg[ x=Bs_LOKI_MASS_JpsiConstr coefList=(b1,b2) ]
+     p.d.f value is less than zero (-0.047729), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6011.58, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.044241), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6008.06, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.023589), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5987.27, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.023874), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5987.56, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.044693), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6008.52, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.063827), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6027.87, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.043383), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6007.19, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.009887), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5973.53, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.026171), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5989.86, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.074804), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=6039, coefList=(b1 = -1.1889,b2 = 0.0544619)
+     p.d.f value is less than zero (-0.005052), forcing value to zero @ x=Bs_LOKI_MASS_JpsiConstr=5968.69, coefList=(b1 = -1.1889,b2 = 0.0544619)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=-3715.74 FROM MIGRAD    STATUS=CONVERGED    1058 CALLS        1059 TOTAL
+                     EDM=2.89432e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alphaL3      1.85551e+00   3.95899e-01   9.07563e-05  -8.38083e-01
+   2  b1          -1.21791e+00   2.02838e-02  -3.30853e-05   1.50909e-01
+   3  b2           3.22946e-01   3.67047e-02   1.19933e-04  -1.46028e-01
+   4  f1L          4.64025e-01   1.39941e-01  -1.56440e-03  -1.37720e-02
+   5  mean3L       5.62126e+03   2.53267e-01  -4.45164e-06  -2.69599e-01
+   6  meanLst3     5.00278e+03   6.75470e+00  -4.53892e-04   3.36191e-02
+   7  nL1          2.03592e+00   1.23290e+00  -4.53681e-04  -3.89338e-01
+   8  nbkg         2.92494e+03   8.19485e+01   9.77414e-07   6.72920e+00
+   9  ngauLstmisc   3.79683e+02   3.58982e+01  -1.81557e-08** at limit **
+  10  nsigL        1.57685e+03   4.17888e+01   3.18069e-08  -7.72433e+01
+  11  nsigLst1405   1.97118e+02   3.49450e+01  -1.43801e-07** at limit **
+  12  nsigS        1.11022e-06   9.00275e+00  -7.97610e-08** at limit **
+  13  sig3L        5.49126e+00   8.01267e-01  -2.09362e-04  -7.76950e-04
+  14  sig4L        1.07704e+01   8.80333e-01  -5.77816e-05   2.21024e-01
+  15  sigLst3      6.86393e+01   6.76113e+00  -2.66995e-04  -4.45175e-03
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  32    NPAR= 15    ERR DEF=0.5
+ ELEMENTS ABOVE DIAGONAL ARE NOT PRINTED.
+  1.567e-01 
+ -7.542e-04  4.114e-04 
+  1.680e-03 -3.479e-04  1.347e-03 
+ -9.471e-03 -1.199e-04  5.741e-05  2.012e-02 
+ -3.639e-02 -1.928e-04  1.643e-04  8.401e-03  6.414e-02 
+  1.068e-02  5.238e-03 -3.485e-02 -2.034e-03  2.716e-03  4.570e+01 
+ -3.734e-01  5.022e-03 -1.275e-02  9.135e-02  8.223e-02  1.849e-01  1.520e+00 
+ -1.437e+00  1.323e-01 -6.480e-01  4.317e-01  1.121e-01  8.461e+01  1.597e+01  6.716e+03 
+  5.603e-01 -6.207e-02  3.293e-01 -1.560e-01  5.026e-02 -5.894e+00 -5.075e+00 -1.044e+03  1.289e+03 
+  1.702e+00 -9.273e-02  2.010e-01 -1.904e-01  3.485e-02 -5.231e+00 -9.928e+00 -1.613e+02  3.702e+01  1.746e+03 
+  1.441e-01 -1.980e-01  7.058e-01  8.407e-02  2.648e-01 -6.846e+01 -4.525e+00 -9.487e+02 -5.258e+01  1.100e+02  1.221e+03 
+  4.468e-05 -6.895e-08 -9.054e-06 -2.306e-05 -2.312e-05  1.513e-03 -1.313e-04  1.005e-02 -2.138e-03 -3.691e-03 -6.388e-03 
+  4.468e-05 -6.895e-08 -9.054e-06 -2.306e-05 -2.312e-05  1.513e-03 -1.313e-04  1.005e-02 -2.138e-03 -3.691e-03 -6.388e-03  3.152e-05 
+ -3.399e-02 -4.620e-04  1.020e-05  1.042e-01  4.132e-02  7.904e-03  4.697e-01  2.512e+00 -9.765e-01 -9.807e-01  3.741e-01 
+ -3.399e-02 -4.620e-04  1.020e-05  1.042e-01  4.132e-02  7.904e-03  4.697e-01  2.512e+00 -9.765e-01 -9.807e-01  3.741e-01 -1.360e-04  6.423e-01 
+  2.874e-02 -1.128e-03  9.893e-04  1.065e-01  1.848e-02 -6.462e-02  3.924e-01  8.854e-01 -2.964e-01 -6.308e-01  7.671e-01 
+  2.874e-02 -1.128e-03  9.893e-04  1.065e-01  1.848e-02 -6.462e-02  3.924e-01  8.854e-01 -2.964e-01 -6.308e-01  7.671e-01 -1.003e-04  5.194e-01  7.752e-01 
+  2.167e-02 -1.028e-02  4.326e-02 -1.275e-02  3.117e-03 -1.045e+00 -5.384e-01 -1.446e+02  1.284e+02  4.172e+00 -1.558e+01 
+  2.167e-02 -1.028e-02  4.326e-02 -1.275e-02  3.117e-03 -1.045e+00 -5.384e-01 -1.446e+02  1.284e+02  4.172e+00 -1.558e+01  1.525e-05 -6.374e-02 -2.392e-02  4.604e+01 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15
+        1  0.90490   1.000 -0.094  0.116 -0.169 -0.363  0.004 -0.765 -0.044  0.039  0.103  0.010  0.020 -0.107  0.082  0.008
+        2  0.49836  -0.094  1.000 -0.467 -0.042 -0.038  0.038  0.201  0.080 -0.085 -0.109 -0.279 -0.001 -0.028 -0.063 -0.075
+        3  0.72592   0.116 -0.467  1.000  0.011  0.018 -0.140 -0.282 -0.215  0.250  0.131  0.550 -0.044  0.000  0.031  0.174
+        4  0.96525  -0.169 -0.042  0.011  1.000  0.234 -0.002  0.522  0.037 -0.031 -0.032  0.017 -0.029  0.917  0.853 -0.013
+        5  0.43995  -0.363 -0.038  0.018  0.234  1.000  0.002  0.263  0.005  0.006  0.003  0.030 -0.016  0.204  0.083  0.002
+        6  0.30333   0.004  0.038 -0.140 -0.002  0.002  1.000  0.022  0.153 -0.024 -0.019 -0.290  0.040  0.001 -0.011 -0.023
+        7  0.91906  -0.765  0.201 -0.282  0.522  0.263  0.022  1.000  0.158 -0.115 -0.193 -0.105 -0.019  0.475  0.361 -0.064
+        8  0.54283  -0.044  0.080 -0.215  0.037  0.005  0.153  0.158  1.000 -0.355 -0.047 -0.331  0.022  0.038  0.012 -0.260
+        9  0.61900   0.039 -0.085  0.250 -0.031  0.006 -0.024 -0.115 -0.355  1.000  0.025 -0.042 -0.011 -0.034 -0.009  0.527
+       10  0.24876   0.103 -0.109  0.131 -0.032  0.003 -0.019 -0.193 -0.047  0.025  1.000  0.075 -0.016 -0.029 -0.017  0.015
+       11  0.68626   0.010 -0.279  0.550  0.017  0.030 -0.290 -0.105 -0.331 -0.042  0.075  1.000 -0.033  0.013  0.025 -0.066
+       12  0.07382   0.020 -0.001 -0.044 -0.029 -0.016  0.040 -0.019  0.022 -0.011 -0.016 -0.033  1.000 -0.030 -0.020  0.000
+       13  0.93268  -0.107 -0.028  0.000  0.917  0.204  0.001  0.475  0.038 -0.034 -0.029  0.013 -0.030  1.000  0.736 -0.012
+       14  0.91453   0.082 -0.063  0.031  0.853  0.083 -0.011  0.361  0.012 -0.009 -0.017  0.025 -0.020  0.736  1.000 -0.004
+       15  0.54878   0.008 -0.075  0.174 -0.013  0.002 -0.023 -0.064 -0.260  0.527  0.015 -0.066  0.000 -0.012 -0.004  1.000
+ **********
+ **   18 **MINOS        7500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+    THE NEGATIVE MINOS ERROR OF PARAMETER  12, nsigS EXCEEDS ITS LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ FCN=-3715.74 FROM MINOS     STATUS=SUCCESSFUL   9256 CALLS       10315 TOTAL
+                     EDM=2.89432e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.7 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  alphaL3      1.85551e+00   3.95899e-01  -3.43146e-01   9.74153e-01
+   2  b1          -1.21791e+00   2.02838e-02  -1.98155e-02   2.07677e-02
+   3  b2           3.22946e-01   3.67047e-02  -3.57096e-02   3.62413e-02
+   4  f1L          4.64025e-01   1.39941e-01  -1.24657e-01   2.19992e-01
+   5  mean3L       5.62126e+03   2.53267e-01  -2.41508e-01   2.45071e-01
+   6  meanLst3     5.00278e+03   6.75470e+00  -6.71044e+00   6.74337e+00
+   7  nL1          2.03592e+00   1.23290e+00  -1.25969e+00   2.51676e+00
+   8  nbkg         2.92494e+03   8.19485e+01  -7.80245e+01   7.88550e+01
+   9  ngauLstmisc   3.79683e+02   3.58982e+01  -3.49669e+01   3.67412e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  10  nsigL        1.57685e+03   4.17888e+01  -4.09775e+01   4.24120e+01
+  11  nsigLst1405   1.97118e+02   3.49450e+01  -3.43343e+01   3.47692e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  12  nsigS        1.11022e-06   9.00275e+00   at limit      7.21750e+00
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  13  sig3L        5.49126e+00   8.01267e-01  -8.07457e-01   1.16747e+00
+  14  sig4L        1.07704e+01   8.80333e-01  -7.26199e-01   2.01300e+00
+  15  sigLst3      6.86393e+01   6.76113e+00  -6.25487e+00   7.22409e+00
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        7500
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+    THE NEGATIVE MINOS ERROR OF PARAMETER  12, nsigS EXCEEDS ITS LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ MINUIT WARNING IN MIGRAD  
+ ============== VARIABLE12 IS AT ITS LOWER ALLOWED LIMIT.
+ FCN=-3715.74 FROM MINOS     STATUS=SUCCESSFUL   9256 CALLS       19571 TOTAL
+                     EDM=2.89432e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.7 per cent
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  alphaL3      1.85551e+00   3.95899e-01  -3.43146e-01   9.74153e-01
+   2  b1          -1.21791e+00   2.02838e-02  -1.98155e-02   2.07677e-02
+   3  b2           3.22946e-01   3.67047e-02  -3.57096e-02   3.62413e-02
+   4  f1L          4.64025e-01   1.39941e-01  -1.24657e-01   2.19992e-01
+   5  mean3L       5.62126e+03   2.53267e-01  -2.41508e-01   2.45071e-01
+   6  meanLst3     5.00278e+03   6.75470e+00  -6.71044e+00   6.74337e+00
+   7  nL1          2.03592e+00   1.23290e+00  -1.25969e+00   2.51676e+00
+   8  nbkg         2.92494e+03   8.19485e+01  -7.80245e+01   7.88550e+01
+   9  ngauLstmisc   3.79683e+02   3.58982e+01  -3.49669e+01   3.67412e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  10  nsigL        1.57685e+03   4.17888e+01  -4.09775e+01   4.24120e+01
+  11  nsigLst1405   1.97118e+02   3.49450e+01  -3.43343e+01   3.47692e+01
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  12  nsigS        1.11022e-06   9.00275e+00   at limit      7.21750e+00
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  13  sig3L        5.49126e+00   8.01267e-01  -8.07457e-01   1.16747e+00
+  14  sig4L        1.07704e+01   8.80333e-01  -7.26199e-01   2.01300e+00
+  15  sigLst3      6.86393e+01   6.76113e+00  -6.25487e+00   7.22409e+00
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigS)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+/\ CB: alpha = 1.855506 +/- 9.741532E-01
+/\ signal: fraction CB = 0.464025 +/- 2.199920E-01
+/\ CB: mean = 5621.261661 +/- 2.450709E-01
+/\ CB: n = 2.035916 +/- 2.516760E+00
+/\ CB: sigma = 5.491256 +/- 1.167474E+00
+/\ gaus: sigma = 10.770413 +/- 2.013000E+00
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigL)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: (CBL,gauL,mean4L)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigLst1405)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+/\*(misc.): mean3 = 5002.778519 +/- 6.743366E+00
+/\*(misc.): sigma3 = 68.639271 +/- 7.224091E+00
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (gauLstmisc)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+Background: Chebychev b1 = -1.217908 +/- 2.076765E-02
+Background: Chebychev b2 = 0.322946 +/- 3.624126E-02
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#chi^{2}/N_{DoF} = 1.205501
+N sigma = 0.000001 +/- 7.217504
+N /\ = 1576.851135 +/- 42.412035
+N /\*(1405) = 197.117958 +/- 34.769243
+N /\*(misc.) = 379.683237 +/- 36.741166
+N bkg = 2924.935039 +/- 78.854973
+Y_{#Sigma^{0}}/Y_{#Lambda} = 7.040760E-10 +/- 4.577163E-03
+limit = 4.703677E-03
+limit at 90% confidence level = 7.525882E-03
+[#0] WARNING:Plotting -- RooHist::makeResisHist(Hist) WARNING: point 88 has zero error, setting residual to zero
+Info in <TCanvas::Print>: eps file plots/fitLL2_LCBGau.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fitLL2_LCBGau.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Tue May 10 21:52:32 CEST 2016
+=========================================
