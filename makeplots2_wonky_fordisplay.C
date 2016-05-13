@@ -30,7 +30,7 @@ It suffers from a need for there to be the same number of branches and cuts for 
 #include "/afs/cern.ch/user/m/mwilkins/algorithms/layer.h"
 #include "makecuts.C"
 
-void makeplots2(TString runmode ="d", TString drawopt=""){
+void makeplots2_wonky_fordisplay(TString runmode ="d", TString drawopt=""){
   gROOT->SetBatch(kTRUE);
   gROOT->ProcessLine(".x /afs/cern.ch/user/m/mwilkins/cmtuser/src/lhcbStyle.C");
   TString placeholder;//this is to avoid adding strings in functions; assign right before use
@@ -45,8 +45,10 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f1quality {{"filetype","data"},{"decaymode","data (both)"}};
   map<TString,TString> f2quality {{"filetype","#Lambda MC"},{"decaymode","#Lambda"}};
   map<TString,TString> f3quality {{"filetype","#Sigma^{0} MC"},{"decaymode","#Sigma^{0}"}};
-  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples.root","SMCfile",f3quality}, \
-  };
+  map<TString,TString> f4quality {{"filetype","#Lambda*(1405) MC"},{"decaymode","#Lambda*(1405)"}};
+  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
+  //{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality}};
+  //{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","LstMC"}};
   int nFiles = (sizeof(f)/sizeof(f[0]));
   int nBranches=0;//initialized both of these to ensure there are no compiler warnings
   int nCuts=0;
@@ -74,9 +76,12 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"m(J/#psi #Lambda) (MeV)",400,4100,6100},       \
-                {massname[ifile],"m(J/#psi #Lambda) LL (MeV)",400,4100,6100},    \
-                {massname[ifile],"m(J/#psi #Lambda) DD (MeV)",400,4100,6100}     \
+    f[ifile].b={{"R_M","#Lambda M",300,1086,1146},			\
+                {"R_M","#Lambda M LL",300,1086,1146},			\
+                {"R_M","#Lambda M DD",300,1086,1146},			\
+                // {massname[ifile],"m(J/#psi #Lambda) (MeV)",400,4100,6100},       \
+                // {massname[ifile],"m(J/#psi #Lambda) LL (MeV)",400,4100,6100},    \
+                // {massname[ifile],"m(J/#psi #Lambda) DD (MeV)",400,4100,6100}     \
                 // {placeholder2,"#Lambda_{b} p",160,0,800000},            \
                 // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         \
                 // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         \
@@ -113,22 +118,27 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,coptimized,ctight,cloose;
-    makecuts(ifile,cLL,cDD,coptimized,ctight,cloose);
+    TCut cLL,cDD,cnew_noLMcut,coptimized_noLMcut;
+    makecuts(ifile,cLL,cDD,cnew_noLMcut,coptimized_noLMcut);
+    TCut ctemp = "abs(R_MC_MOTHER_ID)==3212&&(Bs_LOKI_MASS_JpsiConstr>5300&&Bs_LOKI_MASS_JpsiConstr<5700)";
+    if(f[ifile].name=="SMCfile") cnew_noLMcut = cnew_noLMcut && ctemp;
+
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       float temp = ((float)thisbranch->hiBin - (float)thisbranch->loBin)/(float)thisbranch->nBins;
-      placeholder2=Form("%.0f",temp);
+      placeholder2=Form("%.2f",temp);
       placeholder="Events/"+placeholder2+" MeV";
       thisbranch->ylabel=placeholder;
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->c ={{cloose,"Loose"},         \
-                      {coptimized,"Optimized"}, \
-                      {ctight,"Tight"},         \
-      };
+      thisbranch->c ={{cnew_noLMcut,"newest cuts"},			\
+		      {coptimized_noLMcut,"old optimized cuts"}};
+      // thisbranch->c ={{cloose,"Loose"},         \
+      //                 {coptimized,"Optimized"}, \
+      //                 {ctight,"Tight"},         \
+      // };
 
       nCuts = thisbranch->c.size();
       
@@ -246,9 +256,9 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder = "c"+cistring;
     c[ci] = new TCanvas(placeholder,placeholder,1200,800); //create the canvases
     c[ci]->cd();
-    gPad->SetLogy();
+    // gPad->SetLogy();
     gStyle->SetOptStat("");
-    leg[ci] = new TLegend(0.2, 0.7, 0.625, 0.9);//create legend
+    leg[ci] = new TLegend(0.2, 0.7, 0.475, 0.9);//create legend
     leg[ci]->SetTextSize(0.06);
     placeholder = "hs"+cistring;
     hs[ci] = new THStack(placeholder,placeholder); //create the stack to hold the histograms
