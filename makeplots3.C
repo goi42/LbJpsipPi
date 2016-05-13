@@ -139,19 +139,19 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<f[ifile].b[ibranch].name<<" for file "<<f[ifile].name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,cbase,ctrigger;
-      makecuts(ifile,cLL,cDD,cbase,ctrigger);
-      for(float i=0; i<3000; i+=200){
-	TCut thecut = cbase&&cLPT(i);
-	if(ifile<3) thecut = thecut&&cLFD()&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
-	placeholder2 = Form("%.1f",i);
-	placeholder = "p & #pi ghost prob <"+placeholder2+"";
-	f[ifile].b[ibranch].add_cut(thecut,placeholder);
-      }
-      // f[ifile].b[ibranch].c ={{coptimized,"Optimized"},	\
-      // 			      {cgd,"Optimized with mother cut"} \
-      // }; 
-        
+      TCut cLL,cDD,cnew_noLMcut,coptimized_noLMcut;
+      makecuts(ifile,cLL,cDD,cnew_noLMcut,coptimized_noLMcut);
+      // for(float i=0; i<3000; i+=200){
+      // 	TCut thecut = cbase&&cLPT(i);
+      // 	if(ifile<3) thecut = thecut&&cLFD()&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
+      // 	placeholder2 = Form("%.1f",i);
+      // 	placeholder = "p & #pi ghost prob <"+placeholder2+"";
+      // 	f[ifile].b[ibranch].add_cut(thecut,placeholder);
+      // }
+      f[ifile].b[ibranch].c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
+      			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
+      }; 
+      
       int nCuts = f[ifile].b[ibranch].c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
