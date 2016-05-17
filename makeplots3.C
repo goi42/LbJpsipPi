@@ -5,6 +5,7 @@ It is good for comparing cuts on a single branch.
 It loops over files, then branches, then cuts, assigning branches and cuts in each 
 of these loops, and plotting the cuts as they come.
 Each branch gets its own canvas.
+\r is apparently the character to print things over previous things, btw.
 */
 // Include files
 #include <vector>
@@ -102,9 +103,9 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
                 {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
                 // {"R_M","#Lambda M",300,1086,1146},			\
                 // {"R_M","#Lambda M LL",300,1086,1146},			\
                 // {"R_M","#Lambda M DD",300,1086,1146},			\
@@ -197,7 +198,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         int hiBin = f[ifile].b[ibranch].hiBin;
         h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
         //draw histogram
-        cout<<"\rdrawing histogram "<<icut+1<<"/"<<nCuts<<"...";
+        cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"...";
         while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
           icolor++;//skip bad colors 
 	h[ci][icut]->SetLineColor(icolor);
@@ -206,7 +207,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	cut * mycut = &f[ifile].b[ibranch].c[icut];
 	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
 	//calculate sig/bkg
-        cout<<"\rcalculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
+        cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
 	TString sigcutofflostring = Form("%.0f",sigcutofflo);
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
@@ -230,7 +231,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         
         // float ratio = sqrt((float)nsig/(float)nbkg); 
         //stack histogram
-        cout<<"\rstacking histogram "<<icut+1<<"/"<<nCuts<<"...";
+        cout<<"stacking histogram "<<icut+1<<"/"<<nCuts<<"...";
         leglabel=f[ifile].b[ibranch].c[icut].name;
         // placeholder2=Form("%.3f",ratio);
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
@@ -275,12 +276,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       }
       stacktitle+=f[ifile].name+", "+f[ifile].b[ibranch].name;
       //draw stacked histograms
-      cout<<"\rdrawing stack "<<ci+1<<": "<<stacktitle<<"...";
+      cout<<"drawing stack "<<ci+1<<": "<<stacktitle<<"...";
       hs[ci]->SetTitle(stacktitle);
       hs[ci]->Draw("nostack");
       leg[ci]->Draw();
       //save stuff:
-      cout<<"\rsaving files for stack "<<ci+1<<"...";
+      cout<<"saving files for stack "<<ci+1<<"...";
       placeholder = outputlocation+filename+"(";//the closing page is added after the loop
       c[ci]->Print(placeholder);
       if(runmode.Contains("C")){
