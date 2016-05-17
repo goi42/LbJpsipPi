@@ -43,10 +43,10 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   // TString trueratiostring="";//holds information to be put at end of myfile
   myfile.open(outputlocation+"sigbkg.csv");
   myfile<<"dataset,cuts,number signal,number background,Nsig^2/Nbkg"<<endl;
-  float sigcutofflo = 1112.491056;
-  float sigcutoffhi = 1119.284328;
-  float bkgcutofflo = 1105.697784;
-  float bkgcutoffhi = 1126.0776;
+  float sigcutofflo = 5594.773954;
+  float sigcutoffhi = 5647.485654;
+  float bkgcutofflo = sigcutoffhi;
+  float bkgcutoffhi = 6100;
   cout<<"using "<<sigcutofflo<<" to "<<sigcutoffhi<<" as the signal region and "<<bkgcutofflo<<" and "<<bkgcutoffhi<<" as the upper and lower bounds of the bkg"<<endl;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
@@ -102,15 +102,15 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_M","#Lambda M",300,1086,1146},			\
-                {"R_M","#Lambda M LL",300,1086,1146},			\
-                {"R_M","#Lambda M DD",300,1086,1146},			\
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+                {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+                // {"R_M","#Lambda M",300,1086,1146},			\
+                // {"R_M","#Lambda M LL",300,1086,1146},			\
+                // {"R_M","#Lambda M DD",300,1086,1146},			\
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
 		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
-                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-                // {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
                 // {"R_P","#Lambda p",144,0,385000},			\
                 // {"R_P","#Lambda p LL",144,0,385000},         \
                 // {"R_P","#Lambda p DD",144,0,385000},         \
@@ -211,11 +211,15 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
 	TString bkgcutoffhistring = Form("%.0f",bkgcutoffhi);
-	placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
+	// placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
+	placeholder="(R_M>"+bkgcutofflostring+"&&R_M<"+bkgcutoffhistring+")";
 	TCut cbkg = (TCut)placeholder;
-        int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
+        placeholder="(R_M>"+sigcutofflostring+"&&R_M<"+sigcutoffhistring+")";
+	TCut csig = (TCut)placeholder;
+	int nsig = (int)f[ifile].t[0]->GetEntries(*thiscut&&csig);//number passing csig
+	int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
         int nent = (int)f[ifile].t[0]->GetEntries(*thiscut);//total number
-        int nsig = nent - nbkg;
+        // int nsig = nent - nbkg;
         mycut->nbkg = nbkg;
         mycut->nsig = nsig;
 	float nsig2= (float)nsig*(float)nsig;
