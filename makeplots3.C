@@ -213,9 +213,9 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
 	TString bkgcutoffhistring = Form("%.0f",bkgcutoffhi);
 	// placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
-	placeholder="(R_M>"+bkgcutofflostring+"&&R_M<"+bkgcutoffhistring+")";
+	placeholder="("+massname[ifile]+">"+bkgcutofflostring+"&&"+massname[ifile]+"<"+bkgcutoffhistring+")";
 	TCut cbkg = (TCut)placeholder;
-        placeholder="(R_M>"+sigcutofflostring+"&&R_M<"+sigcutoffhistring+")";
+        placeholder="("+massname[ifile]+">"+sigcutofflostring+"&&"+massname[ifile]+"<"+sigcutoffhistring+")";
 	TCut csig = (TCut)placeholder;
 	int nsig = (int)f[ifile].t[0]->GetEntries(*thiscut&&csig);//number passing csig
 	int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
