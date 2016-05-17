@@ -1,0 +1,12 @@
+Background: Chebychev b1 = 0.273651 +/- [exact]
+Background: Chebychev b2 = -0.013215 +/- [exact]
+#Lambda M: fraction Gaussian 1 = 0.670760 +/- [exact]
+#Lambda M: mean1 = 1115.777861 +/- [exact]
+#Lambda M: sigma1 = 0.945209 +/- [exact]
+#Lambda M: sigma2 = 2.333747 +/- [exact]
+#chi^{2}/N_{DoF} = 0.736437
+N bkg = 24888.377386 +/- 683.183331
+N /\ (/\ mass) = 6517.530630 +/- 120.175237
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 3.882001E-02
+limit = 1.056449E+00
+limit at 90% confidence level = 1.690319E+00

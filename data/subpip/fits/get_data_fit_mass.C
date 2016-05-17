@@ -19,9 +19,11 @@ RooDataSet get_data(RooRealVar* mass, TString tracktype){
   // TH1F * h100 = (TH1F*)inHistos->Get("h70");
   // cout<<"data histogram gotten"<<endl;
   //unbinned
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized";
+  // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized";
+  // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
+  TString placeholder = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/cutfile_optimized_noLM";
   if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+=".root";
+  placeholder+="_LbM.root";
   TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
@@ -52,7 +54,8 @@ RooDataSet get_data_no_WM(RooRealVar* mass, TString tracktype){
 }
 RooDataSet get_data_LM(RooRealVar* mass, TString tracktype){
   //unbinned
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
+  // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
+  TString placeholder = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/cutfile_optimized_noLM";
   if(tracktype!="") placeholder+="_"+tracktype;
   placeholder+=".root";
   TFile *hastree = new TFile(placeholder, "READ");

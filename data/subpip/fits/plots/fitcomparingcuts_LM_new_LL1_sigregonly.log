@@ -1,0 +1,120 @@
+=========================================
+START@:		Fri May 13 23:17:07 CEST 2016
+=========================================
+Configuring DaVinci v40r1p3 from /cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v40r1p3
+GCCXML_config_version: Undefined variable.
+
+Processing ./rootoptscomparingcuts_LM_new_LL1_sigregonly/myRoot.C...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+fileN = comparingcuts_LM_new_LL1_sigregonly
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+fit_mass: Set mass and data:
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMbkglo' created with bounds [1090,1106]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMbkghi' created with bounds [1124,1136]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMtot' created with bounds [1090,1136]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'LMsig' created with bounds [1111.11,1120.45]
+mass declared
+tree gotten
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(data) Ignored 101 out of range events
+data declared
+fit_mass: Mass and data set.
+fit_mass: Assign shapes:
+fit_mass: Shapes assigned.
+fit_mass: declaring number of each shape:
+fit_mass: Numbers declared.
+fit_mass: adding shapes and their numbers to totalPdf:
+fit_mass: totalPdf constructed.
+fit_mass: Starting the fit:
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) constructing test statistic for sub-range named LMsig
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'NormalizationRangeForLMsig' created with bounds [1086,1146]
+[#1] INFO:Eval -- RooRealVar::setRange(R_M) new range named 'fit_nll_totalPdf_data' created with bounds [1111.11,1120.45]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_totalPdf_data) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+ **********
+ **   13 **MIGRAD        1000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+ FCN=-63300.5 FROM MIGRAD    STATUS=INITIATE       37 CALLS          38 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  nbkg         4.39379e+04   1.08275e+03   3.26188e-02   6.50075e+01
+   2  ngauLM       2.55754e+03   5.00000e+01   0.00000e+00  -5.74924e+05
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=-63956.9 FROM MIGRAD    STATUS=CONVERGED      71 CALLS          72 TOTAL
+                     EDM=3.3356e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  nbkg         2.48884e+04   6.78351e+02   6.04109e-05  -1.17048e+01
+   2  ngauLM       6.51753e+03   1.19273e+02   6.59206e-06  -1.51684e+02
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  2    ERR DEF=0.5
+  4.602e+05 -4.786e+04 
+ -4.786e+04  1.423e+04 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2
+        1  0.59153   1.000 -0.592
+        2  0.59153  -0.592  1.000
+ **********
+ **   18 **MINOS        1000
+ **********
+ FCN=-63956.9 FROM MINOS     STATUS=SUCCESSFUL     48 CALLS         120 TOTAL
+                     EDM=3.3356e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  nbkg         2.48884e+04   6.78351e+02  -6.74607e+02   6.83183e+02
+   2  ngauLM       6.51753e+03   1.19273e+02  -1.18569e+02   1.20175e+02
+                               ERR DEF= 0.5
+ **********
+ **   23 **MINOS        1000
+ **********
+ FCN=-63956.9 FROM MINOS     STATUS=SUCCESSFUL     48 CALLS         168 TOTAL
+                     EDM=3.3356e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                  PARABOLIC         MINOS ERRORS        
+  NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE   
+   1  nbkg         2.48884e+04   6.78351e+02  -6.74607e+02   6.83183e+02
+   2  ngauLM       6.51753e+03   1.19273e+02  -1.18569e+02   1.20175e+02
+                               ERR DEF= 0.5
+fit_mass: Fit complete.
+fit_mass: Starting save_plot_fit_mass():
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+Background: Chebychev b1 = 0.273651 +/- [exact]
+Background: Chebychev b2 = -0.013215 +/- [exact]
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: ()
+#Lambda M: fraction Gaussian 1 = 0.670760 +/- [exact]
+#Lambda M: mean1 = 1115.777861 +/- [exact]
+#Lambda M: sigma1 = 0.945209 +/- [exact]
+#Lambda M: sigma2 = 2.333747 +/- [exact]
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) only plotting range 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_totalPdf_data'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) directly selected PDF components: (sigLM)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(totalPdf) indirectly selected PDF components: (gauLM1,gauLM2,meanLM2)
+#chi^{2}/N_{DoF} = 0.736437
+N bkg = 24888.377386 +/- 683.183331
+N /\ (/\ mass) = 6517.530630 +/- 120.175237
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 3.882001E-02
+limit = 1.056449E+00
+limit at 90% confidence level = 1.690319E+00
+Info in <TCanvas::Print>: eps file plots/fitcomparingcuts_LM_new_LL1_sigregonly.eps has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: plots/fitcomparingcuts_LM_new_LL1_sigregonly.C has been generated
+save_plot_fit_mass() complete.
+fit_mass complete.
+=========================================
+Finish root @	Fri May 13 23:17:27 CEST 2016
+=========================================
