@@ -100,10 +100,10 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     placeholder3 = Lbname[ifile]+"_PT";
     f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
 		{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
-                {"R_M","#Lambda M LL",300,1086,1146},			\
-                {"R_M","#Lambda M DD",300,1086,1146},			\
                 // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
                 // {"R_M","#Lambda M",300,1086,1146},			\
+                // {"R_M","#Lambda M LL",300,1086,1146},			\
+                // {"R_M","#Lambda M DD",300,1086,1146},			\
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
 		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
@@ -208,6 +208,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	TCut * thiscut = &mybranch->c[icut].self;
 	cut * mycut = &mybranch->c[icut];
 	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
+	cout<<"done"<<endl;
 	//calculate sig/bkg
         cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
 	float sigcutofflo,sigcutoffhi,bkgcutofflo,bkgcutoffhi;
@@ -218,8 +219,8 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	  sigcutofflo = 5562.230734;
 	  sigcutoffhi = 5680.694666;
 	}
-	bkgcutofflo = sigcutoffhi;
 	bkgcutoffhi = 6100;
+	bkgcutofflo = sigcutoffhi;
 	TString sigcutofflostring = Form("%.0f",sigcutofflo);
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
@@ -242,14 +243,17 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         // mycut->nb = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkgreg);//number in bkg region
         
         // float ratio = sqrt((float)nsig/(float)nbkg); 
-        //stack histogram
+        cout<<"done"<<endl;
+	//stack histogram
         cout<<"stacking histogram "<<icut+1<<"/"<<nCuts<<"...";
         leglabel=mybranch->c[icut].name;
         // placeholder2=Form("%.3f",ratio);
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
         hs[ci]->Add(h[ci][icut]);//stack histogram
+	cout<<"done"<<endl;
         //store calculations
-        myfile<<","<<mybranch->name<<","				\
+        cout<<"storing calculations...";
+	myfile<<","<<mybranch->name<<","				\
 	      <<leglabel<<","						\
               <<sigcutofflostring<<","					\
               <<sigcutoffhistring<<","					\
@@ -258,7 +262,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	      <<Form("%i",nsig)<<","                                    \
               <<Form("%i",nbkg)<<","					\
 	      <<Form("%f",ratio)<<endl;
-
+	cout<<"done"<<endl;
         // //calculate SMC sig/data bkg
         // if(ifile==(nFiles-1)){//ensure everything's been calculated
         //   if(ibranch==0&&icut==0){
@@ -297,6 +301,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       hs[ci]->SetTitle(stacktitle);
       hs[ci]->Draw("nostack");
       leg[ci]->Draw();
+      cout<<"done"<<endl;
       //save stuff:
       cout<<"saving files for stack "<<ci+1<<"...";
       placeholder = outputlocation+filename+"(";//the closing page is added after the loop
@@ -305,7 +310,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         placeholder = outputlocation+"c"+cistring+"_"+stacktitle+".C";
         c[ci]->SaveAs(placeholder);
       }
-      cout<<endl;
+      cout<<"done"<<endl;
       ci++;//iterates every time we finish a branch
     }
   }
