@@ -108,10 +108,11 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<thisbranch->name<<" for file "<<thisfile->name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,cnew;
-      makecuts(ifile,cLL,cDD,cnew);
+      TCut cLL,cDD,cnew_noLMcut,coptimized_noLMcut;
+      makecuts(ifile,cLL,cDD,cnew_noLMcut,coptimized_noLMcut);
 
-      thisbranch->c = {{cnew,"new"}};
+      thisbranch->c = {{cnew_noLMcut,"new_noLM"},\
+		       {coptimized_noLMcut,"optimized_noLM"}};
       int nCuts = thisbranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
@@ -158,10 +159,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
           exit(EXIT_FAILURE);
         }
         TString fileoutputlocation="./";
-        if(thisfile->quality["filetype"].Contains("data"))
-          fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
-        if(thisfile->quality["filetype"].Contains("MC"))
-          fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
+        // if(thisfile->quality["filetype"].Contains("data"))
+        //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
+        // if(thisfile->quality["filetype"].Contains("MC"))
+        //   fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
         TString tempfilelocation=fileoutputlocation+"temp.root";
         cout<<"creating tempfile... ";
         TFile *tempfile = new TFile(tempfilelocation,"recreate");
@@ -175,7 +176,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
         temptree->SetBranchStatus("*",0);
         temptree->SetBranchStatus(thisbranch->self,1);
         cout<<"done"<<endl<<"creating newfile... ";
-        placeholder = fileoutputlocation+"cutfile_"+thiscut->name+".root";
+        placeholder = fileoutputlocation+"cutfile_"+thiscut->name+"_LbM.root";
         TFile *newfile = new TFile(placeholder,"recreate");
         cout<<"done"<<endl<<"copying temptree... ";
         TTree *newtree = temptree->CopyTree("");
