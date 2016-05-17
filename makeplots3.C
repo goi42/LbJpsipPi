@@ -43,12 +43,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   ofstream myfile;
   // TString trueratiostring="";//holds information to be put at end of myfile
   myfile.open(outputlocation+"sigbkg.csv");
-  myfile<<"dataset,cuts,number signal,number background,Nsig^2/Nbkg"<<endl;
-  float sigcutofflo = 5562.230734;
-  float sigcutoffhi = 5680.694666;
-  float bkgcutofflo = sigcutoffhi;
-  float bkgcutoffhi = 6100;
-  cout<<"using "<<sigcutofflo<<" to "<<sigcutoffhi<<" as the signal region and "<<bkgcutofflo<<" and "<<bkgcutoffhi<<" as the upper and lower bounds of the bkg"<<endl;
+  myfile<<"dataset,branch,cuts,siglo,sighi,bkglo,bkghi,number signal,number background,Nsig^2/Nbkg"<<endl;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
   vector<TCanvas*> c;//each canvas holds one stack of histograms
@@ -103,12 +98,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+		{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
+                {"R_M","#Lambda M LL",300,1086,1146},			\
+                {"R_M","#Lambda M DD",300,1086,1146},			\
                 // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
                 // {"R_M","#Lambda M",300,1086,1146},			\
-                // {"R_M","#Lambda M LL",300,1086,1146},			\
-                // {"R_M","#Lambda M DD",300,1086,1146},			\
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
 		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
@@ -137,29 +132,36 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     
     cout<<endl<<"Starting branch loop..."<<endl;
     for(int ibranch=0; ibranch<nBranches; ibranch++){
-      cout<<"On branch "<<f[ifile].b[ibranch].name<<" for file "<<f[ifile].name<<"..."<<endl;
+      branch * mybranch = &f[ifile].b[ibranch];
+      cout<<"On branch "<<mybranch->name<<" for file "<<f[ifile].name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,cnew_noLMcut,coptimized_noLMcut;
-      makecuts(ifile,cLL,cDD,cnew_noLMcut,coptimized_noLMcut);
-      // for(float i=0; i<3000; i+=200){
-      // 	TCut thecut = cbase&&cLPT(i);
-      // 	if(ifile<3) thecut = thecut&&cLFD()&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
-      // 	placeholder2 = Form("%.1f",i);
-      // 	placeholder = "p & #pi ghost prob <"+placeholder2+"";
-      // 	f[ifile].b[ibranch].add_cut(thecut,placeholder);
-      // }
-      f[ifile].b[ibranch].c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
-      			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
-      }; 
+      TCut cLL,cDD,ctrigger,cbase;
+      makecuts(ifile,cLL,cDD,ctrigger,cbase);
+      for(int iFD=0; iFD<5000; iFD+=1000){
+	for(int iZ=0; iZ<1000; iZ+=200){
+	  for(float igp=1; igp>0; igp-=0.2){
+	    TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
+	    if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
+	    TString iFDstring = Form("%i",iFD);
+	    TString iZstring = Form("%i",iZ);
+	    TString igpstring = Form("%.1f",igp);
+	    placeholder = "FD > "+iFDstring+", Z > "+iZstring+" mm, gp < "+igpstring;
+	    mybranch->add_cut(thecut,placeholder);
+	  }
+	}
+      }
+      // mybranch->c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
+      // 			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
+      // }; 
       
-      int nCuts = f[ifile].b[ibranch].c.size();
+      int nCuts = mybranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
         //we must give them an empty cut with an empty name
         //so they can be plotted in the cuts loop
-        f[ifile].b[ibranch].c = {{"",""}};
-        nCuts = f[ifile].b[ibranch].c.size();
+        mybranch->c = {{"",""}};
+        nCuts = mybranch->c.size();
       }
       //create necessary canvasy things
       TString cistring = Form("%d",ci);
@@ -178,36 +180,46 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       
       for(int icut =0; icut<nCuts; icut++){
         //adjust LL and DD branches to have LL and DD cuts
-        if(f[ifile].b[ibranch].name.Contains("LL")){
-          f[ifile].b[ibranch].c[icut].self=f[ifile].b[ibranch].c[icut].self&&cLL;
-          f[ifile].b[ibranch].c[icut].name+=" LL";
+        if(mybranch->name.Contains("LL")){
+          mybranch->c[icut].self=mybranch->c[icut].self&&cLL;
+          mybranch->c[icut].name+=" LL";
         }
-        if(f[ifile].b[ibranch].name.Contains("DD")){
-          f[ifile].b[ibranch].c[icut].self=f[ifile].b[ibranch].c[icut].self&&cDD;
-          f[ifile].b[ibranch].c[icut].name+=" DD";
+        if(mybranch->name.Contains("DD")){
+          mybranch->c[icut].self=mybranch->c[icut].self&&cDD;
+          mybranch->c[icut].name+=" DD";
         }
         
-        cout<<"On cut "<<f[ifile].b[ibranch].c[icut].name<<"..."<<endl;
+        cout<<"On cut "<<mybranch->c[icut].name<<"..."<<endl;
         //create convenient strings
         TString icutstring = Form("%d",icut);
         TString hname = "h"+cistring+icutstring;
-        TString htitle = f[ifile].b[ibranch].name;
+        TString htitle = mybranch->name;
         //create histogram
-        int nBins = f[ifile].b[ibranch].nBins;
-        int loBin = f[ifile].b[ibranch].loBin;
-        int hiBin = f[ifile].b[ibranch].hiBin;
+        int nBins = mybranch->nBins;
+        int loBin = mybranch->loBin;
+        int hiBin = mybranch->hiBin;
         h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
         //draw histogram
         cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"...";
         while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
           icolor++;//skip bad colors 
 	h[ci][icut]->SetLineColor(icolor);
-	placeholder = f[ifile].b[ibranch].self+">>"+hname;
-	TCut * thiscut = &f[ifile].b[ibranch].c[icut].self;
-	cut * mycut = &f[ifile].b[ibranch].c[icut];
+	placeholder = mybranch->self+">>"+hname;
+	TCut * thiscut = &mybranch->c[icut].self;
+	cut * mycut = &mybranch->c[icut];
 	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
 	//calculate sig/bkg
         cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
+	float sigcutofflo,sigcutoffhi,bkgcutofflo,bkgcutoffhi;
+	if(mybranch->name.Contains("LL")){
+	  sigcutofflo = 5594.773954;
+	  sigcutoffhi = 5647.485654;
+	} else if(mybranch->name.Contains("DD")){
+	  sigcutofflo = 5562.230734;
+	  sigcutoffhi = 5680.694666;
+	}
+	bkgcutofflo = sigcutoffhi;
+	bkgcutoffhi = 6100;
 	TString sigcutofflostring = Form("%.0f",sigcutofflo);
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
@@ -232,13 +244,18 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         // float ratio = sqrt((float)nsig/(float)nbkg); 
         //stack histogram
         cout<<"stacking histogram "<<icut+1<<"/"<<nCuts<<"...";
-        leglabel=f[ifile].b[ibranch].c[icut].name;
+        leglabel=mybranch->c[icut].name;
         // placeholder2=Form("%.3f",ratio);
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
         hs[ci]->Add(h[ci][icut]);//stack histogram
         //store calculations
-        myfile<<","<<leglabel<<","                                      \
-              <<Form("%i",nsig)<<","                                    \
+        myfile<<","<<mybranch->name<<","				\
+	      <<leglabel<<","						\
+              <<sigcutofflostring<<","					\
+              <<sigcutoffhistring<<","					\
+              <<bkgcutofflostring<<","					\
+              <<bkgcutoffhistring<<","					\
+	      <<Form("%i",nsig)<<","                                    \
               <<Form("%i",nbkg)<<","					\
 	      <<Form("%f",ratio)<<endl;
 
@@ -265,7 +282,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         //     int nS = f[iLMCfile].b[ibranch].c[icut].nS;
         //     int nb = f[iLMCfile].b[ibranch].c[icut].nb;
             
-        //     trueratiostring+=","+f[ifile].b[ibranch].c[icut].name+","+Form("%i",nLs)+"," \
+        //     trueratiostring+=","+mybranch->c[icut].name+","+Form("%i",nLs)+"," \
         //       +Form("%i",nLb)+","+Form("%i",nSs)+","+Form("%i",nSb)+","+Form("%i",nds)+","+Form("%i",ndb)+"," \
         //       +Form("%.6f",ratioL)+","+Form("%.6f",ratioS)+","          \
         //       +Form("%i",nL)+","+Form("%i",nS)+","+Form("%i",nb)+"\n";
@@ -274,7 +291,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 
         icolor++;
       }
-      stacktitle+=f[ifile].name+", "+f[ifile].b[ibranch].name;
+      stacktitle+=f[ifile].name+", "+mybranch->name;
       //draw stacked histograms
       cout<<"drawing stack "<<ci+1<<": "<<stacktitle<<"...";
       hs[ci]->SetTitle(stacktitle);
