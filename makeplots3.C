@@ -44,8 +44,8 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   // TString trueratiostring="";//holds information to be put at end of myfile
   myfile.open(outputlocation+"sigbkg.csv");
   myfile<<"dataset,cuts,number signal,number background,Nsig^2/Nbkg"<<endl;
-  float sigcutofflo = 5594.773954;
-  float sigcutoffhi = 5647.485654;
+  float sigcutofflo = 5562.230734;
+  float sigcutoffhi = 5680.694666;
   float bkgcutofflo = sigcutoffhi;
   float bkgcutoffhi = 6100;
   cout<<"using "<<sigcutofflo<<" to "<<sigcutoffhi<<" as the signal region and "<<bkgcutofflo<<" and "<<bkgcutoffhi<<" as the upper and lower bounds of the bkg"<<endl;
@@ -103,9 +103,9 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-                {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}   \
                 // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
                 // {"R_M","#Lambda M",300,1086,1146},			\
                 // {"R_M","#Lambda M LL",300,1086,1146},			\
                 // {"R_M","#Lambda M DD",300,1086,1146},			\
