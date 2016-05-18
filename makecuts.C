@@ -91,6 +91,7 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cbase){
   
   TCut cLMLL = "(R_M>1110.3791995)&&(R_M<1121.2909745)";
   TCut cLMDD = "(R_M>1107.0871865)&&(R_M<1124.8458615)";
+  TCut cLM = "(R_M>1107)&&(R_M<1125)";
   
   placeholder = "(J_psi_1S"+Jpsi_[ifile]+"Hlt1DiMuonHighMassDecision_TOS==1)||(J_psi_1S"+Jpsi_[ifile]+"Hlt1TrackMuonDecision_TOS==1)";
   TCut ctriggerHlt1part1=(TCut)placeholder;
@@ -116,7 +117,7 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cbase){
   //   &&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger			\
   //   &&((cLL&&cLPT(1300))||(cDD&&cLPT(2100)&&cLbendv(ifile)));
 
-  cbase=((cLL&&cLWM(-16.65590481,16.65590481,497.742391)&&cLPT(1300))||(cDD&&cLWM(-16.55951271,16.55951271,498.289686)&&cLPT(2100)));
+  cbase=cLM&&((cLL&&cLWM(-16.65590481,16.65590481,497.742391)&&cLPT(1300))||(cDD&&cLWM(-16.55951271,16.55951271,498.289686)&&cLPT(2100)));
   // coptimized=((cLL&&cLPT(1300)&&cLWM(-2.759994,2.759994,497.742391))||(cDD&&cLPT(2100)&&cLWM(-21.321261,21.321261,498.289686))) \
   // 	      &&cLbDIRA(ifile,0.999993)&&cLFD()&&cJpsiMM()&&ctrigger	\
   // 	      &&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile)));

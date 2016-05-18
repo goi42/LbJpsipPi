@@ -99,7 +99,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
     f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-		{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
+		// {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
                 // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
                 // {"R_M","#Lambda M",300,1086,1146},			\
                 // {"R_M","#Lambda M LL",300,1086,1146},			\
@@ -138,9 +138,10 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       //assign cuts
       TCut cLL,cDD,ctrigger,cbase;
       makecuts(ifile,cLL,cDD,ctrigger,cbase);
-      for(int iFD=0; iFD<5000; iFD+=1000){
-	for(int iZ=0; iZ<1000; iZ+=200){
-	  for(float igp=1; igp>0; igp-=0.2){
+      for(int iFD=2500; iFD<3500; iFD+=100){
+	int iZ=0;
+	// for(int iZ=0; iZ<1000; iZ+=200){
+	  for(float igp=0.3; igp>0; igp-=0.05){
 	    TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
 	    if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
 	    TString iFDstring = Form("%i",iFD);
@@ -149,7 +150,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	    placeholder = "FD > "+iFDstring+", Z > "+iZstring+" mm, gp < "+igpstring;
 	    mybranch->add_cut(thecut,placeholder);
 	  }
-	}
+	// }
       }
       // mybranch->c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
       // 			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
@@ -208,7 +209,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	TCut * thiscut = &mybranch->c[icut].self;
 	cut * mycut = &mybranch->c[icut];
 	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
-	cout<<"done"<<endl;
+	cout<<"done. ";
 	//calculate sig/bkg
         cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
 	float sigcutofflo,sigcutoffhi,bkgcutofflo,bkgcutoffhi;
@@ -243,14 +244,14 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         // mycut->nb = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkgreg);//number in bkg region
         
         // float ratio = sqrt((float)nsig/(float)nbkg); 
-        cout<<"done"<<endl;
+        cout<<"done. ";
 	//stack histogram
         cout<<"stacking histogram "<<icut+1<<"/"<<nCuts<<"...";
         leglabel=mybranch->c[icut].name;
         // placeholder2=Form("%.3f",ratio);
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
         hs[ci]->Add(h[ci][icut]);//stack histogram
-	cout<<"done"<<endl;
+	cout<<"done. ";
         //store calculations
         cout<<"storing calculations...";
 	myfile<<","<<mybranch->name<<","				\
