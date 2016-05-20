@@ -152,7 +152,7 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
   //framex->addObject(txt);//add text to frame
 
   gPad->SetTopMargin(0.06);
-  pad1->SetLogy();
+  // pad1->SetLogy();
   // pad1->Range(4100,0,6100,0.0005);
   pad1->Update();
   framex->Draw();
