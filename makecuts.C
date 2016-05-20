@@ -68,7 +68,7 @@ TCut cLFD(float LFDchi=50){
   TCut output = (TCut)place;
   return output;
 }
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest_noLM){
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -89,9 +89,8 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest_noLM){
   TCut cLMM1 = "(R_MM>1112)&&(R_MM<1120)";
   TCut cLMM2 = "(R_MM>1110)&&(R_MM<1122)";
   
-  TCut cLMLL = "(R_M>1110.3791995)&&(R_M<1121.2909745)";
-  TCut cLMDD = "(R_M>1107.0871865)&&(R_M<1124.8458615)";
-  TCut cLM = "(R_M>1107)&&(R_M<1125)";
+  TCut cLMLL = "(R_M>1110.3518805)&&(R_M<1121.2920055)";
+  TCut cLMDD = "(R_M>1106.7300395)&&(R_M<1125.1347545)";
   
   placeholder = "(J_psi_1S"+Jpsi_[ifile]+"Hlt1DiMuonHighMassDecision_TOS==1)||(J_psi_1S"+Jpsi_[ifile]+"Hlt1TrackMuonDecision_TOS==1)";
   TCut ctriggerHlt1part1=(TCut)placeholder;
@@ -102,7 +101,9 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest_noLM){
   TCut ctriggerHlt2=(TCut)placeholder;
   ctrigger = ctriggerHlt1&&ctriggerHlt2;
 
-  cnewest_noLM = ((cLL&&cLPT(1300)&&cLFD(2660)&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235))||(cDD&&cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)))&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  TCut cnewestLL = (cLL&&cLPT(1300)&&cLFD(2660)&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLMLL);
+  TCut cnewestDD = (cDD&&cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLMDD);  
+  cnewest = (cnewestLL||cnewestDD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
 
   // cnew_noLMcut = ((cLL&&cLWM(-16.65590481,16.65590481,497.742391)		\
   // 	   &&cLFD(10))							\
