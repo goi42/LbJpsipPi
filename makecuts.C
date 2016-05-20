@@ -5,9 +5,9 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs"};//,"Bs"};//,"Bs","Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={""};//,"_"};//,"_"};//,"_",""};
+TString Lbname[]={"Bs","Bs"};//,"Bs","Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={"_","_"};//,"_",""};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
