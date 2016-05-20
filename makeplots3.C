@@ -98,9 +98,9 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-		// {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
-                // {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
+                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
+		// {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
                 // {"R_M","#Lambda M",300,1086,1146},			\
                 // {"R_M","#Lambda M LL",300,1086,1146},			\
                 // {"R_M","#Lambda M DD",300,1086,1146},			\
@@ -138,19 +138,19 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       //assign cuts
       TCut cLL,cDD,ctrigger,cbase;
       makecuts(ifile,cLL,cDD,ctrigger,cbase);
-      for(int iFD=2500; iFD<3500; iFD+=100){
-	int iZ=0;
-	// for(int iZ=0; iZ<1000; iZ+=200){
-	  for(float igp=0.3; igp>0; igp-=0.05){
+      for(int iFD=0; iFD<200; iFD+=50){
+	for(int iZ=0; iZ<240; iZ+=20){
+	  // for(float igp=0.5; igp>0.2; igp-=0.05){
+	    float igp = 1;
 	    TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
 	    if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
 	    TString iFDstring = Form("%i",iFD);
 	    TString iZstring = Form("%i",iZ);
-	    TString igpstring = Form("%.1f",igp);
+	    TString igpstring = Form("%.2f",igp);
 	    placeholder = "FD > "+iFDstring+", Z > "+iZstring+" mm, gp < "+igpstring;
 	    mybranch->add_cut(thecut,placeholder);
-	  }
-	// }
+	  // }
+	}
       }
       // mybranch->c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
       // 			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
