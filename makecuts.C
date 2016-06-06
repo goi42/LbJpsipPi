@@ -5,9 +5,9 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs","Bs"};//,"Bs","Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={"_","_"};//,"_",""};
+TString Lbname[]={"Bs"};//,"Bs","Bs"};//,"Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={""};//,"_","_"};//,"_",};//""};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
@@ -68,6 +68,18 @@ TCut cLFD(float LFDchi=50){
   TCut output = (TCut)place;
   return output;
 }
+TCut cLDIRATOP(double LDIRA=1){
+  TString LDIRAstring = Form("%.15f",LDIRA);
+  TString place = "R_DIRA_TOPPV<"+LDIRAstring;
+  TCut output = (TCut)place;
+  return output;
+}
+TCut cLDIRA(double LDIRA=0){
+  TString LDIRAstring = Form("%.15f",LDIRA);
+  TString place = "R_DIRA_TOPPV>"+LDIRAstring;
+  TCut output = (TCut)place;
+  return output;
+}
 void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
@@ -104,6 +116,19 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
   TCut cnewestLL = (cLL&&cLPT(1300)&&cLFD(2660)&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLMLL);
   TCut cnewestDD = (cDD&&cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLMDD);  
   cnewest = (cnewestLL||cnewestDD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  // TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
+  // cnewest=cnewest&&motherL;
+  // if(ifile==0){//cut tails off SMC
+  //   placeholder=massname[ifile]+">5300&&"+massname[ifile]+"<5655";
+  //   cnewest=cnewest&&(TCut)placeholder;
+  //   // ctight=ctight&&(TCut)placeholder;
+  //   // cloose=cloose&&(TCut)placeholder;
+  //   TCut mlambda="abs(R_MC_MOTHER_ID)==3212";//for sigma MC
+  //   cnewest=cnewest&&mlambda;
+  // }else if(ifile==1){// gd mother id for /\*(1405)
+  //   TCut mother1405="abs(R_MC_GD_MOTHER_ID)==13122";//for /\*(1405) MC
+  //   cnewest=cnewest&&mother1405;
+  // }
 
   // cnew_noLMcut = ((cLL&&cLWM(-16.65590481,16.65590481,497.742391)		\
   // 	   &&cLFD(10))							\
@@ -145,20 +170,8 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
   // coptimized_forL=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))		\
   //   &&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2))			\
   //   &&cLWM();
-  // TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
-  // cgd=coptimized&&motherL;
   // TCut motherL="abs(R_MC_GD_MOTHER_ID)==5122";//for /\ MC
   // cgd=coptimized&&motherL;
-  // if(ifile==0){//cut tails off SMC
-  //   placeholder=massname[ifile]+">5300&&"+massname[ifile]+"<5655";
-  //   coptimized=coptimized&&(TCut)placeholder;
-  //   // ctight=ctight&&(TCut)placeholder;
-  //   // cloose=cloose&&(TCut)placeholder;
-  // }
-  // TCut mlambda="abs(R_MC_MOTHER_ID)==3212";//for sigma MC
-  // cgd=coptimized&&mlambda;
-  // TCut mother1405="abs(R_MC_GD_MOTHER_ID)==13122";//for /\*(1405) MC
-  // cgd=coptimized&&mother1405;
 
   // coptimized_sans_WM=((cLL&&cLPT(1300))||(cDD&&cLPT(2100)))&&cLbDIRA(ifile,0.999993) \
   //   &&cLFD()&&cJpsiMM()&&((cLL&&cgprob()&&cLMM1)||(cDD&&cLZ()&&cLMM2&&cLbendv(ifile))) \

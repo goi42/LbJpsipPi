@@ -39,10 +39,11 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   TString placeholder2;
   TString placeholder3;
   TString outputlocation="./";
-  TString filename="plots.pdf";
+  TString basename="comperrcuts";
+  TString filename=basename+".pdf";
   ofstream myfile;
   // TString trueratiostring="";//holds information to be put at end of myfile
-  myfile.open(outputlocation+"sigbkg.csv");
+  myfile.open(outputlocation+basename+".csv");
   myfile<<"dataset,branch,cuts,siglo,sighi,bkglo,bkghi,number signal,number background,Nsig^2/Nbkg"<<endl;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
@@ -59,8 +60,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
-  file f[]={								\
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, \
+  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
@@ -98,33 +98,35 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},	\
-                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},  \
-		// {massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-                // {"R_M","#Lambda M",300,1086,1146},			\
-                // {"R_M","#Lambda M LL",300,1086,1146},			\
-                // {"R_M","#Lambda M DD",300,1086,1146},			\
-                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
-		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
-                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, \
-                // {"R_P","#Lambda p",144,0,385000},			\
-                // {"R_P","#Lambda p LL",144,0,385000},         \
-                // {"R_P","#Lambda p DD",144,0,385000},         \
-                // {"R_PT","#Lambda p_{T}",148,0,37000},         \
-                // {"R_PT","#Lambda p_{T} LL",148,0,37000},      \
-                // {"R_PT","#Lambda p_{T} DD",148,0,37000}       \
-                // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},        \
-                // {placeholder3,"#Lambda_{b} p_{T} LL",4000,0,20000},     \
-                // {placeholder3,"#Lambda_{b} p_{T} DD",4000,0,20000},     \
-                // {placeholder3,"#Lambda_{b} p_{T}",400,0,20000},         \
-                // {placeholder3,"#Lambda_{b} p_{T} LL",400,0,20000},     \
+    f[ifile].b={{massname[ifile],"#Lambda_{b} mass (endV) DD",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass (PV) DD",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass (PV)",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass (endV)",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, 
+		// {"R_M","#Lambda M",300,1086,1146},			
+                // {"R_M","#Lambda M LL",300,1086,1146},			
+                // {"R_M","#Lambda M DD",300,1086,1146},			
+                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, 
+		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, 
+                // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, 
+                // {"R_P","#Lambda p",144,0,385000},			
+                // {"R_P","#Lambda p LL",144,0,385000},         
+                // {"R_P","#Lambda p DD",144,0,385000},         
+                // {"R_PT","#Lambda p_{T}",148,0,37000},         
+                // {"R_PT","#Lambda p_{T} LL",148,0,37000},      
+                // {"R_PT","#Lambda p_{T} DD",148,0,37000}       
+                // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},        
+                // {placeholder3,"#Lambda_{b} p_{T} LL",4000,0,20000},     
+                // {placeholder3,"#Lambda_{b} p_{T} DD",4000,0,20000},     
+                // {placeholder3,"#Lambda_{b} p_{T}",400,0,20000},         
+                // {placeholder3,"#Lambda_{b} p_{T} LL",400,0,20000},     
                 // {placeholder3,"#Lambda_{b} p_{T} DD",400,0,20000}};
-                // {placeholder2,"#Lambda_{b} BKGCAT",131,0,131}                    \
-                // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},                    \
-                // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, \
-                // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1},   \
-                // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},      \
-                // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, \
+                // {placeholder2,"#Lambda_{b} BKGCAT",131,0,131}                    
+                // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},                    
+                // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, 
+                // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1},   
+                // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},      
+                // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, 
                 // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}};
     };
     cout<<"branches declared"<<endl;    
@@ -136,22 +138,52 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<mybranch->name<<" for file "<<f[ifile].name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,ctrigger,cbase;
-      makecuts(ifile,cLL,cDD,ctrigger,cbase);
-      for(int iFD=0; iFD<200; iFD+=50){
-	for(int iZ=0; iZ<240; iZ+=20){
-	  // for(float igp=0.5; igp>0.2; igp-=0.05){
-	    float igp = 1;
-	    TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
-	    if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
-	    TString iFDstring = Form("%i",iFD);
-	    TString iZstring = Form("%i",iZ);
-	    TString igpstring = Form("%.2f",igp);
-	    placeholder = "FD > "+iFDstring+", Z > "+iZstring+" mm, gp < "+igpstring;
-	    mybranch->add_cut(thecut,placeholder);
-	  // }
+      TCut cLL,cDD,ctrigger,cnewest;
+      makecuts(ifile,cLL,cDD,ctrigger,cnewest);
+      // if(mybranch->name.Contains("LL")){
+      // 	mybranch->add_cut(cnewest,"newest");
+      // } else if(mybranch->name.Contains("DD")){
+      placeholder="";//just filling these here in case something goes wrong
+      placeholder2="no cuts";
+      if(mybranch->name.Contains("PV")){
+	for(double i=0.055; i>0.045; i-=0.001){
+	  TString istring = Form("%.3f",i);
+	  placeholder = "sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)<"+istring;
+	  placeholder2 = "newest & #Lambda PV error in X&Y<"+istring;
+	  TCut thecut = cnewest&&(cLL||(TCut)placeholder);
+	  mybranch->add_cut(thecut,placeholder2);
+	}
+      } else if(mybranch->name.Contains("endV")){
+	mybranch->add_cut(cnewest,"newest only");
+	for(double i=60; i>15; i-=3){
+	  TString istring = Form("%.2f",i);
+	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
+	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+	  TCut thecut = cnewest&&(cLL||(TCut)placeholder);
+	  mybranch->add_cut(thecut,placeholder2);
 	}
       }
+      // }	
+
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=0.999999906; i>0.999999900; i-=0.000000001){
+      // 	  // TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
+      // 	  // if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
+      // 	  TCut thecut = cnewest&&cLDIRATOP(i);
+      // 	  TString istring = Form("%.12f",i);
+      // 	  placeholder = "cos(angle /\\_P and top PV)<"+istring;
+      // 	  mybranch->add_cut(thecut,placeholder);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=0.9999999995; i>0.9999999994; i-=0.000000000005){
+      // 	  // TCut thecut = cbase&&((cDD&&cLZ(iZ))||(cLL&&cgprob(igp)));
+      // 	  // if(ifile<3) thecut = thecut&&cLFD(iFD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger&&((cLL)||(cDD&&cLbendv(ifile)));
+      // 	  TCut thecut = cnewest&&cLDIRATOP(i);
+      // 	  TString istring = Form("%.12f",i);
+      // 	  placeholder = "cos(angle /\\_P and top PV)<"+istring;
+      // 	  mybranch->add_cut(thecut,placeholder);
+      // 	}
+      // }	
       // mybranch->c ={{cnew_noLMcut,"cuts at end of talk with no /\\ M cut"}, \
       // 			      {coptimized_noLMcut,"old optimized cuts with no /\\ M cut"} \
       // }; 
