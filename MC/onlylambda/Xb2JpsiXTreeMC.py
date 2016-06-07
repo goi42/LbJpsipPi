@@ -1,97 +1,123 @@
-#---------------------------------------------
-# Author   : Bilas Pal
-# Date     : 10/26/2012
-# Comments : /\b->J/psi p+ K-
-# Data     : Real Data
-# Modified : Michael Wilkinson for /\-> p+ pi- MC 7/9/2015
-# Note     : Items marked #! differ from test/runmc.py
-#---------------------------------------------
-import GaudiKernel.SystemOfUnits as Units
-from Gaudi.Configuration import *
-from Configurables import GaudiSequencer #!
-from Configurables import  DecayTreeTuple, MCDecayTreeTuple, CheckPV #!
-from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, DataOnDemand, MergedSelection #!
-from Configurables import   CombineParticles, FilterDesktop,  OfflineVertexFitter
-from Configurables import SelDSTWriter, DaVinci
-
-#--Stripping--------------------------------------------------------
-from StrippingConf.Configuration import StrippingConf, StrippingStream
-from StrippingSettings.Utils import strippingConfiguration
-from StrippingArchive.Utils import buildStreams
-from StrippingArchive import strippingArchive
-
-#----------------------Standard stripping20-------------------------
-stripping='stripping20'
-config  = strippingConfiguration(stripping)
-archive = strippingArchive(stripping)
-streams = buildStreams(stripping=config, archive=archive)
-
-#----Select my line-------------------------------------------------
-MyStream = StrippingStream("MyStream")
-MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
-
-for stream in streams:
-    for line in stream.lines:
-        if line.name() in MyLines:
-            MyStream.appendLines( [ line ] )
-
-sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
-#------------------------------------------------------------------------
-
-#----selection p+ and K- and Lambda0 -------------------------
-Lambda0LL = DataOnDemand(Location = "Phys/StdLooseLambdaLL/Particles")
-Lambda0DD = DataOnDemand(Location = "Phys/StdLooseLambdaDD/Particles")
-AllLambda0 = MergedSelection( "AllLambda0", RequiredSelections = [Lambda0LL, Lambda0DD])
-
-#----Selection /\->p+ pi-
-
-_FilterL = FilterDesktop("_FilterL")
-_FilterL.Code = "(ADMASS('Lambda0') < 30.*MeV)"\
-                  "& (VFASPF(VCHI2/VDOF) < 12.0)" 
-
-FilterL = Selection( "FilterL",
-                      Algorithm          = _FilterL ,
-                      RequiredSelections = [ AllLambda0 ] )
-
-### Gaudi sequence
-SeqL = SelectionSequence("SeqL", TopSelection = FilterL)
-seq = SeqL.sequence()
-
-#--------------------------------------------------------------------------
-# Configure DaVinci
-#-------------------------------------------------------------------------
-from Configurables import DaVinci
-
-DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
-
-from Configurables import  OfflineVertexFitter
-
-from Configurables import  DecayTreeTuple, MCDecayTreeTuple
-importOptions("Xb2JpsiXTreeMC.py")
-
-
-tuple = DecayTreeTuple( "LTree" )
-tuple.Inputs = [ SeqL.outputLocation() ]
-
-
-
-from PhysConf.Filters import LoKi_Filters #!
-fltrs = LoKi_Filters(STRIP_Code = "(HLT_PASS_RE('StrippingFullDSTDiMuonJpsi2MuMuDetachedLineDecision'))" ) #!
-
-from Configurables import DaVinci #!
-DaVinci().Simulation   = True
-DaVinci().EvtMax = -1                        # Number of events
-#DaVinci().EventPreFilters = fltrs.filters('Filter') #!
-DaVinci().UserAlgorithms = [ seq, tuple  ]
-from Configurables import CondDB #!
-DaVinci().DataType = "2012"
-DaVinci().DDDBtag   = "Sim08-20130503-1" #!
-DaVinci().CondDBtag = "Sim08-20130503-1-vc-md100" #!
-DaVinci().PrintFreq = 50000 #10000 #!
-DaVinci().Lumi = False
-
-
-
 ########################################################################
-MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
-from Configurables import  DaVinciInit
+#
+# J/psi n-tuple
+#
+# @author Bilas Pal
+# @date 2010-11-01
+######
+########################################################################
+from Gaudi.Configuration import *
+#
+# DecayTreeTuple
+#
+from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTrigger, TupleToolTISTOS, TupleToolTagging, MCDecayTreeTuple
+from Configurables import FitDecayTrees, TupleToolGeometry
+tuple = DecayTreeTuple('LTree')
+
+tuple.TupleName = "mytree"
+
+tuple.ToolList =  [
+       "TupleToolGeometry",
+       "TupleToolKinematic",
+       "TupleToolEventInfo",
+#       "TupleToolTISTOS",
+       "TupleToolPid",
+       "TupleToolTrackInfo",
+#       "TupleToolTagging"
+        ]
+tistos = TupleToolTISTOS("tistos")
+tistos.VerboseL0 = 1
+tistos.VerboseHlt1 = 1
+tistos.VerboseHlt2 = 1
+tistos.TriggerList = [
+    'L0DiMuonDecision',
+    'L0HCALDecision',
+    'L0MuonDecision',
+    'L0MuonHighDecision',
+    'Hlt1SingleMuonNoIPL0Decision',
+    'Hlt1DiMuonHighMassDecision',
+    'Hlt1DiMuonLowMassDecision',
+    'Hlt1SingleMuonHighPTDecision',
+    'Hlt1SingleMuonNoIPDecision',
+    'Hlt1TrackAllL0Decision',
+    'Hlt1TrackMuonDecision',
+    'Hlt1SingleMuonNoIPL0Decision',
+    'Hlt2DiMuonBDecision',
+    'Hlt2DiMuonDecision',
+    'Hlt2DiMuonDY1Decision',
+    'Hlt2DiMuonDetachedDecision',
+    'Hlt2DiMuonDetachedHeavyDecision',
+    'Hlt2DiMuonDetachedJPsiDecision',
+    'Hlt2DiMuonJPsiDecision',
+    'Hlt2DiMuonJPsiHighPTDecision',
+    'Hlt2ExpressJPsiDecision',
+    'Hlt2ExpressJPsiTagProbeDecision',
+    'Hlt2SingleMuonDecision',
+    'Hlt2SingleMuonHighPTDecision',
+    'Hlt2SingleMuonLowPTDecision',
+    'Hlt2Topo2BodyBBDTDecision',
+    'Hlt2Topo2BodySimpleDecision',
+    'Hlt2Topo3BodyBBDTDecision',
+    'Hlt2Topo3BodySimpleDecision',
+    'Hlt2Topo4BodyBBDTDecision',
+    'Hlt2Topo4BodySimpleDecision',
+    'Hlt2TopoMu2BodyBBDTDecision',
+    'Hlt2TopoMu3BodyBBDTDecision',
+    'Hlt2TopoMu4BodyBBDTDecision',
+    'Hlt2TransparentDecision',
+    'Hlt2DiMuonUnbiasedJPsiDecision'
+    ]
+
+tuple.addTool(TupleToolGeometry)
+tuple.TupleToolGeometry.Verbose = True
+
+###########################################################################################################################
+tuple.Decay = '[Lambda0 -> ^p+ ^pi-]CC'
+tuple.Branches = {
+    "R"    :  "^[Lambda0 -> p+ pi-]CC", 
+    "H1"   :  "[Lambda0 -> ^p+ pi-]CC",      
+    "H2"   :  "[Lambda0 -> p+ ^pi-]CC",     
+}
+
+tuple.ToolList += [
+    "TupleToolMCTruth",
+    "TupleToolMCBackgroundInfo"
+    ]
+
+from Configurables import TupleToolMCTruth, MCTupleToolP2VV
+
+tuple.addTool(TupleToolDecay, name="R")
+tuple.R.ToolList = [ "TupleToolMCTruth" ]
+tuple.R.addTool(TupleToolMCTruth())
+tuple.R.TupleToolMCTruth.ToolList = [ "MCTupleToolHierarchy" ]
+
+tuple.addTool(TupleToolDecay, name="J_psi_1S")
+tuple.J_psi_1S.addTool(tistos)
+tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
+
+tuple.ReFitPVs = True
+
+#WM tool to cut away KS
+tuple.addTool(TupleToolDecay, name="R")
+
+LoKi_R=LoKi__Hybrid__TupleTool("LoKi_R")
+LoKi_R.Variables =  {
+    "WM" : "WM( 'pi+' , 'pi-')"
+    }
+tuple.R.addTool(LoKi_R)
+tuple.R.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_R"]
+
+from Configurables import LoKi__Hybrid__EvtTupleTool as LoKiTool
+tuple.addTool(LoKiTool , 'MyLoKiTool' )
+tuple.ToolList += [ "LoKi::Hybrid::EvtTupleTool/MyLoKiTool" ]
+tuple.MyLoKiTool.VOID_Variables = {    'nTracks' :  " CONTAINS ('Rec/Track/Best') "  ,
+                                        "nLong"  :   " TrSOURCE('Rec/Track/Best', TrLONG) >> TrSIZE "
+                                          }
+tuple.MyLoKiTool.Preambulo = [
+    "from LoKiTracks.decorators import *",
+    "from LoKiCore.functions import *"
+    ]
+
+
+#-----Added by Michael (copied from test/Bs2JpsiXTreeMC.py):
+from Configurables import TupleToolP2VV
