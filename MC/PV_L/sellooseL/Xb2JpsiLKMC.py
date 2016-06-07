@@ -90,10 +90,10 @@ FilterL = Selection( "FilterL",
 #                       RequiredSelections = [ Jpsi2MuMu, FilterL ] )
 
 ### Gaudi sequence
-SeqL2ppi = SelectionSequence("SeqL2ppi", TopSelection = L2ppi)
-seq = SeqL2ppi.sequence()
-# SeqFilterL = SelectionSequence("SeqFilterL", TopSelection = FilterL)
-# seq = SeqFilterL.sequence()
+# SeqL2ppi = SelectionSequence("SeqL2ppi", TopSelection = L2ppi)
+# seq = SeqL2ppi.sequence()
+SeqFilterL = SelectionSequence("SeqFilterL", TopSelection = FilterL)
+seq = SeqFilterL.sequence()
 
 #--------------------------------------------------------------------------
 # Configure DaVinci
@@ -109,7 +109,7 @@ importOptions("Xb2JpsiXTreeMC.py")
 
 
 tuple = DecayTreeTuple( "L2ppiTree" )
-tuple.Inputs = [ SeqL2ppi.outputLocation() ]
+tuple.Inputs = [ SeqFilterL.outputLocation() ]
 
 
 
