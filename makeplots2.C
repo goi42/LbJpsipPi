@@ -38,7 +38,7 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   TString placeholder3;
   //default parameters
   TString outputlocation="./";
-  TString filename="plots.pdf";
+  TString filename="plots_.pdf";
 
   //-----assign files, branches, cuts-------//
   cout<<"files... ";
@@ -49,7 +49,7 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   map<TString,TString> f6quality {{"filetype","MC"},{"decaymode","#Lambda (minbias)"}};
   file f[]={								\
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
@@ -193,9 +193,14 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
       //assign cuts
       thisbranch->c ={// {cLL,"no cuts LL"},
 		      // {cDD,"no cuts DD"},
-		      {cnewest_PV_L&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts LL"},
-		      {cnewest_PV_L_M&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts LL"},
+		      // {cnewest_PV_L&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts LL"},
 		      // {cnewest_PV_L&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts DD"},
+		      {cnewest_PV_L_M&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts LL"},
+		      {cnewest_PV_L_M&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts DD"},
+		      {cnewest_PV_L_M&&cLL&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only LL"},
+		      {cnewest_PV_L_M&&cDD&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only DD"},
+		      {cnewest_PV_L_M&&cLL&&"R_BKGCAT==0","newest (sans...) cuts signal only LL"},
+		      {cnewest_PV_L_M&&cDD&&"R_BKGCAT==0","newest (sans...) cuts signal only DD"},
 		      // {"","no cuts"},
 		      // {cnewest,"newest cuts"},
       };
@@ -249,7 +254,6 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   for(int i =0; i<nLayers; i++){
     //assign layers; this is not an algorithm 
     if(L[i].name=="file") {
-      L[i].compared=kTRUE;
       for(int j=0;j<nFiles;j++) {
         L[i].add_element(&f[j].name);
       }
