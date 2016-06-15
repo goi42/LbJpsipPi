@@ -12,6 +12,7 @@ from Gaudi.Configuration import *
 #
 from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTrigger, TupleToolTISTOS, TupleToolTagging
 from Configurables import FitDecayTrees, TupleToolGeometry
+from Configurables import TupleToolIsoGeneric
 tuple = DecayTreeTuple('Lb2JpsiLTree') 
 tuple.Inputs = [ 'Phys/Bs2Jpsif0' ]
 
@@ -87,6 +88,8 @@ tuple.Branches = {
     "J_psi_1S"   :  "[Lambda_b0 -> (^J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc"       
 }
 
+TupleToolIsoGeneric = tuple.addTupleTool("TupleToolIsoGeneric")
+TupleToolIsoGeneric.Verbose = True
 
 tuple.addTool(TupleToolDecay, name="Bs")
 tuple.Bs.ToolList = [ "TupleToolPropertime" ]
