@@ -60,11 +60,13 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
-  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
+  map<TString,TString> f6quality {{"filetype","MC"},{"decaymode","#Lambda (minbias)"}};
+  file f[]={// {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
+	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality},
+	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
+	    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality},
   };
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality}, \
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality}, \
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality},
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != sizeof(Lbname)/sizeof(Lbname[0])){
@@ -88,9 +90,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   for(int ifile=0;ifile<nFiles;ifile++){
     myfile<<f[ifile].name;
     cout<<"trees... ";
-    if(ifile<3){
-      f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure the names are correct
-    }else f[ifile].add_tree("LTree/mytree");
+    if(f[ifile].quality["decaymode"]=="#Lambda (minbias)")
+      f[ifile].add_tree("L2ppiTree/mytree");
+    else if(f[ifile].quality["decaymode"]=="#Lambda only")
+      f[ifile].add_tree("LTree/mytree");
+    else      
+      f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure these names are correct
     cout<<"done"<<endl;
     //store file indices
     if(f[ifile].name=="data") idatafile = ifile;
@@ -98,14 +103,16 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{massname[ifile],"#Lambda_{b} mass (endV) DD",400,4100,6100},	
+    f[ifile].b={// {massname[ifile],"#Lambda_{b} mass (PV) LL",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass (endV) LL",400,4100,6100},	
                 // {massname[ifile],"#Lambda_{b} mass (PV) DD",400,4100,6100},	
-                // {massname[ifile],"#Lambda_{b} mass (PV)",400,4100,6100},	
-                // {massname[ifile],"#Lambda_{b} mass (endV)",400,4100,6100},	
+                // {massname[ifile],"#Lambda_{b} mass (endV) DD",400,4100,6100},	
                 // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, 
 		// {"R_M","#Lambda M",300,1086,1146},			
-                // {"R_M","#Lambda M LL",300,1086,1146},			
-                // {"R_M","#Lambda M DD",300,1086,1146},			
+                // {"R_M","#Lambda M (PV) LL",300,1086,1146},			
+                // {"R_M","#Lambda M (endV) LL",300,1086,1146},			
+                // {"R_M","#Lambda M (PV) DD",300,1086,1146},			
+                {"R_M","#Lambda M (endV) DD",300,1086,1146},			
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, 
 		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, 
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, 
@@ -138,30 +145,30 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<mybranch->name<<" for file "<<f[ifile].name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,ctrigger,cnewest;
-      makecuts(ifile,cLL,cDD,ctrigger,cnewest);
+      TCut cLL,cDD,ctrigger,cnewest_PV_L;
+      makecuts(ifile,cLL,cDD,ctrigger,cnewest_PV_L);
       // if(mybranch->name.Contains("LL")){
       // 	mybranch->add_cut(cnewest,"newest");
       // } else if(mybranch->name.Contains("DD")){
       placeholder="";//just filling these here in case something goes wrong
       placeholder2="no cuts";
       if(mybranch->name.Contains("PV")){
-	for(double i=0.055; i>0.045; i-=0.001){
-	  TString istring = Form("%.3f",i);
-	  placeholder = "sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)<"+istring;
-	  placeholder2 = "newest & #Lambda PV error in X&Y<"+istring;
-	  TCut thecut = cnewest&&(cLL||(TCut)placeholder);
-	  mybranch->add_cut(thecut,placeholder2);
-	}
+      	for(double i=100; i>0; i-=0.5){
+      	  TString istring = Form("%.3f",i);
+      	  placeholder = "sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)<"+istring;
+      	  placeholder2 = "newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) & #Lambda PV error in X&Y<"+istring;
+      	  TCut thecut = cnewest_PV_L&&(cLL||(TCut)placeholder);
+      	  mybranch->add_cut(thecut,placeholder2);
+      	}
       } else if(mybranch->name.Contains("endV")){
-	mybranch->add_cut(cnewest,"newest only");
-	for(double i=60; i>15; i-=3){
-	  TString istring = Form("%.2f",i);
-	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
-	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
-	  TCut thecut = cnewest&&(cLL||(TCut)placeholder);
-	  mybranch->add_cut(thecut,placeholder2);
-	}
+      	// mybranch->add_cut(cnewest_PV_L,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) only");
+      	for(double i=36.85; i>36.15; i-=0.01){
+      	  TString istring = Form("%.2f",i);
+      	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
+      	  placeholder2 = "newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) & #Lambda decay vertex error in X&Y<"+istring;
+      	  TCut thecut = cnewest_PV_L&&(cLL||(TCut)placeholder);
+      	  mybranch->add_cut(thecut,placeholder2);
+      	}
       }
       // }	
 
@@ -244,16 +251,16 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	cout<<"done. ";
 	//calculate sig/bkg
         cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
-	float sigcutofflo,sigcutoffhi,bkgcutofflo,bkgcutoffhi;
-	if(mybranch->name.Contains("LL")){
-	  sigcutofflo = 5594.773954;
-	  sigcutoffhi = 5647.485654;
-	} else if(mybranch->name.Contains("DD")){
-	  sigcutofflo = 5562.230734;
-	  sigcutoffhi = 5680.694666;
-	}
-	bkgcutoffhi = 6100;
-	bkgcutofflo = sigcutoffhi;
+	float sigcutofflo=1112,sigcutoffhi=1120,bkgcutofflo=1125,bkgcutoffhi=1145;//initialized to avoid compiler warnings
+	// if(mybranch->name.Contains("LL")){
+	//   sigcutofflo = 5594.773954;
+	//   sigcutoffhi = 5647.485654;
+	// } else if(mybranch->name.Contains("DD")){
+	//   sigcutofflo = 5562.230734;
+	//   sigcutoffhi = 5680.694666;
+	// }
+	// bkgcutoffhi = 6100;
+	// bkgcutofflo = sigcutoffhi;
 	TString sigcutofflostring = Form("%.0f",sigcutofflo);
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);

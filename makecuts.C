@@ -5,9 +5,9 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs"};//,"Bs","Bs"};//,"Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={""};//,"_","_"};//,"_",};//""};
+TString Lbname[]={"Bs","Bs"};//,"Bs","Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={"","_"};//,"_","_"};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
@@ -80,7 +80,7 @@ TCut cLDIRA(double LDIRA=0){
   TCut output = (TCut)place;
   return output;
 }
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest_PV_L,TCut &cnewest_PV_L_M){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -113,9 +113,17 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cnewest){
   TCut ctriggerHlt2=(TCut)placeholder;
   ctrigger = ctriggerHlt1&&ctriggerHlt2;
 
-  TCut cnewestLL = (cLL&&cLPT(1300)&&cLFD(2660)&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLMLL);
-  TCut cnewestDD = (cDD&&cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLMDD);  
-  cnewest = (cnewestLL||cnewestDD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  // TCut cnewestLL = (cLL&&cLPT(1300)&&cLFD(2660)&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLMLL);
+  // TCut cnewestDD = (cDD&&cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLMDD);  
+  // cnewest = (cnewestLL||cnewestDD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  
+  TCut cnewest_PV_L_LL = (cLL&&cLPT(1300)/*&&cLFD(2660)*/&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)/*&&cLMLL*/);
+  TCut cnewest_PV_L_DD = (cDD/*&&cLbendv(ifile)*/&&cLPT(2100)/*&&cLFD(0)*/&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)/*&&cLMDD*/);  
+  cnewest_PV_L = (cnewest_PV_L_LL||cnewest_PV_L_DD)/*&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger*/;
+  TCut cnewest_PV_L_M_LL = (cLL&&cLPT(1300)/*&&cLFD(2660)*/&&cLZ(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLMLL);
+  TCut cnewest_PV_L_M_DD = (cDD/*&&cLbendv(ifile)*/&&cLPT(2100)/*&&cLFD(0)*/&&cLZ(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLMDD);  
+  cnewest_PV_L_M = (cnewest_PV_L_M_LL||cnewest_PV_L_M_DD)/*&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger*/;
+  
   // TCut motherL="abs(R_MC_MOTHER_ID)==5122";//for /\ MC
   // cnewest=cnewest&&motherL;
   // if(ifile==0){//cut tails off SMC
