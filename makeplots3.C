@@ -39,12 +39,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   TString placeholder2;
   TString placeholder3;
   TString outputlocation="./";
-  TString basename="comperrcuts";
+  TString basename="compcuts";
   TString filename=basename+".pdf";
   ofstream myfile;
-  // TString trueratiostring="";//holds information to be put at end of myfile
+  TString trueratiostring="";//holds information to be put at end of myfile
   myfile.open(outputlocation+basename+".csv");
-  myfile<<"dataset,branch,cuts,siglo,sighi,bkglo,bkghi,number signal,number background,Nsig^2/Nbkg"<<endl;
+  // myfile<<"dataset,branch,cuts,siglo,sighi,bkglo,bkghi,number signal,number background,Nsig^2/Nbkg"<<endl;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
   vector<TCanvas*> c;//each canvas holds one stack of histograms
@@ -56,15 +56,15 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 
   //assign things to actually be plotted
   map<TString,TString> f1quality {{"filetype","data"},{"decaymode","both"}};
-  map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda^{0}"}};
+  map<TString,TString> f2quality {{"filetype","MC"},{"decaymode","#Lambda"}};
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   map<TString,TString> f6quality {{"filetype","MC"},{"decaymode","#Lambda (minbias)"}};
-  file f[]={// {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
-	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality},
-	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
-	    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality},
+  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality},
+	    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality},
+	    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
+	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality},
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples_withJpsitrigger.root","#Lambda only MC",f5quality},
 
@@ -83,12 +83,12 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     exit(EXIT_FAILURE);
   }
 
-  int idatafile;//to store the index of the data file
-  int iLMCfile;//to store the index of the L0 file
-  int iSMCfile;//to store the index of the sig0 file
+  int idatafile=0;//to store the index of the data file; initialized to avoid compiler warnings
+  int iLMCfile=0;//to store the index of the L0 file; initialized to avoid compiler warnings
+  int iSMCfile=0;//to store the index of the sig0 file; initialized to avoid compiler warnings
   cout<<"Starting file loop..."<<endl;
   for(int ifile=0;ifile<nFiles;ifile++){
-    myfile<<f[ifile].name;
+    // myfile<<f[ifile].name;
     cout<<"trees... ";
     if(f[ifile].quality["decaymode"]=="#Lambda (minbias)")
       f[ifile].add_tree("L2ppiTree/mytree");
@@ -99,20 +99,21 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     cout<<"done"<<endl;
     //store file indices
     if(f[ifile].name=="data") idatafile = ifile;
-    if(f[ifile].name=="#Lambda^{0} MC") iLMCfile = ifile;
-    if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
+    else if(f[ifile].name=="#Lambda MC") iLMCfile = ifile;
+    else if(f[ifile].name=="#Sigma^{0} MC") iSMCfile = ifile;
     cout<<"Using "<<f[ifile].name<<"..."<<endl;
     placeholder3 = Lbname[ifile]+"_PT";
     f[ifile].b={// {massname[ifile],"#Lambda_{b} mass (PV) LL",400,4100,6100},	
                 // {massname[ifile],"#Lambda_{b} mass (endV) LL",400,4100,6100},	
                 // {massname[ifile],"#Lambda_{b} mass (PV) DD",400,4100,6100},	
                 // {massname[ifile],"#Lambda_{b} mass (endV) DD",400,4100,6100},	
-                // {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, 
+                {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, 
+		{massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}, 
 		// {"R_M","#Lambda M",300,1086,1146},			
                 // {"R_M","#Lambda M (PV) LL",300,1086,1146},			
                 // {"R_M","#Lambda M (endV) LL",300,1086,1146},			
                 // {"R_M","#Lambda M (PV) DD",300,1086,1146},			
-                {"R_M","#Lambda M (endV) DD",300,1086,1146},			
+                // {"R_M","#Lambda M (endV) DD",300,1086,1146},			
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, 
 		// {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, 
                 // {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}, 
@@ -139,38 +140,179 @@ void makeplots3(TString runmode="d", TString drawopt=""){
     cout<<"branches declared"<<endl;    
     int nBranches = f[ifile].b.size();
     
-    cout<<endl<<"Starting branch loop..."<<endl;
+    cout<<endl<<"Starting branch loop "<<ifile+1<<"/"<<nFiles<<"..."<<endl;
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * mybranch = &f[ifile].b[ibranch];
-      cout<<"On branch "<<mybranch->name<<" for file "<<f[ifile].name<<"..."<<endl;
+      cout<<"On branch "<<ibranch+1<<"/"<<nBranches<<" ("<<mybranch->name<<") for file "<<ifile+1<<"/"<<nFiles<<" ("<<f[ifile].name<<")..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,ctrigger,cnewest_PV_L;
-      makecuts(ifile,cLL,cDD,ctrigger,cnewest_PV_L);
-      // if(mybranch->name.Contains("LL")){
-      // 	mybranch->add_cut(cnewest,"newest");
-      // } else if(mybranch->name.Contains("DD")){
-      placeholder="";//just filling these here in case something goes wrong
-      placeholder2="no cuts";
-      if(mybranch->name.Contains("PV")){
-      	for(double i=100; i>0; i-=0.5){
-      	  TString istring = Form("%.3f",i);
-      	  placeholder = "sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)<"+istring;
-      	  placeholder2 = "newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) & #Lambda PV error in X&Y<"+istring;
-      	  TCut thecut = cnewest_PV_L&&(cLL||(TCut)placeholder);
-      	  mybranch->add_cut(thecut,placeholder2);
-      	}
-      } else if(mybranch->name.Contains("endV")){
-      	// mybranch->add_cut(cnewest_PV_L,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) only");
-      	for(double i=36.85; i>36.15; i-=0.01){
-      	  TString istring = Form("%.2f",i);
-      	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
-      	  placeholder2 = "newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) & #Lambda decay vertex error in X&Y<"+istring;
-      	  TCut thecut = cnewest_PV_L&&(cLL||(TCut)placeholder);
-      	  mybranch->add_cut(thecut,placeholder2);
-      	}
+      TCut cLL,cDD,ctrigger,c063016;
+      makecuts(ifile,cLL,cDD,ctrigger,c063016);
+
+      if(ifile==0&&ibranch==0) myfile<<"'c063016' = "<<(TString)c063016<<endl;
+      double imin=0,imax=0,istep=0;
+      if(mybranch->name.Contains("LL")){
+      	imin = 4.307;     imax = 4.3085;   istep=0.0005;
+      }else if(mybranch->name.Contains("DD")){
+	imin = 8.2609;     imax = 8.2650;   istep=0.00005;
       }
-      // }	
+      for(double i=imin; i<imax; i+=istep){
+	TString istring = Form("%.5f",i);
+	placeholder = "R_MMERR<"+istring;
+	TCut thecut = c062516_noLM&&((cDD&&cLZhi())||cLL)&&(TCut)placeholder;
+	placeholder2 = "6/25/16 cuts & DD #Lambda endV Z<2300 mm & #Lambda MM error<,"+istring;
+	mybranch->add_cut(thecut,placeholder2);
+      }
+
+      // double iXYmin=0,iXYmax=0,iZmin=0,iZmax=0,iZhimin=0,iZhimax=0,iZhistep=0,iMMmin=0,iMMmax=0,icosmin=0,icosmax=0;
+      // if(mybranch->name.Contains("LL")){
+      // 	iXYmin =0.51;     iXYmax =0.55;
+      // 	iZmin  =11;       iZmax  =13;
+      // 	iZhimin=637;      iZhimax=639;      iZhistep=1;
+      // 	iMMmin =4.30;     iMMmax =4.40;
+      // 	icosmin=0.9994259;icosmax=0.9994261;
+      // }else if(mybranch->name.Contains("DD")){
+      // 	iXYmin =34.99;    iXYmax =35.01;
+      // 	iZmin  =194;      iZmax  =196;
+      // 	iZhimin=2460;     iZhimax=2482;     iZhistep=2;
+      // 	iMMmin =7.95;     iMMmax =8.05;
+      // 	icosmin=0.9999709;icosmax=0.9999711;
+      // }
+      // for(double iXY=iXYmin; iXY<iXYmax; iXY+=0.01){
+      // 	TString iXYstring = Form("%.3f",iXY);
+      // 	for(double iZ=iZmin; iZ<iZmax; iZ+=1){
+      // 	  TString iZstring = Form("%.1f",iZ);
+      // 	  for(double iZhi=iZhimin; iZhi<iZhimax; iZhi+=iZhistep){
+      // 	    TString iZhistring = Form("%.1f",iZhi);
+      // 	    for(double iMM=iMMmin; iMM<iMMmax; iMM+=0.02){
+      // 	      TString iMMstring = Form("%.3f",iMM);
+      // 	      for(double icos=icosmin; icos<icosmax; icos+=0.0000001){
+      // 		TString icosstring = Form("%.8f",icos);
+      // 		placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+iXYstring;
+      // 		TCut thecut1 = (TCut)placeholder;
+      // 		placeholder = "R_ENDVERTEX_ZERR<"+iZstring;
+      // 		TCut thecut2 = (TCut)placeholder;
+      // 		TCut thecut3 = cLZhi(iZhi);
+      // 		placeholder = "R_MMERR<"+iMMstring;
+      // 		TCut thecut4 = (TCut)placeholder;
+      // 		placeholder = "R_DIRA_OWNPV>"+icosstring;
+      // 		TCut thecut5 = (TCut)placeholder;
+      // 		TCut thecut = cnewest&&thecut1&&thecut2&&thecut3&&thecut4&&thecut5;
+      // 		placeholder2 = "newest & #Lambda decay vertex error in X&Y<,"+iXYstring;
+      // 		placeholder2 += ", #Lambda decay vertex error in Z<,"+iZstring;
+      // 		placeholder2 += ", #Lambda endvertex position in Z<,"+iZhistring;
+      // 		placeholder2 += ", #Lambda MM error<,"+iMMstring;
+      // 		placeholder2 += ", cos(angle p(#Lambda) and #Lambda PV)>,"+icosstring;
+      // 		mybranch->add_cut(thecut,placeholder2);
+      // 	      }}}}}
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=630; i<660; i+=1){
+      // 	  TString istring = Form("%.0f",i);
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+      // 	  TCut thecut = cnewest&&cLZhi(i);
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=2450; i<2540; i+=1){
+      // 	  TString istring = Form("%.0f",i);
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+      // 	  TCut thecut = cnewest&&cLZhi(i);
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // }
+
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=45; i>11; i-=1){
+      // 	  TString istring = Form("%.0f",i);
+      // 	  placeholder = "R_ENDVERTEX_ZERR<"+istring;
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in Z<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=200; i>185; i-=1){
+      // 	  TString istring = Form("%.0f",i);
+      // 	  placeholder = "R_ENDVERTEX_ZERR<"+istring;
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in Z<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // }
+
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=0.6; i>0.4; i-=0.01){
+      // 	  TString istring = Form("%.2f",i);
+      // 	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=35.5; i>34.5; i-=0.01){
+      // 	  TString istring = Form("%.2f",i);
+      // 	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // 	for(double i=33.5; i>32.5; i-=0.01){
+      // 	  TString istring = Form("%.2f",i);
+      // 	  placeholder = "sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)<"+istring;
+      // 	  placeholder2 = "newest & #Lambda decay vertex error in X&Y<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // }
+
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=5.5; i>4; i-=0.05){
+      // 	  TString istring = Form("%.2f",i);
+      // 	  placeholder = "R_MMERR<"+istring;
+      // 	  placeholder2 = "newest & #Lambda MM error<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=11; i>7.5; i-=0.05){
+      // 	  TString istring = Form("%.2f",i);
+      // 	  placeholder = "R_MMERR<"+istring;
+      // 	  placeholder2 = "newest & #Lambda MM error<"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // }
+
+      // if(mybranch->name.Contains("LL")){
+      // 	for(double i=0.9993; i<0.999302; i+=0.0000001){
+      // 	  TString istring = Form("%.7f",i);
+      // 	  placeholder = "R_DIRA_OWNPV>"+istring;
+      // 	  placeholder2 = "newest & cos(angle p(#Lambda) and #Lambda PV) >"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // 	for(double i=0.999425; i<0.999427; i+=0.0000001){
+      // 	  TString istring = Form("%.7f",i);
+      // 	  placeholder = "R_DIRA_OWNPV>"+istring;
+      // 	  placeholder2 = "newest & cos(angle p(#Lambda) and #Lambda PV) >"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // } else if(mybranch->name.Contains("DD")){
+      // 	for(double i=0.999818; i<0.999830; i+=0.0000001){
+      // 	  TString istring = Form("%.7f",i);
+      // 	  placeholder = "R_DIRA_OWNPV>"+istring;
+      // 	  placeholder2 = "newest & cos(angle p(#Lambda) and #Lambda PV) >"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // 	for(double i=0.999970; i<0.999972; i+=0.0000001){
+      // 	  TString istring = Form("%.7f",i);
+      // 	  placeholder = "R_DIRA_OWNPV>"+istring;
+      // 	  placeholder2 = "newest & cos(angle p(#Lambda) and #Lambda PV) >"+istring;
+      // 	  TCut thecut = cnewest&&(TCut)placeholder;
+      // 	  mybranch->add_cut(thecut,placeholder2);
+      // 	}
+      // }
 
       // if(mybranch->name.Contains("LL")){
       // 	for(double i=0.999999906; i>0.999999900; i-=0.000000001){
@@ -203,6 +345,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         mybranch->c = {{"",""}};
         nCuts = mybranch->c.size();
       }
+      cout<<"cuts declared"<<endl;    
       //create necessary canvasy things
       TString cistring = Form("%d",ci);
       placeholder = "c"+cistring;
@@ -218,6 +361,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
       
       int icolor = 0;//color counter
       
+      cout<<endl<<"Starting cut loop "<<ibranch+1<<"/"<<nBranches<<" for file "<<ifile+1<<"/"<<nFiles<<" ("<<f[ifile].name<<")..."<<endl;
       for(int icut =0; icut<nCuts; icut++){
         //adjust LL and DD branches to have LL and DD cuts
         if(mybranch->name.Contains("LL")){
@@ -229,29 +373,34 @@ void makeplots3(TString runmode="d", TString drawopt=""){
           mybranch->c[icut].name+=" DD";
         }
         
-        cout<<"On cut "<<mybranch->c[icut].name<<"..."<<endl;
+        cout<<"On cut "<<icut+1<<"/"<<nCuts<<" ("<<mybranch->c[icut].name<<") for branch "<<ibranch+1<<"/"<<nBranches<<"..."<<endl;
         //create convenient strings
         TString icutstring = Form("%d",icut);
         TString hname = "h"+cistring+icutstring;
         TString htitle = mybranch->name;
-        //create histogram
+        // cout<<"strings created"<<endl;
+	//create histogram
         int nBins = mybranch->nBins;
         int loBin = mybranch->loBin;
         int hiBin = mybranch->hiBin;
+	// cout<<"bins declared"<<endl;
         h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
+	// cout<<"histogram declared"<<endl;
         //draw histogram
-        cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"...";
+        cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"..."<<endl;
         while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
           icolor++;//skip bad colors 
 	h[ci][icut]->SetLineColor(icolor);
+	// cout<<"line color set"<<endl;
 	placeholder = mybranch->self+">>"+hname;
 	TCut * thiscut = &mybranch->c[icut].self;
 	cut * mycut = &mybranch->c[icut];
+	// cout<<"convenient pointers declared"<<endl;
 	f[ifile].t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
-	cout<<"done. ";
-	//calculate sig/bkg
-        cout<<"calculating sig/bkg "<<icut+1<<"/"<<nCuts<<"...";
-	float sigcutofflo=1112,sigcutoffhi=1120,bkgcutofflo=1125,bkgcutoffhi=1145;//initialized to avoid compiler warnings
+	cout<<"done. "<<endl;
+	//calculate sig, bkg
+        cout<<"calculating sig, bkg "<<icut+1<<"/"<<nCuts<<"...";
+	float sigcutofflo=1112,sigcutoffhi=1120,bkgcutofflo=0,bkgcutoffhi=5100;//initialized to avoid compiler warnings
 	// if(mybranch->name.Contains("LL")){
 	//   sigcutofflo = 5594.773954;
 	//   sigcutoffhi = 5647.485654;
@@ -261,23 +410,43 @@ void makeplots3(TString runmode="d", TString drawopt=""){
 	// }
 	// bkgcutoffhi = 6100;
 	// bkgcutofflo = sigcutoffhi;
+	// placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
+	if(f[ifile].name=="data"){
+	  sigcutofflo=5500;
+	  sigcutoffhi=5700;
+	} else if(f[ifile].name=="#Lambda MC"){
+	  sigcutofflo=4100;
+	  sigcutoffhi=6100;
+	  bkgcutofflo=sigcutofflo;
+	  bkgcutoffhi=sigcutoffhi;
+	} else if(f[ifile].name=="#Sigma^{0} MC"){
+	  sigcutofflo=4100;
+	  sigcutoffhi=6100;
+	  bkgcutofflo=sigcutofflo;
+	  bkgcutoffhi=sigcutoffhi;
+	}
 	TString sigcutofflostring = Form("%.0f",sigcutofflo);
 	TString sigcutoffhistring = Form("%.0f",sigcutoffhi);
 	TString bkgcutofflostring = Form("%.0f",bkgcutofflo);
 	TString bkgcutoffhistring = Form("%.0f",bkgcutoffhi);
-	// placeholder="(R_M<"+sigcutofflostring+"&&R_M>"+bkgcutofflostring+")||(R_M>"+sigcutoffhistring+"&&R_M<"+bkgcutoffhistring+")";
-	placeholder="("+massname[ifile]+">"+bkgcutofflostring+"&&"+massname[ifile]+"<"+bkgcutoffhistring+")";
-	TCut cbkg = (TCut)placeholder;
-        placeholder="("+massname[ifile]+">"+sigcutofflostring+"&&"+massname[ifile]+"<"+sigcutoffhistring+")";
+	placeholder="("+massname[ifile]+">"+sigcutofflostring+"&&"+massname[ifile]+"<"+sigcutoffhistring+")";
+	if(f[ifile].name=="#Lambda MC") placeholder+="&&abs(R_MC_MOTHER_ID)==5122&&R_BKGCAT==0";
+	else if(f[ifile].name=="#Sigma^{0} MC") placeholder+="&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212&&R_BKGCAT==0";
 	TCut csig = (TCut)placeholder;
+	mycut->csig = csig;
 	int nsig = (int)f[ifile].t[0]->GetEntries(*thiscut&&csig);//number passing csig
-	int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
         int nent = (int)f[ifile].t[0]->GetEntries(*thiscut);//total number
+	placeholder="("+massname[ifile]+">"+bkgcutofflostring+"&&"+massname[ifile]+"<"+bkgcutoffhistring+")";
+	if(f[ifile].name=="#Lambda MC") placeholder+="&&(abs(R_MC_MOTHER_ID)!=5122||R_BKGCAT!=0)";
+	else if(f[ifile].name=="#Sigma^{0} MC") placeholder+="&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212||R_BKGCAT!=0)";
+	TCut cbkg = (TCut)placeholder;
+	mycut->cbkg = cbkg;
+	int nbkg = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkg);//number passing cbkg
         // int nsig = nent - nbkg;
         mycut->nbkg = nbkg;
         mycut->nsig = nsig;
-	float nsig2= (float)nsig*(float)nsig;
-	float ratio = nsig2/(float)nbkg;
+	// float nsig2= (float)nsig*(float)nsig;
+	// float ratio = nsig2/(float)nbkg;
         // mycut->nL = (int)f[ifile].t[0]->GetEntries(*thiscut&&cLreg);//number in /\ region
         // mycut->nS = (int)f[ifile].t[0]->GetEntries(*thiscut&&cSreg);//number in S region
         // mycut->nb = (int)f[ifile].t[0]->GetEntries(*thiscut&&cbkgreg);//number in bkg region
@@ -290,48 +459,53 @@ void makeplots3(TString runmode="d", TString drawopt=""){
         // placeholder2=Form("%.3f",ratio);
         leg[ci]->AddEntry(h[ci][icut],leglabel,"l");//fill legend
         hs[ci]->Add(h[ci][icut]);//stack histogram
-	cout<<"done. ";
-        //store calculations
-        cout<<"storing calculations...";
-	myfile<<","<<mybranch->name<<","				\
-	      <<leglabel<<","						\
-              <<sigcutofflostring<<","					\
-              <<sigcutoffhistring<<","					\
-              <<bkgcutofflostring<<","					\
-              <<bkgcutoffhistring<<","					\
-	      <<Form("%i",nsig)<<","                                    \
-              <<Form("%i",nbkg)<<","					\
-	      <<Form("%f",ratio)<<endl;
-	cout<<"done"<<endl;
-        // //calculate SMC sig/data bkg
-        // if(ifile==(nFiles-1)){//ensure everything's been calculated
-        //   if(ibranch==0&&icut==0){
-        //     trueratiostring +="summary,cuts,L0 sig,L0 bkg,S0 sig,S0 bkg,data sig,data bkg";
-        //     trueratiostring +=",L/sqrt(L+B),S/sqrt(S+B)";
-        //     trueratiostring +=",nL,nS,nb\n";
-        //   }
-        //   if(f[iSMCfile].b[ibranch].c[icut].name==f[idatafile].b[ibranch].c[icut].name \
-        //      &&f[iSMCfile].b[ibranch].c[icut].name==f[iLMCfile].b[ibranch].c[icut].name){
-        //     //only for cuts in common; should probably check branches too,
-        //     //but the name varies by file and I don't want to code all that in right now
-        //     int nLs = f[iLMCfile].b[ibranch].c[icut].nsig;
-        //     int nLb = f[iLMCfile].b[ibranch].c[icut].nbkg;
-        //     int nSs = f[iSMCfile].b[ibranch].c[icut].nsig;
-        //     int nSb = f[iSMCfile].b[ibranch].c[icut].nbkg;
-        //     int nds = f[idatafile].b[ibranch].c[icut].nsig;
-        //     int ndb = f[idatafile].b[ibranch].c[icut].nbkg;
-        //     float ratioL = ((float)nLs+(float)nLb)/sqrt((float)nLs+(float)nLb+(float)ndb);
-        //     float ratioS = ((float)nSs+(float)nSb)/sqrt((float)nSs+(float)nSb+(float)ndb);
-        //     int nL = f[iLMCfile].b[ibranch].c[icut].nL;
-        //     int nS = f[iLMCfile].b[ibranch].c[icut].nS;
-        //     int nb = f[iLMCfile].b[ibranch].c[icut].nb;
-            
-        //     trueratiostring+=","+mybranch->c[icut].name+","+Form("%i",nLs)+"," \
-        //       +Form("%i",nLb)+","+Form("%i",nSs)+","+Form("%i",nSb)+","+Form("%i",nds)+","+Form("%i",ndb)+"," \
-        //       +Form("%.6f",ratioL)+","+Form("%.6f",ratioS)+","          \
-        //       +Form("%i",nL)+","+Form("%i",nS)+","+Form("%i",nb)+"\n";
-        //   }
-        // }
+	cout<<"done."<<endl;;
+        // //store calculations
+        // cout<<"storing calculations...";
+	// myfile<<","<<mybranch->name<<","				\
+	//       <<leglabel<<","						\
+        //       <<sigcutofflostring<<","					\
+        //       <<sigcutoffhistring<<","					\
+        //       <<bkgcutofflostring<<","					\
+        //       <<bkgcutoffhistring<<","					\
+	//       <<Form("%i",nsig)<<","                                    \
+        //       <<Form("%i",nbkg)<<","					\
+	//       <<Form("%f",ratio)<<endl;
+	// cout<<"done"<<endl;
+        //calculate SMC sig/data bkg
+        if(ifile==(nFiles-1)){//ensure everything's been calculated
+          if(ibranch==0&&icut==0)
+            trueratiostring +="cuts,,L0 sigcut,L0 bkgcut,S0 sigcut,S0 bkgcut,data sigcut,data bkgcut,L0 sig,L0 bkg,S0 sig,S0 bkg,data sig,data bkg,L/sqrt(L+B) (no MC bkg),S/sqrt(S+B) (no MC bkg),L/sqrt(L+B) (MC bkg+data bkg),S/sqrt(S+B) (MC bkg+data bkg)\n";//,nL,nS,nb
+          if(f[iSMCfile].b[ibranch].c[icut].name==f[idatafile].b[ibranch].c[icut].name&&f[iSMCfile].b[ibranch].c[icut].name==f[iLMCfile].b[ibranch].c[icut].name){//only for cuts in common; should probably check branches too, but the name varies by file and I don't want to code all that in right now
+	    cout<<"declaring pointers to calculate ratios... ";
+	    //pointers to make refering to these values below easier to read
+            TCut * csigL = &f[iLMCfile].b[ibranch].c[icut].csig;
+            TCut * cbkgL = &f[iLMCfile].b[ibranch].c[icut].cbkg;
+            TCut * csigS = &f[iSMCfile].b[ibranch].c[icut].csig;
+            TCut * cbkgS = &f[iSMCfile].b[ibranch].c[icut].cbkg;
+            TCut * csigdata = &f[idatafile].b[ibranch].c[icut].csig;
+	    TCut * cbkgdata = &f[idatafile].b[ibranch].c[icut].cbkg;
+	    int * nLs = &f[iLMCfile].b[ibranch].c[icut].nsig;
+            int * nLb = &f[iLMCfile].b[ibranch].c[icut].nbkg;
+            int * nSs = &f[iSMCfile].b[ibranch].c[icut].nsig;
+            int * nSb = &f[iSMCfile].b[ibranch].c[icut].nbkg;
+            int * nds = &f[idatafile].b[ibranch].c[icut].nsig;
+            int * ndb = &f[idatafile].b[ibranch].c[icut].nbkg;
+	    // int * nL = &f[iLMCfile].b[ibranch].c[icut].nL;
+            // int * nS = &f[iLMCfile].b[ibranch].c[icut].nS;
+            // int * nb = &f[iLMCfile].b[ibranch].c[icut].nb;
+	    cout<<"done. calculating ratios... ";
+            // float ratioL = ((float)*nLs+(float)*nLb)/sqrt((float)*nLs+(float)*nLb+(float)*ndb);
+            // float ratioS = ((float)*nSs+(float)*nSb)/sqrt((float)*nSs+(float)*nSb+(float)*ndb);
+            float ratioL2 = ((float)*nLs)/sqrt((float)*nLs+(float)*ndb);
+            float ratioS2 = ((float)*nSs)/sqrt((float)*nSs+(float)*ndb);
+	    float ratioL3 = ((float)*nLs)/sqrt((float)*nLs+(float)*nLb+(float)*ndb);
+            float ratioS3 = ((float)*nSs)/sqrt((float)*nSs+(float)*nSb+(float)*ndb);
+	    cout<<"done. adding to trueratiostring... ";
+            trueratiostring+=mybranch->c[icut].name+","+(TString)*csigL+","+(TString)*cbkgL+","+(TString)*csigS+","+(TString)*cbkgS+","+(TString)*csigdata+","+(TString)*cbkgdata+","+Form("%i",*nLs)+","+Form("%i",*nLb)+","+Form("%i",*nSs)+","+Form("%i",*nSb)+","+Form("%i",*nds)+","+Form("%i",*ndb)+","+Form("%.6f",ratioL2)+","+Form("%.6f",ratioS2)+","+Form("%.6f",ratioL3)+","+Form("%.6f",ratioS3)+"\n";//+","+Form("%.6f",ratioL)+","+Form("%.6f",ratioS)+","+Form("%i",nL)+","+Form("%i",*nS)+","+Form("%i",nb)
+	    cout<<"done."<<endl;
+	  }
+        }
 
         icolor++;
       }
@@ -364,7 +538,7 @@ void makeplots3(TString runmode="d", TString drawopt=""){
   }
   placeholder = outputlocation+filename+")";
   cf->Print(placeholder);
-  // myfile<<trueratiostring;//include at end of CSV file
+  myfile<<trueratiostring;//include at end of CSV file
   myfile.close();
   gROOT->SetBatch(kFALSE);
   cout<<"done"<<endl;

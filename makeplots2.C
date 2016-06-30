@@ -30,7 +30,7 @@ It suffers from a need for there to be the same number of branches and cuts for 
 #include "/afs/cern.ch/user/m/mwilkins/algorithms/layer.h"
 #include "makecuts.C"
 
-void makeplots2(TString runmode ="d", TString drawopt="NORM"){
+void makeplots2(TString runmode ="d", TString drawopt=""){
   gROOT->SetBatch(kTRUE);
   // gROOT->ProcessLine(".x /afs/cern.ch/user/m/mwilkins/cmtuser/src/lhcbStyle.C");
   TString placeholder;//this is to avoid adding strings in functions; assign right before use
@@ -38,7 +38,7 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   TString placeholder3;
   //default parameters
   TString outputlocation="./";
-  TString filename="plots_.pdf";
+  TString filename="plots.pdf";
 
   //-----assign files, branches, cuts-------//
   cout<<"files... ";
@@ -51,8 +51,8 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   file f[]={								\
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality},
@@ -86,10 +86,10 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_MINIP","#Lambda MINIP",102,-1,50},
-		{"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-1000,13000},
-		{"R_MINIPNEXTBEST","#Lambda MINIP (next best)",124,-2,60},
-		{"R_MINIPCHI2NEXTBEST","#Lambda MINIP (next best) #chi^{2}",100,-2000,30000},
+    f[ifile].b={{"R_MINIP","#Lambda MINIP",35,-1,6},
+		{"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-100,900},
+		{"R_MINIPNEXTBEST","#Lambda MINIP (next best)",110,-2,20},
+		{"R_MINIPCHI2NEXTBEST","#Lambda MINIP (next best) #chi^{2}",100,-500,3500},
 		{"R_ENDVERTEX_X","#Lambda endvertex X",100,-175,175},
                 {"R_ENDVERTEX_Y","#Lambda endvertex Y",100,-175,175},
                 {"R_ENDVERTEX_Z","#Lambda endvertex Z",305,-50,3000},
@@ -108,24 +108,24 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
 		{"sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)","#Lambda PV error x&y",60,0,0.06},
 		{"R_OWNPV_CHI2","#Lambda PV #chi^{2}",120,0,120},
 		{"R_OWNPV_NDOF","#Lambda PV ndof",158,0,316},
-		{"R_IP_OWNPV","#Lambda PV IP",50,-5,45},
-		{"R_IPCHI2_OWNPV","#Lambda PV IP #chi^{2}",100,-1000,10000},
+		{"R_IP_OWNPV","#Lambda PV IP",35,-1,6},
+		{"R_IPCHI2_OWNPV","#Lambda PV IP #chi^{2}",100,-100,900},
 		{"R_FD_OWNPV","#Lambda FD (OWNPV)",100,-100,3000},
-		{"R_FDCHI2_OWNPV","#Lambda FD #chi^{2} (OWNPV)",100,-20000,200000},
+		{"R_FDCHI2_OWNPV","#Lambda FD #chi^{2} (OWNPV)",100,-5000,75000},
 		{"-R_DIRA_OWNPV","-cos(angle #Lambda_{p} and OWNPV)",100,-1.00000025,-0.99999},
-                {"R_TOPPV_X","#Lambda top PV X",100,0,1},
-		{"R_TOPPV_Y","#Lambda top PV Y",100,-0.2,0.35},
-		{"R_TOPPV_Z","#Lambda top PV Z",100,-220,220},
-		{"R_TOPPV_XERR","#Lambda top PV XERR",100,0,0.05},
-		{"R_TOPPV_YERR","#Lambda top PV YERR",100,0,0.05},
-		{"R_TOPPV_ZERR","#Lambda top PV ZERR",100,0,0.3},
-		{"R_TOPPV_CHI2","#Lambda top PV #chi^{2}",100,-10,300},
-		{"R_TOPPV_NDOF","#Lambda top PV ndof",158,0,316},
-		{"R_IP_TOPPV","#Lambda top PV IP",50,-5,45},
-		{"R_IPCHI2_TOPPV","#Lambda top PV IP #chi^{2}",100,-2000,16000},
-		{"R_FD_TOPPV","#Lambda top PV FD",1025,-100,3000},
-		{"R_FDCHI2_TOPPV","#Lambda top PV FD #chi^{2}",100,-20000,200000},
-		{"-R_DIRA_TOPPV","-cos(angle #Lambda_{p} and TOPPV)",100,-1.00000025,-0.99999},
+                // {"R_TOPPV_X","#Lambda top PV X",100,0,1},
+		// {"R_TOPPV_Y","#Lambda top PV Y",100,-0.2,0.35},
+		// {"R_TOPPV_Z","#Lambda top PV Z",100,-220,220},
+		// {"R_TOPPV_XERR","#Lambda top PV XERR",100,0,0.05},
+		// {"R_TOPPV_YERR","#Lambda top PV YERR",100,0,0.05},
+		// {"R_TOPPV_ZERR","#Lambda top PV ZERR",100,0,0.3},
+		// {"R_TOPPV_CHI2","#Lambda top PV #chi^{2}",100,-10,300},
+		// {"R_TOPPV_NDOF","#Lambda top PV ndof",158,0,316},
+		// {"R_IP_TOPPV","#Lambda top PV IP",50,-5,45},
+		// {"R_IPCHI2_TOPPV","#Lambda top PV IP #chi^{2}",100,-2000,16000},
+		// {"R_FD_TOPPV","#Lambda top PV FD",100,-100,3000},
+		// {"R_FDCHI2_TOPPV","#Lambda top PV FD #chi^{2}",100,-20000,200000},
+		// {"-R_DIRA_TOPPV","-cos(angle #Lambda_{p} and TOPPV)",100,-1.00000025,-0.99999},
 		{"R_P","#Lambda_{p}",144,0,270000},
                 {"R_PT","#Lambda_{p_{T}}",110,0,11000},
 		{"R_PE","#Lambda_{p_{E}}",100,0,300000},
@@ -183,8 +183,8 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,ctrigger,cnewest_PV_L,cnewest_PV_L_M;
-    makecuts(ifile,cLL,cDD,ctrigger,cnewest_PV_L,cnewest_PV_L_M);
+    TCut cLL,cDD,ctrigger,c062516;
+    makecuts(ifile,cLL,cDD,ctrigger,c062516);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
@@ -195,12 +195,24 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
 		      // {cDD,"no cuts DD"},
 		      // {cnewest_PV_L&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts LL"},
 		      // {cnewest_PV_L&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts DD"},
-		      {cnewest_PV_L_M&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts LL"},
-		      {cnewest_PV_L_M&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts DD"},
-		      {cnewest_PV_L_M&&cLL&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only LL"},
-		      {cnewest_PV_L_M&&cDD&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only DD"},
-		      {cnewest_PV_L_M&&cLL&&"R_BKGCAT==0","newest (sans...) cuts signal only LL"},
-		      {cnewest_PV_L_M&&cDD&&"R_BKGCAT==0","newest (sans...) cuts signal only DD"},
+		      // {cnewest_PV_L_M&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts LL"},
+		      // {cnewest_PV_L_M&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts DD"},
+		      // {cnewest_PV_L_M&&cLL&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only LL"},
+		      // {cnewest_PV_L_M&&cDD&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only DD"},
+		      // {cnewest_PV_L_M&&cLL&&"R_BKGCAT==0","newest (sans...) cuts signal only LL"},
+		      // {cnewest_PV_L_M&&cDD&&"R_BKGCAT==0","newest (sans...) cuts signal only DD"},
+		      // {cnewest&&cDD,"newest cuts DD"},
+		      // {cnewest&&cDD&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","newest cuts non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
+		      // {cnewest&&cDD&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","newest cuts signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
+		      // {c062516&&cLL,"cuts from 6/25/16 LL"},
+		      // {c062516&&cLL&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only LL"},
+		      // {c062516&&cLL&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 signal, #Sigma mother, #Lambda_{b} gdmother only LL"},
+		      // {c062516&&cDD,"cuts from 6/25/16 DD"},
+		      // {c062516&&cDD&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
+		      // {c062516&&cDD&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
+	              {c062516&&cDD&&cLZhi(),"cuts from 6/25/16 and #Lambda endvertex<2300 mm DD"},
+		      {c062516&&cDD&&cLZhi()&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 and #Lambda endvertex<2300 mm non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
+		      {c062516&&cDD&&cLZhi()&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 and #Lambda endvertex<2300 mm signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
 		      // {"","no cuts"},
 		      // {cnewest,"newest cuts"},
       };
@@ -254,6 +266,7 @@ void makeplots2(TString runmode ="d", TString drawopt="NORM"){
   for(int i =0; i<nLayers; i++){
     //assign layers; this is not an algorithm 
     if(L[i].name=="file") {
+      L[i].compared=kTRUE;
       for(int j=0;j<nFiles;j++) {
         L[i].add_element(&f[j].name);
       }

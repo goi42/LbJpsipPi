@@ -57,10 +57,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
-  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
+  file f[]={{"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
             // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality}, \
 	    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality}};
-            // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
 	    
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != (sizeof(Lbname)/sizeof(Lbname[0]))){
@@ -80,15 +80,15 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   for(int ifile=0;ifile<nFiles;ifile++){
     file * thisfile = &f[ifile];
     cout<<"Using "<<thisfile->name<<"..."<<endl;
-    thisfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-    		 {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, \
-                 {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}  \
-    };
+    // thisfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
+    // 		 {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100}, \
+    //              {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}  \
+    // };
     // thisfile->b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
     // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
     // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}};
-    // thisfile->b={{"R_M","#Lambda^{0} M LL",300,1086,1146}, \
-    // 		 {"R_M","#Lambda^{0} M DD",300,1086,1146}};
+    thisfile->b={{"R_M","#Lambda M LL",300,1086,1146},
+ 		 {"R_M","#Lambda M DD",300,1086,1146}};
     // // {"R_M","#Lambda^{0} M",300,1086,1146}, \
 	 
     cout<<"branches declared"<<endl;
@@ -109,10 +109,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<thisbranch->name<<" for file "<<thisfile->name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,ctrigger,cnewest;
-      makecuts(ifile,cLL,cDD,ctrigger,cnewest);
+      TCut cLL,cDD,ctrigger,c063016_noLM;
+      makecuts(ifile,cLL,cDD,ctrigger,c063016_noLM);
 
-      thisbranch->c = {{cnewest,"newest"}};
+      thisbranch->c = {{c063016_noLM,"063016noLM"}};
       int nCuts = thisbranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
@@ -176,7 +176,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
         temptree->SetBranchStatus("*",0);
         temptree->SetBranchStatus(thisbranch->self,1);
         cout<<"done"<<endl<<"creating newfile... ";
-        placeholder = fileoutputlocation+"cutfile_"+thiscut->name+"_LMC_LbM.root";
+        placeholder = fileoutputlocation+"cutfile_"+thiscut->name+"_data_LM.root";
         TFile *newfile = new TFile(placeholder,"recreate");
         cout<<"done"<<endl<<"copying temptree... ";
         TTree *newtree = temptree->CopyTree("");
