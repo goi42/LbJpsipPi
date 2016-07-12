@@ -81,7 +81,7 @@ tuple.TupleToolGeometry.Verbose = True
 ###########################################################################################################################
 tuple.Decay = '[Lambda_b0 -> (^J/psi(1S) -> ^mu+ ^mu-) (^Lambda0 -> ^p+ ^pi-)]cc'
 tuple.Branches = {
-    "Bs"   :  "[Lambda_b0]cc : [Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc",
+    "Bs"   :  "^[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc",
     "R"    :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (^Lambda0 -> p+ pi-)]cc", 
     "H1"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> ^p+ pi-)]cc",      
     "H2"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ ^pi-)]cc",   
