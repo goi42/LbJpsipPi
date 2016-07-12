@@ -1,0 +1,12 @@
+/\ Hypatia: a = 1.116098 +/- 1.173491E-01
+/\ Hypatia: fb = 0.000000 +/- [exact]
+/\ Hypatia: l = -0.912607 +/- 1.478447E-02
+/\ Hypatia: mu = 5619.930982 +/- [exact]
+/\ Hypatia: n = 14.305673 +/- 3.061081E+00
+/\ Hypatia: sigma = 9.380361 +/- [exact]
+/\ Hypatia: zeta = 0.000000 +/- [exact]
+#chi^{2}/N_{DoF} = 8.593486
+N /\ = 8099.509661 +/- 90.273489
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 1.576219E-02
+limit = 1.022542E+00
+limit at 90% confidence level = 1.636068E+00

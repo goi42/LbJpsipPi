@@ -1,0 +1,14 @@
+/\ Hypatia: a = 1.727025 +/- [exact]
+/\ Hypatia: fb = 0.000000 +/- [exact]
+/\ Hypatia: l = -1.048729 +/- [exact]
+/\ Hypatia: mu = 5619.940406 +/- 1.405288E-01
+/\ Hypatia: n = 4.661879 +/- [exact]
+/\ Hypatia: sigma = 7.994858 +/- 1.646204E-01
+/\ Hypatia: zeta = 0.000000 +/- [exact]
+Background: Chebychev b1 = -1.598105 +/- 2.668744E-03
+#chi^{2}/N_{DoF} = 24.897756
+N /\ = 2672.041355 +/- 52.026073
+N bkg = 0.000000 +/- 0.654397
+Y_{#Sigma^{0}}/Y_{#Lambda} = 1.000000E+00 +/- 2.753549E-02
+limit = 1.039714E+00
+limit at 90% confidence level = 1.663543E+00
