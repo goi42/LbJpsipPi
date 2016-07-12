@@ -22,9 +22,10 @@ RooDataSet get_data(RooRealVar* mass, TString tracktype){
   // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newly_optimized";
   // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
   // TString placeholder = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/cutfile_newest";
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newest";
+  // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newest";
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_070116";
   if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_LbM.root";
+  placeholder+="_data.root";
   TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
@@ -57,9 +58,9 @@ RooDataSet get_data_no_WM(RooRealVar* mass, TString tracktype){
 RooDataSet get_data_LM(RooRealVar* mass, TString tracktype){
   //unbinned
   // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
-  TString placeholder = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/cutfile_newest_noLM";
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_070116noLM";
   if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_LM.root";
+  placeholder+="_data_LM.root";
   TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
@@ -86,9 +87,9 @@ RooDataSet get_Lst_MC(RooRealVar* mass){
 }
 
 RooDataSet get_L_MC(RooRealVar* mass, TString tracktype){
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/cutfile_newest";
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/cutfile_070116_plusLMCcuts";
   if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_LMC_LbM.root";
+  placeholder+="_LMC.root";
   TFile *hasLtree = new TFile(placeholder,"READ");
   TTree * Ltree = (TTree*)hasLtree->Get("mytree");
   RooDataSet LMC("LMC","1D",Ltree,*mass);

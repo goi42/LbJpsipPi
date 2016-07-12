@@ -60,26 +60,26 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // mass->setRange("WMtot",320,585);
   // mass->setRange("LMbkglo",1090,1106);
   // mass->setRange("LMbkghi",1124,1136);
-  // mass->setRange("LMtot",1090,1136);
+  // mass->setRange("LMtot",1086,1146);
   // mass->setRange("LMsig",1108.504535,1123.361023);
   // --------------------------------------//
   cout<<"mass declared"<<endl;
-  RooDataSet data_temp = get_L_MC(mass,tracktype);
+  RooDataSet data_temp = get_data(mass,tracktype);
   RooDataSet *data = &data_temp;
   cout<<"fit_mass: Mass and data set."<<endl;
 
   cout<<"fit_mass: Assign shapes:"<<endl;
-  // // sigma
-  // TFile *SMChistos= new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/histos_SMCfile_newest.root", "READ");
-  // cout<<"SMC file opened"<<endl;
-  // TString sighistnum = "h00";
-  // if(tracktype=="LL") sighistnum = "h10";
-  // if(tracktype=="DD") sighistnum = "h20";
-  // TH1F *SMCh = (TH1F*)SMChistos->Get(sighistnum);
-  // cout<<"SMC hist gotten"<<endl;
-  // RooDataHist *SMC = new RooDataHist("SMC","1D",RooArgList(*mass),SMCh);
-  // cout<<"SMC hist assigned to RooDataHist"<<endl;
-  // RooHistPdf sigS = makeroohistpdf(SMC,mass,"sigS","#Sigma^{0} signal (RooHistPdf)");
+  // sigma
+  TFile *SMChistos= new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/histos_SMCfile_c070116.root", "READ");
+  cout<<"SMC file opened"<<endl;
+  TString sighistnum = "h00";
+  if(tracktype=="LL") sighistnum = "h10";
+  if(tracktype=="DD") sighistnum = "h20";
+  TH1F *SMCh = (TH1F*)SMChistos->Get(sighistnum);
+  cout<<"SMC hist gotten"<<endl;
+  RooDataHist *SMC = new RooDataHist("SMC","1D",RooArgList(*mass),SMCh);
+  cout<<"SMC hist assigned to RooDataHist"<<endl;
+  RooHistPdf sigS = makeroohistpdf(SMC,mass,"sigS","#Sigma^{0} signal (RooHistPdf)");
   // /\
   // //dbl Gaussian
   // RooRealVar mean1L("mean1L","/\\ gaus 1: mean",5621.351842,5525,5700);
@@ -118,45 +118,45 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooRealVar f1L("f1L","/\\ signal: fraction bifurcated Gaussian",0.852015,0,1);
   // RooAddPdf sigL("sigL","#Lambda signal (biGaus & Gaus)",RooArgList(bigauL,gauL),RooArgList(f1L));
   //Hypatia
-  RooRealVar lL("lL","/\\ Hypatia: l",-1.048729);
+  RooRealVar lL("lL","/\\ Hypatia: l",-1.903283);
   RooRealVar zetaL("zetaL","/\\ Hypatia: zeta",0);
   RooRealVar fbL("fbL","/\\ Hypatia: fb",0);
-  RooRealVar sigmaL("sigmaL","/\\ Hypatia: sigma",9.617338,0,100);
-  RooRealVar muL("muL","/\\ Hypatia: mu",5620.000034,5525,5700);
-  RooRealVar aL("aL","/\\ Hypatia: a",1.727025,-10,10);
-  RooRealVar nL("nL","/\\ Hypatia: n",4.661879,-10,10);
+  RooRealVar sigmaL("sigmaL","/\\ Hypatia: sigma",14.006587,0,100);
+  RooRealVar muL("muL","/\\ Hypatia: mu",5620.950536,5525,5700);
+  RooRealVar aL("aL","/\\ Hypatia: a",1.257542);
+  RooRealVar nL("nL","/\\ Hypatia: n",12.084803);
   RooIpatia sigL("sigL","#Lambda signal (hypatia)",*mass,lL,zetaL,fbL,sigmaL,muL,aL,nL);
-  // // /\*
-  // // /\*(1405)
-  // //roohistpdf
-  // TFile *Lst1405MChistos= new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/histos_Lst1405MC_newest.root", "READ");
-  // cout<<"Lst1405MC file opened"<<endl;
-  // TString Lst1405histnum = "h30";
-  // if(tracktype=="LL") Lst1405histnum = "h40";
-  // if(tracktype=="DD") Lst1405histnum = "h50";
-  // TH1F *Lst1405MCh = (TH1F*)Lst1405MChistos->Get(Lst1405histnum);
-  // cout<<"Lst1405MC hist gotten"<<endl;
-  // RooDataHist *Lst1405MC = new RooDataHist("Lst1405MC","1D",RooArgList(*mass),Lst1405MCh);
-  // cout<<"Lst1405MC hist assigned to RooDataHist"<<endl;
-  // RooHistPdf sigLst1405 = makeroohistpdf(Lst1405MC,mass,"sigLst1405","#Lambda*(1405) signal (RooHistPdf)");
-  // // //dbl CB
-  // // RooRealVar meanLst1("mean5Lst1","/\\*(1405): mean1",5290.815782,5000,5400);
-  // // RooRealVar sigLst1("sigLst1","/\\*(1405): sigma1",75.880004,0,10000);
-  // // RooRealVar alphaLst1("alphaLst1","/\\*(1405): alpha1",0.586106,0,10000);
-  // // RooRealVar nLst1("nLst1","/\\*(1405): n1",126.153761,0,10000);
-  // // RooCBShape CBLst1405_1("CBLst1405_1","#Lambda*(1405): CB1",*mass,meanLst1,sigLst1,alphaLst1,nLst1);
-  // // RooRealVar meanLst2("mean5Lst2","/\\*(1405): mean2",5162.652596,5000,5400);
-  // // RooRealVar sigLst2("sigLst2","/\\*(1405): sigma2",115.047402,0,10000);
-  // // RooRealVar alphaLst2("alphaLst2","/\\*(1405): alpha2",2.872964,0,10000);
-  // // RooRealVar nLst2("nLst2","/\\*(1405): n2",1.998455,0,10000);
-  // // RooCBShape CBLst1405_2("CBLst1405_2","#Lambda*(1405): CB2",*mass,meanLst2,sigLst2,alphaLst2,nLst2);
-  // // RooRealVar f1Lst("f1Lst","/\\*(1405): fraction CB1",0.582193,0,1);
-  // // RooAddPdf sigLst1405("sigLst1405","#Lambda*(1405) (dbl CB)",RooArgList(CBLst1405_1,CBLst1405_2),RooArgList(f1Lst));
-  // // /\*(misc.)
-  // //gaussian
-  // RooRealVar meanLst3("meanLst3","/\\*(misc.): mean3",4998.348223,4900,5100);
-  // RooRealVar sigLst3("sigLst3","/\\*(misc.): sigma3",61.585037,0,100);
-  // RooGaussian gauLstmisc("gauLstmisc","#Lambda*(misc.) (gaussian)",*mass,meanLst3,sigLst3);
+  // /\*
+  // /\*(1405)
+  //roohistpdf
+  TFile *Lst1405MChistos= new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/histos_Lst1405MC_c070116.root", "READ");
+  cout<<"Lst1405MC file opened"<<endl;
+  TString Lst1405histnum = "h30";
+  if(tracktype=="LL") Lst1405histnum = "h40";
+  if(tracktype=="DD") Lst1405histnum = "h50";
+  TH1F *Lst1405MCh = (TH1F*)Lst1405MChistos->Get(Lst1405histnum);
+  cout<<"Lst1405MC hist gotten"<<endl;
+  RooDataHist *Lst1405MC = new RooDataHist("Lst1405MC","1D",RooArgList(*mass),Lst1405MCh);
+  cout<<"Lst1405MC hist assigned to RooDataHist"<<endl;
+  RooHistPdf sigLst1405 = makeroohistpdf(Lst1405MC,mass,"sigLst1405","#Lambda*(1405) signal (RooHistPdf)");
+  // //dbl CB
+  // RooRealVar meanLst1("mean5Lst1","/\\*(1405): mean1",5290.815782,5000,5400);
+  // RooRealVar sigLst1("sigLst1","/\\*(1405): sigma1",75.880004,0,10000);
+  // RooRealVar alphaLst1("alphaLst1","/\\*(1405): alpha1",0.586106,0,10000);
+  // RooRealVar nLst1("nLst1","/\\*(1405): n1",126.153761,0,10000);
+  // RooCBShape CBLst1405_1("CBLst1405_1","#Lambda*(1405): CB1",*mass,meanLst1,sigLst1,alphaLst1,nLst1);
+  // RooRealVar meanLst2("mean5Lst2","/\\*(1405): mean2",5162.652596,5000,5400);
+  // RooRealVar sigLst2("sigLst2","/\\*(1405): sigma2",115.047402,0,10000);
+  // RooRealVar alphaLst2("alphaLst2","/\\*(1405): alpha2",2.872964,0,10000);
+  // RooRealVar nLst2("nLst2","/\\*(1405): n2",1.998455,0,10000);
+  // RooCBShape CBLst1405_2("CBLst1405_2","#Lambda*(1405): CB2",*mass,meanLst2,sigLst2,alphaLst2,nLst2);
+  // RooRealVar f1Lst("f1Lst","/\\*(1405): fraction CB1",0.582193,0,1);
+  // RooAddPdf sigLst1405("sigLst1405","#Lambda*(1405) (dbl CB)",RooArgList(CBLst1405_1,CBLst1405_2),RooArgList(f1Lst));
+  // /\*(misc.)
+  //gaussian
+  RooRealVar meanLst3("meanLst3","/\\*(misc.): mean3",4998.348223,4900,5100);
+  RooRealVar sigLst3("sigLst3","/\\*(misc.): sigma3",61.585037,0,100);
+  RooGaussian gauLstmisc("gauLstmisc","#Lambda*(misc.) (gaussian)",*mass,meanLst3,sigLst3);
   // ------------special cases-------------//
   // // WM
   // //gaussian
@@ -175,7 +175,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // // RooRealVar nWM1("nWM1","K_{S}: n1",126.153761,0,10000);
   // // RooCBShape sigWM("sigWM","K_{S} (CB)",*mass,meanWM1,sigWM1,alphaWM1,nWM1);
   // // /\ M
-  // //gaussian
+  // //dbl gaussian
   // RooRealVar meanLM1("meanLM1","#Lambda M: mean1",1115.932779,1112,1120);
   // RooRealVar sigLM1("sigLM1","#Lambda M: sigma1",1.566706,0,100);
   // RooGaussian gauLM1("gauLM1","#Lambda M: Gaussian1",*mass,meanLM1,sigLM1);
@@ -189,14 +189,15 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // bkg
   // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
   RooRealVar b1("b1","Background: Chebychev b1",-1.183578,-10,-0.00000000000000000000001);
-  RooRealVar b2("b2","Background: Chebychev b2",0.227144,0,10);
-  RooRealVar b3("b3","Background: Chebychev b3",-0.387522,-2,2);
-  RooRealVar b4("b4","Background: Chebychev b4",0.281777,-2,2);
+  RooRealVar b2("b2","Background: Chebychev b2",0.154520,-10,10);
+  RooRealVar b3("b3","Background: Chebychev b3",-0.387522,-10,10);
+  RooRealVar b4("b4","Background: Chebychev b4",0.281777,-10,10);
   RooRealVar b5("b5","Background: Chebychev b5",0.187079,-2,2);
   RooRealVar b6("b6","Background: Chebychev b6",-0.015,-10000,10000);
   RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
-  RooArgList bList(b1,b2);
+  RooArgList bList(b1,b2,b3);
   RooChebychev bkg("bkg","Background", *mass, bList);
+  // // /\ M (?)
   // // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
   // RooRealVar b1("b1","Background: Chebychev b1",0.370044,-10000,10000);
   // RooRealVar b2("b2","Background: Chebychev b2",0.214440,-10000,10000);
@@ -207,6 +208,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
   // RooArgList bList(b1,b2);
   // RooChebychev bkg("bkg","Background", *mass, bList);
+
   // TF1 *ep = new TF1("ep","[2]*exp([0]*x+[1]*x*x)",4300,5950);
   // ep->SetParameter(0,1);
   // ep->SetParameter(1,-1);
@@ -224,10 +226,10 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"fit_mass: declaring number of each shape:"<<endl;
   RooRealVar nbkg("nbkg","N bkg",2165.490249,0,100000000);
   RooRealVar nsigL("nsigL","N /\\",1689.637290,0,1000000000);
-  // RooRealVar nsigS("nsigS","N sigma",0.000002,0,10000000000);
-  // RooRealVar nsigLst1405("nsigLst1405","N /\\*(1405)",152.061617,0,10000000000);
-  // RooRealVar ngauLstmisc("ngauLstmisc","N /\\*(misc.)",439.812103,0,10000000000);
-  // RooRealVar nbkgLst("nbkgLst","N /\\*",591.828,0,1000000000);
+  RooRealVar nsigS("nsigS","N sigma",0.000002,0,10000000000);
+  RooRealVar nsigLst1405("nsigLst1405","N /\\*(1405)",152.061617,0,10000000000);
+  RooRealVar ngauLstmisc("ngauLstmisc","N /\\*(misc.)",439.812103,0,10000000000);
+  RooRealVar nbkgLst("nbkgLst","N /\\*",591.828,0,1000000000);
   //-----------special cases------------//
   // RooRealVar nsigWM("ngauWM","N K_{S}",100,0,1000000000);
   // RooRealVar nsigLM("ngauLM","N /\\ (/\\ mass)",100,0,1000000000);
@@ -238,11 +240,11 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"fit_mass: adding shapes and their numbers to totalPdf:"<<endl;
   RooArgList shapes;
   RooArgList yields;
-  // shapes.add(sigS);       yields.add(nsigS);
+  shapes.add(sigS);       yields.add(nsigS);
   shapes.add(sigL);       yields.add(nsigL);
-  // shapes.add(sigLst1405); yields.add(nsigLst1405);
-  // shapes.add(gauLstmisc); yields.add(ngauLstmisc);
-  shapes.add(bkg);           yields.add(nbkg);
+  shapes.add(sigLst1405); yields.add(nsigLst1405);
+  shapes.add(gauLstmisc); yields.add(ngauLstmisc);
+  shapes.add(bkg);        yields.add(nbkg);
   //-------------special cases----------//
   // shapes.add(sigWM);         yields.add(nsigWM);
   // shapes.add(sigLM);         yields.add(nsigLM);

@@ -1,7 +1,7 @@
 #! /bin/tcsh -f
 
 #-- set or pass job parameters
-set BASE_NAME = LMC_LL1_narrower_hypatia_parameter_ranges_fixL
+set BASE_NAME = _c070116_LL6
 
 #-- directory and files
 set OUT_DIR = ./plots
@@ -35,7 +35,7 @@ void myRoot(){
 }
 EOF
 
-SetupProject DaVinci >>& ${LOG}
+SetupProject DaVinci v39r1 >>& ${LOG}
 root -l -q ${OPTS_DIR}/myRoot.C >>& ${LOG}
 
 set DATE = `date`
