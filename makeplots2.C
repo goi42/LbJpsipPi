@@ -49,8 +49,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   map<TString,TString> f6quality {{"filetype","MC"},{"decaymode","#Lambda (minbias)"}};
   file f[]={								\
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
   };
@@ -86,91 +86,92 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
-    f[ifile].b={{"R_MINIP","#Lambda MINIP",35,-1,6},
-		{"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-100,900},
-		{"R_MINIPNEXTBEST","#Lambda MINIP (next best)",110,-2,20},
-		{"R_MINIPCHI2NEXTBEST","#Lambda MINIP (next best) #chi^{2}",100,-500,3500},
-		{"R_ENDVERTEX_X","#Lambda endvertex X",100,-175,175},
-                {"R_ENDVERTEX_Y","#Lambda endvertex Y",100,-175,175},
-                {"R_ENDVERTEX_Z","#Lambda endvertex Z",305,-50,3000},
-                {"R_ENDVERTEX_XERR","#Lambda endvertex error X",110,-1,10},
-                {"R_ENDVERTEX_YERR","#Lambda endvertex error Y",110,-1,10},	  
-                {"R_ENDVERTEX_ZERR","#Lambda endvertex error Z",165,-5,160},
-		{"sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)","#Lambda endvertex error x&y",78,-1,15},
-		{"R_ENDVERTEX_CHI2","#Lambda endvertex #chi^{2}",130,-1,12},
-		{"R_ENDVERTEX_NDOF","#Lambda endvertex ndof",10,0,10},
-                {"R_OWNPV_X","#Lambda PV X",100,0,1},
-                {"R_OWNPV_Y","#Lambda PV Y",50,-0.2,0.3},	  
-                {"R_OWNPV_Z","#Lambda PV Z",100,-250,250},	  
-                {"R_OWNPV_XERR","#Lambda PV error X",50,0,0.05},
-                {"R_OWNPV_YERR","#Lambda PV error Y",50,0,0.05},	  
-                {"R_OWNPV_ZERR","#Lambda PV error Z",50,0,0.5},
-		{"sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)","#Lambda PV error x&y",60,0,0.06},
-		{"R_OWNPV_CHI2","#Lambda PV #chi^{2}",120,0,120},
-		{"R_OWNPV_NDOF","#Lambda PV ndof",158,0,316},
-		{"R_IP_OWNPV","#Lambda PV IP",35,-1,6},
-		{"R_IPCHI2_OWNPV","#Lambda PV IP #chi^{2}",100,-100,900},
-		{"R_FD_OWNPV","#Lambda FD (OWNPV)",100,-100,3000},
-		{"R_FDCHI2_OWNPV","#Lambda FD #chi^{2} (OWNPV)",100,-5000,75000},
-		{"-R_DIRA_OWNPV","-cos(angle #Lambda_{p} and OWNPV)",100,-1.00000025,-0.99999},
-                // {"R_TOPPV_X","#Lambda top PV X",100,0,1},
-		// {"R_TOPPV_Y","#Lambda top PV Y",100,-0.2,0.35},
-		// {"R_TOPPV_Z","#Lambda top PV Z",100,-220,220},
-		// {"R_TOPPV_XERR","#Lambda top PV XERR",100,0,0.05},
-		// {"R_TOPPV_YERR","#Lambda top PV YERR",100,0,0.05},
-		// {"R_TOPPV_ZERR","#Lambda top PV ZERR",100,0,0.3},
-		// {"R_TOPPV_CHI2","#Lambda top PV #chi^{2}",100,-10,300},
-		// {"R_TOPPV_NDOF","#Lambda top PV ndof",158,0,316},
-		// {"R_IP_TOPPV","#Lambda top PV IP",50,-5,45},
-		// {"R_IPCHI2_TOPPV","#Lambda top PV IP #chi^{2}",100,-2000,16000},
-		// {"R_FD_TOPPV","#Lambda top PV FD",100,-100,3000},
-		// {"R_FDCHI2_TOPPV","#Lambda top PV FD #chi^{2}",100,-20000,200000},
-		// {"-R_DIRA_TOPPV","-cos(angle #Lambda_{p} and TOPPV)",100,-1.00000025,-0.99999},
-		{"R_P","#Lambda_{p}",144,0,270000},
-                {"R_PT","#Lambda_{p_{T}}",110,0,11000},
-		{"R_PE","#Lambda_{p_{E}}",100,0,300000},
-		{"R_PX","#Lambda_{p_{X}}",100,-10000,10000},
-		{"R_PY","#Lambda_{p_{Y}}",100,-10000,10000},
-		{"R_PZ","#Lambda_{p_{Z}}",100,0,300000},
-		{"R_MM","#Lambda MM",100,1081,1150},
-		{"R_MMERR","#Lambda MM error",100,0,8},
-                {"R_M","#Lambda^{0} M",70,1085,1150},
-                {"R_WM","#Lambda^{0} M with p#rightarrow#pi",80,300,700}, 
-                // {"H1_OWNPV_X","p PV X",90,0,0.9},	  
-                // {"H1_OWNPV_Y","p PV Y",50,-0.2,0.3},	  
-                // {"H1_OWNPV_Z","p PV Z",500,-250,250},	  
-                // {"H1_OWNPV_XERR","p PV error X",60,0,0.06},
-                // {"H1_OWNPV_YERR","p PV error Y",60,0,0.06},	  
-                // {"H1_OWNPV_ZERR","p PV error Z",350,0,0.35},	  
-                // {"H2_OWNPV_X","#pi PV X",90,0,0.9},
-                // {"H2_OWNPV_Y","#pi PV Y",50,-0.2,0.3},	  
-                // {"H2_OWNPV_Z","#pi PV Z",500,-250,250},	  
-                // {"H2_OWNPV_XERR","#pi PV error X",60,0,0.06},
-                // {"H2_OWNPV_YERR","#pi PV error Y",60,0,0.06},	  
-                // {"H2_OWNPV_ZERR","#pi PV error Z",350,0,0.35},	  
-                // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       
-                // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    
-                // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     
-                // {placeholder2,"#Lambda_{b} p",160,0,800000},         
-                // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         
-                // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         
-                // {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         
-                // {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      
-                // {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       
-                // {placeholder2,"#Lambda_{b} p",160000,0,800000},      
-                // {placeholder2,"#Lambda_{b} p LL",160000,0,800000},   
-                // {placeholder2,"#Lambda_{b} p DD",160000,0,800000},   
-                // {placeholder3,"#Lambda_{b} p_{T}",12000,0,60000},    
-                // {placeholder3,"#Lambda_{b} p_{T} LL",12000,0,60000}, 
-                // {placeholder3,"#Lambda_{b} p_{T} DD",12000,0,60000}, 
-                // {placeholder2,"#Lambda_{b} BKGCAT",131,0,131},       
-                // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},     
-                // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},        
-                // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, 
-                // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1}, 
-                // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},  
-                // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, 
-                // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}
+    f[ifile].b={
+      // {"R_MINIP","#Lambda MINIP",35,-1,6},
+      // {"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-100,900},
+      // {"R_MINIPNEXTBEST","#Lambda MINIP (next best)",110,-2,20},
+      // {"R_MINIPCHI2NEXTBEST","#Lambda MINIP (next best) #chi^{2}",100,-500,3500},
+      // {"R_ENDVERTEX_X","#Lambda endvertex X",100,-175,175},
+      // {"R_ENDVERTEX_Y","#Lambda endvertex Y",100,-175,175},
+      // {"R_ENDVERTEX_Z","#Lambda endvertex Z",305,-50,3000},
+      // {"R_ENDVERTEX_XERR","#Lambda endvertex error X",110,-1,10},
+      // {"R_ENDVERTEX_YERR","#Lambda endvertex error Y",110,-1,10},	  
+      // {"R_ENDVERTEX_ZERR","#Lambda endvertex error Z",165,-5,160},
+      // {"sqrt(R_ENDVERTEX_XERR*R_ENDVERTEX_XERR+R_ENDVERTEX_YERR*R_ENDVERTEX_YERR)","#Lambda endvertex error x&y",78,-1,15},
+      // {"R_ENDVERTEX_CHI2","#Lambda endvertex #chi^{2}",130,-1,12},
+      // {"R_ENDVERTEX_NDOF","#Lambda endvertex ndof",10,0,10},
+      // {"R_OWNPV_X","#Lambda PV X",100,0,1},
+      // {"R_OWNPV_Y","#Lambda PV Y",50,-0.2,0.3},	  
+      // {"R_OWNPV_Z","#Lambda PV Z",100,-250,250},	  
+      // {"R_OWNPV_XERR","#Lambda PV error X",50,0,0.05},
+      // {"R_OWNPV_YERR","#Lambda PV error Y",50,0,0.05},	  
+      // {"R_OWNPV_ZERR","#Lambda PV error Z",50,0,0.5},
+      // {"sqrt(R_OWNPV_XERR*R_OWNPV_XERR+R_OWNPV_YERR*R_OWNPV_YERR)","#Lambda PV error x&y",60,0,0.06},
+      // {"R_OWNPV_CHI2","#Lambda PV #chi^{2}",120,0,120},
+      // {"R_OWNPV_NDOF","#Lambda PV ndof",158,0,316},
+      // {"R_IP_OWNPV","#Lambda PV IP",35,-1,6},
+      // {"R_IPCHI2_OWNPV","#Lambda PV IP #chi^{2}",100,-100,900},
+      // {"R_FD_OWNPV","#Lambda FD (OWNPV)",100,-100,3000},
+      // {"R_FDCHI2_OWNPV","#Lambda FD #chi^{2} (OWNPV)",100,-5000,75000},
+      // {"-R_DIRA_OWNPV","-cos(angle #Lambda_{p} and OWNPV)",100,-1.00000025,-0.99999},
+      // {"R_TOPPV_X","#Lambda top PV X",100,0,1},
+      // {"R_TOPPV_Y","#Lambda top PV Y",100,-0.2,0.35},
+      // {"R_TOPPV_Z","#Lambda top PV Z",100,-220,220},
+      // {"R_TOPPV_XERR","#Lambda top PV XERR",100,0,0.05},
+      // {"R_TOPPV_YERR","#Lambda top PV YERR",100,0,0.05},
+      // {"R_TOPPV_ZERR","#Lambda top PV ZERR",100,0,0.3},
+      // {"R_TOPPV_CHI2","#Lambda top PV #chi^{2}",100,-10,300},
+      // {"R_TOPPV_NDOF","#Lambda top PV ndof",158,0,316},
+      // {"R_IP_TOPPV","#Lambda top PV IP",50,-5,45},
+      // {"R_IPCHI2_TOPPV","#Lambda top PV IP #chi^{2}",100,-2000,16000},
+      // {"R_FD_TOPPV","#Lambda top PV FD",100,-100,3000},
+      // {"R_FDCHI2_TOPPV","#Lambda top PV FD #chi^{2}",100,-20000,200000},
+      // {"-R_DIRA_TOPPV","-cos(angle #Lambda_{p} and TOPPV)",100,-1.00000025,-0.99999},
+      // {"R_P","#Lambda_{p}",144,0,270000},
+      // {"R_PT","#Lambda_{p_{T}}",110,0,11000},
+      // {"R_PE","#Lambda_{p_{E}}",100,0,300000},
+      // {"R_PX","#Lambda_{p_{X}}",100,-10000,10000},
+      // {"R_PY","#Lambda_{p_{Y}}",100,-10000,10000},
+      // {"R_PZ","#Lambda_{p_{Z}}",100,0,300000},
+      // {"R_MM","#Lambda MM",100,1081,1150},
+      // {"R_MMERR","#Lambda MM error",100,0,8},
+      // {"R_M","#Lambda^{0} M",70,1085,1150},
+      // {"R_WM","#Lambda^{0} M with p#rightarrow#pi",80,300,700}, 
+      // {"H1_OWNPV_X","p PV X",90,0,0.9},	  
+      // {"H1_OWNPV_Y","p PV Y",50,-0.2,0.3},	  
+      // {"H1_OWNPV_Z","p PV Z",500,-250,250},	  
+      // {"H1_OWNPV_XERR","p PV error X",60,0,0.06},
+      // {"H1_OWNPV_YERR","p PV error Y",60,0,0.06},	  
+      // {"H1_OWNPV_ZERR","p PV error Z",350,0,0.35},	  
+      // {"H2_OWNPV_X","#pi PV X",90,0,0.9},
+      // {"H2_OWNPV_Y","#pi PV Y",50,-0.2,0.3},	  
+      // {"H2_OWNPV_Z","#pi PV Z",500,-250,250},	  
+      // {"H2_OWNPV_XERR","#pi PV error X",60,0,0.06},
+      // {"H2_OWNPV_YERR","#pi PV error Y",60,0,0.06},	  
+      // {"H2_OWNPV_ZERR","#pi PV error Z",350,0,0.35},	  
+      // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       
+      {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    
+      {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     
+      // {placeholder2,"#Lambda_{b} p",160,0,800000},         
+      // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         
+      // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         
+      // {placeholder3,"#Lambda_{b} p_{T}",120,0,60000},         
+      // {placeholder3,"#Lambda_{b} p_{T} LL",120,0,60000},      
+      // {placeholder3,"#Lambda_{b} p_{T} DD",120,0,60000}       
+      // {placeholder2,"#Lambda_{b} p",160000,0,800000},      
+      // {placeholder2,"#Lambda_{b} p LL",160000,0,800000},   
+      // {placeholder2,"#Lambda_{b} p DD",160000,0,800000},   
+      // {placeholder3,"#Lambda_{b} p_{T}",12000,0,60000},    
+      // {placeholder3,"#Lambda_{b} p_{T} LL",12000,0,60000}, 
+      // {placeholder3,"#Lambda_{b} p_{T} DD",12000,0,60000}, 
+      // {placeholder2,"#Lambda_{b} BKGCAT",131,0,131},       
+      // {placeholder3,"#Lambda_{b} p_{T}",4000,0,20000},     
+      // {"J_psi_1S_MM","J/#psi(1S) MM",48,2980,3220},        
+      // {"J_psi_1S_ENDVERTEX_CHI2/J_psi_1S_ENDVERTEX_NDOF","#chi^{2}/ndof(J/#psi(1S))",210,0,21}, 
+      // {"H2_TRACK_GhostProb","#pi track GhostProb",100,0,1}, 
+      // {"H1_TRACK_GhostProb","p track GhostProb",100,0,1},  
+      // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, 
+      // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}
     };
     cout<<"done"<<endl;
     
@@ -183,55 +184,22 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,ctrigger,c062516;
-    makecuts(ifile,cLL,cDD,ctrigger,c062516);
+    TCut cLL,cDD,ctrigger,c070116_LL,c070116_DD;
+    makecuts(ifile,cLL,cDD,ctrigger,c070116_LL,c070116_DD);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->c ={// {cLL,"no cuts LL"},
-		      // {cDD,"no cuts DD"},
-		      // {cnewest_PV_L&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts LL"},
-		      // {cnewest_PV_L&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b} & #Lambda M) cuts DD"},
-		      // {cnewest_PV_L_M&&cLL,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts LL"},
-		      // {cnewest_PV_L_M&&cDD,"newest (sans trigger & #chi^{2}(FD) & J/#psi & #Lambda_{b}) cuts DD"},
-		      // {cnewest_PV_L_M&&cLL&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only LL"},
-		      // {cnewest_PV_L_M&&cDD&&"R_BKGCAT!=0","newest (sans...) cuts non-signal only DD"},
-		      // {cnewest_PV_L_M&&cLL&&"R_BKGCAT==0","newest (sans...) cuts signal only LL"},
-		      // {cnewest_PV_L_M&&cDD&&"R_BKGCAT==0","newest (sans...) cuts signal only DD"},
-		      // {cnewest&&cDD,"newest cuts DD"},
-		      // {cnewest&&cDD&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","newest cuts non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
-		      // {cnewest&&cDD&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","newest cuts signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
-		      // {c062516&&cLL,"cuts from 6/25/16 LL"},
-		      // {c062516&&cLL&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only LL"},
-		      // {c062516&&cLL&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 signal, #Sigma mother, #Lambda_{b} gdmother only LL"},
-		      // {c062516&&cDD,"cuts from 6/25/16 DD"},
-		      // {c062516&&cDD&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
-		      // {c062516&&cDD&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
-	              {c062516&&cDD&&cLZhi(),"cuts from 6/25/16 and #Lambda endvertex<2300 mm DD"},
-		      {c062516&&cDD&&cLZhi()&&"R_BKGCAT!=0&&(abs(R_MC_GD_MOTHER_ID)!=5122||abs(R_MC_MOTHER_ID)!=3212)","cuts from 6/25/16 and #Lambda endvertex<2300 mm non-signal and either non-#Sigma mother or non-#Lambda_{b} gdmother only DD"},
-		      {c062516&&cDD&&cLZhi()&&"R_BKGCAT==0&&abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212","cuts from 6/25/16 and #Lambda endvertex<2300 mm signal, #Sigma mother, #Lambda_{b} gdmother only DD"},
-		      // {"","no cuts"},
-		      // {cnewest,"newest cuts"},
-      };
-                      // {{coptimized_noLMcut,"Optimized with no #Lambda M cut"},	\
-		      //  {cnew,"new"}};
-      // for(int i=0; i<40; i+=5){
-      // 	TCut WM = cLWM(-i,i);
-      // 	placeholder2="optimized with #Lambda_{WM} cut window of ";
-      // 	placeholder3=Form("%i",i);
-      // 	placeholder=placeholder2+placeholder3;
-      // 	thisbranch->add_cut(coptimized_noWM&&WM,placeholder);
-      // }
-      // if(f[ifile].name=="SMCfile_with_gd_info") thisbranch->add_cut(cgd,"optimized + mother cut");
+      thisbranch->add_cut(c070116_LL,"7/1/16 LL cuts");
+      thisbranch->add_cut(c070116_DD,"7/1/16 DD cuts");
       nCuts = thisbranch->c.size();
       
       if(ibranch>0 && (unsigned int)nCuts != f[ifile].b[ibranch-1].c.size()){
         cout<<endl<<"number of cuts must be the same for each branch"<<endl;
         cout<<"nCuts = "<<nCuts<<" for "<<f[ifile].name<<", "<<thisbranch->name \
-            <<" and  = "<<f[ifile].b[ibranch-1].c.size()<<" for "<<thisbranch->name<<endl;
+            <<" and  = "<<f[ifile].b[ibranch-1].c.size()<<" for "<<f[ifile].b[ibranch-1].name<<endl;
         exit(EXIT_FAILURE);
       }
 
@@ -266,11 +234,11 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   for(int i =0; i<nLayers; i++){
     //assign layers; this is not an algorithm 
     if(L[i].name=="file") {
-      L[i].compared=kTRUE;
       for(int j=0;j<nFiles;j++) {
         L[i].add_element(&f[j].name);
       }
     }else if(L[i].name=="branch") {
+      L[i].compared=kTRUE;
       bL=i;
       for(int k=0;k<nBranches;k++) {
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
@@ -340,7 +308,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder = "c"+cistring;
     c[ci] = new TCanvas(placeholder,placeholder,1200,800); //create the canvases
     c[ci]->cd();
-    //gPad->SetLogy();
+    gPad->SetLogy();
     gStyle->SetOptStat("");
     // leg[ci] = new TLegend(0.41, 0.7, 0.85, 0.9);//create legend
     leg[ci] = new TLegend(0.65, 0.7, 1, 0.9);//create legend
