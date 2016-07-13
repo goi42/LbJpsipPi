@@ -12,7 +12,6 @@ from Gaudi.Configuration import *
 #
 from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTrigger, TupleToolTISTOS, TupleToolTagging
 from Configurables import FitDecayTrees, TupleToolGeometry
-from Configurables import TupleToolIsoGeneric
 tuple = DecayTreeTuple('Lb2JpsiLTree') 
 tuple.Inputs = [ 'Phys/Bs2Jpsif0' ]
 
@@ -88,9 +87,6 @@ tuple.Branches = {
     "J_psi_1S"   :  "[Lambda_b0 -> (^J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc"       
 }
 
-TupleToolIsoGeneric = tuple.addTupleTool("TupleToolIsoGeneric")
-TupleToolIsoGeneric.Verbose = True
-
 tuple.addTool(TupleToolDecay, name="Bs")
 tuple.Bs.ToolList = [ "TupleToolPropertime" ]
 tuple.addTool(TupleToolDecay, name="J_psi_1S")
@@ -114,6 +110,23 @@ LoKi_Bs.Variables =  {
         } 
 tuple.Bs.addTool(LoKi_Bs)         
 tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
+
+from Configurables import TupleToolAllTracks
+AllTracks=TupleToolAllTracks("AllTracks")
+atlocations = []
+atlocations.append(SeqLb2JpsipK.outputLocation())
+# AllTracks.ANNPIDCut = 0.3 
+# AllTracks.GhostProb = 0.5
+# AllTracks.Theta = 0.012
+# AllTracks.DeltaPhi = 0.005
+# AllTracks.NewVertexChi2 = 10
+# AllTracks.MHi = 7000
+# AllTracks.ImprovedVertex = 6
+# AllTracks.PVIPchi2 = 8
+# AllTracks.CorrectedMass = False
+# AllTracks.Target = 'D0' #has to be defined in decay descriptor
+AllTracks.InputParticles = atlocations
+tuple.Bs.addTool(AllTracks)
 
 tuple.addTool(TupleToolDecay, name="R")
 
