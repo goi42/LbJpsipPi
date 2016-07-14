@@ -6,9 +6,10 @@
 #---------------------------------------------
 from Gaudi.Configuration import *
 from Configurables import GaudiSequencer
-from Configurables import  DecayTreeTuple, CheckPV
+from Configurables import  DecayTreeTuple#, CheckPV
 from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, DataOnDemand, MergedSelection
-from Configurables import   CombineParticles, FilterDesktop,  OfflineVertexFitter
+from Configurables import   CombineParticles, FilterDesktop#,  OfflineVertexFitter
+
 
 #DaughtCut = "(TRCHI2DOF < 4.0) & (MIPCHI2DV(PRIMARY)>9) & (TRGHOSTPROB < 0.2)"
 DaughtCutK = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) &  (PIDK-PIDpi>0) &  (PIDK-PIDp>-6) & (TRGHOSTPROB < 0.2)"
@@ -66,7 +67,7 @@ seq = SeqLb2JpsipK.sequence()
 #-------------------------------------------------------------------------
 from Configurables import DaVinci
 
-from Configurables import  OfflineVertexFitter
+# from Configurables import  OfflineVertexFitter
 
 from Configurables import  DecayTreeTuple, MCDecayTreeTuple
 # importOptions("Xb2JpsiXTree.py")
@@ -89,8 +90,8 @@ from Gaudi.Configuration import *
 #
 # DecayTreeTuple
 #
-from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTrigger, TupleToolTISTOS, TupleToolTagging
-from Configurables import FitDecayTrees, TupleToolGeometry
+from Configurables import DecayTreeTuple, LoKi__Hybrid__TupleTool, TupleToolDecay, TupleToolTISTOS#, TupleToolTagging, TupleToolTrigger
+from Configurables import TupleToolGeometry#, FitDecayTrees
 # tuple = DecayTreeTuple('Lb2JpsiLTree') 
 # tuple.Inputs = [ 'Phys/Bs2Jpsif0' ]
 
@@ -157,13 +158,13 @@ tuple.TupleToolGeometry.Verbose = True
 #TuneTool(tuple,'Xmass_2011')
 
 ###########################################################################################################################
-tuple.Decay = '[Lambda_b0 -> (^J/psi(1S) -> ^mu+ ^mu-) (^Lambda0 -> ^p+ ^pi-)]cc'
+tuple.Decay = '[Lambda_b0 -> ^(J/psi(1S) -> ^mu+ ^mu-) ^(Lambda0 -> ^p+ ^pi-)]CC'
 tuple.Branches = {
-    "Bs"   :  "^[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc",
-    "R"    :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (^Lambda0 -> p+ pi-)]cc", 
-    "H1"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> ^p+ pi-)]cc",      
-    "H2"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ ^pi-)]cc",   
-    "J_psi_1S"   :  "[Lambda_b0 -> (^J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]cc"       
+    "Bs"   :  "^[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]CC",
+    "R"    :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) ^(Lambda0 -> p+ pi-)]CC", 
+    "H1"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> ^p+ pi-)]CC",      
+    "H2"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ ^pi-)]CC",   
+    "J_psi_1S"   :  "[Lambda_b0 -> ^(J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]CC"       
 }
 
 tuple.addTool(TupleToolDecay, name="Bs")
@@ -233,12 +234,12 @@ tuple.MyLoKiTool.Preambulo = [
 from PhysConf.Filters import LoKi_Filters
 fltrs = LoKi_Filters(STRIP_Code = "(HLT_PASS_RE('StrippingFullDSTDiMuonJpsi2MuMuDetachedLineDecision'))" )
 
-from Configurables import DaVinci
+# from Configurables import DaVinci
 DaVinci().Simulation   = False
 DaVinci().EvtMax = -1                        # Number of events
 DaVinci().EventPreFilters = fltrs.filters('Filter')
 DaVinci().UserAlgorithms = [ seq, tuple  ]
-from Configurables import CondDB
+# from Configurables import CondDB
 #CondDB(UseOracle = True)
 #importOptions("$APPCONFIGOPTS/DisableLFC.py")
 #CondDB().IgnoreHeartBeat = True
@@ -255,11 +256,11 @@ DaVinci().Lumi = True
 ########################################################################
 MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
 from Configurables import  DaVinciInit, GetIntegratedLuminosity
-DaVinciInit().OutputLevel = 6
-MessageSvc().OutputLevel                  = 6
+# DaVinciInit().OutputLevel = 6
+# MessageSvc().OutputLevel                  = 6
 GetIntegratedLuminosity().OutputLevel       = INFO
-ToolSvc().OutputLevel                     = 6
-NTupleSvc().OutputLevel                   = 6
+# ToolSvc().OutputLevel                     = 6
+# NTupleSvc().OutputLevel                   = 6
 
 
 
