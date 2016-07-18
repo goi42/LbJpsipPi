@@ -11,17 +11,17 @@ from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, 
 from Configurables import   CombineParticles, FilterDesktop#,  OfflineVertexFitter
 
 
-#DaughtCut = "(TRCHI2DOF < 4.0) & (MIPCHI2DV(PRIMARY)>9) & (TRGHOSTPROB < 0.2)"
-DaughtCutK = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) &  (PIDK-PIDpi>0) &  (PIDK-PIDp>-6) & (TRGHOSTPROB < 0.2)"
-DaughtCutp = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (PIDp-PIDpi>5) & (PIDp-PIDK>0)  & (TRGHOSTPROB < 0.2)"
+# #DaughtCut = "(TRCHI2DOF < 4.0) & (MIPCHI2DV(PRIMARY)>9) & (TRGHOSTPROB < 0.2)"
+# DaughtCutK = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) &  (PIDK-PIDpi>0) &  (PIDK-PIDp>-6) & (TRGHOSTPROB < 0.2)"
+# DaughtCutp = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (PIDp-PIDpi>5) & (PIDp-PIDK>0)  & (TRGHOSTPROB < 0.2)"
 
 #----Jpsi->mumu---------------------------------
 location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles"
 Jpsi2MuMu = AutomaticData(Location = location)
 
 #----selection p+ and K- -------------------------
-kaons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsKaons/Particles")
-protons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsProtons/Particles")
+# kaons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsKaons/Particles")
+# protons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsProtons/Particles")
 Lambda0LL = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaLL/Particles")
 Lambda0DD = DataOnDemand(Location = "/Event/Phys/StdLooseLambdaDD/Particles")
 
@@ -192,21 +192,22 @@ tuple.Bs.addTool(LoKi_Bs)
 tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
 
 from Configurables import TupleToolAllTracks
-AllTracks=TupleToolAllTracks("AllTracks")
-atlocations = []
+BsAllTracks=TupleToolAllTracks("BsAllTracks")
+atlocations = [  ]
 atlocations.append(SeqLb2JpsipK.outputLocation())
-# AllTracks.ANNPIDCut = 0.3 
-# AllTracks.GhostProb = 0.5
-# AllTracks.Theta = 0.012
-# AllTracks.DeltaPhi = 0.005
-# AllTracks.NewVertexChi2 = 10
-# AllTracks.MHi = 7000
-# AllTracks.ImprovedVertex = 6
-# AllTracks.PVIPchi2 = 8
-# AllTracks.CorrectedMass = False
-# AllTracks.Target = 'D0' #has to be defined in decay descriptor
-AllTracks.InputParticles = atlocations
-tuple.Bs.addTool(AllTracks)
+# BsAllTracks.ANNPIDCut = 0.3 
+# BsAllTracks.GhostProb = 0.5
+# BsAllTracks.Theta = 0.012
+# BsAllTracks.DeltaPhi = 0.005
+# BsAllTracks.NewVertexChi2 = 10
+# BsAllTracks.MHi = 7000
+# BsAllTracks.ImprovedVertex = 6
+# BsAllTracks.PVIPchi2 = 8
+# BsAllTracks.CorrectedMass = False
+BsAllTracks.Target = 'J_psi_1S' #has to be defined in decay descriptor
+BsAllTracks.InputParticles = atlocations
+tuple.Bs.addTool(BsAllTracks)
+tuple.Bs.ToolList+=["TupleToolAllTracks"]
 
 tuple.addTool(TupleToolDecay, name="R")
 
@@ -256,9 +257,9 @@ DaVinci().Lumi = True
 ########################################################################
 MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
 from Configurables import  DaVinciInit, GetIntegratedLuminosity
-# DaVinciInit().OutputLevel = 6
+# DaVinciInit().OutputLevel                 = 6
 # MessageSvc().OutputLevel                  = 6
-GetIntegratedLuminosity().OutputLevel       = INFO
+# GetIntegratedLuminosity().OutputLevel     = 6 #INFO
 # ToolSvc().OutputLevel                     = 6
 # NTupleSvc().OutputLevel                   = 6
 
