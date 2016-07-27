@@ -7,7 +7,7 @@ myApplication.user_release_area = '~/cmtuser'
 # myApplication.platform = 'x86_64-slc6-gcc49-opt' #'x86_64-slc5-gcc46-opt'
 
 myEnv = myApplication.getenv()
-myApplication.optsfile = [File('DataXb2JpsiLK.py')]
+myApplication.optsfile = [File('DataBs2JpsiKstar.py')]
 j = Job(name='Bs2JpsiKstar', application=myApplication, backend=Dirac())
 # j.backend.settings['CPUTime'] = 50000
 mySplitter = SplitByFiles(filesPerJob=10)
