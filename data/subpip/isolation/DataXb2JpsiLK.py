@@ -16,8 +16,7 @@ from Configurables import   CombineParticles, FilterDesktop#,  OfflineVertexFitt
 # DaughtCutp = "(MIPCHI2DV(PRIMARY)>4) & (TRCHI2DOF < 4.0) & (PT>250*MeV) & (PIDp-PIDpi>5) & (PIDp-PIDK>0)  & (TRGHOSTPROB < 0.2)"
 
 #----Jpsi->mumu---------------------------------
-location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles"
-Jpsi2MuMu = AutomaticData(Location = location)
+Jpsi2MuMu = AutomaticData(Location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles")
 
 #----selection p+ and K- -------------------------
 # kaons = DataOnDemand(Location = "/Event/Phys/StdNoPIDsKaons/Particles")
