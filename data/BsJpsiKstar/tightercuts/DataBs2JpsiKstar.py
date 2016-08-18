@@ -18,17 +18,25 @@ Kstar2Kpi = DataOnDemand(Location = "/Event/Phys/StdLooseKstar2Kpi/Particles")
 
 #----Selection K*->K+ pi-
 
-_Kst2Kpi = CombineParticles( "_Kst2Kpi",
-                             DecayDescriptor = "[K*(892)0 -> K+ pi-]cc",
-                             CombinationCut  = "ADAMASS('K*(892)0') < 200.*MeV",
-                             ReFitPVs        = True )
-_Kst2Kpi.DaughtersCuts = {
-    "K+"  : "(PT>250*MeV) & (MINPICHI2>6) & (TRCHI2DOF<7)",
-    "pi-" : "(PT>250*MeV) & (MINPICHI2>6) & (TRCHI2DOF<7)"
-    }
-Kst2Kpi = Selection ("Kst2Kpi",
-                     Algorithm = _Kst2Kpi,
-                     RequiredSelections = [ Kstar2Kpi ] )
+_Kst2Kpi = FilterDesktop("_Kst2Kpi")
+_Kst2Kpi.Code = "(ADMASS('K*(892)0') < 100.*MeV)"\
+                  "& (VFASPF(VCHI2/VDOF) < 12)"
+
+Kst2Kpi = Selection( "FilterKst",
+                      Algorithm          = _Kst2Kpi ,
+                      RequiredSelections = [ Kstar2Kpi ] )
+
+# _Kst2Kpi = CombineParticles( "_Kst2Kpi",
+#                              DecayDescriptor = "[K*(892)0 -> K+ pi-]cc",
+#                              CombinationCut  = "ADAMASS('K*(892)0') < 200.*MeV",
+#                              ReFitPVs        = False )
+# _Kst2Kpi.DaughtersCuts = {
+#     "K+"  : "(PT>250*MeV) & (MINIPCHI2>6) & (TRCHI2DOF<7)",
+#     "pi-" : "(PT>250*MeV) & (MINIPCHI2>6) & (TRCHI2DOF<7)"
+#     }
+# Kst2Kpi = Selection ("Kst2Kpi",
+#                      Algorithm = _Kst2Kpi,
+#                      RequiredSelections = [ Kstar2Kpi ] )
 
 #----Selection Bs -> J/psi K+ pi-------------------
 _Bs2JpsiKpi = CombineParticles( "_Bs2JpsiKpi",
