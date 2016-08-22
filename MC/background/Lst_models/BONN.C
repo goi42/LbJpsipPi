@@ -294,3 +294,20 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
     for(int j=0; j<Channels; j++)
       t[i][j] = fnullpluson0[i][j]*(-4*Pi*sqrt(s)/sqrt(mai[i])/sqrt(mai[j]));
 }
+void invariantmassdistribution(){
+  double MLb = 5.619;
+  double MJpsi = 3.100;
+  int NN = 501;
+  // RES = Table[0, {i, 1, NN}];
+  double NORMALIZATION = 10^5;
+  double h1 = 1, h4 = 0, h7 = -sqrt(2)/3, h10 = 0;
+  double maix[10]; double Maix[10];
+  std::copy(mai,mai + 10,maix); std::copy(Mai,Mai + 10,Maix);
+
+  // Do[   Wx = 1.34 + 0.26 (i - 1)/NN;
+  //     (*Call FSI from Bonn model*)    
+  //     BONN[Wx^2, PAR[[1]], PAR[[2]], PAR[[3]], PAR[[4]], PAR[[5]], PAR[[6]], PAR[[7]], PAR[[8]], PAR[[9]], PAR[[10]], PAR[[11]], PAR[[12]], PAR[[13]], PAR[[14]], PAR[[15]], PAR[[16]], PAR[[17]], PAR[[18]], PAR[[19]], PAR[[20]]];
+  //   (*Eq. 2,3*)   
+  // 	RES[[i]] = {Wx,       NORMALIZATION*1/(2 \[Pi])^3 Re[      Sqrt[(MLb^2 - (MJpsi + Wx)^2) (MLb^2 - (MJpsi -       Wx)^2)] Sqrt[(Wx^2 - (Maix[[1]] +     maix[[1]])^2) (Wx^2 - (Maix[[1]] -    maix[[1]])^2)]]/(16 MLb^3 Wx)   Abs[(h1 + h1 Gvec[[1]] t[[1, 1]] + h1 Gvec[[2]] t[[2, 1]] +         h4 Gvec[[4]] t[[4, 1]] + h4 Gvec[[5]] t[[5, 1]] +         h4 Gvec[[6]] t[[6, 1]] + h7 Gvec[[7]] t[[7, 1]] +         h10 Gvec[[9]] t[[9, 1]] + h10 Gvec[[10]] t[[10, 1]])]^2,   NORMALIZATION*1/(2 \[Pi])^3 Re[  Sqrt[(MLb^2 - (MJpsi + Wx)^2) (MLb^2 - (MJpsi -   Wx)^2)] Sqrt[(Wx^2 - (Maix[[2]] + maix[[2]])^2) (Wx^2 - (Maix[[2]] -        maix[[2]])^2)]]/(16 MLb^3 Wx)  Abs[(h1 + h1 Gvec[[1]] t[[1, 2]] + h1 Gvec[[2]] t[[2, 2]] +        h4 Gvec[[4]] t[[4, 2]] + h4 Gvec[[5]] t[[5, 2]] +        h4 Gvec[[6]] t[[6, 2]] + h7 Gvec[[7]] t[[7, 2]] +        h10 Gvec[[9]] t[[9, 2]] + h10 Gvec[[10]] t[[10, 2]])]^2,  0,  NORMALIZATION*1/(2 \[Pi])^3 Re[ Sqrt[(MLb^2 - (MJpsi + Wx)^2) (MLb^2 - (MJpsi -  Wx)^2)] Sqrt[(Wx^2 - (Maix[[4]] +        maix[[4]])^2) (Wx^2 - (Maix[[4]] -       maix[[4]])^2)]]/(16 MLb^3 Wx) Abs[(h4 +  h4 Gvec[[4]] t[[4, 4]] + h4 Gvec[[5]] t[[5, 4]] +  h4 Gvec[[6]] t[[6, 4]] + h7 Gvec[[7]] t[[7, 4]] +  h10 Gvec[[9]] t[[9, 4]] + h10 Gvec[[10]] t[[10, 4]] +  h1 Gvec[[1]] t[[1, 4]] + h1 Gvec[[2]] t[[2, 4]])]^2,  NORMALIZATION*1/(2 \[Pi])^3 Re[ Sqrt[(MLb^2 - (MJpsi + Wx)^2) (MLb^2 - (MJpsi -  Wx)^2)] Sqrt[(Wx^2 - (Maix[[5]] +        maix[[5]])^2) (Wx^2 - (Maix[[5]] -       maix[[5]])^2)]]/(16 MLb^3 Wx) Abs[(h4 +  h4 Gvec[[4]] t[[4, 5]] + h4 Gvec[[5]] t[[5, 5]] +  h4 Gvec[[6]] t[[6, 5]] + h7 Gvec[[7]] t[[7, 5]] +  h10 Gvec[[9]] t[[9, 5]] + h10 Gvec[[10]] t[[10, 5]] +  h1 Gvec[[1]] t[[1, 5]] + h1 Gvec[[2]] t[[2, 5]])]^2,      NORMALIZATION*1/(2 \[Pi])^3 Re[     Sqrt[(MLb^2 - (MJpsi + Wx)^2) (MLb^2 - (MJpsi -      Wx)^2)] Sqrt[(Wx^2 - (Maix[[6]] +    maix[[6]])^2) (Wx^2 - (Maix[[6]] -   maix[[6]])^2)]]/(16 MLb^3 Wx) Abs[(h4 +      h4 Gvec[[4]] t[[4, 6]] + h4 Gvec[[5]] t[[5, 6]] +      h4 Gvec[[6]] t[[6, 6]] + h7 Gvec[[7]] t[[7, 6]] +      h10 Gvec[[9]] t[[9, 6]] + h10 Gvec[[10]] t[[10, 6]] +      h1 Gvec[[1]] t[[1, 6]] + h1 Gvec[[2]] t[[2, 6]])]^2};
+  //      , {i, 1, NN}]
+}
