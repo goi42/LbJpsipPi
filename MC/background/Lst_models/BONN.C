@@ -44,9 +44,9 @@ matrix null(Channels,Channels);//null = 0*eins;
 matrix im(Channels,Channels);//im = null;
 matrix ib(Channels,Channels);//ib = null;
   
-double mu = (1/2)*(Mai[0]*Mai[0] - Mai[1]*Mai[1] + Mai[2]*Mai[2]);
-double md = (1/2)*(Mai[1]*Mai[1] - Mai[0]*Mai[0] + Mai[2]*Mai[2]);
-double ms = (1/2)*(Mai[0]*Mai[0] + Mai[1]*Mai[1] - Mai[2]*Mai[2]);
+double mu = (0.5)*(Mai[0]*Mai[0] - Mai[1]*Mai[1] + Mai[2]*Mai[2]);
+double md = (0.5)*(Mai[1]*Mai[1] - Mai[0]*Mai[0] + Mai[2]*Mai[2]);
+double ms = (0.5)*(Mai[0]*Mai[0] + Mai[1]*Mai[1] - Mai[2]*Mai[2]);
 matrix Mquark(3,3),l1(3,3),l2(3,3),l3(3,3),l4(3,3),l5(3,3),l6(3,3),l7(3,3),l8(3,3);
 double Pi=3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745;
 double wd4 = 0/(16*Pi*Pi);
@@ -78,7 +78,7 @@ complex<double> spurg6(matrix lb,matrix lj,matrix li,matrix la){
   return Trace(Transpose(lb)*((Transpose(lj)*li - li*Transpose(lj))*la + la*(Transpose(lj)*li - li*Transpose(lj)))); 
 }
 complex<double> spurg7(matrix lb,matrix lj,matrix li,matrix la){
-  return (1/2)*(Trace(Transpose(lb)*Transpose(lj))*Trace(li*la) - Trace(Transpose(lb)*li)*Trace(Transpose(lj)*la)); 
+  return (0.5)*(Trace(Transpose(lb)*Transpose(lj))*Trace(li*la) - Trace(Transpose(lb)*li)*Trace(Transpose(lj)*la)); 
 }
 complex<double> spurgnull(matrix lb,matrix lj,matrix li,matrix la,matrix Mquark){
   return Trace(Transpose(lb)*la)*Trace((Transpose(lj)*li + li*Transpose(lj))*Mquark); 
@@ -184,7 +184,7 @@ void fillthings(){
   spurn = spurWTmatrix;
   
   g = fmes.inverse()*spurn*fmes.inverse();
-  g *= (-1/4);
+  g *= (-0.25);
   for(int i=0; i<Channels; i++)
     for(int j=0; j<Channels; j++)
       if(std::abs(g[i][j])<(1*10^(-10))) g[i][j]=0;
