@@ -208,16 +208,25 @@ void fillthings(){
   spurg10matrix = spurg3matrix;
   spurg11matrix = spurg4matrix;
 }
-// void BONN(double svar, double logKN, double logPiL, double logPiS, double logEtaL, double logEtaS, double logKXi, double b1var, double b2var, double b3var, double b4var, double b5var, double b6var, double b7var, double b8var, double b9var, double b10var, double b11var, double bnullvar, double bDvar, double bFvar){
-//   fillthings();
-//   double s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
-//   double lg[] = {logKN, logKN, logPiL, logPiS, logPiS, logPiS, logEtaL, logEtaS, logKXi, logKXi};
-//   double m5 = mai[0], mp = m5, d = 4, p = sqrt(s), W = sqrt(s), s0 = m5*m5;
+void BONN(double svar, double logKN, double logPiL, double logPiS, double logEtaL, double logEtaS, double logKXi, double b1var, double b2var, double b3var, double b4var, double b5var, double b6var, double b7var, double b8var, double b9var, double b10var, double b11var, double bnullvar, double bDvar, double bFvar){
+  fillthings();
+  double s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
+  double lg[] = {logKN, logKN, logPiL, logPiS, logPiS, logPiS, logEtaL, logEtaS, logKXi, logKXi};
+  double m5 = mai[0], mp = m5, d = 4, p = sqrt(s), W = sqrt(s), s0 = m5*m5;
 
-//   matrix qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
-//   //qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
-//   imb = DiagonalMatrix[ Table[(1/(16*Pi^2))*(-1 + 2 Log[mai[[i]]] - 2 lg[[i]] + ((Mai[[i]]^2 - mai[[i]]^2 + svar)/(2*svar))*Log[(Mai[[i]]/mai[[i]])^2] - ((4*qcms[[i, i]])/Sqrt[svar])*ArcTanh[(2*qcms[[i, i]]*Sqrt[svar])/((mai[[i]] + Mai[[i]])^2 - svar)]), {i, 1, Channels}]];
-//   reqcms = Re[qcms];
+  matrix qcms(Channels,Channels);
+  for(int i=0; i<Channels; i++) for(int j=0; j<Channels; j++)
+      if(i==j)
+	qcms[i][j] = (sqrt(pow(svar,2) + pow(mai[i],4) + pow(Mai[i],4) - 2*pow(mai[i],2)*pow(Mai[i],2)-2*svar*pow(mai[i],2) - 2*svar*pow(Mai[i],2)))/(2*sqrt(svar));
+      else qcms[i][j]=0;
+  //qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
+  matrix imb(Channels,Channels);
+  for(int i=0; i<Channels; i++) for(int j=0; j<Channels; j++)
+      if(i==j)
+	imb[i][j] = (1/(16*Pi*Pi))*(-1 + 2*log(mai[i]) - 2*lg[i] + ((pow(Mai[i],2) - pow(mai[i],2) + svar)/(2*svar))*log(pow((Mai[i]/mai[i]),2)) - ((4*qcms[i][i])/sqrt(svar))*atanh((2*qcms[i][i]*sqrt(svar))/(pow((mai[i] + Mai[i]),2) - svar)));
+      else imb[i][j]=0;
+  //imb = DiagonalMatrix[ Table[(1/(16*Pi^2))*(-1 + 2 Log[mai[[i]]] - 2 lg[[i]] + ((Mai[[i]]^2 - mai[[i]]^2 + svar)/(2*svar))*Log[(Mai[[i]]/mai[[i]])^2] - ((4*qcms[[i, i]])/Sqrt[svar])*ArcTanh[(2*qcms[[i, i]]*Sqrt[svar])/((mai[[i]] + Mai[[i]])^2 - svar)]), {i, 1, Channels}]];
+  matrix reqcms = qcms.re();
 
 
-// }
+}
