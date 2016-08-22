@@ -256,10 +256,8 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix G2matrix = Chop(Inverse( fmes)*(2*b5*spurg5matrix + 2*b6*spurg6matrix + 2*b7*spurg7matrix)*Inverse(fmes));
   matrix G3matrix = -1*Chop((1/m0)*Inverse(fmes)*(-b8*spurg8matrix - b9*spurg9matrix -b10*spurg10matrix - b11*spurg11matrix)*Inverse(fmes));
   matrix G0matrix = Chop(Inverse( fmes)*(4*bnull*spurgnullmatrix + bD*spurgDmatrix + bF*spurgFmatrix)*Inverse(fmes));
-  cout<<"G1matrix:"<<endl;
-  G1matrix.print();
 
-  matrix pmalqm = Chop((1/2)*(s*eins - mbn*mbn + mmn*mmn));
+  matrix pmalqm = Chop(0.5*(s*eins - mbn*mbn + mmn*mmn));
   matrix qmalpm = pmalqm;
   matrix V1p = 2*g - 2*(mbn*G2matrix + G2matrix*mbn) + G3matrix*pmalqm + qmalpm*G3matrix;
   matrix V11 = -mbn*g - g*mbn + G0matrix + 2*(s*G2matrix + mbn*G2matrix*mbn) - mbn*G3matrix*pmalqm - qmalpm*G3matrix*mbn;
@@ -268,7 +266,31 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix v1t2 = eins - C0*V21;
   matrix T2on1 = V21*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
   matrix T2onp = -V21*Inverse(v1t2)*vpt2*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
-  cout<<"T2onp:"<<endl;
-  T2onp.print();
 
+  matrix vpt1 = -G0*V1p - G1*V11 - A0*V21 - B1*V21*pmalqm;
+  matrix v1t1 = eins - G0*V11 - s*G1*V1p + A0*V21*mbn - B0*V21*pmalqm;
+  matrix inv1t1 = Inverse(v1t1 - s*vpt1*Inverse(v1t1)*vpt1);
+  matrix invpt1 = -Inverse(v1t1)*vpt1*inv1t1;
+  matrix pot1t1 = V11 + s*(T2on1*A*V1p) + (2*qmalpm - s*eins)*T2onp*A*V11 - mbn*(T2on1*A*V11) + s*mbn*T2onp*A*V1p + qmalpm*((T2on1*B0 + s*T2onp*B1)*V11 + s*(T2on1*B1 + T2onp*B0)*V1p) + (1/s)*qmalpm*(T2on1*D0 + s*T2onp*D1)*V21*pmalqm + ((2*qmalpm - s*eins)*T2onp - mbn*T2on1)*E0*V21*pmalqm + qmalpm*(s*T2onp*E0*V21 - T2on1*E0*V21*mbn);
+  matrix potpt1 = V1p + T2on1*A*V11 + (2*qmalpm - s*eins)*T2onp*A*V1p - mbn*(T2on1*A*V1p - T2onp*A*V11) + qmalpm*((T2on1*B1 + T2onp*B0)*V11 + (T2on1*B0 +s*T2onp*B1)*V1p) + (1/s)*qmalpm*(T2on1*D1 + T2onp*D0)*V21*pmalqm + (T2on1 +mbn*T2onp)*E0*V21*pmalqm + qmalpm*(T2on1*E0*V21 - T2onp*E0*V21*mbn);
+  matrix T1on1 = pot1t1*inv1t1 + s*potpt1*invpt1;
+  matrix T1onp = pot1t1*invpt1 + potpt1*inv1t1;
+
+  matrix qnullcms = sqrt(qcms*qcms + mmn*mmn);
+  // T0ON = T1on1 + qnullcms*T2on1*qnullcms - z*qcms*T2on1*qcms;
+  // T1ON = T1onp + qnullcms*T2onp*qnullcms - z*qcms*T2onp*qcms;
+  matrix T0ON_0 = T1on1 + qnullcms*T2on1*qnullcms - 0*qcms*T2on1*qcms;//T0ON with z->0
+  matrix T1ON_0 = T1onp + qnullcms*T2onp*qnullcms - 0*qcms*T2onp*qcms;//T1On with z->0
+
+  matrix Ecms = sqrt(mbn*mbn + qcms*qcms);
+  matrix fnullpluson0 = Chop(-(1/(16*Pi*sqrt(s)))*(sqrt(Ecms + mbn)*(2*(T0ON_0 + p*T1ON_0) )*sqrt(Ecms + mbn) +sqrt(Ecms - mbn)*(((double)2/(double)3)*(qcms*T2on1*qcms + p*qcms*T2onp*qcms)/* Coefficient(-T0ON + p*T1ON, z)*/)*sqrt(Ecms - mbn)));
+  matrix maimatrix(sizeof(mai)/sizeof(mai[0]),1);
+  for(unsigned int i=0; i<(sizeof(mai)/sizeof(mai[0])); i++)
+    maimatrix[i][0] = mai[i];
+  matrix Gvec = 2*imb*maimatrix;
+  matrix t(Channels,Channels);
+  //t = Table[fnullpluson0[[i, j]]*(-4 \[Pi] Sqrt[s]/Sqrt[mai[[i]]]/Sqrt[mai[[j]]]), {i, 1, Channels}, {j, 1, Channels}];
+  for(int i=0; i<Channels; i++)
+    for(int j=0; j<Channels; j++)
+      t[i][j] = fnullpluson0[i][j]*(-4*Pi*sqrt(s)/sqrt(mai[i])/sqrt(mai[j]));
 }
