@@ -208,44 +208,47 @@ void fillthings(){
   spurg10matrix = spurg3matrix;
   spurg11matrix = spurg4matrix;
 }
-// void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, complex<double> logPiS, complex<double> logEtaL, complex<double> logEtaS, complex<double> logKXi, complex<double> b1var, complex<double> b2var, complex<double> b3var, complex<double> b4var, complex<double> b5var, complex<double> b6var, complex<double> b7var, complex<double> b8var, complex<double> b9var, complex<double> b10var, complex<double> b11var, complex<double> bnullvar, complex<double> bDvar, complex<double> bFvar){
-//   fillthings();
-//   complex<double> s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
-//   complex<double> lg[] = {logKN, logKN, logPiL, logPiS, logPiS, logPiS, logEtaL, logEtaS, logKXi, logKXi};
-//   complex<double> m5 = mai[0], mp = m5, d = 4, p = sqrt(s), W = sqrt(s), s0 = m5*m5;
+void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, complex<double> logPiS, complex<double> logEtaL, complex<double> logEtaS, complex<double> logKXi, complex<double> b1var, complex<double> b2var, complex<double> b3var, complex<double> b4var, complex<double> b5var, complex<double> b6var, complex<double> b7var, complex<double> b8var, complex<double> b9var, complex<double> b10var, complex<double> b11var, complex<double> bnullvar, complex<double> bDvar, complex<double> bFvar){
+  fillthings();
+  complex<double> s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
+  complex<double> lg[] = {logKN, logKN, logPiL, logPiS, logPiS, logPiS, logEtaL, logEtaS, logKXi, logKXi};
+  complex<double> m5 = mai[0], mp = m5, d = 4, p = sqrt(s), W = sqrt(s), s0 = m5*m5;
 
-//   matrix qcms(Channels,Channels);
-//   for(int i=0; i<Channels; i++) 
-//     for(int j=0; j<Channels; j++)
-//       if(i==j)
-// 	qcms[i][j] = (sqrt(pow(svar,2) + pow(mai[i],4) + pow(Mai[i],4) - 2*pow(mai[i],2)*pow(Mai[i],2)-2*svar*pow(mai[i],2) - 2*svar*pow(Mai[i],2)))/(2*sqrt(svar));
-//       else qcms[i][j]=0;
-//   //qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
-//   matrix imb(Channels,Channels);
-//   for(int i=0; i<Channels; i++) 
-//     for(int j=0; j<Channels; j++)
-//       if(i==j)
-// 	imb[i][j] = (1/(16*Pi*Pi))*(-1 + 2*log(mai[i]) - 2*lg[i] + ((pow(Mai[i],2) - pow(mai[i],2) + svar)/(2*svar))*log(pow((Mai[i]/mai[i]),2)) - ((4*qcms[i][i])/sqrt(svar))*atanh((2*qcms[i][i]*sqrt(svar))/(pow((mai[i] + Mai[i]),2) - svar)));
-//       else imb[i][j]=0;
-//   //imb = DiagonalMatrix[ Table[(1/(16*Pi^2))*(-1 + 2 Log[mai[[i]]] - 2 lg[[i]] + ((Mai[[i]]^2 - mai[[i]]^2 + svar)/(2*svar))*Log[(Mai[[i]]/mai[[i]])^2] - ((4*qcms[[i, i]])/Sqrt[svar])*ArcTanh[(2*qcms[[i, i]]*Sqrt[svar])/((mai[[i]] + Mai[[i]])^2 - svar)]), {i, 1, Channels}]];
-//   matrix reqcms = qcms.re();
+  matrix qcms(Channels,Channels);
+  for(int i=0; i<Channels; i++) 
+    for(int j=0; j<Channels; j++)
+      if(i==j)
+	qcms[i][j] = (sqrt(pow(svar,2) + pow(mai[i],4) + pow(Mai[i],4) - 2*pow(mai[i],2)*pow(Mai[i],2)-2*svar*pow(mai[i],2) - 2*svar*pow(Mai[i],2)))/(2*sqrt(svar));
+      else qcms[i][j]=0;
+  //qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
+  matrix imb(Channels,Channels);
+  for(int i=0; i<Channels; i++) 
+    for(int j=0; j<Channels; j++)
+      if(i==j)
+	imb[i][j] = (1/(16*Pi*Pi))*(-1 + 2*log(mai[i]) - 2*lg[i] + ((pow(Mai[i],2) - pow(mai[i],2) + svar)/(2*svar))*log(pow((Mai[i]/mai[i]),2)) - ((4*qcms[i][i])/sqrt(svar))*atanh((2*qcms[i][i]*sqrt(svar))/(pow((mai[i] + Mai[i]),2) - svar)));
+      else imb[i][j]=0;
+  //imb = DiagonalMatrix[ Table[(1/(16*Pi^2))*(-1 + 2 Log[mai[[i]]] - 2 lg[[i]] + ((Mai[[i]]^2 - mai[[i]]^2 + svar)/(2*svar))*Log[(Mai[[i]]/mai[[i]])^2] - ((4*qcms[[i, i]])/Sqrt[svar])*ArcTanh[(2*qcms[[i, i]]*Sqrt[svar])/((mai[[i]] + Mai[[i]])^2 - svar)]), {i, 1, Channels}]];
+  matrix reqcms = qcms.re();
 
-//   matrix a = (1/(4*p*p*(d - 1)))*((4*p*p*mmn*mmn - (p*p*eins + mmn*mmn - mbn*mbn)^2)*imb + (p*p*eins +  mmn*mmn - mbn*mbn)*im + (p*p*eins - mmn*mmn + mbn*mbn)*ib) - (wd4/(18*p*p))*(4*p*p*mmn*mmn - pow(p*p*eins + mmn*mmn - mbn*mbn,2) +  mmn*mmn*(p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn*(p*p*eins - mmn*mmn + mbn*mbn));
-//   matrix b = (1/(4* p*p*(d - 1)))*((d*pow(p*p*eins + mmn*mmn - mbn*mbn,2) -  4*p*p*mmn*mmn)*imb - d*(p*p*eins + mmn*mmn -  mbn*mbn)*im + (d*(3*p*p*eins + mmn*mmn - mbn*mbn) - 4*p*p*eins)*ib) - (wd4/(18*p*p))*(pow(p*p*eins + mmn*mmn - mbn*mbn,2) - 4*p*p*mmn*mmn -  mmn*mmn* (p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn* (mmn*mmn - mbn*mbn - p*p*eins));
-//   matrix G0 = Chop[mbn*imb];
-//   matrix G1 = Chop[(1/(2*p*p))*((p*p*eins - mmn*mmn + mbn*mbn)*imb + im - ib)];
-//   matrix A0 = Chop[(1/(4*p*p*(d - 1)))*(((p*p*eins - mmn*mmn + mbn*mbn)^2 - 4*p*p*mbn*mbn)*imb - (p*p*eins + mmn*mmn - mbn*mbn)*im - (p*p*eins - mmn*mmn + mbn*mbn)*ib) - (wd4/(18* p*p))*((p*p*eins - mmn*mmn + mbn*mbn)^2 - 4*p*p*mbn*mbn - mmn*mmn* (p*p*eins + mmn*mmn - mbn*mbn) - mbn*mbn* (p*p*eins - mmn*mmn + mbn*mbn))];
-//   matrix A = A0;
-//   matrix B0 = Chop[(1/(2*p*p))*mbn*((p*p*eins + mmn*mmn - mbn*mbn)*imb + ib - im)];
-//   matrix B1 =  Chop[(1/(4*p^4*(d -  1)))*(((d*(p*p*eins - mbn*mbn + mmn*mmn) -  2*p*p*eins)*(p*p*eins + mbn*mbn - mmn*mmn) + 4*p*p*mbn*mbn)*imb - (d*(mbn*mbn - mmn*mmn) + (d - 2)*p*p*eins)*im + (d*(mbn*mbn - mmn*mmn) - (d - 2)*p*p*eins)*ib) - (wd4/(18*p^4))*((mmn*mmn - mbn*mbn - p*p*eins)*(p*p*eins - mmn*mmn +  mbn*mbn) + 4*p*p*mbn*mbn - mmn*mmn* (mbn*mbn - mmn*mmn) +  mbn*mbn* (mbn*mbn - mmn*mmn) +  p*p*(mbn*mbn + mmn*mmn))];
-//   matrix Ha = (1/(2* p*p))*((p*p*eins + mmn*mmn - mbn*mbn)*a + ((1/d)*mbn*mbn)*ib - ((1/d)*mmn*mmn)*im) - (wd4/(16*p*p))*(mbn^4 - mmn^4);
-//   matrix Hb = (1/(2* p*p))*((p*p*eins + mmn*mmn - mbn*mbn)*(b - 2*a) + (p*p*eins - ((1/d)*(2*mbn*mbn)))*ib + ((1/d)*(2* mmn*mmn))*im) - (wd4/(8*p*p))*(mmn^4 - mbn^4);
-//   matrix C0 = Chop[mbn*a];
-//   matrix D0 = Chop[mbn*b];
-//   matrix C1 = Chop[a - Ha];
-//   matrix D1 = Chop[b - Hb];
-//   matrix E0 = Chop[-Ha];
-//   matrix h0s = Chop[p*p*G1 - mbn*G0 - im];
-//   matrix h1s = Chop[G0 - mbn*G1];
-
-// }
+  matrix a = (1/(4*p*p*(d - 1)))*((4*p*p*mmn*mmn - pow(p*p*eins + mmn*mmn - mbn*mbn,2))*imb + (p*p*eins +  mmn*mmn - mbn*mbn)*im + (p*p*eins - mmn*mmn + mbn*mbn)*ib) - (wd4/(18*p*p))*(4*p*p*mmn*mmn - pow(p*p*eins + mmn*mmn - mbn*mbn,2) +  mmn*mmn*(p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn*(p*p*eins - mmn*mmn + mbn*mbn));
+  matrix b = (1/(4* p*p*(d - 1)))*((d*pow(p*p*eins + mmn*mmn - mbn*mbn,2) -  4*p*p*mmn*mmn)*imb - d*(p*p*eins + mmn*mmn -  mbn*mbn)*im + (d*(3*p*p*eins + mmn*mmn - mbn*mbn) - 4*p*p*eins)*ib) - (wd4/(18*p*p))*(pow(p*p*eins + mmn*mmn - mbn*mbn,2) - 4*p*p*mmn*mmn -  mmn*mmn* (p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn* (mmn*mmn - mbn*mbn - p*p*eins));
+  matrix G0 = Chop(mbn*imb);
+  matrix G1 = Chop((1/(2*p*p))*((p*p*eins - mmn*mmn + mbn*mbn)*imb + im - ib));
+  matrix A0 = Chop((1/(4*p*p*(d - 1)))*((pow(p*p*eins - mmn*mmn + mbn*mbn,2) - 4*p*p*mbn*mbn)*imb - (p*p*eins + mmn*mmn - mbn*mbn)*im - (p*p*eins - mmn*mmn + mbn*mbn)*ib) - (wd4/(18* p*p))*(pow(p*p*eins - mmn*mmn + mbn*mbn,2) - 4*p*p*mbn*mbn - mmn*mmn* (p*p*eins + mmn*mmn - mbn*mbn) - mbn*mbn* (p*p*eins - mmn*mmn + mbn*mbn)));
+  matrix A = A0;
+  matrix B0 = Chop((1/(2*p*p))*mbn*((p*p*eins + mmn*mmn - mbn*mbn)*imb + ib - im));
+  matrix B1 =  Chop((1/(4*p*p*p*p*(d -  1)))*(((d*(p*p*eins - mbn*mbn + mmn*mmn) -  2*p*p*eins)*(p*p*eins + mbn*mbn - mmn*mmn) + 4*p*p*mbn*mbn)*imb - (d*(mbn*mbn - mmn*mmn) + (d - 2)*p*p*eins)*im + (d*(mbn*mbn - mmn*mmn) - (d - 2)*p*p*eins)*ib) - (wd4/(18*p*p*p*p))*((mmn*mmn - mbn*mbn - p*p*eins)*(p*p*eins - mmn*mmn +  mbn*mbn) + 4*p*p*mbn*mbn - mmn*mmn* (mbn*mbn - mmn*mmn) +  mbn*mbn* (mbn*mbn - mmn*mmn) +  p*p*(mbn*mbn + mmn*mmn)));
+  matrix Ha = (1/(2* p*p))*((p*p*eins + mmn*mmn - mbn*mbn)*a + ((1/d)*mbn*mbn)*ib - ((1/d)*mmn*mmn)*im) - (wd4/(16*p*p))*(pow(mbn,4) - pow(mmn,4));
+  matrix Hb = (1/(2* p*p))*((p*p*eins + mmn*mmn - mbn*mbn)*(b - 2*a) + (p*p*eins - ((1/d)*(2*mbn*mbn)))*ib + ((1/d)*(2* mmn*mmn))*im) - (wd4/(8*p*p))*(pow(mmn,4) - pow(mbn,4));
+  matrix C0 = Chop(mbn*a);
+  matrix D0 = Chop(mbn*b);
+  matrix C1 = Chop(a - Ha);
+  matrix D1 = Chop(b - Hb);
+  matrix E0 = Chop(-1*Ha);
+  matrix h0s = Chop(p*p*G1 - mbn*G0 - im);
+  matrix h1s = Chop(G0 - mbn*G1);
+  cout<<"Ha:"<<endl;
+  Ha.print();
+  cout<<"B0:"<<endl;
+  B0.print();
+}
