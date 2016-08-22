@@ -117,97 +117,97 @@ matrix spurg9matrix(Channels,Channels);
 matrix spurg10matrix(Channels,Channels);
 matrix spurg11matrix(Channels,Channels);
 //----------------------end declarations---------------------//
-// void fillthings(){
-//   if(SWITCH == 4){std::copy(Mai0x,Mai0x + 10,Mai); std::copy(mai0x,mai0x+10,mai);}//decide which set to use
+void fillthings(){
+  if(SWITCH == 4){std::copy(Mai0x,Mai0x + 10,Mai); std::copy(mai0x,mai0x+10,mai);}//decide which set to use
 
-//   for(int i=0; i<Channels; i++) for(int j=0; j<Channels; j++){
-//       null[i][j]=0; im[i][j]=0; ib[i][j]=0;
-//       if(i==j){
-// 	eins[i][j]=1;
-// 	if(std::abs(mai[i])>=(1*10^(-10))){ mbn[i][j]=mai[i];
-// 	}else{ mbn[i][j]=0;}
-// 	if(std::abs(Mai[i])>=(1*10^(-10))){ mmn[i][j]=Mai[i];
-// 	}else{ mmn[i][j]=0;}
-// 	if((i>=0 && i<2)||(i>=8 && i<10)){ fmes[i][j]=fmesk;
-// 	}else if(i>=2 && i<6){ fmes[i][j]=fmespi;
-// 	}else if(i>=6 && i<8){ fmes[i][j]=fmeseta;}
-//       }else{
-// 	mbn[i][j]=0; mmn[i][j]=0; fmes[i][j]=0; eins[i][j]=0;
-//       }
-//     }
+  for(int i=0; i<Channels; i++) for(int j=0; j<Channels; j++){
+      null[i][j]=0; im[i][j]=0; ib[i][j]=0;
+      if(i==j){
+	eins[i][j]=1;
+	if(std::abs(mai[i])>=(1*10^(-10))){ mbn[i][j]=mai[i];
+	}else{ mbn[i][j]=0;}
+	if(std::abs(Mai[i])>=(1*10^(-10))){ mmn[i][j]=Mai[i];
+	}else{ mmn[i][j]=0;}
+	if((i>=0 && i<2)||(i>=8 && i<10)){ fmes[i][j]=fmesk;
+	}else if(i>=2 && i<6){ fmes[i][j]=fmespi;
+	}else if(i>=6 && i<8){ fmes[i][j]=fmeseta;}
+      }else{
+	mbn[i][j]=0; mmn[i][j]=0; fmes[i][j]=0; eins[i][j]=0;
+      }
+    }
 
-//   for(int i=0; i<Mquark.GetNrows(); i++) for(int j=0; j<Mquark.GetNcols(); j++){
-//       if(i==j){
-// 	if(i==0) Mquark[i][j] = mu;
-// 	if(i==1) Mquark[i][j] = md;
-// 	if(i==2) Mquark[i][j] = ms;
-//       }else Mquark[i][j]=0;
-//     }
+  for(int i=0; i<Mquark.GetNrows(); i++) for(int j=0; j<Mquark.GetNcols(); j++){
+      if(i==j){
+	if(i==0) Mquark[i][j] = mu;
+	if(i==1) Mquark[i][j] = md;
+	if(i==2) Mquark[i][j] = ms;
+      }else Mquark[i][j]=0;
+    }
 
-//   l1[0][0]=(1/sqrt(2)); l1[0][1]=0;            l1[0][2]=0;
-//   l1[1][0]=0;           l1[1][1]=(-1/sqrt(2)); l1[1][2]=0;
-//   l1[2][0]=0;           l1[2][1]=0;            l1[2][2]=0;
+  l1[0][0]=(1/sqrt(2)); l1[0][1]=0;            l1[0][2]=0;
+  l1[1][0]=0;           l1[1][1]=(-1/sqrt(2)); l1[1][2]=0;
+  l1[2][0]=0;           l1[2][1]=0;            l1[2][2]=0;
 
-//   l2[0][0]=(1/sqrt(6)); l2[0][1]=0;            l2[0][2]=0;
-//   l2[1][0]=0;           l2[1][1]=(1/sqrt(6));  l2[1][2]=0;
-//   l2[2][0]=0;           l2[2][1]=0;            l2[2][2]=(-2/sqrt(6));
+  l2[0][0]=(1/sqrt(6)); l2[0][1]=0;            l2[0][2]=0;
+  l2[1][0]=0;           l2[1][1]=(1/sqrt(6));  l2[1][2]=0;
+  l2[2][0]=0;           l2[2][1]=0;            l2[2][2]=(-2/sqrt(6));
 
-//   l3[0][0]=0;           l3[0][1]=1;            l3[0][2]=0;
-//   l3[1][0]=0;           l3[1][1]=0;            l3[1][2]=0;
-//   l3[2][0]=0;           l3[2][1]=0;            l3[2][2]=0;
+  l3[0][0]=0;           l3[0][1]=1;            l3[0][2]=0;
+  l3[1][0]=0;           l3[1][1]=0;            l3[1][2]=0;
+  l3[2][0]=0;           l3[2][1]=0;            l3[2][2]=0;
 
-//   l4[0][0]=0;           l4[0][1]=0;            l4[0][2]=0;
-//   l4[1][0]=1;           l4[1][1]=0;            l4[1][2]=0;
-//   l4[2][0]=0;           l4[2][1]=0;            l4[2][2]=0;
+  l4[0][0]=0;           l4[0][1]=0;            l4[0][2]=0;
+  l4[1][0]=1;           l4[1][1]=0;            l4[1][2]=0;
+  l4[2][0]=0;           l4[2][1]=0;            l4[2][2]=0;
 
-//   l5[0][0]=0;           l5[0][1]=0;            l5[0][2]=1;
-//   l5[1][0]=0;           l5[1][1]=0;            l5[1][2]=0;
-//   l5[2][0]=0;           l5[2][1]=0;            l5[2][2]=0;
+  l5[0][0]=0;           l5[0][1]=0;            l5[0][2]=1;
+  l5[1][0]=0;           l5[1][1]=0;            l5[1][2]=0;
+  l5[2][0]=0;           l5[2][1]=0;            l5[2][2]=0;
 
-//   l6[0][0]=0;           l6[0][1]=0;            l6[0][2]=0;
-//   l6[1][0]=0;           l6[1][1]=0;            l6[1][2]=1;
-//   l6[2][0]=0;           l6[2][1]=0;            l6[2][2]=0;
+  l6[0][0]=0;           l6[0][1]=0;            l6[0][2]=0;
+  l6[1][0]=0;           l6[1][1]=0;            l6[1][2]=1;
+  l6[2][0]=0;           l6[2][1]=0;            l6[2][2]=0;
 
-//   l7[0][0]=0;           l7[0][1]=0;            l7[0][2]=0;
-//   l7[1][0]=0;           l7[1][1]=0;            l7[1][2]=0;
-//   l7[2][0]=0;           l7[2][1]=1;            l7[2][2]=0;
+  l7[0][0]=0;           l7[0][1]=0;            l7[0][2]=0;
+  l7[1][0]=0;           l7[1][1]=0;            l7[1][2]=0;
+  l7[2][0]=0;           l7[2][1]=1;            l7[2][2]=0;
 
-//   l8[0][0]=0;           l8[0][1]=0;            l8[0][2]=0;
-//   l8[1][0]=0;           l8[1][1]=0;            l8[1][2]=0;
-//   l8[2][0]=1;           l8[2][1]=0;            l8[2][2]=0;
-//   fm = {{"Pi0",l1},{"Pi0",l1},{"Piplus",l3},{"Eta",l2},{"Kplus",l5},{"K0",l6},{"Kbar0",l7},{"Kminus",l8},{"Piminus",l4}};
-//   fb = {{"proton",l5},{"neutron",l6},{"lambda",l2},{"sigma0",l1},{"sigmaplus",l3},{"sigmaminus",l4},{"cascademinus",l8},{"cascadenull",l7}};
+  l8[0][0]=0;           l8[0][1]=0;            l8[0][2]=0;
+  l8[1][0]=0;           l8[1][1]=0;            l8[1][2]=0;
+  l8[2][0]=1;           l8[2][1]=0;            l8[2][2]=0;
+  fm = {{"Pi0",l1},{"Pi0",l1},{"Piplus",l3},{"Eta",l2},{"Kplus",l5},{"K0",l6},{"Kbar0",l7},{"Kminus",l8},{"Piminus",l4}};
+  fb = {{"proton",l5},{"neutron",l6},{"lambda",l2},{"sigma0",l1},{"sigmaplus",l3},{"sigmaminus",l4},{"cascademinus",l8},{"cascadenull",l7}};
 
-//   for(int i=0; i<Channels; i++)
-//     for(int j=0; j<Channels; j++)
-//       spurWTmatrix[i][j] = spurWT(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//   spurn = spurWTmatrix;
+  for(int i=0; i<Channels; i++)
+    for(int j=0; j<Channels; j++)
+      spurWTmatrix[i][j] = spurWT(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+  spurn = spurWTmatrix;
   
-//   g = fmes.Invert()*spurn*fmes.Invert();
-//   g *= (-1/4);
-//   for(int i=0; i<Channels; i++)
-//     for(int j=0; j<Channels; j++)
-//       if(std::abs(g[i][j])<(1*10^(-10))) g[i][j]=0;
+  g = fmes.inverse()*spurn*fmes.inverse();
+  g *= (-1/4);
+  for(int i=0; i<Channels; i++)
+    for(int j=0; j<Channels; j++)
+      if(std::abs(g[i][j])<(1*10^(-10))) g[i][j]=0;
 
 
-//   for(int i=0; i<Channels; i++)
-//     for(int j=0; j<Channels; j++){
-//       spurg1matrix[i][j] = spurg1(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg2matrix[i][j] = spurg2(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg3matrix[i][j] = spurg3(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg4matrix[i][j] = spurg4(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg5matrix[i][j] = spurg5(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg6matrix[i][j] = spurg6(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurg7matrix[i][j] = spurg7(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
-//       spurgnullmatrix[i][j] = spurgnull(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
-//       spurgDmatrix[i][j] = spurgD(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
-//       spurgFmatrix[i][j] = spurgF(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
-//     }
-//   spurg8matrix  = spurg1matrix;
-//   spurg9matrix  = spurg2matrix;
-//   spurg10matrix = spurg3matrix;
-//   spurg11matrix = spurg4matrix;
-// }
+  for(int i=0; i<Channels; i++)
+    for(int j=0; j<Channels; j++){
+      spurg1matrix[i][j] = spurg1(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg2matrix[i][j] = spurg2(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg3matrix[i][j] = spurg3(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg4matrix[i][j] = spurg4(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg5matrix[i][j] = spurg5(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg6matrix[i][j] = spurg6(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurg7matrix[i][j] = spurg7(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
+      spurgnullmatrix[i][j] = spurgnull(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
+      spurgDmatrix[i][j] = spurgD(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
+      spurgFmatrix[i][j] = spurgF(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]],Mquark);
+    }
+  spurg8matrix  = spurg1matrix;
+  spurg9matrix  = spurg2matrix;
+  spurg10matrix = spurg3matrix;
+  spurg11matrix = spurg4matrix;
+}
 // void BONN(double svar, double logKN, double logPiL, double logPiS, double logEtaL, double logEtaS, double logKXi, double b1var, double b2var, double b3var, double b4var, double b5var, double b6var, double b7var, double b8var, double b9var, double b10var, double b11var, double bnullvar, double bDvar, double bFvar){
 //   fillthings();
 //   double s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
