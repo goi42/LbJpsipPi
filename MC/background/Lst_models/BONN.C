@@ -14,6 +14,9 @@ matrix Transpose(matrix in){
 matrix Chop(matrix in){
   return in.chop();
 }
+matrix Inverse(matrix in){
+  return in.inverse();
+}
 //----------end matrix functions----------------------------//
 //----------declarations------------------------------------//
 int SWITCH=3; //3 for Fig. 3 4 for Fig. 4
@@ -119,6 +122,7 @@ matrix spurg8matrix(Channels,Channels);
 matrix spurg9matrix(Channels,Channels);
 matrix spurg10matrix(Channels,Channels);
 matrix spurg11matrix(Channels,Channels);
+int m0=1;
 //----------------------end declarations---------------------//
 void fillthings(){
   if(SWITCH == 4){std::copy(Mai0x,Mai0x + 10,Mai); std::copy(mai0x,mai0x+10,mai);}//decide which set to use
@@ -247,8 +251,24 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix E0 = Chop(-1*Ha);
   matrix h0s = Chop(p*p*G1 - mbn*G0 - im);
   matrix h1s = Chop(G0 - mbn*G1);
-  cout<<"Ha:"<<endl;
-  Ha.print();
-  cout<<"B0:"<<endl;
-  B0.print();
+
+  matrix G1matrix = -1*Chop( Inverse(fmes)*(-2*b1*spurg1matrix - 2*b2*spurg2matrix - 2*b3*spurg3matrix - 2*b4*spurg4matrix)*Inverse(fmes));
+  matrix G2matrix = Chop(Inverse( fmes)*(2*b5*spurg5matrix + 2*b6*spurg6matrix + 2*b7*spurg7matrix)*Inverse(fmes));
+  matrix G3matrix = -1*Chop((1/m0)*Inverse(fmes)*(-b8*spurg8matrix - b9*spurg9matrix -b10*spurg10matrix - b11*spurg11matrix)*Inverse(fmes));
+  matrix G0matrix = Chop(Inverse( fmes)*(4*bnull*spurgnullmatrix + bD*spurgDmatrix + bF*spurgFmatrix)*Inverse(fmes));
+  cout<<"G1matrix:"<<endl;
+  G1matrix.print();
+
+  matrix pmalqm = Chop((1/2)*(s*eins - mbn*mbn + mmn*mmn));
+  matrix qmalpm = pmalqm;
+  matrix V1p = 2*g - 2*(mbn*G2matrix + G2matrix*mbn) + G3matrix*pmalqm + qmalpm*G3matrix;
+  matrix V11 = -mbn*g - g*mbn + G0matrix + 2*(s*G2matrix + mbn*G2matrix*mbn) - mbn*G3matrix*pmalqm - qmalpm*G3matrix*mbn;
+  matrix V21 = G1matrix - 2*G2matrix;
+  matrix vpt2 = -C1*V21;
+  matrix v1t2 = eins - C0*V21;
+  matrix T2on1 = V21*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
+  matrix T2onp = -V21*Inverse(v1t2)*vpt2*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
+  cout<<"T2onp:"<<endl;
+  T2onp.print();
+
 }
