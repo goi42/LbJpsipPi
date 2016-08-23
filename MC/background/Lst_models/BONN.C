@@ -301,7 +301,7 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
     for(int j=0; j<Channels; j++)
       t[i][j] = fnullpluson0[i][j]*(-4*Pi*sqrt(s)/sqrt(mai[i])/sqrt(mai[j]));
 }
-void invariantmassdistribution(){
+void invariantmassdistribution_original(){
   double MLb = 5.619;
   double MJpsi = 3.100;
   int NN = 501;
@@ -330,4 +330,18 @@ void invariantmassdistribution(){
        NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[5] +maix[5],2))*(Wx*Wx - pow(Maix[5] - maix[5],2))))/(16*MLb*MLb*MLb*Wx)
        *pow(abs((h4 +h4*Gvec[3][0]*t[3][5] + h4*Gvec[4][0]*t[4][5] +h4*Gvec[5][0]*t[5][5] + h7*Gvec[6][0]*t[6][5] +h10*Gvec[8][0]*t[8][5] + h10*Gvec[9][0]*t[9][5] +h1*Gvec[0][0]*t[0][5] + h1*Gvec[1][0]*t[1][5])),2)};
   }
+}
+double invariantmassdistribution_sig0pi0(double Wx){//input mass in GeV
+  double MLb = 5.619;
+  double MJpsi = 3.100;
+  double NORMALIZATION = 10^5;
+  double h1 = 1, h4 = 0, h7 = -sqrt(2)/3, h10 = 0;
+  double maix[10]; double Maix[10];
+  std::copy(mai,mai + 10,maix); std::copy(Mai,Mai + 10,Maix);
+
+  // Call FSI from Bonn model
+  BONN(Wx*Wx, PAR[0], PAR[1], PAR[2], PAR[3], PAR[4], PAR[5], PAR[6], PAR[7], PAR[8], PAR[9], PAR[10], PAR[11], PAR[12], PAR[13], PAR[14], PAR[15], PAR[16], PAR[17], PAR[18], PAR[19]);
+  return NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[3] +maix[3],2))*(Wx*Wx - pow(Maix[3] - maix[3],2))))/(16*MLb*MLb*MLb*Wx)
+    *pow(abs((h4 +h4*Gvec[3][0]*t[3][3] + h4*Gvec[4][0]*t[4][3] +h4*Gvec[5][0]*t[5][3] + h7*Gvec[6][0]*t[6][3] +h10*Gvec[8][0]*t[8][3] + h10*Gvec[9][0]*t[9][3] +h1*Gvec[0][0]*t[0][3] + h1*Gvec[1][0]*t[1][3])),2);//value of Bonn model in arb. units.
+
 }
