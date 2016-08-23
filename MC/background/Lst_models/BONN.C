@@ -312,7 +312,7 @@ void invariantmassdistribution_original(){
   std::copy(mai,mai + 10,maix); std::copy(Mai,Mai + 10,Maix);
 
   for(int i=0; i<NN; i++){
-    complex<double> Wx = complex<double>(1.34 - 0.26/NN, 0.26/NN); //1.34 + 0.26 (i - 1)/NN;
+    complex<double> Wx = complex<double>(1.34 + 0.26(i-1)/NN, 0); //1.34 + 0.26 (i - 1)/NN;
     // Call FSI from Bonn model
     BONN(Wx*Wx, PAR[0], PAR[1], PAR[2], PAR[3], PAR[4], PAR[5], PAR[6], PAR[7], PAR[8], PAR[9], PAR[10], PAR[11], PAR[12], PAR[13], PAR[14], PAR[15], PAR[16], PAR[17], PAR[18], PAR[19]);
     // Eq. 2,3
