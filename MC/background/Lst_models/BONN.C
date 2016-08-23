@@ -218,6 +218,8 @@ void fillthings(){
   spurg10matrix = spurg3matrix;
   spurg11matrix = spurg4matrix;
 }
+matrix Gvec; //set by BONN()
+matrix t(Channels,Channels); //set by BONN()
 void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, complex<double> logPiS, complex<double> logEtaL, complex<double> logEtaS, complex<double> logKXi, complex<double> b1var, complex<double> b2var, complex<double> b3var, complex<double> b4var, complex<double> b5var, complex<double> b6var, complex<double> b7var, complex<double> b8var, complex<double> b9var, complex<double> b10var, complex<double> b11var, complex<double> bnullvar, complex<double> bDvar, complex<double> bFvar){
   fillthings();
   complex<double> s = svar, bnull = bnullvar, bD = bDvar, bF = bFvar, b1 = -b1var, b2 = -b2var, b3 = -b3var, b4 = -b4var, b5 = b5var, b6 = b6var, b7 = b7var, b8 = -b8var, b9 = -b9var, b10 = -b10var, b11 = -b11var;
@@ -293,8 +295,7 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix maimatrix(sizeof(mai)/sizeof(mai[0]),1);
   for(unsigned int i=0; i<(sizeof(mai)/sizeof(mai[0])); i++)
     maimatrix[i][0] = mai[i];
-  matrix Gvec = 2*imb*maimatrix;
-  matrix t(Channels,Channels);
+  Gvec = 2*imb*maimatrix;
   //t = Table[fnullpluson0[[i, j]]*(-4 \[Pi] Sqrt[s]/Sqrt[mai[[i]]]/Sqrt[mai[[j]]]), {i, 1, Channels}, {j, 1, Channels}];
   for(int i=0; i<Channels; i++)
     for(int j=0; j<Channels; j++)
@@ -315,18 +316,18 @@ void invariantmassdistribution(){
     // Call FSI from Bonn model
     BONN(Wx*Wx, PAR[0], PAR[1], PAR[2], PAR[3], PAR[4], PAR[5], PAR[6], PAR[7], PAR[8], PAR[9], PAR[10], PAR[11], PAR[12], PAR[13], PAR[14], PAR[15], PAR[16], PAR[17], PAR[18], PAR[19]);
     // Eq. 2,3
-    RES[i][0] =
+    RES[i] =
       {Wx,
        NORMALIZATION*1/pow(2*Pi,3)*Re(sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi - Wx,2)))*sqrt((Wx*Wx - pow(Maix[0] + maix[0],2))*(Wx*Wx - pow(Maix[0] -maix[0],2))))/(16*MLb*MLb*MLb*Wx)
-       *pow(abs((h1 + h1*Gvec[0]*t[0][0] + h1*Gvec[1]*t[1][0] + h4*Gvec[3]*t[3][0] + h4*Gvec[4]*t[4][0] + h4*Gvec[5]*t[5][0] + h7*Gvec[6]*t[6][0] + h10*Gvec[8]*t[8][0] + h10*Gvec[9]*t[9][0])),2),
+       *pow(abs((h1 + h1*Gvec[0][0]*t[0][0] + h1*Gvec[1][0]*t[1][0] + h4*Gvec[3][0]*t[3][0] + h4*Gvec[4][0]*t[4][0] + h4*Gvec[5][0]*t[5][0] + h7*Gvec[6][0]*t[6][0] + h10*Gvec[8][0]*t[8][0] + h10*Gvec[9][0]*t[9][0])),2),
        NORMALIZATION*1/pow(2*Pi,3)*Re(sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi - Wx,2)))*sqrt((Wx*Wx - pow(Maix[1] + maix[1],2))*(Wx*Wx - pow(Maix[1] -maix[1],2))))/(16*MLb*MLb*MLb*Wx)
-       *pow(abs((h1 + h1*Gvec[0]*t[0][1] + h1*Gvec[1]*t[1][1] +h4*Gvec[3]*t[3][1] + h4*Gvec[4]*t[4][1] +h4*Gvec[5]*t[5][1] + h7*Gvec[6]*t[6][1] +h10*Gvec[8]*t[8][1] + h10*Gvec[9]*t[9][1])),2),
+       *pow(abs((h1 + h1*Gvec[0][0]*t[0][1] + h1*Gvec[1][0]*t[1][1] +h4*Gvec[3][0]*t[3][1] + h4*Gvec[4][0]*t[4][1] +h4*Gvec[5][0]*t[5][1] + h7*Gvec[6][0]*t[6][1] +h10*Gvec[8][0]*t[8][1] + h10*Gvec[9][0]*t[9][1])),2),
        0,
        NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[3] +maix[3],2))*(Wx*Wx - pow(Maix[3] - maix[3],2))))/(16*MLb*MLb*MLb*Wx)
-       *pow(abs((h4 +h4*Gvec[3]*t[3][3] + h4*Gvec[4]*t[4][3] +h4*Gvec[5]*t[5][3] + h7*Gvec[6]*t[6][3] +h10*Gvec[8]*t[8][3] + h10*Gvec[9]*t[9][3] +h1*Gvec[0]*t[0][3] + h1*Gvec[1]*t[1][3])),2),
-       NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[4] +maix[4],2))*(Wx*Wx - pow(Maix[4] - maix[4],2))))/(16 MLb*MLb*MLb*Wx)
-       *pow(abs((h4 +h4*Gvec[3]*t[3][4] + h4*Gvec[4]*t[4][4] +h4*Gvec[5]*t[5][4] + h7*Gvec[6]*t[6][4] +h10*Gvec[8]*t[8][4] + h10*Gvec[9]*t[9][4] +h1*Gvec[0]*t[0][4] + h1*Gvec[1]*t[1][4])),2),
+       *pow(abs((h4 +h4*Gvec[3][0]*t[3][3] + h4*Gvec[4][0]*t[4][3] +h4*Gvec[5][0]*t[5][3] + h7*Gvec[6][0]*t[6][3] +h10*Gvec[8][0]*t[8][3] + h10*Gvec[9][0]*t[9][3] +h1*Gvec[0][0]*t[0][3] + h1*Gvec[1][0]*t[1][3])),2),
+       NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[4] +maix[4],2))*(Wx*Wx - pow(Maix[4] - maix[4],2))))/(16*MLb*MLb*MLb*Wx)
+       *pow(abs((h4 +h4*Gvec[3][0]*t[3][4] + h4*Gvec[4][0]*t[4][4] +h4*Gvec[5][0]*t[5][4] + h7*Gvec[6][0]*t[6][4] +h10*Gvec[8][0]*t[8][4] + h10*Gvec[9][0]*t[9][4] +h1*Gvec[0][0]*t[0][4] + h1*Gvec[1][0]*t[1][4])),2),
        NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[5] +maix[5],2))*(Wx*Wx - pow(Maix[5] - maix[5],2))))/(16*MLb*MLb*MLb*Wx)
-       *pow(abs((h4 +h4*Gvec[3]*t[3][5] + h4*Gvec[4]*t[4][5] +h4*Gvec[5]*t[5][5] + h7*Gvec[6]*t[6][5] +h10*Gvec[8]*t[8][5] + h10*Gvec[9]*t[9][5] +h1*Gvec[0]*t[0][5] + h1*Gvec[1]*t[1][5])),2)};
+       *pow(abs((h4 +h4*Gvec[3][0]*t[3][5] + h4*Gvec[4][0]*t[4][5] +h4*Gvec[5][0]*t[5][5] + h7*Gvec[6][0]*t[6][5] +h10*Gvec[8][0]*t[8][5] + h10*Gvec[9][0]*t[9][5] +h1*Gvec[0][0]*t[0][5] + h1*Gvec[1][0]*t[1][5])),2)};
   }
 }
