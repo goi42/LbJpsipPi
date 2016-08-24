@@ -148,7 +148,6 @@ void fillthings(){
     }
   mbn=Chop(mbn);
   mmn=Chop(mmn);
-
   for(int i=0; i<Mquark.GetNrows(); i++) for(int j=0; j<Mquark.GetNcols(); j++){
       if(i==j){
 	if(i==0) Mquark[i][j] = mu;
@@ -156,7 +155,6 @@ void fillthings(){
 	if(i==2) Mquark[i][j] = ms;
       }else Mquark[i][j]=0;
     }
-
   l1[0][0]=(1/sqrt(2)); l1[0][1]=0;            l1[0][2]=0;
   l1[1][0]=0;           l1[1][1]=(-1/sqrt(2)); l1[1][2]=0;
   l1[2][0]=0;           l1[2][1]=0;            l1[2][2]=0;
@@ -199,7 +197,6 @@ void fillthings(){
   g = fmes.inverse()*spurn*fmes.inverse();
   g *= (-0.25);
   g = Chop(g);
-
   for(int i=0; i<Channels; i++)
     for(int j=0; j<Channels; j++){
       spurg1matrix[i][j] = spurg1(fb[blist[i]],fm[mlist[i]],fm[mlist[j]],fb[blist[j]]);
@@ -230,18 +227,18 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   for(int i=0; i<Channels; i++) 
     for(int j=0; j<Channels; j++)
       if(i==j)
-	qcms[i][j] = (sqrt(pow(svar,2) + pow(mai[i],4) + pow(Mai[i],4) - 2*pow(mai[i],2)*pow(Mai[i],2)-2*svar*pow(mai[i],2) - 2*svar*pow(Mai[i],2)))/(2*sqrt(svar));
+	qcms[i][j] = (sqrt((pow(svar,2) + pow(mai[i],4) + pow(Mai[i],4)) + ( - 2*pow(mai[i],2)*pow(Mai[i],2)-2*svar*pow(mai[i],2) - 2*svar*pow(Mai[i],2))))/(2*sqrt(svar));//extra parentheses in numerator because of weirdness with order of operations--don't understand why it goes wrong
       else qcms[i][j]=0;
   //qcms = DiagonalMatrix[Table[(Sqrt[ svar^2 + mai[[i]]^4 + Mai[[i]]^4 - 2*mai[[i]]^2*Mai[[i]]^2 -2*svar*mai[[i]]^2 - 2*svar*Mai[[i]]^2])/(2*Sqrt[svar]), {i, 1,Channels}]];
   matrix imb(Channels,Channels);
   for(int i=0; i<Channels; i++) 
     for(int j=0; j<Channels; j++)
       if(i==j)
-	imb[i][j] = (1/(16*Pi*Pi))*(-1 + 2*log(mai[i]) - 2*lg[i] + ((pow(Mai[i],2) - pow(mai[i],2) + svar)/(2*svar))*log(pow((Mai[i]/mai[i]),2)) - ((4*qcms[i][i])/sqrt(svar))*atanh((2*qcms[i][i]*sqrt(svar))/(pow((mai[i] + Mai[i]),2) - svar)));
+	imb[i][j] = (1/(16*Pi*Pi))*(-1 + 2*log(mai[i]) - 2*lg[i] + ((pow(Mai[i],2) - pow(mai[i],2) + svar)/(2*svar))*log(pow((Mai[i]/mai[i]),2)) - ((4*qcms[i][i])/sqrt(svar))*ArcTanh((2*qcms[i][i]*sqrt(svar))/(pow((mai[i] + Mai[i]),2) - svar)));
       else imb[i][j]=0;
   //imb = DiagonalMatrix[ Table[(1/(16*Pi^2))*(-1 + 2 Log[mai[[i]]] - 2 lg[[i]] + ((Mai[[i]]^2 - mai[[i]]^2 + svar)/(2*svar))*Log[(Mai[[i]]/mai[[i]])^2] - ((4*qcms[[i, i]])/Sqrt[svar])*ArcTanh[(2*qcms[[i, i]]*Sqrt[svar])/((mai[[i]] + Mai[[i]])^2 - svar)]), {i, 1, Channels}]];
   matrix reqcms = qcms.re();
-
+  
   matrix a = (1/(4*p*p*(d - 1)))*((4*p*p*mmn*mmn - pow(p*p*eins + mmn*mmn - mbn*mbn,2))*imb + (p*p*eins +  mmn*mmn - mbn*mbn)*im + (p*p*eins - mmn*mmn + mbn*mbn)*ib) - (wd4/(18*p*p))*(4*p*p*mmn*mmn - pow(p*p*eins + mmn*mmn - mbn*mbn,2) +  mmn*mmn*(p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn*(p*p*eins - mmn*mmn + mbn*mbn));
   matrix b = (1/(4* p*p*(d - 1)))*((d*pow(p*p*eins + mmn*mmn - mbn*mbn,2) -  4*p*p*mmn*mmn)*imb - d*(p*p*eins + mmn*mmn -  mbn*mbn)*im + (d*(3*p*p*eins + mmn*mmn - mbn*mbn) - 4*p*p*eins)*ib) - (wd4/(18*p*p))*(pow(p*p*eins + mmn*mmn - mbn*mbn,2) - 4*p*p*mmn*mmn -  mmn*mmn* (p*p*eins + mmn*mmn - mbn*mbn) +  mbn*mbn* (mmn*mmn - mbn*mbn - p*p*eins));
   matrix G0 = Chop(mbn*imb);
@@ -259,12 +256,12 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix E0 = Chop(-1*Ha);
   matrix h0s = Chop(p*p*G1 - mbn*G0 - im);
   matrix h1s = Chop(G0 - mbn*G1);
-
+  
   matrix G1matrix = -1*Chop( Inverse(fmes)*(-2*b1*spurg1matrix - 2*b2*spurg2matrix - 2*b3*spurg3matrix - 2*b4*spurg4matrix)*Inverse(fmes));
   matrix G2matrix = Chop(Inverse( fmes)*(2*b5*spurg5matrix + 2*b6*spurg6matrix + 2*b7*spurg7matrix)*Inverse(fmes));
   matrix G3matrix = -1*Chop((1/m0)*Inverse(fmes)*(-b8*spurg8matrix - b9*spurg9matrix -b10*spurg10matrix - b11*spurg11matrix)*Inverse(fmes));
   matrix G0matrix = Chop(Inverse( fmes)*(4*bnull*spurgnullmatrix + bD*spurgDmatrix + bF*spurgFmatrix)*Inverse(fmes));
-
+  
   matrix pmalqm = Chop(0.5*(s*eins - mbn*mbn + mmn*mmn));
   matrix qmalpm = pmalqm;
   matrix V1p = 2*g - 2*(mbn*G2matrix + G2matrix*mbn) + G3matrix*pmalqm + qmalpm*G3matrix;
@@ -274,7 +271,7 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix v1t2 = eins - C0*V21;
   matrix T2on1 = V21*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
   matrix T2onp = -V21*Inverse(v1t2)*vpt2*Inverse(v1t2 - s*vpt2*Inverse(v1t2)*vpt2);
-
+  
   matrix vpt1 = -G0*V1p - G1*V11 - A0*V21 - B1*V21*pmalqm;
   matrix v1t1 = eins - G0*V11 - s*G1*V1p + A0*V21*mbn - B0*V21*pmalqm;
   matrix inv1t1 = Inverse(v1t1 - s*vpt1*Inverse(v1t1)*vpt1);
@@ -283,7 +280,7 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix potpt1 = V1p + T2on1*A*V11 + (2*qmalpm - s*eins)*T2onp*A*V1p - mbn*(T2on1*A*V1p - T2onp*A*V11) + qmalpm*((T2on1*B1 + T2onp*B0)*V11 + (T2on1*B0 +s*T2onp*B1)*V1p) + (1/s)*qmalpm*(T2on1*D1 + T2onp*D0)*V21*pmalqm + (T2on1 +mbn*T2onp)*E0*V21*pmalqm + qmalpm*(T2on1*E0*V21 - T2onp*E0*V21*mbn);
   matrix T1on1 = pot1t1*inv1t1 + s*potpt1*invpt1;
   matrix T1onp = pot1t1*invpt1 + potpt1*inv1t1;
-
+  
   matrix qnullcms = sqrt(qcms*qcms + mmn*mmn);
   // T0ON = T1on1 + qnullcms*T2on1*qnullcms - z*qcms*T2on1*qcms;
   // T1ON = T1onp + qnullcms*T2onp*qnullcms - z*qcms*T2onp*qcms;
@@ -291,7 +288,7 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   matrix T1ON_0 = T1onp + qnullcms*T2onp*qnullcms - 0*qcms*T2onp*qcms;//T1On with z->0
 
   matrix Ecms = sqrt(mbn*mbn + qcms*qcms);
-  matrix fnullpluson0 = Chop(-(1/(16*Pi*sqrt(s)))*(sqrt(Ecms + mbn)*(2*(T0ON_0 + p*T1ON_0) )*sqrt(Ecms + mbn) +sqrt(Ecms - mbn)*(((double)2/(double)3)*(qcms*T2on1*qcms + p*qcms*T2onp*qcms)/* Coefficient(-T0ON + p*T1ON, z)*/)*sqrt(Ecms - mbn)));
+  matrix fnullpluson0 = Chop(-(1/(16*Pi*sqrt(s)))*(sqrt(Ecms + mbn)*(2*(T0ON_0 + p*T1ON_0) )*sqrt(Ecms + mbn) +sqrt(Ecms - mbn)*(((double)2/(double)3)*(qcms*T2on1*qcms - p*qcms*T2onp*qcms)/* Coefficient(-T0ON + p*T1ON, z)*/)*sqrt(Ecms - mbn)));
   matrix maimatrix(sizeof(mai)/sizeof(mai[0]),1);
   for(unsigned int i=0; i<(sizeof(mai)/sizeof(mai[0])); i++)
     maimatrix[i][0] = mai[i];
@@ -300,6 +297,8 @@ void BONN(complex<double> svar, complex<double> logKN, complex<double> logPiL, c
   for(int i=0; i<Channels; i++)
     for(int j=0; j<Channels; j++)
       t[i][j] = fnullpluson0[i][j]*(-4*Pi*sqrt(s)/sqrt(mai[i])/sqrt(mai[j]));
+  cout<<"t:"<<endl;
+  t.print();
 }
 void invariantmassdistribution_original(){
   double MLb = 5.619;
@@ -312,7 +311,7 @@ void invariantmassdistribution_original(){
   std::copy(mai,mai + 10,maix); std::copy(Mai,Mai + 10,Maix);
 
   for(int i=0; i<NN; i++){
-    complex<double> Wx = complex<double>(1.34 + 0.26(i-1)/NN, 0); //1.34 + 0.26 (i - 1)/NN;
+    complex<double> Wx = complex<double>(1.34 + 0.26*(i-1)/NN, 0); //1.34 + 0.26 (i - 1)/NN;
     // Call FSI from Bonn model
     BONN(Wx*Wx, PAR[0], PAR[1], PAR[2], PAR[3], PAR[4], PAR[5], PAR[6], PAR[7], PAR[8], PAR[9], PAR[10], PAR[11], PAR[12], PAR[13], PAR[14], PAR[15], PAR[16], PAR[17], PAR[18], PAR[19]);
     // Eq. 2,3
@@ -341,6 +340,10 @@ double invariantmassdistribution_sig0pi0(double Wx){//input mass in GeV
 
   // Call FSI from Bonn model
   BONN(Wx*Wx, PAR[0], PAR[1], PAR[2], PAR[3], PAR[4], PAR[5], PAR[6], PAR[7], PAR[8], PAR[9], PAR[10], PAR[11], PAR[12], PAR[13], PAR[14], PAR[15], PAR[16], PAR[17], PAR[18], PAR[19]);
+  cout<<"Gvec:"<<endl;
+  Gvec.print();
+  cout<<"t:"<<endl;
+  t.print();
   return NORMALIZATION*1/pow(2*Pi,3)*Re( sqrt((MLb*MLb - pow(MJpsi + Wx,2))*(MLb*MLb - pow(MJpsi -Wx,2)))*sqrt((Wx*Wx - pow(Maix[3] +maix[3],2))*(Wx*Wx - pow(Maix[3] - maix[3],2))))/(16*MLb*MLb*MLb*Wx)
     *pow(abs((h4 +h4*Gvec[3][0]*t[3][3] + h4*Gvec[4][0]*t[4][3] +h4*Gvec[5][0]*t[5][3] + h7*Gvec[6][0]*t[6][3] +h10*Gvec[8][0]*t[8][3] + h10*Gvec[9][0]*t[9][3] +h1*Gvec[0][0]*t[0][3] + h1*Gvec[1][0]*t[1][3])),2);//value of Bonn model in arb. units.
 
