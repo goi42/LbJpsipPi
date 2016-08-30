@@ -6,6 +6,8 @@ It loops over files, then branches, then cuts, assigning branches and cuts in ea
 of these loops, and plotting the cuts as they come.
 Each branch gets its own canvas.
 
+Specify "tree" as the runmode to get root file output; include "bron" to keep all the branches in the output file. Specify "hist" to make histograms.
+
 MAKE SURE TO DOUBLE CHECK THE OUTPUT FILE NAMES 
 */
 // Include files
@@ -36,6 +38,14 @@ MAKE SURE TO DOUBLE CHECK THE OUTPUT FILE NAMES
 #include "/afs/cern.ch/user/m/mwilkins/algorithms/file.h"
 
 void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
+  if(runmode.Contains("tree")&&runmode.Contains("hist")){
+    cout<<"Cannot do both tree and histogram output."<<endl;
+    exit(EXIT_FAILURE);
+  }
+  if(!(runmode.Contains("tree")||runmode.Contains("hist"))){
+    cout<<"This program doesn't do anything unless you specify \"tree\" or \"hist\"."<<endl;
+    exit(EXIT_FAILURE);
+  }
   gROOT->SetBatch(kTRUE);
   TString placeholder;//this is to avoid adding strings in functions; assign right before use
   TString placeholder2;
@@ -242,7 +252,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       ci++;//iterates every time we finish a branch
     }
       
-    if(runmode=="hist"){
+    if(runmode.Contains("hist")){
       cout<<"saving histograms... ";
       TString fileoutputlocation="./";
       if(myfile->quality["filetype"].Contains("data"))
