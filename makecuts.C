@@ -5,9 +5,9 @@
 // local
 
 TString placeholder;
-TString Lbname[]={"Bs","Bs","Bs"};//,"Bs"};//,"Bs"};//make sure to have 1 per file
-TString massname[]={"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};
-TString Jpsi_[]={"","_","_"};//,"_"};
+TString Lbname[]={"Bs"};//,"Bs","Bs"};//,"Bs"};//,"Bs"};//make sure to have 1 per file
+TString massname[]={"Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr","Bs_LOKI_MASS_JpsiConstr"};//,"Bs_LOKI_MASS_JpsiConstr"};
+TString Jpsi_[]={""};//,"_","_"};//,"_"};
 TCut cLbDIRA(int i,float input=0.9999){//declared here because of weirdness
   TString inputstring = Form("%f",input);
   TString place=Lbname[i]+"_DIRA_OWNPV>"+inputstring;
@@ -113,7 +113,7 @@ TCut cLM(double mean,double factor,double sigma){
   TCut output = (TCut)place;
   return output;
 }
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &c070116_LL,TCut &c070116_DD){
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &Bs2JpsiKst){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -147,10 +147,23 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &c070116_LL,TCut
   TCut ctriggerHlt2=(TCut)placeholder;
   ctrigger = ctriggerHlt1&&ctriggerHlt2;
 
-  c070116_LL = // cLL&&
-    cLPT(1300)&&cLFD(2660)&&cLZlo(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLendVerrXY(0.54)&&cLendVerrZ(12)&&cLZhi(638)&&cLDIRA(0.999426)&&cLM(1115.821289,2,2.272018)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
-  c070116_DD = // cDD&&
-    cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZlo(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLendVerrXY(35)&&cLendVerrZ(195)&&cLZhi(2300)&&cLDIRA(0.999971)&&cLMMerr(5)&&cLM(1115.931940,2,3.814952)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  //---Bs->J/psi K*---//
+  TCut cut0("cut0","muplus_PT>500&&muminus_PT>500&&muminus_PIDmu>0&&muplus_PIDmu>0&&muminus_TRACK_CHI2NDOF<4&&muplus_TRACK_CHI2NDOF<4&&muminus_isMuon>0&&muplus_isMuon>0");
+  TCut cut1("cut1","H1_PIDK>4&&H2_PIDK<4&&H1_MINIPCHI2>9&&H2_MINIPCHI2>9&&H1_TRACK_CHI2NDOF<4&&H2_TRACK_CHI2NDOF<4&&H1_PT+H2_PT>900&&H1_PT>250&&H2_PT>250");
+  TCut cut3("cut3","(J_psi_1S_MM-3096.92)>-48&&(J_psi_1S_MM-3096.92)<43");
+  TCut cut4("cut4","Bs_DIRA_OWNPV>0.99993&&Bs_ENDVERTEX_CHI2/Bs_ENDVERTEX_NDOF<5&&Bs_IPCHI2_OWNPV<25");
+  TCut cut5("cut5","abs(R_MM-982)<100");
+  TCut cut6("cut6","muplus_TRACK_CloneDist<=0&&muminus_TRACK_CloneDist<=0");
+  
+  TCut cuthlt("cuthlt","J_psi_1S_Hlt1Global_TOS>0&&J_psi_1S_Hlt2Global_TOS>0");
+
+  Bs2JpsiKst = cut0&&cut1&&cut3&&cut4&&cut5&&cut6&&cuthlt;
+  //-----------------//
+
+  // c070116_LL = cLL&&
+  //   cLPT(1300)&&cLFD(2660)&&cLZlo(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLendVerrXY(0.54)&&cLendVerrZ(12)&&cLZhi(638)&&cLDIRA(0.999426)&&cLM(1115.821289,2,2.272018)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
+  // c070116_DD = cDD&&
+  //   cLbendv(ifile)&&cLPT(2100)&&cLFD(0)&&cLZlo(100)&&cgprob(1)&&cLWM(-15.22162671,15.22162671,497.764269)&&cLendVerrXY(35)&&cLendVerrZ(195)&&cLZhi(2300)&&cLDIRA(0.999971)&&cLMMerr(5)&&cLM(1115.931940,2,3.814952)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
   // c070116 = (c070116_LL||c070116_DD)&&cLbDIRA(ifile,0.999993)&&cJpsiMM()&&ctrigger;
 
   // TCut c070116_noLMLL = cLL&&cLPT(1300)&&cLFD(2660)&&cLZlo(0)&&cgprob(0.30)&&cLWM(-7.42162085,7.42162085,497.975235)&&cLendVerrXY(0.54)&&cLendVerrZ(12)&&cLZhi(638)&&cLDIRA(0.999426);
