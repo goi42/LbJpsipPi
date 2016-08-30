@@ -47,6 +47,9 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
     cout<<"This program doesn't do anything unless you specify \"tree\" or \"hist\"."<<endl;
     exit(EXIT_FAILURE);
   }
+  if(runmode.Contains("hist")&&runmode.Contains("bron")){
+    cout<<"Warning: \"bron\" option doesn't do anything in \"hist\" mode."<<endl;
+  }
   gROOT->SetBatch(kTRUE);
   TString placeholder;//this is to avoid adding strings in functions; assign right before use
   TString placeholder2;
