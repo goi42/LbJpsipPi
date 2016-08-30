@@ -56,6 +56,7 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
   TString placeholder3;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
+  cout<<"Running in mode "<<runmode<<"..."<<endl<<endl;
   vector<TCanvas*> c;//each canvas holds one stack of histograms
   int ci = 0;//how many canvases have been plotted?
   vector<TLegend*> leg;//one legend per canvas
