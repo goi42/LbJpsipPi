@@ -196,6 +196,10 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 	    cout<<"Edit code"<<endl;
 	    exit(EXIT_FAILURE);
 	  }
+	  if(!mychain->quality["decaymode"].Contains("B_{s}")){
+	    cout<<"Why are you using this code for something other than B_{s}?"<<endl;
+	    exit(EXIT_FAILURE);
+	  }
 	  TString tempfilelocation=fileoutputlocation+"temp.root";
 	  cout<<"creating tempfile... ";
 	  TFile *tempfile = new TFile(tempfilelocation,"recreate");
@@ -213,10 +217,6 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 	    cout<<"done"<<endl;
 	  }
 	  cout<<"creating newfile... ";
-	  if(!mychain->quality["decaymode"].Contains("B_{s}")){
-	    cout<<"Why are you using this code for something other than B_{s}?"<<endl;
-	    exit(EXIT_FAILURE);
-	  }
 	  placeholder = fileoutputlocation+"cutfile_"+mycut->name+".root";
 	  TFile *newfile = new TFile(placeholder,"recreate");
 	  cout<<"done"<<endl<<"copying temptree... ";
