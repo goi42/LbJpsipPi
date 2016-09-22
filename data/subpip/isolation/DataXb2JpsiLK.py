@@ -163,7 +163,7 @@ tuple.Branches = {
     "R"    :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) ^(Lambda0 -> p+ pi-)]CC", 
     "H1"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> ^p+ pi-)]CC",      
     "H2"   :  "[Lambda_b0 -> (J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ ^pi-)]CC",   
-    "J_psi_1S"   :  "[Lambda_b0 -> ^(J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]CC"       
+    "J_psi_1S"   :  "[Lambda_b0 -> ^(J/psi(1S) -> mu+ mu-) (Lambda0 -> p+ pi-)]CC"
 }
 
 tuple.addTool(TupleToolDecay, name="Bs")
@@ -180,33 +180,36 @@ LoKi_Bs.Variables =  {
 #        "LOKI_FDCHI2"     : "BPVVDCHI2", 
 #        "LOKI_FDS"        : "BPVDLS", 
 #        "LOKI_DIRA"       : "BPVDIRA" , 
-        "LOKI_DTF_CTAU"        : "DTF_CTAU( 0, True )", 
-#        "LOKI_DTF_CTAUS"       : "DTF_CTAUSIGNIFICANCE( 0, True )", 
-        "LOKI_DTF_CHI2NDOF"    : "DTF_CHI2NDOF( True )", 
-        "LOKI_DTF_CTAUERR"     : "DTF_CTAUERR( 0, True )", 
-        "LOKI_MASS_JpsiConstr" : "DTF_FUN ( M , True , 'J/psi(1S)' )" , 
-        "LOKI_DTF_VCHI2NDOF"   : "DTF_FUN ( VFASPF(VCHI2/VDOF) , True  )"  
+        "LOKI_DTF_CTAU"             : "DTF_CTAU( 0, True )", 
+#        "LOKI_DTF_CTAUS"            : "DTF_CTAUSIGNIFICANCE( 0, True )", 
+        "LOKI_DTF_CHI2NDOF"         : "DTF_CHI2NDOF( True )", 
+        "LOKI_DTF_CTAUERR"          : "DTF_CTAUERR( 0, True )", 
+        "LOKI_MASS_JpsiConstr"      : "DTF_FUN ( M , True , 'J/psi(1S)' )" , 
+        "LOKI_MASS_ConstrLbtoJpsiL" : "DTF_FUN ( M , True , strings('J/psi(1S)', 'Lambda0') )",
+        "LOKI_DTF_VCHI2NDOF"        : "DTF_FUN ( VFASPF(VCHI2/VDOF) , True  )"  
         } 
-tuple.Bs.addTool(LoKi_Bs)         
+tuple.Bs.addTool(LoKi_Bs)
 tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
 
 from Configurables import TupleToolAllTracks
 BsAllTracks=TupleToolAllTracks("BsAllTracks")
 atlocations = [  ]
-atlocations.append(SeqLb2JpsipK.outputLocation())
+# atlocations.append(SeqLb2JpsipK.outputLocation())
+atlocations.append("Phys/StdAllNoPIDsPions/Particles")
+atlocations.append("Phys/StdAllNoPIDsKaons/Particles")
 # BsAllTracks.ANNPIDCut = 0.3 
 # BsAllTracks.GhostProb = 0.5
 # BsAllTracks.Theta = 0.012
 # BsAllTracks.DeltaPhi = 0.005
-# BsAllTracks.NewVertexChi2 = 10
+BsAllTracks.NewVertexChi2 = 10
 # BsAllTracks.MHi = 7000
-# BsAllTracks.ImprovedVertex = 6
-# BsAllTracks.PVIPchi2 = 8
+BsAllTracks.ImprovedVertex = 6
+BsAllTracks.PVIPchi2 = 8
 # BsAllTracks.CorrectedMass = False
-BsAllTracks.Target = 'J_psi_1S' #has to be defined in decay descriptor
+BsAllTracks.Target = 'J/psi(1S)' #has to be defined in decay descriptor
 BsAllTracks.InputParticles = atlocations
 tuple.Bs.addTool(BsAllTracks)
-tuple.Bs.ToolList+=["TupleToolAllTracks"]
+tuple.Bs.ToolList+=["TupleToolAllTracks/BsAllTracks"]
 
 tuple.addTool(TupleToolDecay, name="R")
 
