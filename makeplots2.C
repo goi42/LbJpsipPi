@@ -48,10 +48,12 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
   map<TString,TString> f6quality {{"filetype","MC"},{"decaymode","#Lambda (minbias)"}};
-  file f[]={								\
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
+  map<TString,TString> f7quality {{"filetype","data"},{"decaymode","#B_{s}"}};
+  file f[]={
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/Bs2JpsiKst/cutfile_Liming_selection_cuts_test.root","Bsdata",f7quality},
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","#Sigma^{0} MC",f3quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality},
@@ -76,17 +78,19 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   cout<<"done"<<endl;
   for(int ifile=0;ifile<nFiles;ifile++){
     cout<<"trees... ";
-    if(f[ifile].quality["decaymode"]=="#Lambda (minbias)")
-      f[ifile].add_tree("L2ppiTree/mytree");
-    else if(f[ifile].quality["decaymode"]=="#Lambda only")
-      f[ifile].add_tree("LTree/mytree");
-    else      
-      f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure these names are correct
+    // if(f[ifile].quality["decaymode"]=="#Lambda (minbias)")
+    //   f[ifile].add_tree("L2ppiTree/mytree");
+    // else if(f[ifile].quality["decaymode"]=="#Lambda only")
+    //   f[ifile].add_tree("LTree/mytree");
+    // else      
+    //   f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure these names are correct
+    f[ifile].add_tree("mytree");
     cout<<"done"<<endl;
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
     f[ifile].b={
+      {"sqrt(pow(J_psi_1S_PE+R_PE,2)-pow(J_psi_1S_PX+R_PX,2)-pow(J_psi_1S_PY+R_PY,2)-pow(J_psi_1S_PZ+R_PZ,2))","m(J/#psi K*)",520,3800,6400},	
       // {"R_MINIP","#Lambda MINIP",35,-1,6},
       // {"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-100,900},
       // {"R_MINIPNEXTBEST","#Lambda MINIP (next best)",110,-2,20},
@@ -150,8 +154,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       // {"H2_OWNPV_YERR","#pi PV error Y",60,0,0.06},	  
       // {"H2_OWNPV_ZERR","#pi PV error Z",350,0,0.35},	  
       // {massname[ifile],"#Lambda_{b} MM",400,4100,6100},       
-      {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    
-      {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     
+      // {massname[ifile],"#Lambda_{b} MM LL",400,4100,6100},    
+      // {massname[ifile],"#Lambda_{b} MM DD",400,4100,6100}     
       // {placeholder2,"#Lambda_{b} p",160,0,800000},         
       // {placeholder2,"#Lambda_{b} p LL",160,0,800000},         
       // {placeholder2,"#Lambda_{b} p DD",160,0,800000},         
@@ -173,6 +177,11 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       // {"muplus_TRACK_GhostProb","#mu^{+} track GhostProb",100,0,1}, 
       // {"muminus_TRACK_GhostProb","#mu^{-} track GhostProb",100,0,1}
     };
+    // for(int i=150; i<200; i++){
+    //   TString istring = Form("%i",i);
+    //   placeholder="Added_CharmH_VERTEXCHI2_NEW["+istring+"]";
+    //   f[ifile].add_branch(placeholder,500,0,500);
+    // }
     cout<<"done"<<endl;
     
     nBranches = f[ifile].b.size();
@@ -184,16 +193,17 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     } 
     //declare cuts
     cout<<"cuts... ";
-    TCut cLL,cDD,ctrigger,c070116_LL,c070116_DD;
-    makecuts(ifile,cLL,cDD,ctrigger,c070116_LL,c070116_DD);
+    TCut cLL,cDD,ctrigger,Bs2JpsiKst;
+    makecuts(ifile,cLL,cDD,ctrigger,Bs2JpsiKst);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * thisbranch = &f[ifile].b[ibranch];
       cout<<"cuts for branch "<<thisbranch->name<<"... ";
       //assign cuts
-      thisbranch->add_cut(c070116_LL,"7/1/16 LL cuts");
-      thisbranch->add_cut(c070116_DD,"7/1/16 DD cuts");
+      // thisbranch->add_cut(c070116_LL,"7/1/16 LL cuts");
+      // thisbranch->add_cut(c070116_DD,"7/1/16 DD cuts");
+      thisbranch->add_cut("","");
       nCuts = thisbranch->c.size();
       
       if(ibranch>0 && (unsigned int)nCuts != f[ifile].b[ibranch-1].c.size()){
@@ -238,13 +248,12 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
         L[i].add_element(&f[j].name);
       }
     }else if(L[i].name=="branch") {
-      L[i].compared=kTRUE;
+      // L[i].compared=kTRUE;
       bL=i;
       for(int k=0;k<nBranches;k++) {
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
       }
     }else if(L[i].name=="cut") {
-      L[i].compared=kTRUE;
       cL=i;
       for(int l=0;l<nCuts;l++)
 	L[i].add_element(&f[0].b[0].c[l].name);//all branches have the same named cuts
