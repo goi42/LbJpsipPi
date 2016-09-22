@@ -11,16 +11,28 @@ from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, 
 from Configurables import   CombineParticles, FilterDesktop#,  OfflineVertexFitter
 
 #----Jpsi->mumu---------------------------------
-Jpsi2MuMu = AutomaticData(Location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles")
+J2MuMu = AutomaticData(Location = "/Event/Dimuon/Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles")
 
-#----selection K+ and pi- -------------------------
-Kstar2Kpi = DataOnDemand(Location = "/Event/Phys/StdLooseKstar2Kpi/Particles")
+_Jpsi2MuMu = FilterDesktop("_J2MuMu")
+_Jpsi2MuMu.Code = "(ADMASS('J/psi(1S)')<50*MeV)"\
+    "& (MINTREE(ABSID=='mu+',PT)>500*MeV)"\
+    "& (MINTREE(ABSID=='mu+',TRCHI2DOF)<4)"
+
+Jpsi2MuMu = Selection("FilterJ",
+                      Algorithm = _Jpsi2MuMu ,
+                      RequiredSelections = [ J2MuMu ] )
 
 #----Selection K*->K+ pi-
+Kstar2Kpi = DataOnDemand(Location = "/Event/Phys/StdLooseKstar2Kpi/Particles")
 
 _Kst2Kpi = FilterDesktop("_Kst2Kpi")
 _Kst2Kpi.Code = "(ADMASS('K*(892)0') < 100.*MeV)"\
-                  "& (VFASPF(VCHI2/VDOF) < 12)"
+    "& (VFASPF(VCHI2/VDOF) < 4)"\
+    "& (MINTREE(ABSID=='K+',PT)>250*MeV)"\
+    "& (MINTREE(ABSID=='pi-',PT)>250*MeV)"\
+    "& ((MINTREE(ABSID=='K+',PT)+MINTREE(ABSID=='pi-',PT))>900*MeV)"\
+    "& (MINTREE(ABSID=='K+',TRCHI2DOF)<4)"\
+    "& (MINTREE(ABSID=='pi-',TRCHI2DOF)<4)"
 
 Kst2Kpi = Selection( "FilterKst",
                       Algorithm          = _Kst2Kpi ,
@@ -42,7 +54,7 @@ Kst2Kpi = Selection( "FilterKst",
 _Bs2JpsiKpi = CombineParticles( "_Bs2JpsiKpi",
                               DecayDescriptor = "[B_s0 -> J/psi(1S) K*(892)0]cc",
                               CombinationCut  = "AM < 6500. * MeV",
-                              MotherCut       = "(VFASPF(VCHI2/VDOF)<20) & (BPVDIRA > 0.9999)",
+                              MotherCut       = "(VFASPF(VCHI2/VDOF)<5) & (BPVDIRA > 0.99993)",
                               ReFitPVs        = True )
 
 Bs2JpsiKpi  = Selection( "Bs2JpsiKpi",
@@ -176,11 +188,30 @@ LoKi_Bs.Variables =  {
         } 
 tuple.Bs.addTool(LoKi_Bs)         
 tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
+#----Select K+ pi- for TupleToolAllTracks (should be same as above)
+Ks = DataOnDemand(Location = "/Event/Phys/StdAllLooseKaons/Particles")
+_Kaons = FilterDesktop("_Kaons")
+_Kaons.Code = "(PT>250*MeV)"\
+    "& (TRCHI2DOF<4)"
+Kaons = Selection( "FilterKaons",
+                   Algorithm          = _Kaons ,
+                   RequiredSelections = [ Ks ] )
+SeqKaons = SelectionSequence("SeqKaons", TopSelection = Kaons)
+
+pis = DataOnDemand(Location = "/Event/Phys/StdAllLoosePions/Particles")
+_pions = FilterDesktop("_pions")
+_pions.Code = "(PT>250*MeV)"\
+    "& (TRCHI2DOF<4)"
+pions = Selection( "Filterpions",
+                   Algorithm          = _pions ,
+                   RequiredSelections = [ pis ] )
+Seqpions = SelectionSequence("Seqpions", TopSelection = pions)
 
 from Configurables import TupleToolAllTracks
 BsAllTracks=TupleToolAllTracks("BsAllTracks")
 atlocations = [  ]
-atlocations.append(SeqBs2JpsiKpi.outputLocation())
+atlocations.append(SeqKaons.outputLocation())
+atlocations.append(Seqpions.outputLocation())
 # BsAllTracks.ANNPIDCut = 0.3 
 # BsAllTracks.GhostProb = 0.5
 # BsAllTracks.Theta = 0.012
@@ -190,10 +221,10 @@ atlocations.append(SeqBs2JpsiKpi.outputLocation())
 # BsAllTracks.ImprovedVertex = 6
 # BsAllTracks.PVIPchi2 = 8
 # BsAllTracks.CorrectedMass = False
-BsAllTracks.Target = 'J_psi_1S' #has to be defined in decay descriptor
+BsAllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
 BsAllTracks.InputParticles = atlocations
 tuple.Bs.addTool(BsAllTracks)
-tuple.Bs.ToolList+=["TupleToolAllTracks"]
+tuple.Bs.ToolList+=["TupleToolAllTracks/BsAllTracks"]
 
 # tuple.addTool(TupleToolDecay, name="R")
 
@@ -225,7 +256,7 @@ fltrs = LoKi_Filters(STRIP_Code = "(HLT_PASS_RE('StrippingFullDSTDiMuonJpsi2MuMu
 DaVinci().Simulation   = False
 DaVinci().EvtMax = -1                        # Number of events
 DaVinci().EventPreFilters = fltrs.filters('Filter')
-DaVinci().UserAlgorithms = [ seq, tuple  ]
+DaVinci().UserAlgorithms = [ seq, tuple, SeqKaons, Seqpions ]
 # from Configurables import CondDB
 #CondDB(UseOracle = True)
 #importOptions("$APPCONFIGOPTS/DisableLFC.py")
@@ -234,7 +265,7 @@ DaVinci().DataType = "2012"
 #DaVinci().DDDBtag   = "head-20110914"
 #DaVinci().CondDBtag = "head-20111102"
 DaVinci().TupleFile = "LimDVNtuples.root"
-DaVinci().PrintFreq = 10000
+DaVinci().PrintFreq = 1#0000
 #For luminosity
 #CondDB().LocalTags["LHCBCOND"] = ['lumi-20100825']
 DaVinci().Lumi = True
