@@ -1,7 +1,7 @@
 #---------------------------------------------
 # Author   : Michael Wilkinson
 # Date     : 7/27/16
-# Comments : Bs->J/psi K*
+# Comments : B0->J/psi K*
 # Data     : Real Data
 #---------------------------------------------
 from Gaudi.Configuration import *
@@ -63,20 +63,20 @@ Kst2Kpi = Selection( "FilterKst",
                       Algorithm          = _Kst2Kpi ,
                       RequiredSelections = [ Kstar2Kpi ] )
 
-#----Selection Bs -> J/psi K+ pi-------------------
-_Bs2JpsiKpi = CombineParticles( "_Bs2JpsiKpi",
-                              DecayDescriptor = "[B_s0 -> J/psi(1S) K*(892)0]cc",
+#----Selection B0 -> J/psi K+ pi-------------------
+_B02JpsiKpi = CombineParticles( "_B02JpsiKpi",
+                              DecayDescriptor = "[B0 -> J/psi(1S) K*(892)0]cc",
                               CombinationCut  = "AM < 6500. * MeV",
                               MotherCut       = "(VFASPF(VCHI2/VDOF)<5) & (BPVDIRA > 0.99993)",
                               ReFitPVs        = True )
 
-Bs2JpsiKpi  = Selection( "Bs2JpsiKpi",
-                      Algorithm          = _Bs2JpsiKpi ,
+B02JpsiKpi  = Selection( "B02JpsiKpi",
+                      Algorithm          = _B02JpsiKpi ,
                       RequiredSelections = [ Jpsi2MuMu, Kst2Kpi ] )
 
 ### Gaudi sequence
-SeqBs2JpsiKpi = SelectionSequence("SeqBs2JpsiKpi", TopSelection = Bs2JpsiKpi)
-seq = SeqBs2JpsiKpi.sequence()
+SeqB02JpsiKpi = SelectionSequence("SeqB02JpsiKpi", TopSelection = B02JpsiKpi)
+seq = SeqB02JpsiKpi.sequence()
 
 #--------------------------------------------------------------------------
 # Configure DaVinci
@@ -88,8 +88,8 @@ from Configurables import  OfflineVertexFitter
 
 from Configurables import  DecayTreeTuple, MCDecayTreeTuple
 
-tuple = DecayTreeTuple( "Bs2JpsiKpiTree" )
-tuple.Inputs = [ SeqBs2JpsiKpi.outputLocation() ]
+tuple = DecayTreeTuple( "B02JpsiKpiTree" )
+tuple.Inputs = [ SeqB02JpsiKpi.outputLocation() ]
 
 
 #----------begin former Xb2JpsiXTree.py-----------------#
@@ -167,13 +167,13 @@ tuple.addTool(TupleToolGeometry)
 tuple.TupleToolGeometry.Verbose = True
 
 ###########################################################################################################################
-tuple.Decay = '[B_s0 -> ^(J/psi(1S) -> ^mu+ ^mu-) ^(K*(892)0 -> ^K+ ^pi-)]CC'
+tuple.Decay = '[B0 -> ^(J/psi(1S) -> ^mu+ ^mu-) ^(K*(892)0 -> ^K+ ^pi-)]CC'
 tuple.Branches = {
-    "Bs"   :  "^[B_s0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ pi-)]CC",
-    "R"    :  "[B_s0 -> (J/psi(1S) -> mu+ mu-) ^(K*(892)0 -> K+ pi-)]CC", 
-    "H1"   :  "[B_s0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> ^K+ pi-)]CC",
-    "H2"   :  "[B_s0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ ^pi-)]CC",
-    "J_psi_1S"   :  "[B_s0 -> ^(J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ pi-)]CC"       
+    "B0"   :  "^[B0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ pi-)]CC",
+    "R"    :  "[B0 -> (J/psi(1S) -> mu+ mu-) ^(K*(892)0 -> K+ pi-)]CC", 
+    "H1"   :  "[B0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> ^K+ pi-)]CC",
+    "H2"   :  "[B0 -> (J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ ^pi-)]CC",
+    "J_psi_1S"   :  "[B0 -> ^(J/psi(1S) -> mu+ mu-) (K*(892)0 -> K+ pi-)]CC"       
 }
 
 tuple.ToolList += [
@@ -183,18 +183,18 @@ tuple.ToolList += [
 
 from Configurables import TupleToolMCTruth, MCTupleToolP2VV
 
-tuple.addTool(TupleToolDecay, name="Bs")
-tuple.Bs.ToolList = [ "TupleToolMCTruth", "TupleToolPropertime" ]
-tuple.Bs.addTool(TupleToolMCTruth)
+tuple.addTool(TupleToolDecay, name="B0")
+tuple.B0.ToolList = [ "TupleToolMCTruth", "TupleToolPropertime" ]
+tuple.B0.addTool(TupleToolMCTruth)
 tuple.addTool(TupleToolDecay, name="J_psi_1S")
 
-tuple.Bs.addTool(tistos)
-tuple.Bs.ToolList+=["TupleToolTISTOS/tistos"]
+tuple.B0.addTool(tistos)
+tuple.B0.ToolList+=["TupleToolTISTOS/tistos"]
 tuple.J_psi_1S.addTool(tistos)
 tuple.J_psi_1S.ToolList+=["TupleToolTISTOS/tistos"]
 tuple.ReFitPVs = True
-LoKi_Bs=LoKi__Hybrid__TupleTool("LoKi_Bs")
-LoKi_Bs.Variables =  { 
+LoKi_B0=LoKi__Hybrid__TupleTool("LoKi_B0")
+LoKi_B0.Variables =  { 
 #        "LOKI_FDCHI2"     : "BPVVDCHI2", 
 #        "LOKI_FDS"        : "BPVDLS", 
 #        "LOKI_DIRA"       : "BPVDIRA" , 
@@ -205,28 +205,28 @@ LoKi_Bs.Variables =  {
         "LOKI_MASS_JpsiConstr" : "DTF_FUN ( M , True , 'J/psi(1S)' )" , 
         "LOKI_DTF_VCHI2NDOF"   : "DTF_FUN ( VFASPF(VCHI2/VDOF) , True  )"  
         } 
-tuple.Bs.addTool(LoKi_Bs)         
-tuple.Bs.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_Bs"] 
+tuple.B0.addTool(LoKi_B0)         
+tuple.B0.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_B0"] 
 #----Select K+ pi- for TupleToolAllTracks (should be same as above)
 
 from Configurables import TupleToolAllTracks
-BsAllTracks=TupleToolAllTracks("BsAllTracks")
+B0AllTracks=TupleToolAllTracks("B0AllTracks")
 atlocations = [  ]
 atlocations.append("Phys/StdAllLooseKaons/Particles")
 atlocations.append("Phys/StdAllLoosePions/Particles")
-# BsAllTracks.ANNPIDCut = 0.3 
-# BsAllTracks.GhostProb = 0.5
-# BsAllTracks.Theta = 0.012
-# BsAllTracks.DeltaPhi = 0.005
-BsAllTracks.NewVertexChi2 = 10
-# BsAllTracks.MHi = 7000
-BsAllTracks.ImprovedVertex = 6
-BsAllTracks.PVIPchi2 = 8
-# BsAllTracks.CorrectedMass = False
-BsAllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
-BsAllTracks.InputParticles = atlocations
-tuple.Bs.addTool(BsAllTracks)
-tuple.Bs.ToolList+=["TupleToolAllTracks/BsAllTracks"]
+# B0AllTracks.ANNPIDCut = 0.3 
+# B0AllTracks.GhostProb = 0.5
+# B0AllTracks.Theta = 0.012
+# B0AllTracks.DeltaPhi = 0.005
+B0AllTracks.NewVertexChi2 = 10
+# B0AllTracks.MHi = 7000
+B0AllTracks.ImprovedVertex = 6
+B0AllTracks.PVIPchi2 = 8
+# B0AllTracks.CorrectedMass = False
+B0AllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
+B0AllTracks.InputParticles = atlocations
+tuple.B0.addTool(B0AllTracks)
+tuple.B0.ToolList+=["TupleToolAllTracks/B0AllTracks"]
 
 from Configurables import LoKi__Hybrid__EvtTupleTool as LoKiTool
 tuple.addTool(LoKiTool , 'MyLoKiTool' )
