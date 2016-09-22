@@ -56,7 +56,16 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
   TString placeholder3;
   //create necessary counters, canvases, legends, etc.
   cout<<endl;
-  cout<<"Running in mode "<<runmode<<"..."<<endl<<endl;
+  cout<<"Running in mode "<<runmode;
+  if(runmode.Contains("tree")){
+    cout<<"(will create new root file";
+    if(runmode.Contains("bron"))
+      cout<<" with all branches copied";
+    else cout<<" with only the given branch copied";
+    cout<<")";
+  }else if(runmode.Contains("hist"))
+    cout<<"(will create root file with histograms)";
+  cout<<"..."<<endl<<endl;
   vector<TCanvas*> c;//each canvas holds one stack of histograms
   int ci = 0;//how many canvases have been plotted?
   vector<TLegend*> leg;//one legend per canvas
@@ -66,11 +75,15 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 
   //assign things to actually be plotted
   map<TString,TString> chquality {{"filetype","data"},{"decaymode","B_{s}"}};
-  vector<file> f={{"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples353_0-230.root"},
-		  {"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples353_231-507.root"},
-		  {"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples354.root"},
+  vector<file> f={
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_070116_data.root"},
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Loose_DD.root"},
+    {"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples353_0-230.root"},
+    {"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples353_231-507.root"},
+    {"/afs/cern.ch/user/m/mwilkins/EOS/lhcb/user/m/mwilkins/ganga/outputfiles/DVNtuples354.root"},
   };
   chain ch[]={{"Bs2JpsiKpiTree/mytree",f,"data",chquality}};
+  // chain ch[]={{"mytree",f,"data",chquality}};
 
   int nChains = (sizeof(ch)/sizeof(ch[0]));
   if((unsigned int)nChains != sizeof(Lbname)/sizeof(Lbname[0])){
@@ -94,14 +107,15 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
     cout<<"Using "<<mychain->name<<"..."<<endl;
     placeholder3 = Lbname[ichain]+"_PT";
     mychain->b={// {massname[ichain],"#Lambda_{b} mass (PV) LL",400,4100,6100},	
-                // {massname[ichain],"#Lambda_{b} mass (endV) LL",400,4100,6100},	
+                // {massname[ichain],"#Lambda_{b} mass (endV) LL",400,4100,6100},
                 // {massname[ichain],"#Lambda_{b} mass (PV) DD",400,4100,6100},	
-                // {massname[ichain],"#Lambda_{b} mass (endV) DD",400,4100,6100},	
+                // {massname[ichain],"#Lambda_{b} mass (endV) DD",400,4100,6100},
+                {massname[ichain],"#Lambda_{b} mass",400,4100,6100}, 
                 // {massname[ichain],"#Lambda_{b} mass LL",400,4100,6100}, 
 		// {massname[ichain],"#Lambda_{b} mass DD",400,4100,6100}, 
-		{massname[ichain],"B_{s} mass"   ,700,3500,7000},
-		{massname[ichain],"B_{s} mass LL",700,3500,7000},
-		{massname[ichain],"B_{s} mass DD",700,3500,7000},
+		// {massname[ichain],"B_{s} mass"   ,700,3500,7000},
+		// {massname[ichain],"B_{s} mass LL",700,3500,7000},
+		// {massname[ichain],"B_{s} mass DD",700,3500,7000},
 		// {"R_M","#Lambda M",300,1086,1146},			
                 // {"R_M","#Lambda M (PV) LL",300,1086,1146},			
                 // {"R_M","#Lambda M (endV) LL",300,1086,1146},			
@@ -132,7 +146,11 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
     };
     cout<<"branches declared"<<endl;    
     int nBranches = mychain->b.size();
-    
+    if(nBranches>1){
+      cout<<"Due to weirdness reloading the chain in memory, no more than one branch is currently supported."<<endl;
+      exit(EXIT_FAILURE);
+    }
+
     cout<<endl<<"Starting branch loop "<<ichain+1<<"/"<<nChains<<"..."<<endl;
     for(int ibranch=0; ibranch<nBranches; ibranch++){
       branch * mybranch = &(mychain->b[ibranch]);
@@ -144,6 +162,7 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
       makecuts(ichain,cLL,cDD,ctrigger,Bs2JpsiKst);
 
       mybranch->add_cut(Bs2JpsiKst,"Liming_selection_cuts");
+      // mybranch->add_cut("Bs_LOKI_MASS_JpsiConstr>5000","test_cut");
 
       int nCuts = mybranch->c.size();
       if(nCuts==0){
@@ -153,6 +172,11 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
         mybranch->c = {{"",""}};
         nCuts = mybranch->c.size();
       }
+      if(nCuts>1){
+	cout<<"Due to weirdness reloading the chain in memory, no more than one cut is currently supported."<<endl;
+	exit(EXIT_FAILURE);
+      }
+
       cout<<"cuts declared"<<endl;    
       //create necessary canvasy things
       TString cistring = Form("%d",ci);
@@ -192,7 +216,7 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 	  //create cut trees
 	  TString fileoutputlocation="./";
 	  if(mychain->quality["filetype"].Contains("data")&&mychain->quality["decaymode"].Contains("B_{s}"))
-	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/Bs2JpsiKst";
+	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/Bs2JpsiKst/";//should end with '/'
 	  else {
 	    cout<<"Edit code"<<endl;
 	    exit(EXIT_FAILURE);
@@ -214,11 +238,12 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 	  if(!runmode.Contains("bron")){
 	    cout<<"setting branch statuses... ";
 	    temptree->SetBranchStatus("*",0);
+	    cout<<"set to 0...";
 	    temptree->SetBranchStatus(*thisbranch,1);
 	    cout<<"done"<<endl;
 	  }
 	  cout<<"creating newfile... ";
-	  placeholder = fileoutputlocation+"cutfile_"+mycut->name+".root";
+	  placeholder = fileoutputlocation+"cutfile_"+mycut->name+"_test.root";
 	  TFile *newfile = new TFile(placeholder,"recreate");
 	  cout<<"done"<<endl<<"copying temptree... ";
 	  TTree *newtree = temptree->CopyTree("");
@@ -237,28 +262,31 @@ void makeplots3_chain_RootOut(TString runmode="d", TString drawopt=""){
 	  cout<<"done"<<endl<<"removing tempfile... ";
 	  placeholder= "rm "+tempfilelocation;
 	  gSystem->Exec(placeholder);
-	  cout<<"done"<<endl<<"reloading "<<mychain->name<<" and its tree in memory... ";
-	  mychain->add_files(f,1);
 	  cout<<"done"<<endl;
+	  // cout<<"reloading "<<mychain->name<<" and its tree in memory... ";
+	  // mychain->add_files(f,1);
+	  // cout<<"done"<<endl;
 	}
-	//create convenient strings
-        TString icutstring = Form("%d",icut);
-        TString hname = "h"+cistring+icutstring;
-        TString htitle = mybranch->name;
-	//create histogram
-        int nBins = mybranch->nBins;
-        int loBin = mybranch->loBin;
-        int hiBin = mybranch->hiBin;
-        h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
-        //draw histogram
-        cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"..."<<endl;
-        while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
-          icolor++;//skip bad colors 
-	h[ci][icut]->SetLineColor(icolor);
-	placeholder = *thisbranch+">>"+hname;
-	// cout<<"convenient pointers declared"<<endl;
-	mychain->Draw(placeholder,*thiscut,drawopt);
-	cout<<"done. "<<endl;
+	if(runmode.Contains("hist")){
+	  //create convenient strings
+	  TString icutstring = Form("%d",icut);
+	  TString hname = "h"+cistring+icutstring;
+	  TString htitle = mybranch->name;
+	  //create histogram
+	  int nBins = mybranch->nBins;
+	  int loBin = mybranch->loBin;
+	  int hiBin = mybranch->hiBin;
+	  h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
+	  //draw histogram
+	  cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"..."<<endl;
+	  while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
+	    icolor++;//skip bad colors 
+	  h[ci][icut]->SetLineColor(icolor);
+	  placeholder = *thisbranch+">>"+hname;
+	  // cout<<"convenient pointers declared"<<endl;
+	  mychain->Draw(placeholder,*thiscut,drawopt);
+	  cout<<"done. "<<endl;
+	}
       }
       ci++;//iterates every time we finish a branch
     }

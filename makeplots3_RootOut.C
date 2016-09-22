@@ -72,7 +72,8 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   file f[]={// {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
     {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality},
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst1405MC",f4quality}};
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst1405MC",f4quality}
+  };
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
   if((unsigned int)nFiles != (sizeof(Lbname)/sizeof(Lbname[0]))){
@@ -93,9 +94,9 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
     file * myfile = &(f[ifile]);
     TFile * thisfile = f[ifile].self;
     cout<<"Using "<<myfile->name<<"..."<<endl;
-    myfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},	\
-	       {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},	\
-	       {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100}	\
+    myfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},
+	       {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},
+	       {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},
     };
     // myfile->b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
     // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
@@ -232,26 +233,28 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	  }
 	  cout<<"done"<<endl;
 	}
-        //create convenient strings
-        TString icutstring = Form("%d",icut);
-        TString hname = "h"+cistring+icutstring;
-        placeholder3 = mycut->name;
-        placeholder2 = mybranch->name;
-        placeholder = placeholder2 + " " + placeholder3;
-        TString htitle = placeholder;
-        //create histogram
-        int nBins = mybranch->nBins;
-        int loBin = mybranch->loBin;
-        int hiBin = mybranch->hiBin;
-        h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
-        //draw histogram
-        cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"...";
-        while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
-          icolor++;//skip bad colors 
-        h[ci][icut]->SetLineColor(icolor);
-        placeholder = *thisbranch+">>"+hname;
-        myfile->t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
-	cout<<"done"<<endl;
+	if(runmode.Contains("hist")){
+	  //create convenient strings
+	  TString icutstring = Form("%d",icut);
+	  TString hname = "h"+cistring+icutstring;
+	  placeholder3 = mycut->name;
+	  placeholder2 = mybranch->name;
+	  placeholder = placeholder2 + " " + placeholder3;
+	  TString htitle = placeholder;
+	  //create histogram
+	  int nBins = mybranch->nBins;
+	  int loBin = mybranch->loBin;
+	  int hiBin = mybranch->hiBin;
+	  h[ci].push_back( new TH1F(hname,htitle,nBins,loBin,hiBin) );
+	  //draw histogram
+	  cout<<"drawing histogram "<<icut+1<<"/"<<nCuts<<"...";
+	  while(icolor==0||icolor==5||icolor==10||(icolor>=17&&icolor<=19)) 
+	    icolor++;//skip bad colors 
+	  h[ci][icut]->SetLineColor(icolor);
+	  placeholder = *thisbranch+">>"+hname;
+	  myfile->t[0]->Draw(placeholder,*thiscut,drawopt);//there's only one tree per file
+	  cout<<"done"<<endl;
+	}
       }
       ci++;//iterates every time we finish a branch
     }
