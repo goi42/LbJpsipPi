@@ -10,9 +10,15 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
 
   //make frame
   RooPlot *framex = mass->frame();
-  framex->GetYaxis()->SetTitle("Events/(5 MeV)");
+  double *loedge = &(framex->GetXaxis()->GetXmin());
+  double *hiedge = &(framex->GetXaxis()->GetXmax());
+  int bins = floor((*hiedge - *loedge)/5);
+  double interval = (*hiedge - *loedge)/bins;
+  TString intervalstring = Form("%d",interval);
+  placeholder = "Events/("+intervalstring+" MeV)";
+  framex->GetYaxis()->SetTitle(placeholder);
   //plot data
-  data->plotOn(framex,Name("Hist"),MarkerColor(kBlack),LineColor(kBlack),DataError(RooAbsData::SumW2));
+  data->plotOn(framex,Name("Hist"),MarkerColor(kBlack),LineColor(kBlack),DataError(RooAbsData::SumW2),Binning(bins));
   //plot totalPdf
   totalPdf.plotOn(framex,Name("curvetot"),LineColor(kBlue));
   //create legend
@@ -87,7 +93,6 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
   vector<double> Y, E;//holds yields and associated errors
   vector<TString> YS, ES;//holds strings of the corresponding yields
   int j=0;//count vector position
-  int jS=0, jL=0;//these hold the position of the S and L results;initialized in case there is no nsigS or nsigL
   while(varyields){//loop over yields
     TString varname = varyields->GetName();
     TString vartitle = varyields->GetTitle();
@@ -98,10 +103,7 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
     E.push_back(TMath::Max(fabs(lo),hi));
     YS.push_back(Form("%f",Y[j]));
     ES.push_back(Form("%f",E[j]));
-    
-    if(varname=="nsigS") jS=j;
-    if(varname=="nsigL") jL=j;
-    
+        
     outputtext = vartitle+" = "+YS[j]+" +/- "+ES[j];
     cout<<outputtext<<endl;
     textfile<<outputtext<<endl;
@@ -110,27 +112,6 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
     varyields = (RooRealVar*) iteryields->Next();
     j++;
   }
-  //S/L
-  double result = Y[jS]/Y[jL];
-  double E_result = TMath::Abs(result)*sqrt(pow(E[jS]/Y[jS],2)+pow(E[jL]/Y[jL],2));
-  TString resultstring = Form("%E",result);
-  TString E_resultstring = Form("%E",E_result);
-  outputtext = "Y_{#Sigma^{0}}/Y_{#Lambda} = "+resultstring+" +/- "+E_resultstring;
-  cout<<outputtext<<endl;
-  textfile<<outputtext<<endl;
-  //txt->AddText(outputtext);
-  double resultlimit = (Y[jS]+E[jS])/(Y[jL]-E[jL]);
-  outputtext = Form("%E",resultlimit);
-  outputtext = "limit = "+outputtext;
-  cout<<outputtext<<endl;
-  textfile<<outputtext<<endl;
-  //txt->AddText(outputtext);
-  double resultlimit_90cl = 1.6*(Y[jS]+E[jS])/(Y[jL]-E[jL]);
-  outputtext = Form("%E",resultlimit_90cl);
-  outputtext = "limit at 90% confidence level = "+outputtext;
-  cout<<outputtext<<endl;
-  textfile<<outputtext<<endl;
-  //txt->AddText(outputtext);
   
   // Create canvas and pads, set style
   TCanvas *c1 = new TCanvas("c1","data fits",1200,800);

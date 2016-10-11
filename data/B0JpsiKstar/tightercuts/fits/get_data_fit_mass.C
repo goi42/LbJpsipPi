@@ -23,9 +23,9 @@ RooDataSet get_data(RooRealVar* mass, TString tracktype){
   // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
   // TString placeholder = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/cutfile_newest";
   // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_newest";
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_070116";
+  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0/cutfile_LimingB0cuts";
   if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_data.root";
+  placeholder+="_B0MC.root";
   TFile *hastree = new TFile(placeholder, "READ");
   TTree * h100 = (TTree*)hastree->Get("mytree");
   // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
@@ -36,65 +36,6 @@ RooDataSet get_data(RooRealVar* mass, TString tracktype){
   RooDataSet data("data","1D",h100,*mass);
   cout<<"data declared"<<endl;
   return data;
-}
-
-RooDataSet get_data_no_WM(RooRealVar* mass, TString tracktype){
-  //unbinned
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_Optimized_with_no_WM";
-  if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+=".root";
-  TFile *hastree = new TFile(placeholder, "READ");
-  TTree * h100 = (TTree*)hastree->Get("mytree");
-  // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
-  // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
-  cout<<"tree gotten"<<endl;
-  // RooDataHist *data = new RooDataHist("data","1D",RooArgList(*mass),h100);
-  //unbinned
-  RooDataSet data("data","1D",h100,*mass);
-  cout<<"data declared"<<endl;
-  return data;
-}
-
-RooDataSet get_data_LM(RooRealVar* mass, TString tracktype){
-  //unbinned
-  // TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_new_LM";
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/cutfile_070116noLM";
-  if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_data_LM.root";
-  TFile *hastree = new TFile(placeholder, "READ");
-  TTree * h100 = (TTree*)hastree->Get("mytree");
-  // TFile *hastree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lb_JpsiLambda_mmSpi_1405_200000.root", "READ");
-  // TTree * h100 = (TTree*)hastree->Get("MCDecayTreeTuple/MCDecayTree");
-  cout<<"tree gotten"<<endl;
-  // RooDataHist *data = new RooDataHist("data","1D",RooArgList(*mass),h100);
-  //unbinned
-  RooDataSet data("data","1D",h100,*mass);
-  cout<<"data declared"<<endl;
-  return data;
-}
-
-RooDataSet get_Lst_MC(RooRealVar* mass){
-  // TFile *hasLsttree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/Lst_1405_JpsiLmass.root","READ");
-  // TTree * Lsttree = (TTree*)hasLsttree->Get("mytree");
-  // RooDataSet LstMC("LstMC","1D",Lsttree,*mass);
-  // cout<<"LstMC RooDataSet created"<<endl;
-  // return LstMC;
-  TFile *hasLsttree = new TFile("/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/cutfile_Optimized_and_require_1405_Lst1405_fullMC.root","READ");
-  TTree * Lsttree = (TTree*)hasLsttree->Get("mytree");
-  RooDataSet LstMC("LstMC","1D",Lsttree,*mass);
-  cout<<"LstMC RooDataSet created"<<endl;
-  return LstMC;
-}
-
-RooDataSet get_L_MC(RooRealVar* mass, TString tracktype){
-  TString placeholder = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/cutfile_070116_plusLMCcuts";
-  if(tracktype!="") placeholder+="_"+tracktype;
-  placeholder+="_LMC.root";
-  TFile *hasLtree = new TFile(placeholder,"READ");
-  TTree * Ltree = (TTree*)hasLtree->Get("mytree");
-  RooDataSet LMC("LMC","1D",Ltree,*mass);
-  cout<<"LMC RooDataSet created"<<endl;
-  return LMC;
 }
 
 #endif
