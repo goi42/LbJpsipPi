@@ -10,11 +10,11 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
 
   //make frame
   RooPlot *framex = mass->frame();
-  double *loedge = &(framex->GetXaxis()->GetXmin());
-  double *hiedge = &(framex->GetXaxis()->GetXmax());
-  int bins = floor((*hiedge - *loedge)/5);
-  double interval = (*hiedge - *loedge)/bins;
-  TString intervalstring = Form("%d",interval);
+  double loedge = framex->GetXaxis()->GetXmin();
+  double hiedge = framex->GetXaxis()->GetXmax();
+  int bins = floor((hiedge - loedge)/5);
+  double interval = (hiedge - loedge)/bins;
+  TString intervalstring = Form("%f",interval);
   placeholder = "Events/("+intervalstring+" MeV)";
   framex->GetYaxis()->SetTitle(placeholder);
   //plot data

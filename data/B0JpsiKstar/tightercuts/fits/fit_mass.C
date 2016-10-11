@@ -50,14 +50,14 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"fit_mass: Assign shapes:"<<endl;
   // B0
   //dbl Gaussian
-  RooRealVar mean1("mean1L","B0 gaus 1: mean",5350,5200,5500);
-  RooRealVar sig1("sig1L","B0 gaus 1: sigma",8,0,200);
-  RooGaussian gau1("gau1L","B^{0} signal: gaussian 1",*mass,mean1L,sig1L);
-  RooFormulaVar mean2("mean2L","@0",mean1L);
-  RooRealVar sig2("sig2L","B0 gaus 2: sigma",23,0,200);
-  RooGaussian gau2("gau2L","B^{0} signal: gaussian 2",*mass,mean2L,sig2L);
-  RooRealVar f1("f1L","B0 signal: fraction gaussian 1",0.8,0,1);
-  RooAddPdf sig("sigL","B^{0} signal (dbl gaus)",RooArgList(gau1L,gau2L),RooArgList(f1L));
+  RooRealVar mean1("mean1","B0 gaus 1: mean",5350,5200,5500);
+  RooRealVar sig1("sig1","B0 gaus 1: sigma",8,0,200);
+  RooGaussian gau1("gau1","B^{0} signal: gaussian 1",*mass,mean1,sig1);
+  RooFormulaVar mean2("mean2","@0",mean1);
+  RooRealVar sig2("sig2","B0 gaus 2: sigma",23,0,200);
+  RooGaussian gau2("gau2","B^{0} signal: gaussian 2",*mass,mean2,sig2);
+  RooRealVar f1("f1","B0 signal: fraction gaussian 1",0.8,0,1);
+  RooAddPdf sig("sig","B^{0} signal (dbl gaus)",RooArgList(gau1,gau2),RooArgList(f1));
 
   // bkg
   // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
