@@ -18,7 +18,6 @@ double check that the name given to mass is the branch in use
 #include "RooGaussian.h"
 #include "RooChebychev.h"
 #include <RooCBShape.h>
-#include "RooIpatia.cxx"
 #include "RooAddPdf.h"
 #include "RooMinuit.h"
 #include "RooHist.h"
