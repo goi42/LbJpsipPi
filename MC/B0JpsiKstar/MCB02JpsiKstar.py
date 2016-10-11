@@ -52,12 +52,12 @@ Kstar2Kpi = DataOnDemand(Location = "Phys/StdLooseKstar2Kpi/Particles")
 
 _Kst2Kpi = FilterDesktop("_Kst2Kpi")
 _Kst2Kpi.Code = "(ADMASS('K*(892)0') < 100.*MeV)"\
-    "& (VFASPF(VCHI2/VDOF) < 4)"\
-    "& (MINTREE(ABSID=='K+',PT)>250*MeV)"\
-    "& (MINTREE(ABSID=='pi-',PT)>250*MeV)"\
-    "& ((MINTREE(ABSID=='K+',PT)+MINTREE(ABSID=='pi-',PT))>900*MeV)"\
-    "& (MINTREE(ABSID=='K+',TRCHI2DOF)<4)"\
-    "& (MINTREE(ABSID=='pi-',TRCHI2DOF)<4)"
+    # "& (VFASPF(VCHI2/VDOF) < 4)"\
+    # "& (MINTREE(ABSID=='K+',PT)>250*MeV)"\
+    # "& (MINTREE(ABSID=='pi-',PT)>250*MeV)"\
+    # "& ((MINTREE(ABSID=='K+',PT)+MINTREE(ABSID=='pi-',PT))>900*MeV)"\
+    # "& (MINTREE(ABSID=='K+',TRCHI2DOF)<4)"\
+    # "& (MINTREE(ABSID=='pi-',TRCHI2DOF)<4)"
 
 Kst2Kpi = Selection( "FilterKst",
                       Algorithm          = _Kst2Kpi ,
@@ -207,26 +207,26 @@ LoKi_B0.Variables =  {
         } 
 tuple.B0.addTool(LoKi_B0)         
 tuple.B0.ToolList+=["LoKi::Hybrid::TupleTool/LoKi_B0"] 
-#----Select K+ pi- for TupleToolAllTracks (should be same as above)
+# #----Select K+ pi- for TupleToolAllTracks (should be same as above)
 
-from Configurables import TupleToolAllTracks
-B0AllTracks=TupleToolAllTracks("B0AllTracks")
-atlocations = [  ]
-atlocations.append("Phys/StdAllLooseKaons/Particles")
-atlocations.append("Phys/StdAllLoosePions/Particles")
-# B0AllTracks.ANNPIDCut = 0.3 
-# B0AllTracks.GhostProb = 0.5
-# B0AllTracks.Theta = 0.012
-# B0AllTracks.DeltaPhi = 0.005
-B0AllTracks.NewVertexChi2 = 10
-# B0AllTracks.MHi = 7000
-B0AllTracks.ImprovedVertex = 6
-B0AllTracks.PVIPchi2 = 8
-# B0AllTracks.CorrectedMass = False
-B0AllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
-B0AllTracks.InputParticles = atlocations
-tuple.B0.addTool(B0AllTracks)
-tuple.B0.ToolList+=["TupleToolAllTracks/B0AllTracks"]
+# from Configurables import TupleToolAllTracks
+# B0AllTracks=TupleToolAllTracks("B0AllTracks")
+# atlocations = [  ]
+# atlocations.append("Phys/StdAllLooseKaons/Particles")
+# atlocations.append("Phys/StdAllLoosePions/Particles")
+# # B0AllTracks.ANNPIDCut = 0.3 
+# # B0AllTracks.GhostProb = 0.5
+# # B0AllTracks.Theta = 0.012
+# # B0AllTracks.DeltaPhi = 0.005
+# B0AllTracks.NewVertexChi2 = 10
+# # B0AllTracks.MHi = 7000
+# B0AllTracks.ImprovedVertex = 6
+# B0AllTracks.PVIPchi2 = 8
+# # B0AllTracks.CorrectedMass = False
+# B0AllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
+# B0AllTracks.InputParticles = atlocations
+# tuple.B0.addTool(B0AllTracks)
+# tuple.B0.ToolList+=["TupleToolAllTracks/B0AllTracks"]
 
 from Configurables import LoKi__Hybrid__EvtTupleTool as LoKiTool
 tuple.addTool(LoKiTool , 'MyLoKiTool' )
