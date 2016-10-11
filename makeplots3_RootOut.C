@@ -69,10 +69,12 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
   map<TString,TString> f3quality {{"filetype","MC"},{"decaymode","#Sigma^{0}"}};
   map<TString,TString> f4quality {{"filetype","MC"},{"decaymode","#Lambda*(1405)"}};
   map<TString,TString> f5quality {{"filetype","MC"},{"decaymode","#Lambda only"}};
+  map<TString,TString> f8quality {{"filetype","MC"},{"decaymode","B_{0}"}};
   file f[]={// {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}};
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality},
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst1405MC",f4quality}
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality},
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst1405MC",f4quality}
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0.root","B0MC",f8quality},
   };
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
@@ -94,10 +96,14 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
     file * myfile = &(f[ifile]);
     TFile * thisfile = f[ifile].self;
     cout<<"Using "<<myfile->name<<"..."<<endl;
-    myfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},
-	       {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},
-	       {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},
+    myfile->b={{massname[ifile],"B_{0} mass",560,3800,6600},
+	       {massname[ifile],"B_{0} mass LL",560,3800,6600},
+	       {massname[ifile],"B_{0} mass DD",560,3800,6600},
     };
+    // myfile->b={{massname[ifile],"#Lambda_{b} mass",400,4100,6100},
+    // 	       {massname[ifile],"#Lambda_{b} mass LL",400,4100,6100},
+    // 	       {massname[ifile],"#Lambda_{b} mass DD",400,4100,6100},
+    // };
     // myfile->b={{"R_WM","#Lambda^{0} M with p #rightarrow #pi",80,300,700}, \
     // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi LL",80,300,700}, \
     // 		 {"R_WM","#Lambda^{0} M with p #rightarrow #pi DD",80,300,700}};
@@ -106,7 +112,10 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
     // // {"R_M","#Lambda^{0} M",300,1086,1146}, \
 	 
     cout<<"branches declared"<<endl;
-    myfile->add_tree("Lb2JpsiLTree/mytree");//all 3 files have the same tree
+    if(myfile->name!="B0MC")
+      myfile->add_tree("Lb2JpsiLTree/mytree");//all 3 files have the same tree
+    else
+      myfile->add_tree("B02JpsiKpiTree/mytree");
     cout<<"tree added"<<endl;
     
     int nBranches = myfile->b.size();
@@ -118,8 +127,8 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
       cout<<"On branch "<<mybranch->name<<" for file "<<myfile->name<<"..."<<endl;
       
       //assign cuts
-      TCut cLL,cDD,ctrigger,c070116;
-      makecuts(ifile,cLL,cDD,ctrigger,c070116);
+      TCut cLL,cDD,ctrigger,cB02JpsiKst;
+      makecuts(ifile,cLL,cDD,ctrigger,cB02JpsiKst);
 
       if(f[ifile].name=="SMCfile"){
 	placeholder = "abs(R_MC_GD_MOTHER_ID)==5122&&abs(R_MC_MOTHER_ID)==3212&&R_BKGCAT==0";
@@ -128,8 +137,9 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	placeholder = "abs(R_MC_GD_GD_MOTHER_ID)==5122&&abs(R_MC_GD_MOTHER_ID)==13122&&abs(R_MC_MOTHER_ID)==3212&&R_BKGCAT==0";
 	placeholder2="Lst1405MC";
       }
-      placeholder3="070116_plus"+placeholder2+"cuts";
-      mybranch->c = {{c070116&&(TCut)placeholder,placeholder3}};
+      // placeholder3="070116_plus"+placeholder2+"cuts";
+      // mybranch->c = {{c070116&&(TCut)placeholder,placeholder3}};
+      mybranch->c = {{cB02JpsiKst,"LimingB0cuts"}};
       int nCuts = mybranch->c.size();
       if(nCuts==0){
         //for branches with no cuts assigned, 
@@ -182,6 +192,8 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/";
 	  if(myfile->quality["filetype"].Contains("MC"))
 	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
+	  if(myfile->name=="B0MC")
+	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/";
 	  TString tempfilelocation=fileoutputlocation+"temp.root";
 	  cout<<"creating tempfile... ";
 	  TFile *tempfile = new TFile(tempfilelocation,"recreate");
@@ -203,6 +215,8 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	    placeholder2="SMC";
 	  }else if(f[ifile].name=="Lst1405MC"){
 	    placeholder2="Lst1405MC";
+	  }else if(f[ifile].name=="B0MC"){
+	    placeholder2="B0MC";
 	  }
 	  placeholder = fileoutputlocation+"cutfile_"+mycut->name+"_"+placeholder2+".root";
 	  TFile *newfile = new TFile(placeholder,"recreate");
@@ -224,7 +238,8 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	  placeholder= "rm "+tempfilelocation;
 	  gSystem->Exec(placeholder);
 	  cout<<"done"<<endl<<"reloading "<<myfile->name<<" and its tree in memory... ";
-	  thisfile = TFile::Open(myfile->location);
+	  myfile->self = TFile::Open(myfile->location);
+	  thisfile = myfile->self;
 	  myfile->add_tree(myfile->tname[0]);
 	  cout<<"done"<<endl<<"removing extra elements in tree vector, currently size "<<myfile->t.size()<<"... ";
 	  if(myfile->t.size()>1){
