@@ -1,7 +1,7 @@
 #! /bin/tcsh -f
 
 #-- set or pass job parameters
-set BASE_NAME = _LimingB0cuts1
+set BASE_NAME = $1
 
 #-- directory and files
 set OUT_DIR = ./plots

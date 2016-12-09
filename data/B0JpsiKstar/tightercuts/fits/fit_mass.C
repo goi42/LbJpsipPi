@@ -42,6 +42,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   cout<<"fit_mass: Set mass and data:"<<endl;
   RooRealVar *mass = new RooRealVar("B0_LOKI_MASS_JpsiConstr","m(J/#psi K*)",3800,6600,"MeV");
   mass->setRange("tot",3800,6600);
+  mass->setRange("peak",5200,5400);
   RooDataSet data_temp = get_data(mass,tracktype);
   RooDataSet *data = &data_temp;
   cout<<"fit_mass: Mass and data set."<<endl;
@@ -50,25 +51,28 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
   // B0
   //dbl Gaussian
   RooRealVar mean1("mean1","B0 gaus 1: mean",5350,5200,5500);
-  RooRealVar sig1("sig1","B0 gaus 1: sigma",8,0,200);
+  RooRealVar sig1("sig1","B0 gaus 1: sigma",8,0,3000);
   RooGaussian gau1("gau1","B^{0} signal: gaussian 1",*mass,mean1,sig1);
   RooFormulaVar mean2("mean2","@0",mean1);
-  RooRealVar sig2("sig2","B0 gaus 2: sigma",23,0,200);
+  RooRealVar sig2("sig2","B0 gaus 2: sigma",23,0,3000);
   RooGaussian gau2("gau2","B^{0} signal: gaussian 2",*mass,mean2,sig2);
   RooRealVar f1("f1","B0 signal: fraction gaussian 1",0.8,0,1);
   RooAddPdf sig("sig","B^{0} signal (dbl gaus)",RooArgList(gau1,gau2),RooArgList(f1));
 
   // bkg
-  // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
-  RooRealVar b1("b1","Background: Chebychev b1",-1.183578,-10,10);
-  RooRealVar b2("b2","Background: Chebychev b2",0.154520,-10,10);
-  RooRealVar b3("b3","Background: Chebychev b3",-0.387522,-10,10);
-  RooRealVar b4("b4","Background: Chebychev b4",0.281777,-10,10);
-  RooRealVar b5("b5","Background: Chebychev b5",0.187079,-2,2);
-  RooRealVar b6("b6","Background: Chebychev b6",-0.015,-10000,10000);
-  RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
-  RooArgList bList(b1,b2,b3);
-  RooChebychev bkg("bkg","Background", *mass, bList);
+  // // RooRealVar b0("b0","Background: Chebychev b0",-1.071,-10000,10000);
+  // RooRealVar b1("b1","Background: Chebychev b1",-1.183578,-100,100);
+  // RooRealVar b2("b2","Background: Chebychev b2",0.154520,-100,100);
+  // RooRealVar b3("b3","Background: Chebychev b3",-0.387522,-10,10);
+  // RooRealVar b4("b4","Background: Chebychev b4",0.281777,-10,10);
+  // RooRealVar b5("b5","Background: Chebychev b5",0.187079,-2,2);
+  // RooRealVar b6("b6","Background: Chebychev b6",-0.015,-10000,10000);
+  // RooRealVar b7("b7","Background: Chebychev b7",0.012,-10000,10000);
+  // RooArgList bList(b1,b2);
+  // RooChebychev bkg("bkg","Background", *mass, bList);
+  RooRealVar mb("mb","Background: Gaussian mean",5300,3800,6600);
+  RooRealVar sb("sb","Background: Gaussian sigma",0,6000);
+  RooGaussian bkg("bkg","Background",*mass,mb,sb);
 
   cout<<"fit_mass: Shapes assigned."<<endl;
   
@@ -90,7 +94,7 @@ void fit_mass(TString fileN="test") {//suffix added before file extension, e.g.,
 
   //fit the totalPdf
   cout<<"fit_mass: Starting the fit:"<<endl;
-  RooAbsReal * nll = totalPdf.createNLL(*data,Extended(kTRUE),Range("tot"));
+  RooAbsReal * nll = totalPdf.createNLL(*data,Extended(kTRUE),Range("peak"));
   RooMinuit m(*nll);
   m.setVerbose(kFALSE);
   m.migrad();

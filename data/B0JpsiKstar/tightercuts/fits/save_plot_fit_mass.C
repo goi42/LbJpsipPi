@@ -22,8 +22,8 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
   //plot totalPdf
   totalPdf.plotOn(framex,Name("curvetot"),LineColor(kBlue));
   //create legend
-  TLegend *leg = new TLegend(0.2, 0.02, .4, .42);  
-  // TLegend *leg = new TLegend(0.75, 0.5, 1, .9);  
+  // TLegend *leg = new TLegend(0.2, 0.02, .4, .42);  
+  TLegend *leg = new TLegend(0.75, 0.5, 1, .9);
   leg->SetTextSize(0.06);
   leg->AddEntry(framex->findObject("curvetot"),"Total PDF","l");
   //iterate over totalPdf components
@@ -127,7 +127,7 @@ void save_plot_fit_mass(TString fileN, RooRealVar *mass, RooDataSet *data, RooAd
   pad1->Draw();
   pad1->cd();
   framex->SetMinimum(1);
-  framex->SetMaximum(7500);
+  framex->SetMaximum(150000);
   
   framex->addObject(leg);//add legend to frame
   //framex->addObject(txt);//add text to frame
