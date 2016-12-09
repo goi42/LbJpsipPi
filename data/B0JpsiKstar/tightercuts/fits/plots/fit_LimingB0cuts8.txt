@@ -1,0 +1,9 @@
+B0 signal: fraction gaussian 1 = 0.078489 +/- 1.566359E-03
+B0 gaus 1: mean = 5280.136150 +/- 1.180290E-02
+B0 gaus 1: sigma = 23.952932 +/- 3.598811E-01
+B0 gaus 2: sigma = 6.741537 +/- 1.520717E-02
+Background: Gaussian mean = 5178.211909 +/- 3.433118E+00
+Background: Gaussian sigma = 360.704798 +/- 2.696081E+00
+#chi^{2}/N_{DoF} = 668.060407
+N B0 = 401628.616746 +/- 639.584438
+N bkg = 11540.778920 +/- 135.825072
