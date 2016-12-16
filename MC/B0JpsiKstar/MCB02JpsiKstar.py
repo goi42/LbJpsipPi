@@ -285,7 +285,7 @@ fltrs = LoKi_Filters(STRIP_Code = "(HLT_PASS_RE('StrippingFullDSTDiMuonJpsi2MuMu
 
 # from Configurables import DaVinci
 DaVinci().Simulation   = True
-DaVinci().EvtMax = 1000 #-1                        # Number of events
+DaVinci().EvtMax = -1                        # Number of events
 DaVinci().EventPreFilters = fltrs.filters('Filter')
 from Configurables import TrackScaleState
 scaler = TrackScaleState( 'StateScale' )
