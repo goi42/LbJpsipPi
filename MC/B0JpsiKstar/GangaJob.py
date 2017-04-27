@@ -12,7 +12,7 @@ myApplication.directory = "/afs/cern.ch/user/m/mwilkins/DaVinciDev_v38r1p2"
 #myEnv = myApplication.getenv()
 #myApplication.optsfile = [File('MCB02JpsiKstar.py')]
 myApplication.options = ['MCB02JpsiKstar.py']
-j = Job(name='B02JpsiKstar_MC', application=myApplication, backend=Dirac())
+j = Job(name='B02JpsiKstar_MC_noalltrackscuts', application=myApplication, backend=Dirac())
 # j.backend.settings['CPUTime'] = 50000
 mySplitter = SplitByFiles(filesPerJob=10)
 j.outputfiles = [DiracFile('LimDVNtuples.root')] #has to match what's in optsfile

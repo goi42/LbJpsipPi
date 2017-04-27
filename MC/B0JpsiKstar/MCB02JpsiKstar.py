@@ -252,15 +252,15 @@ atlocations = [  ]
 #atlocations.append("Phys/StdAllLooseKaons/Particles")
 atlocations.append(SeqKst2K.outputLocation())
 atlocations.append(SeqKst2pi.outputLocation())
-# B0AllTracks.ANNPIDCut = 0.3 
-# B0AllTracks.GhostProb = 0.5
-# B0AllTracks.Theta = 0.012
-# B0AllTracks.DeltaPhi = 0.005
-B0AllTracks.NewVertexChi2 = 10
-# B0AllTracks.MHi = 7000
-B0AllTracks.ImprovedVertex = 6
-B0AllTracks.PVIPchi2 = 8
-# B0AllTracks.CorrectedMass = False
+## B0AllTracks.ANNPIDCut = 0.3 
+## B0AllTracks.GhostProb = 0.5
+## B0AllTracks.Theta = 0.012
+## B0AllTracks.DeltaPhi = 0.005
+#B0AllTracks.NewVertexChi2 = 10
+## B0AllTracks.MHi = 7000
+#B0AllTracks.ImprovedVertex = 6
+#B0AllTracks.PVIPchi2 = 8
+## B0AllTracks.CorrectedMass = False
 B0AllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
 B0AllTracks.InputParticles = atlocations
 tuple.B0.addTool(B0AllTracks)
