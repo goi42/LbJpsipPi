@@ -17,8 +17,8 @@ from StrippingSettings.Utils import strippingConfiguration
 from StrippingArchive.Utils import buildStreams
 from StrippingArchive import strippingArchive
 
-#----------------------Standard stripping20-------------------------
-stripping='stripping20'
+#----------------------Standard stripping21-------------------------
+stripping='stripping21'
 config  = strippingConfiguration(stripping)
 archive = strippingArchive(stripping)
 streams = buildStreams(stripping=config, archive=archive)
@@ -260,7 +260,8 @@ atlocations.append(SeqKst2pi.outputLocation())
 ## B0AllTracks.MHi = 7000
 #B0AllTracks.ImprovedVertex = 6
 #B0AllTracks.PVIPchi2 = 8
-## B0AllTracks.CorrectedMass = False
+B0AllTracks.WritePXPYPZ = True
+B0AllTracks.CorrectedMass = True
 B0AllTracks.Target = "J/psi(1S)" #has to be defined in decay descriptor
 B0AllTracks.InputParticles = atlocations
 tuple.B0.addTool(B0AllTracks)

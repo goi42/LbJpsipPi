@@ -6,8 +6,9 @@ import os #use this file for everything
 # myApplication.user_release_area = '~/cmtuser'
 # # myApplication.platform = 'x86_64-slc6-gcc49-opt' #'x86_64-slc5-gcc46-opt'
 myApplication = GaudiExec()
-myApplication.directory = "/afs/cern.ch/user/m/mwilkins/DaVinciDev_v38r1p2"
-
+# myApplication.directory = "/afs/cern.ch/user/m/mwilkins/DaVinciDev_v38r1p2"
+myApplication.directory = "/afs/cern.ch/user/m/mwilkins/LbJpsipPi/data/subpip/isolation/DaVinciDev_v36r1p4"
+myApplication.platform = 'x86_64-slc6-gcc48-opt'
 
 #myEnv = myApplication.getenv()
 #myApplication.optsfile = [File('MCB02JpsiKstar.py')]
