@@ -30,6 +30,6 @@ for path in paths:
 
     j.inputdata = filteredFiles
     optsfilename = 'DataXb2JpsiLK'+"_"+path.split("Collision")[1].split("/")[0]+'.py' 
-    myApplication.optsfile = [File(optsfilename)]
+    myApplication.options = [optsfilename]
     j.application=myApplication
     j.submit()
