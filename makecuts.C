@@ -113,7 +113,7 @@ TCut cLM(double mean,double factor,double sigma){
   TCut output = (TCut)place;
   return output;
 }
-void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cB02JpsiKst,TCut &cB02JpsiKst_mass){
+void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cB02JpsiKst) {//,TCut &cB02JpsiKst_mass){
   TCut cH1LL = "H1_TRACK_Type==3";
   TCut cH2LL = "H2_TRACK_Type==3";
   cLL = cH1LL&&cH2LL;
@@ -160,7 +160,7 @@ void makecuts(int ifile,TCut &cLL,TCut &cDD,TCut &ctrigger,TCut &cB02JpsiKst,TCu
   TCut B0mass("B0mass","B0_LOKI_MASS_JpsiConstr>5256.332362&&B0_LOKI_MASS_JpsiConstr<5303.962918");
 
   cB02JpsiKst      = cut0&&cut1&&cut3&&cut4&&cut5&&cut6&&cuthlt;
-  cB02JpsiKst_mass = cut0&&cut1&&cut3&&cut4&&cut5&&cut6&&cuthlt&&B0mass;
+  //  cB02JpsiKst_mass = cut0&&cut1&&cut3&&cut4&&cut5&&cut6&&cuthlt&&B0mass;
   //-----------------//
 
   // c070116_LL = cLL&&

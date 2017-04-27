@@ -51,7 +51,8 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
   map<TString,TString> f7quality {{"filetype","data"},{"decaymode","#B_{s}"}};
   map<TString,TString> f8quality {{"filetype","MC"},{"decaymode","B_{0}"}};
   file f[]={
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0/B0.root","B0MC",f8quality},
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality},
+    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0/B0.root","B0MC",f8quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/Bs2JpsiKst/cutfile_Liming_selection_cuts_test.root","Bsdata",f7quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/data/subLimDVNtuples.root","data",f1quality}, 
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","#Lambda MC",f2quality}, 
@@ -59,7 +60,6 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/PV_L/DVNtuples_L.root","#Lambda minbias MC",f6quality}, 
   };
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/onlylambda/DVNtuples.root","#Lambda only MC",f5quality},
-    // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst(1405)MC",f4quality},
   
   int nFiles = (sizeof(f)/sizeof(f[0]));
   int nBranches=0;//initialized both of these to ensure there are no compiler warnings
@@ -85,21 +85,25 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     // else if(f[ifile].quality["decaymode"]=="#Lambda only")
     //   f[ifile].add_tree("LTree/mytree");
     // else      
-    //   f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure these names are correct
-    f[ifile].add_tree("B02JpsiKpiTree/mytree");
+    f[ifile].add_tree("Lb2JpsiLTree/mytree"); //make sure these names are correct
+    // f[ifile].add_tree("B02JpsiKpiTree/mytree");
     cout<<"done"<<endl;
     placeholder2 = Lbname[ifile]+"_P";
     cout<<"branches for file "<<f[ifile].name<<"... ";
     placeholder3 = Lbname[ifile]+"_PT";
     f[ifile].b={
-      {"sqrt(pow(J_psi_1S_PE+R_PE,2)-pow(J_psi_1S_PX+R_PX,2)-pow(J_psi_1S_PY+R_PY,2)-pow(J_psi_1S_PZ+R_PZ,2))","m(J/#psi K*)",560,3800,6600},
-      {"sqrt(pow(J_psi_1S_PE+H1_PE,2)-pow(J_psi_1S_PX+H1_PX,2)-pow(J_psi_1S_PY+H1_PY,2)-pow(J_psi_1S_PZ+H1_PZ,2))","m(J/#psi K)",580,3500,6400},
-      {"sqrt(pow(J_psi_1S_PE+H2_PE,2)-pow(J_psi_1S_PX+H2_PX,2)-pow(J_psi_1S_PY+H2_PY,2)-pow(J_psi_1S_PZ+H2_PZ,2))","m(J/#psi #pi)",530,3150,5800},
-      {"B0_LOKI_MASS_JpsiConstr","m(B^{0})",560,3800,6600},
-      {"H1_MINIPCHI2","K MINIP #chi^{2}",100,0,100000},
-      {"H2_MINIPCHI2","#pi MINIP #chi^{2}",100,0,100000},
-      {"H1_PT","p_{T}(K)",400,0,40000},
-      {"H2_PT","p_{T}(#pi)",400,0,40000},
+      {"sqrt(Bs_TRUEP_E*Bs_TRUEP_E-Bs_TRUEP_X*Bs_TRUEP_X-Bs_TRUEP_Y*Bs_TRUEP_Y-Bs_TRUEP_Z*Bs_TRUEP_Z)","m(#Lambda_{b}) TRUE",200,0,200},
+      {"sqrt(Bs_TRUEP_E*Bs_TRUEP_E-Bs_TRUEP_X*Bs_TRUEP_X-Bs_TRUEP_Y*Bs_TRUEP_Y-Bs_TRUEP_Z*Bs_TRUEP_Z)","m(#Lambda_{b}) TRUE",400,4600,5000},
+      {"sqrt(Bs_TRUEP_E*Bs_TRUEP_E-Bs_TRUEP_X*Bs_TRUEP_X-Bs_TRUEP_Y*Bs_TRUEP_Y-Bs_TRUEP_Z*Bs_TRUEP_Z)","m(#Lambda_{b}) TRUE",400,5400,5800},
+      {"abs(Bs_TRUEID)","#Lambda_{b} TRUEID",5201,-1,5500},
+      // {"sqrt(pow(J_psi_1S_PE+R_PE,2)-pow(J_psi_1S_PX+R_PX,2)-pow(J_psi_1S_PY+R_PY,2)-pow(J_psi_1S_PZ+R_PZ,2))","m(J/#psi K*)",560,3800,6600},
+      // {"sqrt(pow(J_psi_1S_PE+H1_PE,2)-pow(J_psi_1S_PX+H1_PX,2)-pow(J_psi_1S_PY+H1_PY,2)-pow(J_psi_1S_PZ+H1_PZ,2))","m(J/#psi K)",580,3500,6400},
+      // {"sqrt(pow(J_psi_1S_PE+H2_PE,2)-pow(J_psi_1S_PX+H2_PX,2)-pow(J_psi_1S_PY+H2_PY,2)-pow(J_psi_1S_PZ+H2_PZ,2))","m(J/#psi #pi)",530,3150,5800},
+      // {"B0_LOKI_MASS_JpsiConstr","m(B^{0})",560,3800,6600},
+      // {"H1_MINIPCHI2","K MINIP #chi^{2}",100,0,100000},
+      // {"H2_MINIPCHI2","#pi MINIP #chi^{2}",100,0,100000},
+      // {"H1_PT","p_{T}(K)",400,0,40000},
+      // {"H2_PT","p_{T}(#pi)",400,0,40000},
       // {"R_MINIP","#Lambda MINIP",35,-1,6},
       // {"R_MINIPCHI2","#Lambda MINIP #chi^{2}",100,-100,900},
       // {"R_MINIPNEXTBEST","#Lambda MINIP (next best)",110,-2,20},
@@ -203,7 +207,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     //declare cuts
     cout<<"cuts... ";
     TCut cLL,cDD,ctrigger,B02JpsiKst,B02JpsiKst_mass;
-    makecuts(ifile,cLL,cDD,ctrigger,B02JpsiKst,B02JpsiKst_mass);
+    makecuts(ifile,cLL,cDD,ctrigger,B02JpsiKst);//,B02JpsiKst_mass);
     cout<<"done"<<endl;
     
     for(int ibranch=0; ibranch<nBranches; ibranch++){
@@ -212,9 +216,9 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
       //assign cuts
       // thisbranch->add_cut(c070116_LL,"7/1/16 LL cuts");
       // thisbranch->add_cut(c070116_DD,"7/1/16 DD cuts");
-      // thisbranch->add_cut("","no cuts");
-      thisbranch->add_cut(B02JpsiKst     ,"Liming's B0 cuts");
-      thisbranch->add_cut(B02JpsiKst_mass,"Liming's B0 cuts with B0 mass cut");
+      thisbranch->add_cut("","no cuts");
+      // thisbranch->add_cut(B02JpsiKst     ,"Liming's B0 cuts");
+      // thisbranch->add_cut(B02JpsiKst_mass,"Liming's B0 cuts with B0 mass cut");
       nCuts = thisbranch->c.size();
       
       if(ibranch>0 && (unsigned int)nCuts != f[ifile].b[ibranch-1].c.size()){
@@ -265,7 +269,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
         L[i].add_element(&f[0].b[k].name);//all files have the same named branches
       }
     }else if(L[i].name=="cut") {
-      L[i].compared=kTRUE;
+      // L[i].compared=kTRUE;
       cL=i;
       for(int l=0;l<nCuts;l++)
 	L[i].add_element(&f[0].b[0].c[l].name);//all branches have the same named cuts
@@ -329,7 +333,7 @@ void makeplots2(TString runmode ="d", TString drawopt=""){
     placeholder = "c"+cistring;
     c[ci] = new TCanvas(placeholder,placeholder,1200,800); //create the canvases
     c[ci]->cd();
-    gPad->SetLogy();
+    // gPad->SetLogy();
     gStyle->SetOptStat("");
     // leg[ci] = new TLegend(0.41, 0.7, 0.85, 0.9);//create legend
     leg[ci] = new TLegend(0.65, 0.7, 1, 0.9);//create legend

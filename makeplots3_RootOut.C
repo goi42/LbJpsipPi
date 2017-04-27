@@ -74,7 +74,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/LMC_tuples_with_gd_info.root","LMCfile",f2quality}};
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/SMC_tuples_with_gd_info.root","SMCfile",f3quality},
     // {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/Lst/1405_fullMC/Lb_JpsiLambda_mmSpi_1405_200000.root","Lst1405MC",f4quality}
-    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0.root","B0MC",f8quality},
+    {"/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0/B0.root","B0MC",f8quality},
   };
 
   int nFiles = (sizeof(f)/sizeof(f[0]));
@@ -193,7 +193,7 @@ void makeplots3_RootOut(TString runmode="d", TString drawopt=""){
 	  if(myfile->quality["filetype"].Contains("MC"))
 	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/withKScut/";
 	  if(myfile->name=="B0MC")
-	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/";
+	    fileoutputlocation = "/afs/cern.ch/work/m/mwilkins/Lb2JpsiLtr/MC/B0/";
 	  TString tempfilelocation=fileoutputlocation+"temp.root";
 	  cout<<"creating tempfile... ";
 	  TFile *tempfile = new TFile(tempfilelocation,"recreate");
