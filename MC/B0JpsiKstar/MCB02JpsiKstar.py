@@ -11,29 +11,29 @@ from PhysSelPython.Wrappers import AutomaticData, Selection, SelectionSequence, 
 from Configurables import   CombineParticles, FilterDesktop#,  OfflineVertexFitter
 from Configurables import SelDSTWriter, DaVinci
 
-#--Stripping--------------------------------------------------------
-from StrippingConf.Configuration import StrippingConf, StrippingStream
-from StrippingSettings.Utils import strippingConfiguration
-from StrippingArchive.Utils import buildStreams
-from StrippingArchive import strippingArchive
+# #--Stripping--------------------------------------------------------
+# from StrippingConf.Configuration import StrippingConf, StrippingStream
+# from StrippingSettings.Utils import strippingConfiguration
+# from StrippingArchive.Utils import buildStreams
+# from StrippingArchive import strippingArchive
 
-#----------------------Standard stripping21-------------------------
-stripping='stripping21'
-config  = strippingConfiguration(stripping)
-archive = strippingArchive(stripping)
-streams = buildStreams(stripping=config, archive=archive)
+# #----------------------Standard stripping21-------------------------
+# stripping='stripping21'
+# config  = strippingConfiguration(stripping)
+# archive = strippingArchive(stripping)
+# streams = buildStreams(stripping=config, archive=archive)
 
-#----Select my line-------------------------------------------------
-MyStream = StrippingStream("MyStream")
-MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
+# #----Select my line-------------------------------------------------
+# MyStream = StrippingStream("MyStream")
+# MyLines = [ 'StrippingFullDSTDiMuonJpsi2MuMuDetachedLine' ]
 
-for stream in streams:
-    for line in stream.lines:
-        if line.name() in MyLines:
-            MyStream.appendLines( [ line ] )
+# for stream in streams:
+#     for line in stream.lines:
+#         if line.name() in MyLines:
+#             MyStream.appendLines( [ line ] )
 
-sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
-#------------------------------------------------------------------------
+# sc = StrippingConf( HDRLocation = "MyStrip", Streams = [ MyStream ] )
+# #------------------------------------------------------------------------
 
 #----Jpsi->mumu---------------------------------
 J2MuMu = AutomaticData(Location = "Phys/FullDSTDiMuonJpsi2MuMuDetachedLine/Particles")
@@ -100,7 +100,7 @@ seqpi= SeqKst2pi.sequence()
 #-------------------------------------------------------------------------
 from Configurables import DaVinci
 
-DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
+# DaVinci().appendToMainSequence( [sc.sequence() ] )   # Append the stripping selection sequence to DaVinci
 from Configurables import  OfflineVertexFitter
 
 from Configurables import  DecayTreeTuple, MCDecayTreeTuple
